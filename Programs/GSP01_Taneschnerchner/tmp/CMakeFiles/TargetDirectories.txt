@@ -1,0 +1,8 @@
+C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/database.dir
+C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard.dir
+C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-build.dir
+C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-configure.dir
+C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-executes.dir
+C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-database.dir
+C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/edit_cache.dir
+C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/rebuild_cache.dir
