@@ -54,7 +54,7 @@ int duplStack() {
     return NO_ERROR;
 }
 
-void clearStack() {
+void deleteStack() {
     for (int i = 0; i < size; i++) {
         stack[i] = 0;
     }

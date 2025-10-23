@@ -21,27 +21,27 @@ Die Funktion p druckt den obersten Wert des Stacks aus, ohne dass der Stack ver√
  **************************************************************
  * @brief: prints the value of the topmost element on the stack
  *************************************************************/
-void printTopOfStack();
+void printTopOfStackCMD();
 
 /*
  **************************************************************
  * @brief: prints the entire stack
  *************************************************************/
-void printStack();
+void printStackCMD();
 
 /*
  **************************************************************
  * @brief: deletes all elements from the stack
  *************************************************************/
-void clearStack();
+void deleteStackCMD();
 
 /*
  **************************************************************
- * @brief  copies the topmost element of the stack and pushe that to the stack.
- *
- * @return  returns STACK_UNDERFLOW when the stack is empty
+ * @brief: copies the topmost element of the stack and pushes
+ * that to the stack.
+ * @return: returns STACK_UNDERFLOW when the stack is empty
  *************************************************************/
-int duplicateTopOfStack();
+int duplicateTopOfStackCMD();
 
 /*
  **************************************************************
@@ -50,6 +50,6 @@ int duplicateTopOfStack();
  * @return: returns STACK_UNDERFLOW when the stack has fewer
  * than two elements.
  *************************************************************/
-int swapFristTwoEntries();
+int swapFristTwoEntriesCMD();
 
 #endif

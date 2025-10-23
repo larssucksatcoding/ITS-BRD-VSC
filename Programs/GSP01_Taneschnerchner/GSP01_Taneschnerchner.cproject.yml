@@ -188,6 +188,7 @@ project:
         - file: Inc/command.h
         - file: Inc/errno.h
         - file: Inc/operator.h
+        - file: Inc/print.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -199,6 +200,7 @@ project:
         - file: Src/errno.c
         - file: Src/operator.c
         - file: Src/command.c
+        - file: Src/print.c
 
   components:
     - component: ARM::CMSIS:CORE
