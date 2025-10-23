@@ -29,18 +29,9 @@ int push(int v);
  *
  *  @return     0 -> hat geklappt, 4 -> Stack Underflow
  ****************************************************************************************/
- int pop(int* x);
+int pop(int* x);
 
- /*
- ****************************************************************************************
- *  @brief      Abrufen der obersten beiden Zahlen vom Stack
- *
- *  @param      Zielspeicherort der Variable
- *
- *  @return     0 -> hat geklappt, 4 -> Stack Underflow
- ****************************************************************************************/
-int pop(int* x, int* y);
-
+ 
 /*
  ****************************************************************************************
  *  @brief      vertauschen der oberen beiden Variablen auf dem Stack
@@ -76,6 +67,15 @@ int clearStack();
  *  @return     
  ****************************************************************************************/
 int showNumbers();
+
+/*
+ ****************************************************************************************
+ *  @brief      Gibt aus, wie viele Elemente auf dem Stack liegen
+ *
+ *  @return     Anzahl der Elemente auf dem Stack
+ ****************************************************************************************/
+int getSize();
+
 
 #endif
 
