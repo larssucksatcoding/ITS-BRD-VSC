@@ -29,7 +29,7 @@ int push(int v);
  *
  *  @return     0 -> hat geklappt, 4 -> Stack Underflow
  ****************************************************************************************/
-int pop(int* x);
+int pop(int* v);
 
  
 /*
@@ -54,19 +54,27 @@ int duplStack();
  ****************************************************************************************
  *  @brief      lösche alle Werte aus dem Stack
  *
- *  @return     
+ *  @return     nüchts
  ****************************************************************************************/
-int clearStack();
+void clearStack();
 
 /*
  ****************************************************************************************
- *  @brief      
+ *  @brief     gibt die oberste Zahl des Stack aus, ohne diese zu entfernen 
  *
- *  @param      
+ *  @return    oberste Zahl des Stacks
+ ****************************************************************************************/
+int getFirst();
+
+/*
+ ****************************************************************************************
+ *  @brief      füllt ein übergebens Array mit den Werten im Stack
+ *
+ *  @param      Array der Größe MAX_SIZE oder getSize() des Stacks
  *
  *  @return     
  ****************************************************************************************/
-int showNumbers();
+void getCopyOfStack(int copy[]);
 
 /*
  ****************************************************************************************

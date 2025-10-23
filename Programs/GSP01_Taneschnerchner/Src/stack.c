@@ -16,31 +16,68 @@ static int size = 0; // aktuelle Anzahl der Elemente
 static int stack[MAX_SIZE];
 
 int push(int v) {
-
+    if(size == MAX_SIZE) {
+        return STACK_OVERFLOW;
+    }
+    stack[size] = v;
+    size++;
+    return NO_ERROR;
 }
 
-int pop(int* x) {
-
+int pop(int* v) {
+    if(size == 0) {
+        return STACK_UNDERFLOW;
+    }
+    *v = stack[size];
+    stack[size] = 0;
+    size--;
+    return NO_ERROR;
 }
 
 int swapStack() {
-
+    if(size == 0 || size == 1) {
+        return STACK_UNDERFLOW;
+    }
+    int v = stack[size];
+    stack[size] = stack[size-1];
+    stack[size-1] = v;
+    return NO_ERROR;
 }
 
 int duplStack() {
-
+    if(size == 0) {
+        return STACK_UNDERFLOW;
+    }
+    int v = 0;
+    pop(&v);
+    push(v);
+    return NO_ERROR;
 }
 
-int clearStack() {
-
+void clearStack() {
+    for (int i = 0; i < size; i++) {
+        stack[i] = 0;
+    }
+    size = 0;
 }
 
-int showNumbers() {
+int getFirst() {
+    return stack[size];
+}
 
+void getCopyOfStack(int copy[]) {
+    for (int i = 0; i < MAX_SIZE; i++) {
+        if (i < size) {
+            copy[i] = stack[i];
+        }
+        else {
+            copy[i] = 0;
+        }
+    }
 }
 
 int getSize() {
-  
+    return size;
 }
 
 int popTopTwoElements(int* top, int* bottom) {
@@ -64,3 +101,5 @@ int popTopTwoElements(int* top, int* bottom) {
 
     return NO_ERROR;
 }
+
+//EOF
