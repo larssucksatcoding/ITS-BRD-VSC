@@ -8,33 +8,74 @@
 #ifndef STACK_H
 #define STACK_H
 
-// Größe des Stacks = 8 
+// Größe des Stacks = 8
 
-// Abspeicherung im Stack
 
-// get from Stack (1)
-
-// get from Stack (2) 
-
-// Swap Command 
-
-// duplicate Command
-
- //!< Token for print command 
-   //!< Token for swap command 
-  //!< Token for print total stack command
- //!< Token for clear command
-//!< Token for double top of stack command 
- //!< Token for ENTER button
 /*
  ****************************************************************************************
- *  @brief      This function prints a string to stdout terminal.
+ *  @brief      Speichert eine Nummer im Stack
  *
- *  @param      msg The value that will be printed on on the terminal.
+ *  @param      
  *
- *  @return     void 
+ *  @return     0 -> hat geklappt, 3 -> Stack Overflow
  ****************************************************************************************/
-extern void printStdout(char * msg);
+int push(int v);
+
+/*
+ ****************************************************************************************
+ *  @brief      Abrufen der obersten Zahl vom Stack
+ *
+ *  @param      Zielspeicherort der Variable
+ *
+ *  @return     0 -> hat geklappt, 4 -> Stack Underflow
+ ****************************************************************************************/
+ int pop(int* x);
+
+ /*
+ ****************************************************************************************
+ *  @brief      Abrufen der obersten beiden Zahlen vom Stack
+ *
+ *  @param      Zielspeicherort der Variable
+ *
+ *  @return     0 -> hat geklappt, 4 -> Stack Underflow
+ ****************************************************************************************/
+int pop(int* x, int* y);
+
+/*
+ ****************************************************************************************
+ *  @brief      vertauschen der oberen beiden Variablen auf dem Stack
+ *
+ *  @return     0 -> hat geklappt, 4 -> Stack Underflow
+ ****************************************************************************************/
+int swapStack();
+
+
+/*
+ ****************************************************************************************
+ *  @brief      dupliziere oberste Variable auf dem Stack
+ *
+ *  @return     0 -> hat geklappt, 3 -> Stack Overflow, 4 -> Stack Underflow
+ ****************************************************************************************/
+int duplStack();
+
+
+/*
+ ****************************************************************************************
+ *  @brief      lösche alle Werte aus dem Stack
+ *
+ *  @return     
+ ****************************************************************************************/
+int clearStack();
+
+/*
+ ****************************************************************************************
+ *  @brief      
+ *
+ *  @param      
+ *
+ *  @return     
+ ****************************************************************************************/
+int showNumbers();
 
 #endif
 
