@@ -13,7 +13,6 @@ build-idx:
       messages:
         info:
           - GSP01_Taneschnerchner.cbuild-pack.yml - file is already up-to-date
-          - "RTE Model reports:\nConstructed file /home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/RTE/_Debug_ITSboard/RTE_Components.h was recreated"
           - GSP01_Taneschnerchner+ITSboard.cbuild-run.yml - file is already up-to-date
           - GSP01_Taneschnerchner.Debug+ITSboard.cbuild.yml - file generated successfully
       packs-unused:

@@ -333,6 +333,8 @@ build:
           category: header
         - file: ../../../../Inc/main.h
           category: header
+        - file: ../../../../Inc/stack.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -340,6 +342,8 @@ build:
         - file: ../../../../Src/display.c
           category: sourceC
         - file: ../../../../Src/scanner.c
+          category: sourceC
+        - file: ../../../../Src/stack.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h
