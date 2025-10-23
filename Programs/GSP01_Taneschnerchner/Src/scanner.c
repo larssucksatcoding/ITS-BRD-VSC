@@ -22,7 +22,7 @@ inline static char nextChar(void) {
 }
 
 T_token nextToken(void) {
-   // This scanner needs a lookahead of 1 to detect the end of a number token.
+   // This scanner needs a lookahead of 1 to detect the end of a number token. ?
 	// ' ' / ENTER will be handled as whitespace
    static char c = ENTER;  // next character according to lookahead
    clearEchoTerm();

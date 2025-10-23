@@ -331,6 +331,8 @@ build:
           category: header
         - file: ../../../../Inc/token.h
           category: header
+        - file: ../../../../Inc/main.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c

@@ -14,7 +14,7 @@ build-idx:
         info:
           - GSP01_Taneschnerchner.cbuild-pack.yml - file is already up-to-date
           - GSP01_Taneschnerchner+ITSboard.cbuild-run.yml - file is already up-to-date
-          - GSP01_Taneschnerchner.Debug+ITSboard.cbuild.yml - file is already up-to-date
+          - GSP01_Taneschnerchner.Debug+ITSboard.cbuild.yml - file generated successfully
       packs-unused:
         - pack: ARM::CMSIS-DSP@1.16.2
         - pack: ARM::CMSIS-NN@7.0.0
