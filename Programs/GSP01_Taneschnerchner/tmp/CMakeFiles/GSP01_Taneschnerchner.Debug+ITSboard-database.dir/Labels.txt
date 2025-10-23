@@ -1,11 +1,11 @@
 # Target labels
  GSP01_Taneschnerchner.Debug+ITSboard
 # Source files and their labels
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-database
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-database.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-configure.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-patch.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-update.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-download.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-mkdir.rule
+/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-database
+/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-database.rule
+/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database.rule
+/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-configure.rule
+/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-patch.rule
+/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-update.rule
+/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-download.rule
+/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-mkdir.rule

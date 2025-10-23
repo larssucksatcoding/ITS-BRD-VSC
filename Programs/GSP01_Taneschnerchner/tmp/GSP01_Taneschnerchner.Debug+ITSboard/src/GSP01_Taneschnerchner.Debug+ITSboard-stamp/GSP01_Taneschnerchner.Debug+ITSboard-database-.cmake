@@ -1,11 +1,11 @@
 
 cmake_minimum_required(VERSION 3.15)
 
-set(command "C:/Users/Uni/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake.exe;--build;C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1;--target;database")
+set(command "/home/bazzite/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake;--build;/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1;--target;database")
 set(log_merged "")
 set(log_output_on_failure "ON")
-set(stdout_log "C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database-out.log")
-set(stderr_log "C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database-err.log")
+set(stdout_log "/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database-out.log")
+set(stderr_log "/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database-err.log")
 execute_process(
   COMMAND ${command}
   RESULT_VARIABLE result
@@ -31,7 +31,7 @@ if(result)
   if (${log_merged})
     set(msg "${msg}\nSee also\n  ${stderr_log}")
   else()
-    set(msg "${msg}\nSee also\n  C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database-*.log")
+    set(msg "${msg}\nSee also\n  /home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database-*.log")
   endif()
   if (${log_output_on_failure})
     message(SEND_ERROR "${msg}")
@@ -50,7 +50,7 @@ if(result)
   endif()
 else()
   if(NOT "Ninja" MATCHES "Ninja")
-    set(msg "GSP01_Taneschnerchner.Debug+ITSboard database command succeeded.  See also C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database-*.log")
+    set(msg "GSP01_Taneschnerchner.Debug+ITSboard database command succeeded.  See also /home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database-*.log")
     message(STATUS "${msg}")
   endif()
 endif()

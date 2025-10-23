@@ -1,4 +1,5 @@
 # ninja log v6
+<<<<<<< HEAD
 8819	9818	7823306573074247	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/testsoftware.o	ebf0e14953c135d8
 8938	9450	7823306574253981	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Debug.o	502153fe1f0ce6c3
 2326	3144	7823306508142429	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o	5ddad8279b0709e5
@@ -78,3 +79,7 @@
 10	1038	7823353704146115	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	153c56f7a05fc91a
 43	296	7823354697383376	CMakeFiles/database	153c56f7a05fc91a
 43	296	7823354697383376	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	153c56f7a05fc91a
+=======
+5	18	1760632143338543794	CMakeFiles/database	2f86af1a2a775b27
+5	18	1760632143338543794	/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	2f86af1a2a775b27
+>>>>>>> 7d21a59ae524a4081db2c29fc06ef2c91617fbe6
