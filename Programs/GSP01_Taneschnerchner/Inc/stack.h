@@ -77,6 +77,8 @@ int showNumbers();
 int getSize();
 
 
+int popTopTwoElements(int* top, int* bottom);
+
 #endif
 
 // EOF

@@ -8,6 +8,8 @@
 
 #include "stack.h"
 #include "errno.h"
+#include "stdbool.h"
+
 #define MAX_SIZE 8
 
 static int size = 0; // aktuelle Anzahl der Elemente
@@ -15,28 +17,50 @@ static int stack[MAX_SIZE];
 
 int push(int v) {
 
- }
+}
 
- int pop(int* x) {
+int pop(int* x) {
 
- }
+}
 
- int swapStack() {
+int swapStack() {
 
- }
+}
 
- int duplStack() {
+int duplStack() {
 
- }
+}
 
- int clearStack() {
+int clearStack() {
 
- }
+}
 
- int showNumbers() {
+int showNumbers() {
 
- }
+}
 
- int getSize() {
-    
- }
+int getSize() {
+  
+}
+
+int popTopTwoElements(int* top, int* bottom) {
+    bool stackSizeSufficient = (getSize() >= 2);
+
+    if (!stackSizeSufficient) {
+        return STACK_UNDERFLOW;
+    }
+
+    int error;
+
+    error = pop(top);
+    if (error != NO_ERROR) {
+        return error;
+    }
+
+    error = pop(bottom);
+    if (error != NO_ERROR) {
+        return error;
+    }
+
+    return NO_ERROR;
+}
