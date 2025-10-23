@@ -198,6 +198,7 @@ project:
         - file: Src/stack.c
         - file: Src/errno.c
         - file: Src/operator.c
+        - file: Src/command.c
 
   components:
     - component: ARM::CMSIS:CORE

@@ -1,3 +1,9 @@
+/**
+  * @file command.h
+  * @author Der Stumpfe Kommandeur Lars 
+  * @date gestern
+  * @brief Header file of the commander 
+  */
 
 #ifndef COMMAND_H
 #define COMMAND_H
@@ -27,13 +33,13 @@ void printStack();
  **************************************************************
  * @brief: deletes all elements from the stack
  *************************************************************/
-void deleteStack();
+void clearStack();
 
 /*
  **************************************************************
- * @brief: copies the topmost element of the stack and pushes
- * that to the stack.
- * @return: returns STACK_UNDERFLOW when the stack is empty
+ * @brief  copies the topmost element of the stack and pushe that to the stack.
+ *
+ * @return  returns STACK_UNDERFLOW when the stack is empty
  *************************************************************/
 int duplicateTopOfStack();
 

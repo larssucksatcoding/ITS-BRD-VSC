@@ -355,6 +355,8 @@ build:
           category: sourceC
         - file: ../../../../Src/operator.c
           category: sourceC
+        - file: ../../../../Src/command.c
+          category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h
       category: header
