@@ -1,4 +1,5 @@
 # ninja log v6
+<<<<<<< HEAD
 12	143	7829391728180651	CMakeFiles/database	550a4c9dd448a04
 12	143	7829391728180651	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	550a4c9dd448a04
 39	2892	7829391879472041	build.ninja	751d10d39b4cc564
@@ -6,3 +7,7 @@
 42	157	7829391880981867	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	550a4c9dd448a04
 168	538	7829984520299401	CMakeFiles/database	550a4c9dd448a04
 168	538	7829984520299401	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	550a4c9dd448a04
+=======
+3	8	1761238782176124997	CMakeFiles/database	2f86af1a2a775b27
+3	8	1761238782176124997	/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	2f86af1a2a775b27
+>>>>>>> d3286a85a40d512e625aaf39f8114f582ed76e04
