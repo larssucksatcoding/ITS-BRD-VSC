@@ -52,4 +52,26 @@ int duplicateTopOfStackCMD();
  *************************************************************/
 int swapFristTwoEntriesCMD();
 
+/*
+ **************************************************************
+ * @brief     counts the digits of a number
+ *
+ * @param     number which digits shall be known
+ *
+ * @return    the amount of digits that have been counted
+ *************************************************************/
+int digitCount(int v);
+
+/*
+ **************************************************************
+ * @brief     turns a number into a string
+ *
+ * @param     char n[]: digits+1, int v: number that is supposed to be a string
+ *
+ * @return    number transformed to a string
+ *************************************************************/
+void numberToString(char n[], int v);
+
+
+
 #endif
