@@ -1,11 +1,17 @@
+/**
+  * @file       errno.h 
+  * @author     Lars Müller-Stumpf, Noah Rajko
+  * @date       Oct 2025
+  * @brief      Definition der Error Codes
+  */
 
 #ifndef ERRNO_h
 #define ERRNO_h
 
-#define NO_ERROR            0
-#define DIVISION_BY_ZERO    1
-#define ARITHMETIC_OVERFLOW 2
-#define STACK_OVERFLOW      3
-#define STACK_UNDERFLOW     4
+#define NO_ERROR            0       // kein Fehler
+#define DIVISION_BY_ZERO    1       // Bei Division: teiler == 0
+#define ARITHMETIC_OVERFLOW 2       // Bereichsüberschreitung (Add, Mul, Sub)
+#define STACK_OVERFLOW      3       // Stack voll
+#define STACK_UNDERFLOW     4       // Stack leer
 
 #endif

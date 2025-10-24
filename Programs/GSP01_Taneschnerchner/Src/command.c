@@ -1,8 +1,8 @@
 /**
-  * @file command.h
-  * @author Der Stumpfe Kommandeur Lars 
-  * @date gestern
-  * @brief C file of the commander 
+  * @file       command.c
+  * @author     Lars Müller-Stumpf, Noah Rajko
+  * @date       Oct 2025
+  * @brief      functions to deal with any command
   */
 
 #include "command.h"

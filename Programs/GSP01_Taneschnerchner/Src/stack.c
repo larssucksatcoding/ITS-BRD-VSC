@@ -1,9 +1,9 @@
 /**
-  * @file stack.c
-  * @author Noah Rajko
-  * @date Oct 2025
-  * @brief This module implements our Stack.
-  *
+  * @file       stack.c
+  * @author     Lars Müller-Stumpf, Noah Rajko
+  * @date       Oct 2025
+  * @brief      implements the stack + functions to operate
+  *             on the stack
   */
 
 #include "stack.h"

@@ -1,8 +1,8 @@
 /**
-  * @file command.h
-  * @author Der Stumpfe Kommandeur Lars 
-  * @date gestern
-  * @brief Header file of the commander 
+  * @file       command.h
+  * @author     Lars M√ºller-Stumpf, Noah Rajko
+  * @date       Oct 2025
+  * @brief      header file of command module
   */
 
 #ifndef COMMAND_H
@@ -17,59 +17,55 @@ Die Funktion p druckt den obersten Wert des Stacks aus, ohne dass der Stack ver√
 */
 
 
-/*
- **************************************************************
- * @brief: prints the value of the topmost element on the stack
- *************************************************************/
+/**
+  * @brief      prints the value of the topmost element on the stack
+  */
 void printTopOfStackCMD();
 
-/*
- **************************************************************
- * @brief: prints the entire stack
- *************************************************************/
+/**
+  * @brief      prints the entire stack
+  */
 void printStackCMD();
 
-/*
- **************************************************************
- * @brief: deletes all elements from the stack
- *************************************************************/
+/**
+  * @brief      deletes all elements from the stack
+  */
 void deleteStackCMD();
 
-/*
- **************************************************************
- * @brief: copies the topmost element of the stack and pushes
- * that to the stack.
- * @return: returns STACK_UNDERFLOW when the stack is empty
- *************************************************************/
+/**
+  * @brief      copies the topmost element of the stack and pushes
+  *             that to the stack.
+  * 
+  * @return     returns STACK_UNDERFLOW when the stack is empty
+  */
 int duplicateTopOfStackCMD();
 
-/*
- **************************************************************
- * @brief: reverses the order of the two topmost elements of
- * the stack
- * @return: returns STACK_UNDERFLOW when the stack has fewer
- * than two elements.
- *************************************************************/
+/**
+  * @brief      reverses the order of the two topmost elements of
+  *             the stack
+  * 
+  * @return     returns STACK_UNDERFLOW when the stack has fewer
+  *             than two elements.
+  */
 int swapFristTwoEntriesCMD();
 
-/*
- **************************************************************
- * @brief     counts the digits of a number
- *
- * @param     number which digits shall be known
- *
- * @return    the amount of digits that have been counted
- *************************************************************/
+/**
+  * @brief      counts the digits of a number 
+  *
+  * @param      int number which digits shall be known
+  * 
+  * @return     the amount of digits that have been counted
+  */
 int digitCount(int v);
 
-/*
- **************************************************************
- * @brief     turns a number into a string
- *
- * @param     char n[]: digits+1, int v: number that is supposed to be a string
- *
- * @return    number transformed to a string
- *************************************************************/
+/**
+  * @brief      turns a number into a string 
+  *
+  * @param      char n[]: digits+1, 
+  * @param      int v: number that is supposed to be a string
+  * 
+  * @return     number transformed to a string
+  */
 void numberToString(char n[], int v);
 
 

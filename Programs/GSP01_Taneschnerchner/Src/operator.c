@@ -1,4 +1,9 @@
-
+/**
+  * @file       operator.c
+  * @author     Lars Müller-Stumpf, Noah Rajko
+  * @date       Oct 2025
+  * @brief      functions to deal with mul div sub add
+  */
 #include "operator.h"
 #include "stack.h"
 #include "errno.h"
