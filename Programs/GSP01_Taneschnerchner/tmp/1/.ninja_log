@@ -1,13 +1,12 @@
 # ninja log v6
-<<<<<<< HEAD
-12	143	7829391728180651	CMakeFiles/database	550a4c9dd448a04
-12	143	7829391728180651	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	550a4c9dd448a04
-39	2892	7829391879472041	build.ninja	751d10d39b4cc564
-42	157	7829391880981867	CMakeFiles/database	550a4c9dd448a04
-42	157	7829391880981867	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	550a4c9dd448a04
-168	538	7829984520299401	CMakeFiles/database	550a4c9dd448a04
-168	538	7829984520299401	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	550a4c9dd448a04
-=======
-3	8	1761238782176124997	CMakeFiles/database	2f86af1a2a775b27
-3	8	1761238782176124997	/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	2f86af1a2a775b27
->>>>>>> d3286a85a40d512e625aaf39f8114f582ed76e04
+3	15	1761752623196994782	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	8be19faa22d42158
+3	15	1761752623196994782	CMakeFiles/database	8be19faa22d42158
+3	198	1761752868963056597	build.ninja	157990460b2c4d65
+4	19	1761752868985056512	CMakeFiles/database	8be19faa22d42158
+4	19	1761752868985056512	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	8be19faa22d42158
+3	11	1761752885062994219	CMakeFiles/database	8be19faa22d42158
+3	11	1761752885062994219	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	8be19faa22d42158
+2	9	1761752894316958370	CMakeFiles/database	8be19faa22d42158
+2	9	1761752894316958370	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	8be19faa22d42158
+3	10	1761752903308923537	CMakeFiles/database	8be19faa22d42158
+3	10	1761752903308923537	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	8be19faa22d42158

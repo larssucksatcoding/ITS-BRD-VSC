@@ -1,8 +1,8 @@
-/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/database.dir
-/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard.dir
-/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-build.dir
-/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-configure.dir
-/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-executes.dir
-/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-database.dir
-/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/edit_cache.dir
-/home/bazzite/Documents/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/rebuild_cache.dir
+/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/database.dir
+/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard.dir
+/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-build.dir
+/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-configure.dir
+/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-executes.dir
+/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/GSP01_Taneschnerchner.Debug+ITSboard-database.dir
+/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/edit_cache.dir
+/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/CMakeFiles/rebuild_cache.dir
