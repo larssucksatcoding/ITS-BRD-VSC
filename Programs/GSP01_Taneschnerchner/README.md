@@ -2,7 +2,7 @@
 
 ## Modulkonzept
 
-Das grafische Modulkonzept liegt als `modulkonzept.iwas` im gleichen Ordner wie diese README.
+Das grafische Modulkonzept liegt als `modulkonzept.png` im gleichen Ordner wie diese README.
 
 **Begründung für gewählte Modulunterteilung**
 
