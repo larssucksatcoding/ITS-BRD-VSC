@@ -38,12 +38,14 @@ int main(void) {
 		T_token input = nextToken();
 		int error = NO_ERROR;
 		int result = 0;
+		bool pushVal = input.val != 0;
 		bool arithmeticOperation = false;
 		switch(input.tok) {
 			case NUMBER: {
 				push(input.val);
 			}
 			case PLUS: {
+				// habe ich input.val? ja - push auf stack
 				error = add(&result);
 				arithmeticOperation = true;
 			}
@@ -75,13 +77,19 @@ int main(void) {
 				error = duplicateCMD()
 			}
 			case ENTER: {
-				// mal schauen
+				// check number
+				if (input.val != 0) {
+					// store number in stack
+					push(input.val);
+				}
 			}
 			case UNEXPECTED: {
-				// gar kein plan 
+				// default token, wir warten bis wir was 
 			}
 			case OVERFLOW: {
-				// miste kagge
+				// - Zahl wurde eingegeben setze alles zurück
+				// wir müssen damit nicht umgehen, tun wir trotzdem
+				error = NEGATIVE_INPUT;
 			}
 			
 			 
