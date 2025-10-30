@@ -83,8 +83,13 @@ Kann man sich nicht vor drücken:
 - [ ] Lars: `operator.h` Kommentare (und generell auch xd)
 - [ ] Funktion zum printen von Zahlen (nicht sprintf!)
 - [ ] Main Loop
-- [ ] Noah: Was macht `getFirst()` wenn der Stack keine Elemente hat?
+- [ ] errno Zahlen negativ werden lassen
+- [ ] Command.c print all command peek getcopyofstack raus 
 
 Kann man sich vllt vor drücken:
-- [ ] Vllt macht es wegen `getCopyOfStack` Sinn für den Stack einen eigenes struct zu definieren, damit man den Typ davon als Parameter benutzen kann? (z.B. `getCopyOfStack(T_stack* stack)` statt `getCopyOfStack(int[] copy)`).
 - [ ] Vllt macht es Sinn einen eigenen Datentypen für die Fehler zu implementieren damit man bei Funktionen die Fehler zurückgeben können klar sehen kann, dass der Rückgabewert ein Fehler ist? (z.B. `T_Error add(int* result)` statt `int add(int* result)`). 
+
+erledigt uuh yeah:
+
+- [x] Noah: irgendwas mit stack underflow bei getfirst
+- [x] Vllt macht es wegen `getCopyOfStack` Sinn für den Stack einen eigenes struct zu definieren, damit man den Typ davon als Parameter benutzen kann? (z.B. `getCopyOfStack(T_stack* stack)` statt `getCopyOfStack(int[] copy)`).
