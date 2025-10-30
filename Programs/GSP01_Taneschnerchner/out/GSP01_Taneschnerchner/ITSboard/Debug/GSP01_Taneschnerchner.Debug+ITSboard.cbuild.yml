@@ -341,8 +341,6 @@ build:
           category: header
         - file: ../../../../Inc/operator.h
           category: header
-        - file: ../../../../Inc/print.h
-          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -358,8 +356,6 @@ build:
         - file: ../../../../Src/operator.c
           category: sourceC
         - file: ../../../../Src/command.c
-          category: sourceC
-        - file: ../../../../Src/print.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h

@@ -2,7 +2,7 @@ set(CMAKE_ASM_COMPILER "/home/bazzite/.vcpkg/artifacts/2139c4c6/compilers.arm.ar
 set(CMAKE_ASM_COMPILER_ARG1 "")
 set(CMAKE_AR "/home/bazzite/.vcpkg/artifacts/2139c4c6/compilers.arm.armclang/6.24.0/bin/armar")
 set(CMAKE_ASM_COMPILER_AR "")
-set(CMAKE_RANLIB ":")
+set(CMAKE_RANLIB "/usr/bin/ranlib")
 set(CMAKE_ASM_COMPILER_RANLIB "")
 set(CMAKE_LINKER "/home/bazzite/.vcpkg/artifacts/2139c4c6/compilers.arm.armclang/6.24.0/bin/armlink")
 set(CMAKE_MT "")
