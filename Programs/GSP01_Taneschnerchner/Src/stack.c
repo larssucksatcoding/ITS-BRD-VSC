@@ -69,19 +69,23 @@ int getFirst(int* v) {
     return NO_ERROR;
 }
 
-void getCopyOfStack(int copy[]) {
-    for (int i = 0; i < MAX_SIZE; i++) {
-        if (i < size) {
-            copy[i] = stack[i];
-        }
-        else {
-            copy[i] = 0;
-        }
+int peek(int* val, int field) {
+    if (field >= MAX_SIZE) {
+        return STACK_OVERFLOW;
     }
+    else if (field >= size || field < size) {
+        return EMPTY_FIELD;
+    }
+    else *val=stack[field];
+    return NO_ERROR;
 }
 
-int getSize() {
-    return size;
+int getSize(int* val) {
+    if (size == 0) {
+        return STACK_UNDERFLOW;
+    }
+    *val = size;
+    return NO_ERROR;
 }
 
 int popTopTwoElements(int* top, int* bottom) {

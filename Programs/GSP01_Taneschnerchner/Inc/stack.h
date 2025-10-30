@@ -55,20 +55,24 @@ void deleteStack();
 int getFirst(int* v);
 
 /**
-  * @brief      füllt ein übergebens Array mit den Werten im Stack 
+  * @brief      speichert den Wert 
   *
-  * @param      int[] Array der Größe MAX_SIZE oder getSize() des Stacks
+  * @param      int* val Zielspeicher des Wertes
+  *
+  * @param      int field Position im Stack
   * 
-  * @return     void
+  * @return     Fehlercode 
   */
-void getCopyOfStack(int copy[]);
+int peek(int* val, int field);
 
 /**
   * @brief      Gibt aus, wie viele Elemente auf dem Stack liegen
   * 
-  * @return     Anzahl der Elemente auf dem Stack
+  * @param      int* Zielspeicher für den Wert
+  * 
+  * @return     Fehlercode
   */
-int getSize();
+int getSize(int* val);
 
 /**
   * @brief      ~ ~ 

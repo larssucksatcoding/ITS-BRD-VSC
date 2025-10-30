@@ -14,5 +14,6 @@
 #define STACK_OVERFLOW      -3      // Stack voll
 #define STACK_UNDERFLOW     -4      // Stack leer
 #define NEGATIVE_INPUT      -5      // negative Zahl wurde eingegeben
+#define EMPTY_FIELD         -6      // Feld im Stack nicht belegt
 
 #endif
