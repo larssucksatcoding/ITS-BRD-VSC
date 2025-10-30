@@ -68,11 +68,9 @@ int peek(int* val, int field);
 /**
   * @brief      Gibt aus, wie viele Elemente auf dem Stack liegen
   * 
-  * @param      int* Zielspeicher für den Wert
-  * 
-  * @return     Fehlercode
+  * @return     Größe des Stacks 
   */
-int getSize(int* val);
+int getSize();
 
 /**
   * @brief      ~ ~ 

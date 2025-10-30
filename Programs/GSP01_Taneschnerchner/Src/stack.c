@@ -80,12 +80,8 @@ int peek(int* val, int field) {
     return NO_ERROR;
 }
 
-int getSize(int* val) {
-    if (size == 0) {
-        return STACK_UNDERFLOW;
-    }
-    *val = size;
-    return NO_ERROR;
+int getSize() {
+    return size;
 }
 
 int popTopTwoElements(int* top, int* bottom) {
