@@ -20,6 +20,7 @@
 #include "stack.h"
 #include "operator.h"
 #include "command.h"
+#include "stdbool.h"
 
 
 int main(void) {
@@ -36,53 +37,64 @@ int main(void) {
 		// HAL_Delay(10000);
 		T_token input = nextToken();
 		int error = NO_ERROR;
+		int result = 0;
+		bool arithmeticOperation = false;
 		switch(input.tok) {
 			case NUMBER: {
 				push(input.val);
 			}
 			case PLUS: {
-				int result = 0;
 				error = add(&result);
-				if (error == NO_ERROR) {
-					push(result);
-				}
-				// ergebnis anzeigen lassen?
+				arithmeticOperation = true;
 			}
 			case MINUS: {
-
+				error = subtract(&result);
+				arithmeticOperation = true;
 			} 
 			case MULT: {
-
+				error = multiply(&result);
+				arithmeticOperation = true;
 			}
 			case DIV: {
-
+				error = divide(&result);
+				arithmeticOperation = true;
 			}
 			case PRT: {
-
+				error = printCMD();
 			}
 			case SWAP: {
-
+				error = swapCMD();
 			}
 			case PRT_ALL: {
-
+				error = printAllCMD()
 			}
 			case CLEAR: {
-
+				error = deleteCMD()
 			}
 			case DOUBLE: {
-
+				error = duplicateCMD()
 			}
 			case ENTER: {
-
+				// mal schauen
 			}
 			case UNEXPECTED: {
-
+				// gar kein plan 
 			}
 			case OVERFLOW: {
-
+				// miste kagge
 			}
+			
+			 
 
 		}
+		if (error != NO_ERROR) {
+			// Fehlerverarbeitung
+		}
+		else if (arithmeticOperation) {
+			push(result);
+			// print result
+		}
+
 
 			
 	}

@@ -8,7 +8,7 @@
 #include "command.h"
 #include "stack.h"
 
-void printTopOfStackCMD() {
+void printCMD() {
     int v = getFirst();
     int digits = digitCount(v);
 
@@ -17,21 +17,21 @@ void printTopOfStackCMD() {
 
 }
 
-void printStackCMD() {
+void printAllCMD() {
     int size = getSize();
     int stackCopy[size];
 }
 
-void deleteStackCMD() {
+void deleteCMD() {
     deleteStack();
 }
 
-int duplicateTopOfStackCMD() {
+int duplCMD() {
     int error = duplStack();
     return error;
 }
 
-int swapFristTwoEntriesCMD() {
+int swapCMD() {
     int error = swapStack();
     return error;
 }

@@ -20,17 +20,17 @@ Die Funktion p druckt den obersten Wert des Stacks aus, ohne dass der Stack ver√
 /**
   * @brief      prints the value of the topmost element on the stack
   */
-void printTopOfStackCMD();
+void printCMD();
 
 /**
   * @brief      prints the entire stack
   */
-void printStackCMD();
+void printAllCMD();
 
 /**
   * @brief      deletes all elements from the stack
   */
-void deleteStackCMD();
+void deleteCMD();
 
 /**
   * @brief      copies the topmost element of the stack and pushes
@@ -38,7 +38,7 @@ void deleteStackCMD();
   * 
   * @return     returns STACK_UNDERFLOW when the stack is empty
   */
-int duplicateTopOfStackCMD();
+int duplicateCMD();
 
 /**
   * @brief      reverses the order of the two topmost elements of
@@ -47,7 +47,7 @@ int duplicateTopOfStackCMD();
   * @return     returns STACK_UNDERFLOW when the stack has fewer
   *             than two elements.
   */
-int swapFristTwoEntriesCMD();
+int swapCMD();
 
 /**
   * @brief      counts the digits of a number 
