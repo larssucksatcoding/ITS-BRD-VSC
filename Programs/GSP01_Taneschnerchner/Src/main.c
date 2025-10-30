@@ -51,12 +51,15 @@ int main(void) {
 		bool pushVal = input.val != 0;
 		bool arithmeticOperation = false;
 		switch(input.tok) {
+			
+			case ENTER: case UNEXPECTED: {
+				break;
+			}
 			case NUMBER: {
 				push(input.val);
 				break;
 			}
 			case PLUS: {
-				// habe ich input.val? ja - push auf stack
 				error = add(&result);
 				arithmeticOperation = true;
 				break;
@@ -96,18 +99,6 @@ int main(void) {
 				// error = duplicateCMD();
 				break;
 			}
-			case ENTER: {
-				// check number
-				if (input.val != 0) {
-					// store number in stack
-					push(input.val);
-				}
-				break;
-			}
-			case UNEXPECTED: {
-				// default token, wir warten bis wir was 
-				break;
-			}
 			case OVERFLOW: {
 				// - Zahl wurde eingegeben setze alles zurück
 				// wir müssen damit nicht umgehen, tun wir trotzdem
@@ -116,20 +107,49 @@ int main(void) {
 			}
 		}
 		if (error != NO_ERROR) {
-			// Fehlerverarbeitung
+			errorPrint(error);
+			do {
+				T_token reset = nextToken();
+			} while (reset.tok != CLEAR)
+			setNormalMode();
 		}
 		else if (arithmeticOperation) {
+			// kein Fehler + arithmetic Operation
 			push(result);
-			// print result
-		}
-
-
-			
+		}		
 	}
 }
 
 void errorPrint (int e) {
-
+	setErrMode();
+	switch(error) {
+		case DIVISION_BY_ZERO: {
+			printStdout("nicht durch 0 teilen du Idiot!\n"
+				"error: DIVSION BY ZERO");
+			break;
+		}
+		case ARITHMETIC_OVERFLOW: {
+			printStdout("so weit kann ich nicht Zählen.\n"
+				"error: ARITHMETIC OVERFLOW");
+			break;
+		}
+		case STACK_OVERFLOW: {
+			printStdout("Ich bin voll, ich kann nicht mehr.\n"
+				"error: STACK OVERFLOW");
+			break;
+		}
+		case STACK_UNDERFLOW: {
+			printStdout("Was willst du? ich kann dir nichts geben.\n"
+				"error: STACK UNDERFLOW");
+			break;
+		}
+		case NEGATIVE_INPUT: {
+			printStdout("5 Äpfel kannst du mir geben, aber -5?!\n"
+				"error: NEGATIVE INPUT");
+			break;
+		}
+		printStdout("\n\n\n  press C to reset")
+	} 
 }
 
 // EOF
