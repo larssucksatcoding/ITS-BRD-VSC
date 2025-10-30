@@ -72,7 +72,6 @@ Die Fehler werden als Errorcode zurückgegeben (siehe `Inc/errno.h`). Um zu verh
 `p` sollte STACK_UNDERFLOW werfen.
 `1 p 2 p p` sollte STACK_UNDERFLOW werfen. (wird size korrekt gesetzt?)
 `1 2 3 4 C 1 p p` sollte STACK_UNDERFLOW werfen. (wird size zurückgesetzt?)
-``
 
 `d` sollte STACK_OVERFLOW werfen.
 `1 d` sollte NO_ERROR zurückgeben.
