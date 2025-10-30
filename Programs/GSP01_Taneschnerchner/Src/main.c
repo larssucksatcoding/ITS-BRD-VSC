@@ -60,19 +60,19 @@ int main(void) {
 				arithmeticOperation = true;
 			}
 			case PRT: {
-				error = printCMD();
+				printCMD();
 			}
 			case SWAP: {
 				error = swapCMD();
 			}
 			case PRT_ALL: {
-				error = printAllCMD()
+				printAllCMD();
 			}
 			case CLEAR: {
-				error = deleteCMD()
+				deleteCMD();
 			}
 			case DOUBLE: {
-				error = duplicateCMD()
+				error = duplicateCMD();
 			}
 			case ENTER: {
 				// mal schauen
