@@ -20,10 +20,11 @@ void printCMD() {
 }
 
 void printAllCMD() {
-    int size = getSize(); // anpassung änderung
-    int stackCopy[size];
-    getCopyOfStack(stackCopy);
-    //iterieren und printen
+    int size = getSize();
+    for (int i = 0, i<size; i++) {
+        int val = peek(i);
+        // print val
+    }
 }
 
 void deleteCMD() {
