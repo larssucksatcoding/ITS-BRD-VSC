@@ -84,7 +84,9 @@ Kann man sich nicht vor drücken:
 - [ ] Funktion zum printen von Zahlen (nicht sprintf!)
 - [ ] Main Loop
 - [ ] errno Zahlen negativ werden lassen
-- [ ] Command.c print all command peek getcopyofstack raus 
+- [ ] Command.c print all command peek getcopyofstack raus
+- [ ] Lars: Kommentare stack.h-popTopTwoElements
+- [ ] command.c - printAllStackdingsi  
 
 Kann man sich vllt vor drücken:
 - [ ] Vllt macht es Sinn einen eigenen Datentypen für die Fehler zu implementieren damit man bei Funktionen die Fehler zurückgeben können klar sehen kann, dass der Rückgabewert ein Fehler ist? (z.B. `T_Error add(int* result)` statt `int add(int* result)`). 
