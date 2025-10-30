@@ -7,19 +7,23 @@
 
 #include "command.h"
 #include "stack.h"
+#include "stdbool.h"
+#include <stdlib.h>
 
 void printCMD() {
-    int v = getFirst();
+    int v, error;
+    error = getFirst(&v);
     int digits = digitCount(v);
 
     char vString[digits + 1];
     numberToString(vString, v);
-
 }
 
 void printAllCMD() {
-    int size = getSize();
+    int size = getSize(); // anpassung änderung
     int stackCopy[size];
+    getCopyOfStack(stackCopy);
+    //iterieren und printen
 }
 
 void deleteCMD() {
@@ -38,19 +42,31 @@ int swapCMD() {
 
 int digitCount(int v) {
     int digits = 0;
-    while (v % 10 != 0) {
+    while (v != 0) {
         digits ++;
+        v /= 10;
     }
     return digits;
 }
 
 void numberToString(char *vString, int v) {
+    bool is_negative = v < 0;  
     int digits = digitCount(v);
+
+    if (is_negative) {
+        vString[0] = '-';
+        digits += 1;
+    }
+
     vString[digits] = '\0';
-    for (int i = digits-1; i>= 0; i--) {
-        int z = v;
-        v = v%10;
-        vString[i] = z - (v*10);
+    int current_index = digits - 1;
+
+    while (v != 0) {
+        int last_digit = abs(v % 10);
+        v /= 10;
+
+        vString[current_index] = last_digit;
+        current_index += 1;
     }
 }
 
