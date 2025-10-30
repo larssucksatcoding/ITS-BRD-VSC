@@ -48,9 +48,11 @@ void deleteStack();
 /**
   * @brief      gibt die oberste Zahl des Stack aus, ohne diese zu entfernen
   * 
-  * @return     int oberste Zahl des Stacks
+  * @param      Zeiger auf Zeilspeicherort des Wertes
+  * 
+  * @return     int Fehlercode
   */
-int getFirst();
+int getFirst(int* v);
 
 /**
   * @brief      füllt ein übergebens Array mit den Werten im Stack 

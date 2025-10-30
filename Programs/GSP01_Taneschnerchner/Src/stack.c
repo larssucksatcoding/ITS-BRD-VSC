@@ -61,8 +61,12 @@ void deleteStack() {
     size = 0;
 }
 
-int getFirst() {
-    return stack[size];
+int getFirst(int* v) {
+    if (size == 0) {
+        return STACK_UNDERFLOW;
+    }
+    *v = stack[size];
+    return NO_ERROR;
 }
 
 void getCopyOfStack(int copy[]) {
