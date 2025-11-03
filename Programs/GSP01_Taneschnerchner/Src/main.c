@@ -32,6 +32,9 @@ int main(void) {
 	initITSboard();
 	initDisplay();
 
+	// in case a test fails, the program halts.
+	// run_tests();
+
 	while(1) {
 		T_token input = nextToken();
 

@@ -5,8 +5,8 @@
   * @brief      Definition der Error Codes
   */
 
-#ifndef ERRNO_h
-#define ERRNO_h
+#ifndef ERRNO_H
+#define ERRNO_H
 
 #define NO_ERROR             0      // kein Fehler
 #define DIVISION_BY_ZERO    -1      // Bei Division: teiler == 0
