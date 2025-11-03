@@ -21,8 +21,9 @@ void printCMD() {
 
 void printAllCMD() {
     int size = getSize();
-    for (int i = 0, i<size; i++) {
-        int val = peek(i);
+    for (int i = 0; i < size; i++) {
+        int val = 0;
+        int error = peek(&val, i);
         // print val
     }
 }

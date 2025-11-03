@@ -73,7 +73,7 @@ int peek(int* val, int field) {
     if (field >= MAX_SIZE) {
         return STACK_OVERFLOW;
     }
-    else if (field >= size || field < size) {
+    else if (field >= size || field < 0) {
         return EMPTY_FIELD;
     }
     else *val=stack[field];

@@ -59,11 +59,11 @@ int getFirst(int* v);
   *
   * @param      int* val Zielspeicher des Wertes
   *
-  * @param      int field Position im Stack
+  * @param      int Index Position im Stack
   * 
   * @return     Fehlercode 
   */
-int peek(int* val, int field);
+int peek(int* val, int index);
 
 /**
   * @brief      Gibt aus, wie viele Elemente auf dem Stack liegen

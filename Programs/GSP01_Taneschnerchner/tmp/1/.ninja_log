@@ -65,3 +65,12 @@
 9647	10084	7838644372289931	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/Src/operator.o	a5b7a8fe8046bbac
 8710	10144	7838644362954124	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/USART_STM32F4xx.o	892a3a9f24fa3790
 14	569	7838648318289861	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/Src/main.o	11ce79b589d9c54a
+28	439	7838655008578678	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/Src/operator.o	a5b7a8fe8046bbac
+34	447	7838655008578678	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/Src/command.o	64c8e0447b1a3736
+14	670	7838655008401836	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/Src/main.o	11ce79b589d9c54a
+55	203	7838656673352517	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/Src/operator.o	a5b7a8fe8046bbac
+48	231	7838656673196214	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/Src/stack.o	4878fc4f14dfc31b
+42	332	7838656673196214	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/Src/main.o	11ce79b589d9c54a
+332	1201	7838656676021708	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/out/GSP01_Taneschnerchner/ITSboard/Debug/GSP01_Taneschnerchner.axf	f8eb445a75618e50
+35	112	7838656686462499	CMakeFiles/database	153c56f7a05fc91a
+35	112	7838656686462499	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/1/CMakeFiles/database	153c56f7a05fc91a
