@@ -1510,16 +1510,24 @@ Section Cross References
     operator.o(.ARM.exidx.text.divide) refers to operator.o(.text.divide) for [Anonymous Symbol]
     operator.o(.text.multiply) refers to stack.o(.text.popTopTwoElements) for popTopTwoElements
     operator.o(.ARM.exidx.text.multiply) refers to operator.o(.text.multiply) for [Anonymous Symbol]
+    command.o(.text.printCMD) refers to display.o(.text.clearStdout) for clearStdout
     command.o(.text.printCMD) refers to stack.o(.text.getFirst) for getFirst
+    command.o(.text.printCMD) refers to command.o(.text.numberToString) for numberToString
+    command.o(.text.printCMD) refers to command.o(.bss.numberCharArray) for numberCharArray
+    command.o(.text.printCMD) refers to display.o(.text.printStdout) for printStdout
+    command.o(.text.printCMD) refers to command.o(.rodata.str1.1) for .L.str
     command.o(.ARM.exidx.text.printCMD) refers to command.o(.text.printCMD) for [Anonymous Symbol]
+    command.o(.text.numberToString) refers to command.o(.text.digitCount) for digitCount
+    command.o(.text.numberToString) refers to command.o(.bss.numberCharArray) for numberCharArray
+    command.o(.ARM.exidx.text.numberToString) refers to command.o(.text.numberToString) for [Anonymous Symbol]
+    command.o(.text.printAllCMD) refers to display.o(.text.clearStdout) for clearStdout
     command.o(.text.printAllCMD) refers to stack.o(.text.getSize) for getSize
     command.o(.text.printAllCMD) refers to stack.o(.text.peek) for peek
-    command.o(.text.printAllCMD) refers to command.o(.text.printNumber) for printNumber
+    command.o(.text.printAllCMD) refers to command.o(.text.numberToString) for numberToString
+    command.o(.text.printAllCMD) refers to command.o(.bss.numberCharArray) for numberCharArray
+    command.o(.text.printAllCMD) refers to display.o(.text.printStdout) for printStdout
+    command.o(.text.printAllCMD) refers to command.o(.rodata.str1.1) for .L.str
     command.o(.ARM.exidx.text.printAllCMD) refers to command.o(.text.printAllCMD) for [Anonymous Symbol]
-    command.o(.text.printNumber) refers to command.o(.text.digitCount) for digitCount
-    command.o(.text.printNumber) refers to command.o(.text.numberToString) for numberToString
-    command.o(.text.printNumber) refers to display.o(.text.printStdout) for printStdout
-    command.o(.ARM.exidx.text.printNumber) refers to command.o(.text.printNumber) for [Anonymous Symbol]
     command.o(.text.deleteCMD) refers to stack.o(.text.deleteStack) for deleteStack
     command.o(.ARM.exidx.text.deleteCMD) refers to command.o(.text.deleteCMD) for [Anonymous Symbol]
     command.o(.text.duplCMD) refers to stack.o(.text.duplStack) for duplStack
@@ -1527,8 +1535,6 @@ Section Cross References
     command.o(.text.swapCMD) refers to stack.o(.text.swapStack) for swapStack
     command.o(.ARM.exidx.text.swapCMD) refers to command.o(.text.swapCMD) for [Anonymous Symbol]
     command.o(.ARM.exidx.text.digitCount) refers to command.o(.text.digitCount) for [Anonymous Symbol]
-    command.o(.text.numberToString) refers to command.o(.text.digitCount) for digitCount
-    command.o(.ARM.exidx.text.numberToString) refers to command.o(.text.numberToString) for [Anonymous Symbol]
     sqrt.o(i.__hardfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
     sqrt.o(i.__hardfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
     sqrt.o(i.__hardfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
@@ -2752,14 +2758,13 @@ Removing Unused input sections from the image.
     Removing operator.o(.ARM.exidx.text.multiply), (8 bytes).
     Removing command.o(.text), (0 bytes).
     Removing command.o(.ARM.exidx.text.printCMD), (8 bytes).
+    Removing command.o(.ARM.exidx.text.numberToString), (8 bytes).
     Removing command.o(.ARM.exidx.text.printAllCMD), (8 bytes).
-    Removing command.o(.ARM.exidx.text.printNumber), (8 bytes).
     Removing command.o(.ARM.exidx.text.deleteCMD), (8 bytes).
     Removing command.o(.text.duplCMD), (16 bytes).
     Removing command.o(.ARM.exidx.text.duplCMD), (8 bytes).
     Removing command.o(.ARM.exidx.text.swapCMD), (8 bytes).
     Removing command.o(.ARM.exidx.text.digitCount), (8 bytes).
-    Removing command.o(.ARM.exidx.text.numberToString), (8 bytes).
     Removing dfltui.o(.text), (26 bytes).
     Removing dfixi.o(.text), (62 bytes).
     Removing depilogue.o(.text), (186 bytes).
@@ -2770,7 +2775,7 @@ Removing Unused input sections from the image.
     Removing dfixul.o(.text), (48 bytes).
     Removing cdrcmple.o(.text), (48 bytes).
 
-1135 unused section(s) (total 783046 bytes) removed from the image.
+1134 unused section(s) (total 783038 bytes) removed from the image.
 
 ==============================================================================
 
@@ -3126,70 +3131,71 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08006178   Section        0  LCD_Tools.o(.text.itoa)
     [Anonymous Symbol]                       0x0800622c   Section        0  lcd.o(.text.lcdPrintS)
     [Anonymous Symbol]                       0x08006400   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x0800654c   Section        0  keypad.o(.text.makeKeyPad)
-    [Anonymous Symbol]                       0x08006620   Section        0  operator.o(.text.multiply)
-    nextChar                                 0x08006791   Thumb Code     8  scanner.o(.text.nextChar)
-    [Anonymous Symbol]                       0x08006790   Section        0  scanner.o(.text.nextChar)
-    [Anonymous Symbol]                       0x08006798   Section        0  scanner.o(.text.nextToken)
-    [Anonymous Symbol]                       0x080068e4   Section        0  command.o(.text.numberToString)
+    [Anonymous Symbol]                       0x08006538   Section        0  keypad.o(.text.makeKeyPad)
+    [Anonymous Symbol]                       0x0800660c   Section        0  operator.o(.text.multiply)
+    nextChar                                 0x0800677d   Thumb Code     8  scanner.o(.text.nextChar)
+    [Anonymous Symbol]                       0x0800677c   Section        0  scanner.o(.text.nextChar)
+    [Anonymous Symbol]                       0x08006784   Section        0  scanner.o(.text.nextToken)
+    [Anonymous Symbol]                       0x080068d0   Section        0  command.o(.text.numberToString)
     [Anonymous Symbol]                       0x08006980   Section        0  stack.o(.text.peek)
     [Anonymous Symbol]                       0x080069dc   Section        0  stack.o(.text.pop)
     [Anonymous Symbol]                       0x08006a28   Section        0  stack.o(.text.popTopTwoElements)
     [Anonymous Symbol]                       0x08006a88   Section        0  command.o(.text.printAllCMD)
-    printButton                              0x08006acd   Thumb Code   582  keypad.o(.text.printButton)
-    [Anonymous Symbol]                       0x08006acc   Section        0  keypad.o(.text.printButton)
-    [Anonymous Symbol]                       0x08006d14   Section        0  command.o(.text.printCMD)
-    [Anonymous Symbol]                       0x08006d24   Section        0  terminal.o(.text.printChar)
-    [Anonymous Symbol]                       0x08006dc0   Section        0  LCD_Debug.o(.text.printDebugMsg)
-    printNewLine                             0x08006e75   Thumb Code    32  terminal.o(.text.printNewLine)
-    [Anonymous Symbol]                       0x08006e74   Section        0  terminal.o(.text.printNewLine)
-    [Anonymous Symbol]                       0x08006e94   Section        0  command.o(.text.printNumber)
-    [Anonymous Symbol]                       0x08006ee8   Section        0  display.o(.text.printStdout)
-    [Anonymous Symbol]                       0x08006f00   Section        0  terminal.o(.text.printTerm)
-    [Anonymous Symbol]                       0x08006f3c   Section        0  display.o(.text.printToEchoLine)
-    [Anonymous Symbol]                       0x08006f64   Section        0  stack.o(.text.push)
-    save_restore_AltFn_SPI1_MOSI_Pin         0x08006fad   Thumb Code    48  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
-    [Anonymous Symbol]                       0x08006fac   Section        0  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
-    selectButton                             0x08006fdd   Thumb Code   362  keypad.o(.text.selectButton)
-    [Anonymous Symbol]                       0x08006fdc   Section        0  keypad.o(.text.selectButton)
-    [Anonymous Symbol]                       0x08007148   Section        0  display.o(.text.setErrMode)
-    [Anonymous Symbol]                       0x08007168   Section        0  display.o(.text.setNormalMode)
-    [Anonymous Symbol]                       0x08007188   Section        0  terminal.o(.text.setTextColorTerm)
-    [Anonymous Symbol]                       0x0800719c   Section        0  stdinout_USART.o(.text.stdinout_init)
-    stringCopy                               0x0800724d   Thumb Code    70  lcd.o(.text.stringCopy)
-    [Anonymous Symbol]                       0x0800724c   Section        0  lcd.o(.text.stringCopy)
-    [Anonymous Symbol]                       0x08007294   Section        0  operator.o(.text.subtract)
-    [Anonymous Symbol]                       0x08007368   Section        0  command.o(.text.swapCMD)
-    [Anonymous Symbol]                       0x08007378   Section        0  stack.o(.text.swapStack)
-    touchCoordinateToKey                     0x080073e1   Thumb Code   234  keypad.o(.text.touchCoordinateToKey)
-    [Anonymous Symbol]                       0x080073e0   Section        0  keypad.o(.text.touchCoordinateToKey)
-    i.__scatterload_copy                     0x080074ca   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x080074d8   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x080074da   Section       14  handlers.o(i.__scatterload_zeroinit)
-    USART3_Resources                         0x08007538   Data          52  USART_STM32F4xx.o(.rodata.USART3_Resources)
-    [Anonymous Symbol]                       0x08007538   Section        0  USART_STM32F4xx.o(.rodata.USART3_Resources)
-    USART3_rx                                0x0800756c   Data          12  USART_STM32F4xx.o(.rodata.USART3_rx)
-    [Anonymous Symbol]                       0x0800756c   Section        0  USART_STM32F4xx.o(.rodata.USART3_rx)
-    USART3_tx                                0x08007578   Data          12  USART_STM32F4xx.o(.rodata.USART3_tx)
-    [Anonymous Symbol]                       0x08007578   Section        0  USART_STM32F4xx.o(.rodata.USART3_tx)
-    .L.str                                   0x0800773c   Data          64  LCD_GUI.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x0800773c   Section        0  LCD_GUI.o(.rodata.str1.1)
-    .L.str                                   0x0800777c   Data          64  LCD_SPI.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x0800777c   Section        0  LCD_SPI.o(.rodata.str1.1)
-    .L.str                                   0x080077bc   Data          64  LCD_TIM.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x080077bc   Section        0  LCD_TIM.o(.rodata.str1.1)
-    .L.str.1                                 0x080077fc   Data           6  LCD_Debug.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x080077fc   Section        0  LCD_Debug.o(.rodata.str1.1)
-    .L.str                                   0x08007802   Data          22  LCD_Debug.o(.rodata.str1.1)
-    .L.str                                   0x08007818   Data          38  terminal.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007818   Section        0  terminal.o(.rodata.str1.1)
-    .L.str.1                                 0x0800783e   Data          46  terminal.o(.rodata.str1.1)
-    .L.str                                   0x0800786c   Data          54  main.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x0800786c   Section        0  main.o(.rodata.str1.1)
-    .L.str.4                                 0x080078a2   Data          62  main.o(.rodata.str1.1)
-    .L.str.3                                 0x080078e0   Data          65  main.o(.rodata.str1.1)
-    .L.str.1                                 0x08007921   Data          59  main.o(.rodata.str1.1)
-    .L.str.2                                 0x0800795c   Data          57  main.o(.rodata.str1.1)
+    printButton                              0x08006ae5   Thumb Code   582  keypad.o(.text.printButton)
+    [Anonymous Symbol]                       0x08006ae4   Section        0  keypad.o(.text.printButton)
+    [Anonymous Symbol]                       0x08006d2c   Section        0  command.o(.text.printCMD)
+    [Anonymous Symbol]                       0x08006d68   Section        0  terminal.o(.text.printChar)
+    [Anonymous Symbol]                       0x08006e04   Section        0  LCD_Debug.o(.text.printDebugMsg)
+    printNewLine                             0x08006eb9   Thumb Code    32  terminal.o(.text.printNewLine)
+    [Anonymous Symbol]                       0x08006eb8   Section        0  terminal.o(.text.printNewLine)
+    [Anonymous Symbol]                       0x08006ed8   Section        0  display.o(.text.printStdout)
+    [Anonymous Symbol]                       0x08006ef0   Section        0  terminal.o(.text.printTerm)
+    [Anonymous Symbol]                       0x08006f2c   Section        0  display.o(.text.printToEchoLine)
+    [Anonymous Symbol]                       0x08006f54   Section        0  stack.o(.text.push)
+    save_restore_AltFn_SPI1_MOSI_Pin         0x08006f9d   Thumb Code    48  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
+    [Anonymous Symbol]                       0x08006f9c   Section        0  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
+    selectButton                             0x08006fcd   Thumb Code   362  keypad.o(.text.selectButton)
+    [Anonymous Symbol]                       0x08006fcc   Section        0  keypad.o(.text.selectButton)
+    [Anonymous Symbol]                       0x08007138   Section        0  display.o(.text.setErrMode)
+    [Anonymous Symbol]                       0x08007158   Section        0  display.o(.text.setNormalMode)
+    [Anonymous Symbol]                       0x08007178   Section        0  terminal.o(.text.setTextColorTerm)
+    [Anonymous Symbol]                       0x0800718c   Section        0  stdinout_USART.o(.text.stdinout_init)
+    stringCopy                               0x0800723d   Thumb Code    70  lcd.o(.text.stringCopy)
+    [Anonymous Symbol]                       0x0800723c   Section        0  lcd.o(.text.stringCopy)
+    [Anonymous Symbol]                       0x08007284   Section        0  operator.o(.text.subtract)
+    [Anonymous Symbol]                       0x08007358   Section        0  command.o(.text.swapCMD)
+    [Anonymous Symbol]                       0x08007368   Section        0  stack.o(.text.swapStack)
+    touchCoordinateToKey                     0x080073d1   Thumb Code   234  keypad.o(.text.touchCoordinateToKey)
+    [Anonymous Symbol]                       0x080073d0   Section        0  keypad.o(.text.touchCoordinateToKey)
+    i.__scatterload_copy                     0x080074ba   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x080074c8   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x080074ca   Section       14  handlers.o(i.__scatterload_zeroinit)
+    USART3_Resources                         0x08007528   Data          52  USART_STM32F4xx.o(.rodata.USART3_Resources)
+    [Anonymous Symbol]                       0x08007528   Section        0  USART_STM32F4xx.o(.rodata.USART3_Resources)
+    USART3_rx                                0x0800755c   Data          12  USART_STM32F4xx.o(.rodata.USART3_rx)
+    [Anonymous Symbol]                       0x0800755c   Section        0  USART_STM32F4xx.o(.rodata.USART3_rx)
+    USART3_tx                                0x08007568   Data          12  USART_STM32F4xx.o(.rodata.USART3_tx)
+    [Anonymous Symbol]                       0x08007568   Section        0  USART_STM32F4xx.o(.rodata.USART3_tx)
+    .L.str                                   0x0800772c   Data          64  LCD_GUI.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0800772c   Section        0  LCD_GUI.o(.rodata.str1.1)
+    .L.str                                   0x0800776c   Data          64  LCD_SPI.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0800776c   Section        0  LCD_SPI.o(.rodata.str1.1)
+    .L.str                                   0x080077ac   Data          64  LCD_TIM.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x080077ac   Section        0  LCD_TIM.o(.rodata.str1.1)
+    .L.str.1                                 0x080077ec   Data           6  LCD_Debug.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x080077ec   Section        0  LCD_Debug.o(.rodata.str1.1)
+    .L.str                                   0x080077f2   Data          22  LCD_Debug.o(.rodata.str1.1)
+    .L.str                                   0x08007808   Data          38  terminal.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08007808   Section        0  terminal.o(.rodata.str1.1)
+    .L.str.1                                 0x0800782e   Data          46  terminal.o(.rodata.str1.1)
+    .L.str                                   0x0800785c   Data          54  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0800785c   Section        0  main.o(.rodata.str1.1)
+    .L.str.4                                 0x08007892   Data          62  main.o(.rodata.str1.1)
+    .L.str.3                                 0x080078d0   Data          65  main.o(.rodata.str1.1)
+    .L.str.1                                 0x08007911   Data          59  main.o(.rodata.str1.1)
+    .L.str.2                                 0x0800794c   Data          57  main.o(.rodata.str1.1)
+    .L.str                                   0x08007985   Data           2  command.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08007985   Section        0  command.o(.rodata.str1.1)
     crd                                      0x20000014   Data           4  lcd.o(.data.crd)
     [Anonymous Symbol]                       0x20000014   Section        0  lcd.o(.data.crd)
     echoTerm                                 0x20000018   Data          24  display.o(.data.echoTerm)
@@ -3218,13 +3224,15 @@ Image Symbol Table
     [Anonymous Symbol]                       0x200000f0   Section        0  LCD_TIM.o(.bss.htim4)
     lcdColor                                 0x20000130   Data           2  lcd.o(.bss.lcdColor)
     [Anonymous Symbol]                       0x20000130   Section        0  lcd.o(.bss.lcdColor)
-    sTP_DEV                                  0x20000134   Data          24  LCD_Touch.o(.bss.sTP_DEV)
-    [Anonymous Symbol]                       0x20000134   Section        0  LCD_Touch.o(.bss.sTP_DEV)
-    size                                     0x2000014c   Data           4  stack.o(.bss.size)
-    [Anonymous Symbol]                       0x2000014c   Section        0  stack.o(.bss.size)
-    stack                                    0x20000150   Data          32  stack.o(.bss.stack)
-    [Anonymous Symbol]                       0x20000150   Section        0  stack.o(.bss.stack)
-    STACK                                    0x20000178   Section     1024  startup_stm32f429xx.o(STACK)
+    numberCharArray                          0x20000132   Data          12  command.o(.bss.numberCharArray)
+    [Anonymous Symbol]                       0x20000132   Section        0  command.o(.bss.numberCharArray)
+    sTP_DEV                                  0x20000140   Data          24  LCD_Touch.o(.bss.sTP_DEV)
+    [Anonymous Symbol]                       0x20000140   Section        0  LCD_Touch.o(.bss.sTP_DEV)
+    size                                     0x20000158   Data           4  stack.o(.bss.size)
+    [Anonymous Symbol]                       0x20000158   Section        0  stack.o(.bss.size)
+    stack                                    0x2000015c   Data          32  stack.o(.bss.stack)
+    [Anonymous Symbol]                       0x2000015c   Section        0  stack.o(.bss.stack)
+    STACK                                    0x20000180   Section     1024  startup_stm32f429xx.o(STACK)
 
     Global Symbols
 
@@ -3443,48 +3451,47 @@ Image Symbol Table
     initITSboard                             0x08006165   Thumb Code    20  init.o(.text.initITSboard)
     itoa                                     0x08006179   Thumb Code   180  LCD_Tools.o(.text.itoa)
     lcdPrintS                                0x0800622d   Thumb Code   466  lcd.o(.text.lcdPrintS)
-    main                                     0x08006401   Thumb Code   330  main.o(.text.main)
-    makeKeyPad                               0x0800654d   Thumb Code   210  keypad.o(.text.makeKeyPad)
-    multiply                                 0x08006621   Thumb Code   366  operator.o(.text.multiply)
-    nextToken                                0x08006799   Thumb Code   330  scanner.o(.text.nextToken)
-    numberToString                           0x080068e5   Thumb Code   154  command.o(.text.numberToString)
-    peek                                     0x08006981   Thumb Code    92  stack.o(.text.peek)
+    main                                     0x08006401   Thumb Code   312  main.o(.text.main)
+    makeKeyPad                               0x08006539   Thumb Code   210  keypad.o(.text.makeKeyPad)
+    multiply                                 0x0800660d   Thumb Code   366  operator.o(.text.multiply)
+    nextToken                                0x08006785   Thumb Code   330  scanner.o(.text.nextToken)
+    numberToString                           0x080068d1   Thumb Code   174  command.o(.text.numberToString)
+    peek                                     0x08006981   Thumb Code    90  stack.o(.text.peek)
     pop                                      0x080069dd   Thumb Code    76  stack.o(.text.pop)
     popTopTwoElements                        0x08006a29   Thumb Code    96  stack.o(.text.popTopTwoElements)
-    printAllCMD                              0x08006a89   Thumb Code    68  command.o(.text.printAllCMD)
-    printCMD                                 0x08006d15   Thumb Code    16  command.o(.text.printCMD)
-    printChar                                0x08006d25   Thumb Code   156  terminal.o(.text.printChar)
-    printDebugMsg                            0x08006dc1   Thumb Code   178  LCD_Debug.o(.text.printDebugMsg)
-    printNumber                              0x08006e95   Thumb Code    84  command.o(.text.printNumber)
-    printStdout                              0x08006ee9   Thumb Code    24  display.o(.text.printStdout)
-    printTerm                                0x08006f01   Thumb Code    60  terminal.o(.text.printTerm)
-    printToEchoLine                          0x08006f3d   Thumb Code    40  display.o(.text.printToEchoLine)
-    push                                     0x08006f65   Thumb Code    70  stack.o(.text.push)
-    setErrMode                               0x08007149   Thumb Code    32  display.o(.text.setErrMode)
-    setNormalMode                            0x08007169   Thumb Code    30  display.o(.text.setNormalMode)
-    setTextColorTerm                         0x08007189   Thumb Code    20  terminal.o(.text.setTextColorTerm)
-    stdinout_init                            0x0800719d   Thumb Code   174  stdinout_USART.o(.text.stdinout_init)
-    subtract                                 0x08007295   Thumb Code   212  operator.o(.text.subtract)
-    swapCMD                                  0x08007369   Thumb Code    16  command.o(.text.swapCMD)
-    swapStack                                0x08007379   Thumb Code   102  stack.o(.text.swapStack)
-    __scatterload_copy                       0x080074cb   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x080074d9   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x080074db   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    AHBPrescTable                            0x080074e8   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x080074f8   Data           8  system_stm32f4xx.o(.rodata.APBPrescTable)
-    Driver_USART3                            0x08007500   Data          56  USART_STM32F4xx.o(.rodata.Driver_USART3)
-    initCmds                                 0x08007584   Data         103  LCD_Driver.o(.rodata.initCmds)
-    keypad                                   0x080075ec   Data         336  keypad.o(.rodata.keypad)
-    Region$$Table$$Base                      0x08007998   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080079b8   Number         0  anon$$obj.o(Region$$Table)
+    printAllCMD                              0x08006a89   Thumb Code    92  command.o(.text.printAllCMD)
+    printCMD                                 0x08006d2d   Thumb Code    58  command.o(.text.printCMD)
+    printChar                                0x08006d69   Thumb Code   156  terminal.o(.text.printChar)
+    printDebugMsg                            0x08006e05   Thumb Code   178  LCD_Debug.o(.text.printDebugMsg)
+    printStdout                              0x08006ed9   Thumb Code    24  display.o(.text.printStdout)
+    printTerm                                0x08006ef1   Thumb Code    60  terminal.o(.text.printTerm)
+    printToEchoLine                          0x08006f2d   Thumb Code    40  display.o(.text.printToEchoLine)
+    push                                     0x08006f55   Thumb Code    70  stack.o(.text.push)
+    setErrMode                               0x08007139   Thumb Code    32  display.o(.text.setErrMode)
+    setNormalMode                            0x08007159   Thumb Code    30  display.o(.text.setNormalMode)
+    setTextColorTerm                         0x08007179   Thumb Code    20  terminal.o(.text.setTextColorTerm)
+    stdinout_init                            0x0800718d   Thumb Code   174  stdinout_USART.o(.text.stdinout_init)
+    subtract                                 0x08007285   Thumb Code   212  operator.o(.text.subtract)
+    swapCMD                                  0x08007359   Thumb Code    16  command.o(.text.swapCMD)
+    swapStack                                0x08007369   Thumb Code   102  stack.o(.text.swapStack)
+    __scatterload_copy                       0x080074bb   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x080074c9   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x080074cb   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    AHBPrescTable                            0x080074d8   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x080074e8   Data           8  system_stm32f4xx.o(.rodata.APBPrescTable)
+    Driver_USART3                            0x080074f0   Data          56  USART_STM32F4xx.o(.rodata.Driver_USART3)
+    initCmds                                 0x08007574   Data         103  LCD_Driver.o(.rodata.initCmds)
+    keypad                                   0x080075dc   Data         336  keypad.o(.rodata.keypad)
+    Region$$Table$$Base                      0x08007988   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080079a8   Number         0  anon$$obj.o(Region$$Table)
     Consolas40FLASH                          0x20000000   Data           8  fontsFLASH.o(.data.Consolas40FLASH)
     Font16FLASH                              0x20000008   Data           8  fontsFLASH.o(.data.Font16FLASH)
     SystemCoreClock                          0x20000010   Data           4  system_stm32f4xx.o(.data.SystemCoreClock)
     uwTickFreq                               0x20000064   Data           1  stm32f4xx_hal.o(.data.uwTickFreq)
     uwTickPrio                               0x20000068   Data           4  stm32f4xx_hal.o(.data.uwTickPrio)
     EthHandle                                0x20000070   Data          72  stm32f4xx_it.o(.bss.EthHandle)
-    uwTick                                   0x20000170   Data           4  stm32f4xx_hal.o(.bss.uwTick)
-    __initial_sp                             0x20000578   Data           0  startup_stm32f429xx.o(STACK)
+    uwTick                                   0x2000017c   Data           4  stm32f4xx_hal.o(.bss.uwTick)
+    __initial_sp                             0x20000580   Data           0  startup_stm32f429xx.o(STACK)
 
 
 
@@ -3494,30 +3501,30 @@ Memory Map of the image
 
   Image Entry point : 0x080001c1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00007a28, Max: 0x00200000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00007a18, Max: 0x00200000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000079b8, Max: 0x00200000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000079a8, Max: 0x00200000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000001ac   Data   RO           63    RESET               startup_stm32f429xx.o
-    0x080001ac   0x080001ac   0x00000000   Code   RO         1699  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001ac   0x080001ac   0x00000004   Code   RO         1742    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001b0   0x080001b0   0x00000004   Code   RO         1745    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO         1747    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO         1749    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080001b4   0x080001b4   0x00000008   Code   RO         1750    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080001bc   0x080001bc   0x00000000   Code   RO         1752    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080001bc   0x080001bc   0x00000000   Code   RO         1754    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080001bc   0x080001bc   0x00000004   Code   RO         1743    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001ac   0x080001ac   0x00000000   Code   RO         1698  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001ac   0x080001ac   0x00000004   Code   RO         1741    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001b0   0x080001b0   0x00000004   Code   RO         1744    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO         1746    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO         1748    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080001b4   0x080001b4   0x00000008   Code   RO         1749    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080001bc   0x080001bc   0x00000000   Code   RO         1751    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080001bc   0x080001bc   0x00000000   Code   RO         1753    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080001bc   0x080001bc   0x00000004   Code   RO         1742    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x080001c0   0x080001c0   0x00000024   Code   RO           64  * .text               startup_stm32f429xx.o
-    0x080001e4   0x080001e4   0x00000062   Code   RO         1702    .text               mc_w.l(uldiv.o)
-    0x08000246   0x08000246   0x00000062   Code   RO         1704    .text               mc_w.l(ldiv.o)
-    0x080002a8   0x080002a8   0x00000024   Code   RO         1706    .text               mc_w.l(memseta.o)
-    0x080002cc   0x080002cc   0x0000000e   Code   RO         1708    .text               mc_w.l(strlen.o)
-    0x080002da   0x080002da   0x0000001e   Code   RO         1772    .text               mc_w.l(llshl.o)
-    0x080002f8   0x080002f8   0x00000020   Code   RO         1774    .text               mc_w.l(llushr.o)
-    0x08000318   0x08000318   0x00000030   Code   RO         1798    .text               mc_w.l(init.o)
+    0x080001e4   0x080001e4   0x00000062   Code   RO         1701    .text               mc_w.l(uldiv.o)
+    0x08000246   0x08000246   0x00000062   Code   RO         1703    .text               mc_w.l(ldiv.o)
+    0x080002a8   0x080002a8   0x00000024   Code   RO         1705    .text               mc_w.l(memseta.o)
+    0x080002cc   0x080002cc   0x0000000e   Code   RO         1707    .text               mc_w.l(strlen.o)
+    0x080002da   0x080002da   0x0000001e   Code   RO         1771    .text               mc_w.l(llshl.o)
+    0x080002f8   0x080002f8   0x00000020   Code   RO         1773    .text               mc_w.l(llushr.o)
+    0x08000318   0x08000318   0x00000030   Code   RO         1797    .text               mc_w.l(init.o)
     0x08000348   0x08000348   0x00000004   Code   RO           91    .text.BusFault_Handler  stm32f4xx_it.o
     0x0800034c   0x0800034c   0x00000002   Code   RO           97    .text.DebugMon_Handler  stm32f4xx_it.o
     0x0800034e   0x0800034e   0x00000002   PAD
@@ -3731,106 +3738,107 @@ Memory Map of the image
     0x08006178   0x08006178   0x000000b4   Code   RO         1301    .text.itoa          LCD_Tools.o
     0x0800622c   0x0800622c   0x000001d2   Code   RO         1367    .text.lcdPrintS     lcd.o
     0x080063fe   0x080063fe   0x00000002   PAD
-    0x08006400   0x08006400   0x0000014a   Code   RO         1575    .text.main          main.o
-    0x0800654a   0x0800654a   0x00000002   PAD
-    0x0800654c   0x0800654c   0x000000d2   Code   RO         1441    .text.makeKeyPad    keypad.o
-    0x0800661e   0x0800661e   0x00000002   PAD
-    0x08006620   0x08006620   0x0000016e   Code   RO         1661    .text.multiply      operator.o
-    0x0800678e   0x0800678e   0x00000002   PAD
-    0x08006790   0x08006790   0x00000008   Code   RO         1615    .text.nextChar      scanner.o
-    0x08006798   0x08006798   0x0000014a   Code   RO         1613    .text.nextToken     scanner.o
-    0x080068e2   0x080068e2   0x00000002   PAD
-    0x080068e4   0x080068e4   0x0000009a   Code   RO         1684    .text.numberToString  command.o
+    0x08006400   0x08006400   0x00000138   Code   RO         1575    .text.main          main.o
+    0x08006538   0x08006538   0x000000d2   Code   RO         1441    .text.makeKeyPad    keypad.o
+    0x0800660a   0x0800660a   0x00000002   PAD
+    0x0800660c   0x0800660c   0x0000016e   Code   RO         1661    .text.multiply      operator.o
+    0x0800677a   0x0800677a   0x00000002   PAD
+    0x0800677c   0x0800677c   0x00000008   Code   RO         1615    .text.nextChar      scanner.o
+    0x08006784   0x08006784   0x0000014a   Code   RO         1613    .text.nextToken     scanner.o
+    0x080068ce   0x080068ce   0x00000002   PAD
+    0x080068d0   0x080068d0   0x000000ae   Code   RO         1672    .text.numberToString  command.o
     0x0800697e   0x0800697e   0x00000002   PAD
-    0x08006980   0x08006980   0x0000005c   Code   RO         1639    .text.peek          stack.o
+    0x08006980   0x08006980   0x0000005a   Code   RO         1639    .text.peek          stack.o
+    0x080069da   0x080069da   0x00000002   PAD
     0x080069dc   0x080069dc   0x0000004c   Code   RO         1629    .text.pop           stack.o
     0x08006a28   0x08006a28   0x00000060   Code   RO         1643    .text.popTopTwoElements  stack.o
-    0x08006a88   0x08006a88   0x00000044   Code   RO         1672    .text.printAllCMD   command.o
-    0x08006acc   0x08006acc   0x00000246   Code   RO         1443    .text.printButton   keypad.o
-    0x08006d12   0x08006d12   0x00000002   PAD
-    0x08006d14   0x08006d14   0x00000010   Code   RO         1670    .text.printCMD      command.o
-    0x08006d24   0x08006d24   0x0000009c   Code   RO         1422    .text.printChar     terminal.o
-    0x08006dc0   0x08006dc0   0x000000b2   Code   RO         1333    .text.printDebugMsg  LCD_Debug.o
-    0x08006e72   0x08006e72   0x00000002   PAD
-    0x08006e74   0x08006e74   0x00000020   Code   RO         1426    .text.printNewLine  terminal.o
-    0x08006e94   0x08006e94   0x00000054   Code   RO         1674    .text.printNumber   command.o
-    0x08006ee8   0x08006ee8   0x00000018   Code   RO         1592    .text.printStdout   display.o
-    0x08006f00   0x08006f00   0x0000003c   Code   RO         1424    .text.printTerm     terminal.o
-    0x08006f3c   0x08006f3c   0x00000028   Code   RO         1596    .text.printToEchoLine  display.o
-    0x08006f64   0x08006f64   0x00000046   Code   RO         1627    .text.push          stack.o
-    0x08006faa   0x08006faa   0x00000002   PAD
-    0x08006fac   0x08006fac   0x00000030   Code   RO         1248    .text.save_restore_AltFn_SPI1_MOSI_Pin  LCD_SPI.o
-    0x08006fdc   0x08006fdc   0x0000016a   Code   RO         1447    .text.selectButton  keypad.o
-    0x08007146   0x08007146   0x00000002   PAD
-    0x08007148   0x08007148   0x00000020   Code   RO         1598    .text.setErrMode    display.o
-    0x08007168   0x08007168   0x0000001e   Code   RO         1600    .text.setNormalMode  display.o
-    0x08007186   0x08007186   0x00000002   PAD
-    0x08007188   0x08007188   0x00000014   Code   RO         1418    .text.setTextColorTerm  terminal.o
-    0x0800719c   0x0800719c   0x000000ae   Code   RO         1562    .text.stdinout_init  stdinout_USART.o
-    0x0800724a   0x0800724a   0x00000002   PAD
-    0x0800724c   0x0800724c   0x00000046   Code   RO         1369    .text.stringCopy    lcd.o
-    0x08007292   0x08007292   0x00000002   PAD
-    0x08007294   0x08007294   0x000000d4   Code   RO         1657    .text.subtract      operator.o
-    0x08007368   0x08007368   0x00000010   Code   RO         1680    .text.swapCMD       command.o
-    0x08007378   0x08007378   0x00000066   Code   RO         1631    .text.swapStack     stack.o
-    0x080073de   0x080073de   0x00000002   PAD
-    0x080073e0   0x080073e0   0x000000ea   Code   RO         1453    .text.touchCoordinateToKey  keypad.o
-    0x080074ca   0x080074ca   0x0000000e   Code   RO         1806    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x080074d8   0x080074d8   0x00000002   Code   RO         1807    i.__scatterload_null  mc_w.l(handlers.o)
-    0x080074da   0x080074da   0x0000000e   Code   RO         1808    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x080074e8   0x080074e8   0x00000010   Data   RO           76    .rodata.AHBPrescTable  system_stm32f4xx.o
-    0x080074f8   0x080074f8   0x00000008   Data   RO           77    .rodata.APBPrescTable  system_stm32f4xx.o
-    0x08007500   0x08007500   0x00000038   Data   RO         1548    .rodata.Driver_USART3  USART_STM32F4xx.o
-    0x08007538   0x08007538   0x00000034   Data   RO         1553    .rodata.USART3_Resources  USART_STM32F4xx.o
-    0x0800756c   0x0800756c   0x0000000c   Data   RO         1550    .rodata.USART3_rx   USART_STM32F4xx.o
-    0x08007578   0x08007578   0x0000000c   Data   RO         1549    .rodata.USART3_tx   USART_STM32F4xx.o
-    0x08007584   0x08007584   0x00000067   Data   RO         1158    .rodata.initCmds    LCD_Driver.o
-    0x080075eb   0x080075eb   0x00000001   PAD
-    0x080075ec   0x080075ec   0x00000150   Data   RO         1455    .rodata.keypad      keypad.o
-    0x0800773c   0x0800773c   0x00000040   Data   RO         1190    .rodata.str1.1      LCD_GUI.o
-    0x0800777c   0x0800777c   0x00000040   Data   RO         1254    .rodata.str1.1      LCD_SPI.o
-    0x080077bc   0x080077bc   0x00000040   Data   RO         1287    .rodata.str1.1      LCD_TIM.o
-    0x080077fc   0x080077fc   0x0000001c   Data   RO         1336    .rodata.str1.1      LCD_Debug.o
-    0x08007818   0x08007818   0x00000054   Data   RO         1432    .rodata.str1.1      terminal.o
-    0x0800786c   0x0800786c   0x00000129   Data   RO         1579    .rodata.str1.1      main.o
-    0x08007995   0x08007995   0x00000003   PAD
-    0x08007998   0x08007998   0x00000020   Data   RO         1805    Region$$Table       anon$$obj.o
+    0x08006a88   0x08006a88   0x0000005c   Code   RO         1674    .text.printAllCMD   command.o
+    0x08006ae4   0x08006ae4   0x00000246   Code   RO         1443    .text.printButton   keypad.o
+    0x08006d2a   0x08006d2a   0x00000002   PAD
+    0x08006d2c   0x08006d2c   0x0000003a   Code   RO         1670    .text.printCMD      command.o
+    0x08006d66   0x08006d66   0x00000002   PAD
+    0x08006d68   0x08006d68   0x0000009c   Code   RO         1422    .text.printChar     terminal.o
+    0x08006e04   0x08006e04   0x000000b2   Code   RO         1333    .text.printDebugMsg  LCD_Debug.o
+    0x08006eb6   0x08006eb6   0x00000002   PAD
+    0x08006eb8   0x08006eb8   0x00000020   Code   RO         1426    .text.printNewLine  terminal.o
+    0x08006ed8   0x08006ed8   0x00000018   Code   RO         1592    .text.printStdout   display.o
+    0x08006ef0   0x08006ef0   0x0000003c   Code   RO         1424    .text.printTerm     terminal.o
+    0x08006f2c   0x08006f2c   0x00000028   Code   RO         1596    .text.printToEchoLine  display.o
+    0x08006f54   0x08006f54   0x00000046   Code   RO         1627    .text.push          stack.o
+    0x08006f9a   0x08006f9a   0x00000002   PAD
+    0x08006f9c   0x08006f9c   0x00000030   Code   RO         1248    .text.save_restore_AltFn_SPI1_MOSI_Pin  LCD_SPI.o
+    0x08006fcc   0x08006fcc   0x0000016a   Code   RO         1447    .text.selectButton  keypad.o
+    0x08007136   0x08007136   0x00000002   PAD
+    0x08007138   0x08007138   0x00000020   Code   RO         1598    .text.setErrMode    display.o
+    0x08007158   0x08007158   0x0000001e   Code   RO         1600    .text.setNormalMode  display.o
+    0x08007176   0x08007176   0x00000002   PAD
+    0x08007178   0x08007178   0x00000014   Code   RO         1418    .text.setTextColorTerm  terminal.o
+    0x0800718c   0x0800718c   0x000000ae   Code   RO         1562    .text.stdinout_init  stdinout_USART.o
+    0x0800723a   0x0800723a   0x00000002   PAD
+    0x0800723c   0x0800723c   0x00000046   Code   RO         1369    .text.stringCopy    lcd.o
+    0x08007282   0x08007282   0x00000002   PAD
+    0x08007284   0x08007284   0x000000d4   Code   RO         1657    .text.subtract      operator.o
+    0x08007358   0x08007358   0x00000010   Code   RO         1680    .text.swapCMD       command.o
+    0x08007368   0x08007368   0x00000066   Code   RO         1631    .text.swapStack     stack.o
+    0x080073ce   0x080073ce   0x00000002   PAD
+    0x080073d0   0x080073d0   0x000000ea   Code   RO         1453    .text.touchCoordinateToKey  keypad.o
+    0x080074ba   0x080074ba   0x0000000e   Code   RO         1805    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080074c8   0x080074c8   0x00000002   Code   RO         1806    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080074ca   0x080074ca   0x0000000e   Code   RO         1807    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080074d8   0x080074d8   0x00000010   Data   RO           76    .rodata.AHBPrescTable  system_stm32f4xx.o
+    0x080074e8   0x080074e8   0x00000008   Data   RO           77    .rodata.APBPrescTable  system_stm32f4xx.o
+    0x080074f0   0x080074f0   0x00000038   Data   RO         1548    .rodata.Driver_USART3  USART_STM32F4xx.o
+    0x08007528   0x08007528   0x00000034   Data   RO         1553    .rodata.USART3_Resources  USART_STM32F4xx.o
+    0x0800755c   0x0800755c   0x0000000c   Data   RO         1550    .rodata.USART3_rx   USART_STM32F4xx.o
+    0x08007568   0x08007568   0x0000000c   Data   RO         1549    .rodata.USART3_tx   USART_STM32F4xx.o
+    0x08007574   0x08007574   0x00000067   Data   RO         1158    .rodata.initCmds    LCD_Driver.o
+    0x080075db   0x080075db   0x00000001   PAD
+    0x080075dc   0x080075dc   0x00000150   Data   RO         1455    .rodata.keypad      keypad.o
+    0x0800772c   0x0800772c   0x00000040   Data   RO         1190    .rodata.str1.1      LCD_GUI.o
+    0x0800776c   0x0800776c   0x00000040   Data   RO         1254    .rodata.str1.1      LCD_SPI.o
+    0x080077ac   0x080077ac   0x00000040   Data   RO         1287    .rodata.str1.1      LCD_TIM.o
+    0x080077ec   0x080077ec   0x0000001c   Data   RO         1336    .rodata.str1.1      LCD_Debug.o
+    0x08007808   0x08007808   0x00000054   Data   RO         1432    .rodata.str1.1      terminal.o
+    0x0800785c   0x0800785c   0x00000129   Data   RO         1579    .rodata.str1.1      main.o
+    0x08007985   0x08007985   0x00000002   Data   RO         1685    .rodata.str1.1      command.o
+    0x08007987   0x08007987   0x00000001   PAD
+    0x08007988   0x08007988   0x00000020   Data   RO         1804    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080079b8, Size: 0x00000578, Max: 0x00030000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080079a8, Size: 0x00000580, Max: 0x00030000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080079b8   0x00000008   Data   RW         1108    .data.Consolas40FLASH  fontsFLASH.o
-    0x20000008   0x080079c0   0x00000008   Data   RW         1102    .data.Font16FLASH   fontsFLASH.o
-    0x20000010   0x080079c8   0x00000004   Data   RW           75    .data.SystemCoreClock  system_stm32f4xx.o
-    0x20000014   0x080079cc   0x00000004   Data   RW         1385    .data.crd           lcd.o
-    0x20000018   0x080079d0   0x00000018   Data   RW         1605    .data.echoTerm      display.o
-    0x20000030   0x080079e8   0x00000004   Data   RW         1386    .data.fontHeight    lcd.o
-    0x20000034   0x080079ec   0x00000004   Data   RW         1384    .data.fontWidth     lcd.o
-    0x20000038   0x080079f0   0x00000004   Data   RW         1387    .data.lcdFont       lcd.o
-    0x2000003c   0x080079f4   0x00000004   Data   RW         1383    .data.lcdmaxx       lcd.o
-    0x20000040   0x080079f8   0x00000004   Data   RW         1389    .data.lcdmaxy       lcd.o
-    0x20000044   0x080079fc   0x00000001   Data   RW         1617    .data.nextToken.c   scanner.o
-    0x20000045   0x080079fd   0x00000003   PAD
-    0x20000048   0x08007a00   0x00000004   Data   RW         1255    .data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF  LCD_SPI.o
-    0x2000004c   0x08007a04   0x00000018   Data   RW         1604    .data.stdoutTerm    display.o
-    0x20000064   0x08007a1c   0x00000001   Data   RW          332    .data.uwTickFreq    stm32f4xx_hal.o
-    0x20000065   0x08007a1d   0x00000003   PAD
-    0x20000068   0x08007a20   0x00000004   Data   RW          331    .data.uwTickPrio    stm32f4xx_hal.o
-    0x2000006c   0x08007a24   0x00000004   PAD
+    0x20000000   0x080079a8   0x00000008   Data   RW         1108    .data.Consolas40FLASH  fontsFLASH.o
+    0x20000008   0x080079b0   0x00000008   Data   RW         1102    .data.Font16FLASH   fontsFLASH.o
+    0x20000010   0x080079b8   0x00000004   Data   RW           75    .data.SystemCoreClock  system_stm32f4xx.o
+    0x20000014   0x080079bc   0x00000004   Data   RW         1385    .data.crd           lcd.o
+    0x20000018   0x080079c0   0x00000018   Data   RW         1605    .data.echoTerm      display.o
+    0x20000030   0x080079d8   0x00000004   Data   RW         1386    .data.fontHeight    lcd.o
+    0x20000034   0x080079dc   0x00000004   Data   RW         1384    .data.fontWidth     lcd.o
+    0x20000038   0x080079e0   0x00000004   Data   RW         1387    .data.lcdFont       lcd.o
+    0x2000003c   0x080079e4   0x00000004   Data   RW         1383    .data.lcdmaxx       lcd.o
+    0x20000040   0x080079e8   0x00000004   Data   RW         1389    .data.lcdmaxy       lcd.o
+    0x20000044   0x080079ec   0x00000001   Data   RW         1617    .data.nextToken.c   scanner.o
+    0x20000045   0x080079ed   0x00000003   PAD
+    0x20000048   0x080079f0   0x00000004   Data   RW         1255    .data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF  LCD_SPI.o
+    0x2000004c   0x080079f4   0x00000018   Data   RW         1604    .data.stdoutTerm    display.o
+    0x20000064   0x08007a0c   0x00000001   Data   RW          332    .data.uwTickFreq    stm32f4xx_hal.o
+    0x20000065   0x08007a0d   0x00000003   PAD
+    0x20000068   0x08007a10   0x00000004   Data   RW          331    .data.uwTickPrio    stm32f4xx_hal.o
+    0x2000006c   0x08007a14   0x00000004   PAD
     0x20000070        -       0x00000048   Zero   RW          105    .bss.EthHandle      stm32f4xx_it.o
     0x200000b8        -       0x00000014   Zero   RW         1551    .bss.USART3_Info    USART_STM32F4xx.o
     0x200000cc        -       0x00000024   Zero   RW         1552    .bss.USART3_TransferInfo  USART_STM32F4xx.o
     0x200000f0        -       0x00000040   Zero   RW         1286    .bss.htim4          LCD_TIM.o
     0x20000130        -       0x00000002   Zero   RW         1388    .bss.lcdColor       lcd.o
-    0x20000132   0x08007a24   0x00000002   PAD
-    0x20000134        -       0x00000018   Zero   RW         1227    .bss.sTP_DEV        LCD_Touch.o
-    0x2000014c        -       0x00000004   Zero   RW         1645    .bss.size           stack.o
-    0x20000150        -       0x00000020   Zero   RW         1646    .bss.stack          stack.o
-    0x20000170        -       0x00000004   Zero   RW          333    .bss.uwTick         stm32f4xx_hal.o
-    0x20000174   0x08007a24   0x00000004   PAD
-    0x20000178        -       0x00000400   Zero   RW           61    STACK               startup_stm32f429xx.o
+    0x20000132        -       0x0000000c   Zero   RW         1684    .bss.numberCharArray  command.o
+    0x2000013e   0x08007a14   0x00000002   PAD
+    0x20000140        -       0x00000018   Zero   RW         1227    .bss.sTP_DEV        LCD_Touch.o
+    0x20000158        -       0x00000004   Zero   RW         1645    .bss.size           stack.o
+    0x2000015c        -       0x00000020   Zero   RW         1646    .bss.stack          stack.o
+    0x2000017c        -       0x00000004   Zero   RW          333    .bss.uwTick         stm32f4xx_hal.o
+    0x20000180        -       0x00000400   Zero   RW           61    STACK               startup_stm32f429xx.o
 
 
 ==============================================================================
@@ -3849,17 +3857,17 @@ Image component sizes
        410          0          0          0          0       3117   LCD_Tools.o
       1062          8          0          0         24       6561   LCD_Touch.o
       8678         52        132          0         56      22503   USART_STM32F4xx.o
-       398          0          0          0          0       2118   command.o
+       400          0          2          0         12       1956   command.o
        366          0          0         48          0       2538   display.o
        232          0          0          0          0       2444   error.o
          0          0          0         16          0       1842   fontsFLASH.o
        524          0          0          0          0       3750   init.o
       1552          0        336          0          0       5238   keypad.o
        536          0          0         24          2       3866   lcd.o
-       438         90        297          0          0       1527   main.o
+       420         90        297          0          0       1522   main.o
        832          0          0          0          0       2013   operator.o
        338         74          0          1          0       1129   scanner.o
-       580          0          0          0         36       2069   stack.o
+       578          0          0          0         36       2071   stack.o
         36          8        428          0       1024        972   startup_stm32f429xx.o
        174          0          0          0          0       1509   stdinout_USART.o
        264          0          0          5          4       7879   stm32f4xx_hal.o
@@ -3876,9 +3884,9 @@ Image component sizes
        508          0         84          0          0       3409   terminal.o
 
     ----------------------------------------------------------------------
-     29094        246       1660        108       1292     206539   Object Totals
+     29078        246       1660        108       1300     206374   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-       146          0          4          6         10          0   (incl. Padding)
+       148          0          2          6          6          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -3921,15 +3929,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     29500        264       1660        108       1292     206523   Grand Totals
-     29500        264       1660        108       1292     206523   ELF Image Totals
-     29500        264       1660        108          0          0   ROM Totals
+     29484        264       1660        108       1300     206358   Grand Totals
+     29484        264       1660        108       1300     206358   ELF Image Totals
+     29484        264       1660        108          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                31160 (  30.43kB)
-    Total RW  Size (RW Data + ZI Data)              1400 (   1.37kB)
-    Total ROM Size (Code + RO Data + RW Data)      31268 (  30.54kB)
+    Total RO  Size (Code + RO Data)                31144 (  30.41kB)
+    Total RW  Size (RW Data + ZI Data)              1408 (   1.38kB)
+    Total ROM Size (Code + RO Data + RW Data)      31252 (  30.52kB)
 
 ==============================================================================
 
