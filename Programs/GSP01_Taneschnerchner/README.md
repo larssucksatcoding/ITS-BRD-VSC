@@ -80,8 +80,7 @@ Die Fehler werden als Errorcode zurückgegeben (siehe `Inc/errno.h`). Um zu verh
 ## TODOs
 
 Kann man sich nicht vor drücken:
-- [ ] Lars: Kommentare stack.h-popTopTwoElements
-- [ ] command.c - printAllStackdingsi 
+-> all done c:
 
 Kann man sich vllt vor drücken:
 - [ ] Vllt macht es Sinn einen eigenen Datentypen für die Fehler zu implementieren damit man bei Funktionen die Fehler zurückgeben können klar sehen kann, dass der Rückgabewert ein Fehler ist? (z.B. `T_Error add(int* result)` statt `int add(int* result)`). 
@@ -96,3 +95,5 @@ erledigt uuh yeah:
 - [x] Fehlerverarbeitung in der Main 
 - [x] Lars: `operator.h` Kommentare (und generell auch xd)
 - [x] Funktion zum printen von Zahlen (nicht sprintf!)
+- [x] Lars: Kommentare stack.h-popTopTwoElements
+- [x] command.c - printAllStackdingsi 
