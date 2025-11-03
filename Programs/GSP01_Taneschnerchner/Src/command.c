@@ -121,11 +121,12 @@ void numberToString(int val) {
     numberCharArray[digits] = '\0';
     int current_index = digits - 1;
 
-    while (val != 0) {
+    // do while because loop needs to run at least once, even if val == 0
+    do {
         int last_digit = abs(val % 10);
         val /= 10;
 
         numberCharArray[current_index] = last_digit + '0';
         current_index -= 1;
-    }
+    } while (val != 0);
 }

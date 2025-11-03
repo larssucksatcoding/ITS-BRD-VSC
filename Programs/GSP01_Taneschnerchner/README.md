@@ -80,8 +80,6 @@ Die Fehler werden als Errorcode zurückgegeben (siehe `Inc/errno.h`). Um zu verh
 ## TODOs
 
 Kann man sich nicht vor drücken:
-- [ ] Lars: `operator.h` Kommentare (und generell auch xd)
-- [ ] Funktion zum printen von Zahlen (nicht sprintf!)
 - [ ] Lars: Kommentare stack.h-popTopTwoElements
 - [ ] command.c - printAllStackdingsi 
 
@@ -96,3 +94,5 @@ erledigt uuh yeah:
 - [x] errno Zahlen negativ werden lassen
 - [x] Command.c print all command peek getcopyofstack raus
 - [x] Fehlerverarbeitung in der Main 
+- [x] Lars: `operator.h` Kommentare (und generell auch xd)
+- [x] Funktion zum printen von Zahlen (nicht sprintf!)
