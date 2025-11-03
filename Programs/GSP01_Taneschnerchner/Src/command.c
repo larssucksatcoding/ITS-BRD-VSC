@@ -72,9 +72,9 @@ void printCMD() {
 
 void printAllCMD() {
     clearStdout();
-    int size = getSize();
+    int elements = getSize();
 
-    for (int i = 0; i<size; i++) {
+    for (int i = 0; i<elements; i++) {
         int val;
         int errrror = peek(&val, i);
 
