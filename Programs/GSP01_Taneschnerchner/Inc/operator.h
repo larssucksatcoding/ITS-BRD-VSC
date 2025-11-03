@@ -9,8 +9,6 @@
 #define OPERATOR_H
 
 
-// Hallo lieber Lars, ich bin zu faul mir deinen Kot in der C Datei anzuschauen,
-// deswegen bidde bidde kommentieren, habe schonmal Templates eingefügt. 
 /**
   * @brief      adds the top two numbers from the stack defined in stack.h.
   *             performes arrithmetic overflow checks and returns an error
