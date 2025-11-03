@@ -4,6 +4,6 @@
 
 method=source_dir
 command=
-source_dir=/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard
+source_dir=C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard
 work_dir=
 

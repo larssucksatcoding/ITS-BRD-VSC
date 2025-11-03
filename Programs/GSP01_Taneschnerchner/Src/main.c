@@ -25,6 +25,15 @@
 #include "display.h"
 #include <stdio.h>
 
+/**
+  * @brief      organizes the Error Output
+  *
+  * @param      int errorcode
+  * 
+  * @return     void
+  */
+
+void errorPrint(int error);
 
 int main(void) {
 	initITSboard();    // Initialisierung des ITS Boards
@@ -108,9 +117,10 @@ int main(void) {
 		}
 		if (error != NO_ERROR) {
 			errorPrint(error);
+			T_token reset;
 			do {
-				T_token reset = nextToken();
-			} while (reset.tok != CLEAR)
+				reset = nextToken();
+			} while (reset.tok != CLEAR);
 			setNormalMode();
 		}
 		else if (arithmeticOperation) {
@@ -120,7 +130,7 @@ int main(void) {
 	}
 }
 
-void errorPrint (int e) {
+void errorPrint (int error) {
 	setErrMode();
 	switch(error) {
 		case DIVISION_BY_ZERO: {
@@ -148,7 +158,7 @@ void errorPrint (int e) {
 				"error: NEGATIVE INPUT");
 			break;
 		}
-		printStdout("\n\n\n  press C to reset")
+		printStdout("\n\n\n  press C to reset");
 	} 
 }
 

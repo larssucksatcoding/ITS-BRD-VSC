@@ -1,15 +1,13 @@
 # ninja log v6
-1084	1115	1761810626648051198	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database	c47759bd33f9d269
-0	8	1761810625572055644	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-mkdir	efddcaee5b4cff19
-0	8	1761810625572055644	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-mkdir	efddcaee5b4cff19
-22	27	1761810625591055566	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-patch	dafca5e0b411e9a3
-9	15	1761810625578055620	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-download	a55c43063a255ffe
-9	15	1761810625578055620	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-download	a55c43063a255ffe
-15	21	1761810625585055591	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-update	bfa218bc63149b46
-15	21	1761810625585055591	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-update	bfa218bc63149b46
-27	1084	1761810626647051202	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-configure	605abbabb6019165
-22	27	1761810625591055566	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-patch	dafca5e0b411e9a3
-27	1084	1761810626647051202	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-configure	605abbabb6019165
-1084	1115	1761810626648051198	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database	c47759bd33f9d269
-1	24	1761810746206551023	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database	c47759bd33f9d269
-1	24	1761810746206551023	/home/bazzite/Documents/code projects/uni/gs/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database	c47759bd33f9d269
+92	1798	7838642461449588	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-mkdir	4d1fa03615967bc7
+2727	4240	7838642485150848	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-update	e6e8de502a082376
+92	1798	7838642461449588	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-mkdir	4d1fa03615967bc7
+5445	30028	7838642745292243	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-configure	4a57257a13803a54
+4240	5444	7838642497660435	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-patch	1cb256801d1b8067
+1799	2727	7838642470398183	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-download	cee271819bf7c9a3
+2727	4240	7838642485150848	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-update	e6e8de502a082376
+4240	5444	7838642497660435	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-patch	1cb256801d1b8067
+1799	2727	7838642470398183	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-download	cee271819bf7c9a3
+5445	30028	7838642745292243	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-configure	4a57257a13803a54
+30028	30601	7838642745393619	GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database	c661ba25dc1a25aa
+30028	30601	7838642745393619	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/GSP01_Taneschnerchner/tmp/GSP01_Taneschnerchner.Debug+ITSboard/src/GSP01_Taneschnerchner.Debug+ITSboard-stamp/GSP01_Taneschnerchner.Debug+ITSboard-database	c661ba25dc1a25aa
