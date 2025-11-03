@@ -10,7 +10,14 @@
 #include "errno.h"
 #include "stack.h"
 #include "stdbool.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include "limits.h"
+
+
+// function deklarations
+int numberStrLen(int number);
+
 
 /**
   * @brief      prints a number
@@ -53,13 +60,21 @@ void printCMD() {
 }
 
 void printAllCMD() {
+    clearStdout();
+
     int size = getSize();
-    for (int i = 0; i < size; i++) {
-        int val = 0;
-        int error = peek(&val, i);
-        if (error == NO_ERROR) {
-            printNumber(val);
-        }
+
+    
+    for (int i = 0; i<size; i++) {
+        int value;
+        int errror = peek(&value, i);
+
+        int str_len = numberStrLen(value);
+        char value_str[str_len];
+        numberToString(value_str, value);
+
+        printStdout(value_str);
+        printStdout("\n");
     }
 }
 
@@ -86,14 +101,18 @@ int digitCount(int v) {
     return digits;
 }
 
-void printNumber(int val) {
-    int digits = digitCount(val);
-    char vString[digits + 1];
-    numberToString(vString, val);
-    printStdout(vString);
+int numberStrLen(int number) {
+    bool is_negative = number < 0;
+    int len = digitCount(number) + 1; // for '\0'
+    
+    if (is_negative) {
+        len += 1; // for '-'
+    }
+
+    return len;
 }
 
-void numberToString(char *vString, int v) {
+void numberToString(char vString[], int v) {
     bool is_negative = v < 0;  
     int digits = digitCount(v);
 
@@ -110,6 +129,6 @@ void numberToString(char *vString, int v) {
         v /= 10;
 
         vString[current_index] = last_digit;
-        current_index += 1;
+        current_index -= 1;
     }
 }
