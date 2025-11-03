@@ -28,7 +28,7 @@
             "type": "shell",
             "command": "pyocd",
             "options": {
-                "cwd": "${workspaceFolder}/Programs/GSP01_Taneschnerchner"
+                "cwd": "${workspaceFolder}/Programs\\GSP01_Taneschnerchner"
             },
             "windows": {
                 "options": {
@@ -76,7 +76,7 @@
             "type": "shell",
             "command": "pyocd",
             "options": {
-                "cwd": "${workspaceFolder}/Programs/GSP01_Taneschnerchner"
+                "cwd": "${workspaceFolder}/Programs\\GSP01_Taneschnerchner"
             },
             "windows": {
                 "options": {
@@ -123,7 +123,7 @@
             "type": "shell",
             "command": "pyocd",
             "options": {
-                "cwd": "${workspaceFolder}/Programs/GSP01_Taneschnerchner"
+                "cwd": "${workspaceFolder}/Programs\\GSP01_Taneschnerchner"
             },
             "windows": {
                 "options": {
@@ -186,7 +186,7 @@
             "type": "shell",
             "command": "pyocd",
             "options": {
-                "cwd": "${workspaceFolder}/Programs/GSP01_Taneschnerchner"
+                "cwd": "${workspaceFolder}/Programs\\GSP01_Taneschnerchner"
             },
             "windows": {
                 "options": {
