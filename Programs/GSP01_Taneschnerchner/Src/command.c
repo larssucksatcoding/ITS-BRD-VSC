@@ -14,10 +14,16 @@
 #include <stdlib.h>
 #include "limits.h"
 
+#define MAX_LENGTH 12 
+// längste Zahle ist -2^31 10 Stellen + Nullterminater + Minuszeichen
 
-// function deklarations
-int numberStrLen(int number);
+/**
 
+################ V A R I A B L E ################
+
+*/
+
+static char numberCharArray[MAX_LENGTH];
 
 /**
   * @brief      prints a number
@@ -36,7 +42,7 @@ void printNumber(int val);
   * 
   * @return     number transformed to a string
   */
-void numberToString(char n[], int v);
+void numberToString(int val);
 
 /**
   * @brief      counts the digits of a number 
@@ -45,7 +51,7 @@ void numberToString(char n[], int v);
   * 
   * @return     the amount of digits that have been counted
   */
-int digitCount(int v);
+int digitCount(int val);
 
 
 /**
@@ -54,27 +60,29 @@ int digitCount(int v);
  
 */
 void printCMD() {
+    clearStdout();
     int val, error;
     error = getFirst(&val);
-    
+    if(error == NO_ERROR) {
+        numberToString(val);
+        printStdout(numberCharArray);
+        printStdout("\n");
+    }
 }
 
 void printAllCMD() {
     clearStdout();
-
     int size = getSize();
 
-    
     for (int i = 0; i<size; i++) {
-        int value;
-        int errror = peek(&value, i);
+        int val;
+        int errrror = peek(&val, i);
 
-        int str_len = numberStrLen(value);
-        char value_str[str_len];
-        numberToString(value_str, value);
-
-        printStdout(value_str);
-        printStdout("\n");
+        if(errrror == NO_ERROR) {
+            numberToString(val);
+            printStdout(numberCharArray);
+            printStdout("\n");
+        }
     }
 }
 
@@ -101,34 +109,23 @@ int digitCount(int v) {
     return digits;
 }
 
-int numberStrLen(int number) {
-    bool is_negative = number < 0;
-    int len = digitCount(number) + 1; // for '\0'
-    
-    if (is_negative) {
-        len += 1; // for '-'
-    }
-
-    return len;
-}
-
-void numberToString(char vString[], int v) {
-    bool is_negative = v < 0;  
-    int digits = digitCount(v);
+void numberToString(int val) {
+    bool is_negative = val < 0;  
+    int digits = digitCount(val);
 
     if (is_negative) {
-        vString[0] = '-';
+        numberCharArray[0] = '-';
         digits += 1;
     }
 
-    vString[digits] = '\0';
+    numberCharArray[digits] = '\0';
     int current_index = digits - 1;
 
-    while (v != 0) {
-        int last_digit = abs(v % 10);
-        v /= 10;
+    while (val != 0) {
+        int last_digit = abs(val % 10);
+        val /= 10;
 
-        vString[current_index] = last_digit + '0';
+        numberCharArray[current_index] = last_digit + '0';
         current_index -= 1;
     }
 }
