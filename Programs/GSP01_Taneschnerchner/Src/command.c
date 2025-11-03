@@ -128,7 +128,7 @@ void numberToString(char vString[], int v) {
         int last_digit = abs(v % 10);
         v /= 10;
 
-        vString[current_index] = last_digit;
+        vString[current_index] = last_digit + '0';
         current_index -= 1;
     }
 }
