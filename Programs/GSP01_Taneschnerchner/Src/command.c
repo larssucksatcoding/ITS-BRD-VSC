@@ -90,7 +90,7 @@ void deleteCMD() {
     deleteStack();
 }
 
-int duplCMD() {
+int duplicateCMD() {
     int error = duplStack();
     return error;
 }
@@ -102,10 +102,10 @@ int swapCMD() {
 
 int digitCount(int v) {
     int digits = 0;
-    while (v != 0) {
+    do {
         digits ++;
         v /= 10;
-    }
+    } while (v != 0);
     return digits;
 }
 

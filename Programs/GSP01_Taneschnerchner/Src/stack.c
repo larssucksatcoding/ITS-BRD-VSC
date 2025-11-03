@@ -28,8 +28,8 @@ int pop(int* v) {
     if(size == 0) {
         return STACK_UNDERFLOW;
     }
-    *v = stack[size];
-    stack[size] = 0;
+    *v = stack[size-1];
+    stack[size-1] = 0;
     size--;
     return NO_ERROR;
 }
@@ -38,9 +38,9 @@ int swapStack() {
     if(size == 0 || size == 1) {
         return STACK_UNDERFLOW;
     }
-    int v = stack[size];
-    stack[size] = stack[size-1];
-    stack[size-1] = v;
+    int v = stack[size-1];
+    stack[size-1] = stack[size-2];
+    stack[size-2] = v;
     return NO_ERROR;
 }
 

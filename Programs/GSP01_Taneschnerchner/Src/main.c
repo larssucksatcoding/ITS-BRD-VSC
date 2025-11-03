@@ -57,8 +57,6 @@ int main(void) {
 
 		int error = NO_ERROR;
 		int result = 0;
-		bool pushVal = input.val != 0;
-		bool arithmeticOperation = false;
 		switch(input.tok) {
 			
 			case ENTER: case UNEXPECTED: {
@@ -68,6 +66,9 @@ int main(void) {
 				error = push(input.val);
 				break;
 			}
+			// bei den arithmetischen Operationen können wir pushen
+			// ohne auf Fehler zu überprüfen. Stack_Overflow kann nicht
+			// eintreten, da vorher schon 2 Zahlen runtergenommen wurden.
 			case PLUS: {
 				error = add(&result);
 				push(result);
@@ -105,11 +106,11 @@ int main(void) {
 				break;
 			}
 			case DOUBLE: {
-				// error = duplicateCMD();
+				error = duplicateCMD();
 				break;
 			}
 			case OVERFLOW: {
-				// - Zahl wurde eingegeben setze alles zurück
+				// negative Zahl wurde eingegeben setze alles zurück
 				// wir müssen damit nicht umgehen, tun wir trotzdem
 				error = NEGATIVE_INPUT;
 				break;
