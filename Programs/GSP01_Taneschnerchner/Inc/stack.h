@@ -73,11 +73,14 @@ int peek(int* val, int index);
 int getSize();
 
 /**
-  * @brief      ~ ~ 
+  * @brief      pops the first two elements of the stack, writing
+  *             them into the respective call-by-reference parameters.
   *
-  * @param      ~ ~
+  * @param      int* top:    top element of stack will be written to this
+  *             int* bottom: bottom element of stack will be written to this
   * 
-  * @return     ~ ~
+  * @return     one of the error codes in errno.h can be NO_ERROR and 
+  *             STACK_UNDERFLOW in case there are less than 2 elements on the stack.
   */
 int popTopTwoElements(int* top, int* bottom);
 
