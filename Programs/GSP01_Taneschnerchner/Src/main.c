@@ -65,27 +65,27 @@ int main(void) {
 				break;
 			}
 			case NUMBER: {
-				push(input.val);
+				error = push(input.val);
 				break;
 			}
 			case PLUS: {
 				error = add(&result);
-				arithmeticOperation = true;
+				push(result);
 				break;
 			}
 			case MINUS: {
 				error = subtract(&result);
-				arithmeticOperation = true;
+				push(result);
 				break;
 			} 
 			case MULT: {
 				error = multiply(&result);
-				arithmeticOperation = true;
+				push(result);
 				break;
 			}
 			case DIV: {
 				error = divide(&result);
-				arithmeticOperation = true;
+				push(result);
 				break;
 			}
 			case PRT: {
@@ -122,11 +122,7 @@ int main(void) {
 				reset = nextToken();
 			} while (reset.tok != CLEAR);
 			setNormalMode();
-		}
-		else if (arithmeticOperation) {
-			// kein Fehler + arithmetic Operation
-			push(result);
-		}		
+		}	
 	}
 }
 
