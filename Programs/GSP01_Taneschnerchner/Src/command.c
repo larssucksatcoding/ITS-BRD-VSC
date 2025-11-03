@@ -6,17 +6,50 @@
   */
 
 #include "command.h"
+#include "display.h"
+#include "errno.h"
 #include "stack.h"
 #include "stdbool.h"
 #include <stdlib.h>
 
-void printCMD() {
-    int v, error;
-    error = getFirst(&v);
-    int digits = digitCount(v);
+/**
+  * @brief      prints a number
+  *
+  * @param      int number (to be printed) 
+  * 
+  * @return     void
+  */
+void printNumber(int val);
 
-    char vString[digits + 1];
-    numberToString(vString, v);
+/**
+  * @brief      turns a number into a string 
+  *
+  * @param      char n[]: digits+1, 
+  * @param      int v: number that is supposed to be a string
+  * 
+  * @return     number transformed to a string
+  */
+void numberToString(char n[], int v);
+
+/**
+  * @brief      counts the digits of a number 
+  *
+  * @param      int number which digits shall be known
+  * 
+  * @return     the amount of digits that have been counted
+  */
+int digitCount(int v);
+
+
+/**
+
+################ F U N C T I O N S ################
+ 
+*/
+void printCMD() {
+    int val, error;
+    error = getFirst(&val);
+    
 }
 
 void printAllCMD() {
@@ -24,7 +57,9 @@ void printAllCMD() {
     for (int i = 0; i < size; i++) {
         int val = 0;
         int error = peek(&val, i);
-        // print val
+        if (error == NO_ERROR) {
+            printNumber(val);
+        }
     }
 }
 
@@ -51,6 +86,13 @@ int digitCount(int v) {
     return digits;
 }
 
+void printNumber(int val) {
+    int digits = digitCount(val);
+    char vString[digits + 1];
+    numberToString(vString, val);
+    printStdout(vString);
+}
+
 void numberToString(char *vString, int v) {
     bool is_negative = v < 0;  
     int digits = digitCount(v);
@@ -71,4 +113,3 @@ void numberToString(char *vString, int v) {
         current_index += 1;
     }
 }
-
