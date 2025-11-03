@@ -12,38 +12,48 @@
 // Hallo lieber Lars, ich bin zu faul mir deinen Kot in der C Datei anzuschauen,
 // deswegen bidde bidde kommentieren, habe schonmal Templates eingefügt. 
 /**
-  * @brief      ~ ~ 
+  * @brief      adds the top two numbers from the stack defined in stack.h.
+  *             performes arrithmetic overflow checks and returns an error
+  *             in return value if applicable.          
   *
-  * @param      int*
+  * @param      int* call-by-reference that result will be written to.
   * 
-  * @return     ~ ~
+  * @return     one of the error codes defined in errno.h
   */
 int add(int* result);
 
 /**
-  * @brief      ~ ~ 
+  * @brief      takes the top two numbers from the stack defined in stack.h
+  *             and subtracts the upper from the lower one (2nd - 1st).
+  *             performes arrithmetic overflow checks and returns an error
+  *             in return value if applicable.   
   *
-  * @param      int*
+  * @param      int* call-by-reference that result will be written to.
   * 
-  * @return     ~ ~
+  * @return     one of the error codes defined in errno.h
   */
 int subtract(int* result);
 
 /**
-  * @brief      ~ ~ 
+  * @brief      divides the top two numbers from the stack defined in stack.h
+  *             and divides the upper from the lower one (2nd / 1st).
+  *             performes arrithmetic overflow checks and returns an error
+  *             in return value if applicable.   
   *
-  * @param      int*
+  * @param      int* call-by-reference that result will be written to.
   * 
-  * @return     ~ ~
+  * @return     one of the error codes defined in errno.h
   */
 int divide(int* result);
 
 /**
-  * @brief      ~ ~ 
+  * @brief      multiplies the top two numbers from the stack defined in stack.h.
+  *             performes arrithmetic overflow checks and returns an error
+  *             in return value if applicable.   
   *
-  * @param      int*
+  * @param      int* call-by-reference that result will be written to.
   * 
-  * @return     ~ ~
+  * @return     one of the error codes defined in errno.h
   */
 int multiply(int* result);
 
