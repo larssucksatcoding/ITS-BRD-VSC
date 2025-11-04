@@ -38,7 +38,7 @@ void deleteCMD();
   * 
   * @return     returns STACK_UNDERFLOW when the stack is empty
   */
-int duplicateCMD();
+int duplCMD();
 
 /**
   * @brief      reverses the order of the two topmost elements of

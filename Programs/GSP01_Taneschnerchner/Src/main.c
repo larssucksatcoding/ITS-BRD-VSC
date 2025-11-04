@@ -24,139 +24,26 @@
 #include "keypad.h"
 #include "display.h"
 #include <stdio.h>
+#include "tests.h"
+#include "parser.h"
 
-/**
-  * @brief      organizes the Error Output
-  *
-  * @param      int errorcode
-  * 
-  * @return     void
-  */
-
-void errorPrint(int error);
 
 int main(void) {
-	initITSboard();    // Initialisierung des ITS Boards
-	
+	initITSboard();
 	initDisplay();
-	// GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-	// TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 
-	// makeKeyPad();
+	// in case a test fails, the program halts.
+	// run_tests();
 
-	// std out:   big green box at the top
-	// echo line: small thingy at the bottom
-
-	// printToEchoLine('c'); 
-	// printStdout("Hallo");
-
-	// Test in Endlosschleife
 	while(1) {
-		// HAL_Delay(10000);
 		T_token input = nextToken();
 
 		int error = NO_ERROR;
 		int result = 0;
-		switch(input.tok) {
-			
-			case ENTER: case UNEXPECTED: {
-				break;
-			}
-			case NUMBER: {
-				error = push(input.val);
-				break;
-			}
-			// bei den arithmetischen Operationen können wir pushen
-			// ohne auf Fehler zu überprüfen. Stack_Overflow kann nicht
-			// eintreten, da vorher schon 2 Zahlen runtergenommen wurden.
-			case PLUS: {
-				error = add(&result);
-				push(result);
-				break;
-			}
-			case MINUS: {
-				error = subtract(&result);
-				push(result);
-				break;
-			} 
-			case MULT: {
-				error = multiply(&result);
-				push(result);
-				break;
-			}
-			case DIV: {
-				error = divide(&result);
-				push(result);
-				break;
-			}
-			case PRT: {
-				printCMD();
-				break;
-			}
-			case SWAP: {
-				error = swapCMD();
-				break;
-			}
-			case PRT_ALL: {
-				printAllCMD();
-				break;
-			}
-			case CLEAR: {
-				deleteCMD();
-				break;
-			}
-			case DOUBLE: {
-				error = duplicateCMD();
-				break;
-			}
-			case OVERFLOW: {
-				// negative Zahl wurde eingegeben setze alles zurück
-				// wir müssen damit nicht umgehen, tun wir trotzdem
-				error = NEGATIVE_INPUT;
-				break;
-			}
-		}
-		if (error != NO_ERROR) {
-			errorPrint(error);
-			T_token reset;
-			do {
-				reset = nextToken();
-			} while (reset.tok != CLEAR);
-			setNormalMode();
-		}	
-	}
-}
 
-void errorPrint (int error) {
-	setErrMode();
-	switch(error) {
-		case DIVISION_BY_ZERO: {
-			printStdout("nicht durch 0 teilen du Idiot!\n"
-				"error: DIVSION BY ZERO");
-			break;
-		}
-		case ARITHMETIC_OVERFLOW: {
-			printStdout("so weit kann ich nicht Zählen.\n"
-				"error: ARITHMETIC OVERFLOW");
-			break;
-		}
-		case STACK_OVERFLOW: {
-			printStdout("Ich bin voll, ich kann nicht mehr.\n"
-				"error: STACK OVERFLOW");
-			break;
-		}
-		case STACK_UNDERFLOW: {
-			printStdout("Was willst du? ich kann dir nichts geben.\n"
-				"error: STACK UNDERFLOW");
-			break;
-		}
-		case NEGATIVE_INPUT: {
-			printStdout("5 Äpfel kannst du mir geben, aber -5?!\n"
-				"error: NEGATIVE INPUT");
-			break;
-		}
-		printStdout("\n\n\n  press C to reset");
-	} 
+		error = parse_token(input, &result);
+		handle_error(error);
+	}
 }
 
 // EOF

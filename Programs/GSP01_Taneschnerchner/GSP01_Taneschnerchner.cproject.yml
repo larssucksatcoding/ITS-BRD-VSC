@@ -156,6 +156,7 @@ project:
         - file: Inc/errno.h
         - file: Inc/operator.h
         - file: Inc/tests.h
+        - file: Inc/parser.h
     - group: Program/User/Src
       files:
         - file: Src/main.c
@@ -166,5 +167,6 @@ project:
         - file: Src/operator.c
         - file: Src/command.c
         - file: Src/tests.c
+        - file: Src/parser.c
   components:
     - component: ARM::CMSIS:CORE
