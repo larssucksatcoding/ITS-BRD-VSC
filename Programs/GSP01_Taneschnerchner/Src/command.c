@@ -90,7 +90,7 @@ void deleteCMD() {
     deleteStack();
 }
 
-int duplicateCMD() {
+int duplCMD() {
     int error = duplStack();
     return error;
 }

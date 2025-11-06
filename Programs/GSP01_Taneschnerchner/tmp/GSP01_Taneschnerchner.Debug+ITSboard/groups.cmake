@@ -213,6 +213,7 @@ add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/operator.c"
   "${SOLUTION_ROOT}/Src/command.c"
   "${SOLUTION_ROOT}/Src/tests.c"
+  "${SOLUTION_ROOT}/Src/parser.c"
 )
 target_include_directories(Group_Program_User_Src PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>
