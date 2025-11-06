@@ -12,16 +12,14 @@
 
 #define MAX_SIZE 8
 
-static int size = 0;                // aktuelle Anzahl der Elemente
 static int top_element_index = -1;  // index des obersten Elements
 static int stack[MAX_SIZE];
 
 int push(int v) {
-    if(size == MAX_SIZE) {
+    if((top_element_index + 1) == MAX_SIZE) {
         return STACK_OVERFLOW;
     }
 
-    size++;
     top_element_index++;
 
     stack[top_element_index] = v;
@@ -29,21 +27,19 @@ int push(int v) {
 }
 
 int pop(int* v) {
-    if(size == 0) {
+    if(top_element_index == -1) {
         return STACK_UNDERFLOW;
     }
 
     *v = stack[top_element_index];
-    stack[top_element_index] = 0;
 
-    size--;
     top_element_index--;
 
     return NO_ERROR;
 }
 
 int swapStack() {
-    if(size == 0 || size == 1) {
+    if(top_element_index == -1 || top_element_index == 0) {
         return STACK_UNDERFLOW;
     }
 
@@ -55,27 +51,25 @@ int swapStack() {
 }
 
 int duplStack() {
-    if(size == 0) {
+    if(top_element_index == -1) {
         return STACK_UNDERFLOW;
     }
 
     int v = 0;
-    pop(&v);
-    push(v);
+    getFirst(&v);
     return push(v);
 }
 
 void deleteStack() {
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i <= top_element_index; i++) {
         stack[i] = 0;
     }
 
-    size = 0;
     top_element_index = -1;
 }
 
 int getFirst(int* v) {
-    if (size == 0) {
+    if (top_element_index == -1) {
         return STACK_UNDERFLOW;
     }
 
@@ -85,10 +79,10 @@ int getFirst(int* v) {
 
 int peek(int* val, int field) {
     if (field >= MAX_SIZE) {
-        return STACK_OVERFLOW;
+        return EMPTY_FIELD;
     }
-    else if (field >= size || field < 0) {
-        return STACK_OVERFLOW;
+    else if (field > top_element_index || field < 0) {
+        return EMPTY_FIELD;
     }
 
     *val = stack[field];
@@ -96,7 +90,7 @@ int peek(int* val, int field) {
 }
 
 int getSize() {
-    return size;
+    return top_element_index+1;
 }
 
 int popTopTwoElements(int* top, int* bottom) {
