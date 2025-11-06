@@ -7,7 +7,8 @@
 #include "scanner.h"
 
 /**
-  * @brief      organizes the Error Output
+  * @brief      organizes the Error Output, sets Error Mode 
+  *  			and displays error message
   *
   * @param      int errorcode
   * 
@@ -36,9 +37,15 @@ void errorPrint (int error) {
 				"\n    error:\n  STACK UNDERFLOW");
 			break;
 		}
+		// last two errors will never be displayed
 		case NEGATIVE_INPUT: {
 			printStdout(" 5 aepfel kannst du mir geben, aber -5?!\n"
 				"\n    error:\n  NEGATIVE INPUT");
+			break;
+		}
+		case EMPTY_FIELD: {
+			printStdout(" what would java say?\n INDEX OUT OF BOUNDS\n"
+				"\n    error:\n  EMPTY FIELD");
 			break;
 		}
 	}
@@ -49,10 +56,12 @@ void errorPrint (int error) {
 void handle_error(int error) {
     if (error != NO_ERROR) {
         errorPrint(error);
+		// wait for CLEAR token, to reset calculator
         T_token reset;
         do {
             reset = nextToken();
         } while (reset.tok != CLEAR);
+		// reset Calculator
         deleteStack();
         setNormalMode();
     }	

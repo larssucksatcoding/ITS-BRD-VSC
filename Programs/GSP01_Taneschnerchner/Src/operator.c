@@ -103,6 +103,8 @@ int divide(int* result) {
         return error;
     }
 
+    // only possble error when dividing is divison by zero
+    // arithmetic over-/ underflow not possible
     if (top_number == 0) {
         return DIVISION_BY_ZERO;
     }

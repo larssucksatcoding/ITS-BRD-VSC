@@ -41,7 +41,9 @@ int main(void) {
 		int error = NO_ERROR;
 		int result = 0;
 
+		// parser checks input, if thrown returns error
 		error = parse_token(input, &result);
+		// let error handler check the errorcode (/ no_errorcode)
 		handle_error(error);
 	}
 }

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [C:\Users\Uni\Desktop\ITS-BRD-VSC\Programs\GSP01_Taneschnerchner\out\GSP01_Taneschnerchner\ITSboard\Debug\GSP01_Taneschnerchner.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image C:\Users\Uni\Desktop\ITS-BRD-VSC\Programs\GSP01_Taneschnerchner\out\GSP01_Taneschnerchner\ITSboard\Debug\GSP01_Taneschnerchner.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Thu Nov  6 12:06:25 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Thu Nov  6 13:20:09 2025
 <BR><P>
 <H3>Maximum Stack Usage =        704 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1075,7 +1075,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
 </UL>
 <P><STRONG><a name="[ed]"></a>add</STRONG> (Thumb, 188 bytes, Stack size 40 bytes, operator.o(.text.add))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = add &rArr; popTopTwoElements &rArr; pop
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = add &rArr; popTopTwoElements &rArr; pop
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;popTopTwoElements
 </UL>
@@ -1096,7 +1096,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearTerm
 </UL>
-<BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
+<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printCMD
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initDisplay
 </UL>
@@ -1115,17 +1115,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f2]"></a>deleteCMD</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, command.o(.text.deleteCMD))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = deleteCMD &rArr; deleteStack
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = deleteCMD
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deleteStack
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_token
 </UL>
 
-<P><STRONG><a name="[f3]"></a>deleteStack</STRONG> (Thumb, 82 bytes, Stack size 4 bytes, stack.o(.text.deleteStack))
-<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = deleteStack
-</UL>
-<BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deleteCMD
+<P><STRONG><a name="[f3]"></a>deleteStack</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stack.o(.text.deleteStack))
+<BR><BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deleteCMD
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handle_error
 </UL>
 
@@ -1136,7 +1134,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f4]"></a>divide</STRONG> (Thumb, 66 bytes, Stack size 32 bytes, operator.o(.text.divide))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = divide &rArr; popTopTwoElements &rArr; pop
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = divide &rArr; popTopTwoElements &rArr; pop
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;popTopTwoElements
 </UL>
@@ -1144,23 +1142,23 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f5]"></a>duplCMD</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, command.o(.text.duplCMD))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = duplCMD &rArr; duplStack &rArr; pop
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = duplCMD &rArr; duplStack &rArr; push
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;duplStack
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_token
 </UL>
 
-<P><STRONG><a name="[f6]"></a>duplStack</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, stack.o(.text.duplStack))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = duplStack &rArr; pop
+<P><STRONG><a name="[f6]"></a>duplStack</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, stack.o(.text.duplStack))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = duplStack &rArr; push
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
+<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFirst
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;duplCMD
 </UL>
 
-<P><STRONG><a name="[f9]"></a>errorPrint</STRONG> (Thumb, 120 bytes, Stack size 16 bytes, errno.o(.text.errorPrint))
+<P><STRONG><a name="[f9]"></a>errorPrint</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, errno.o(.text.errorPrint))
 <BR><BR>[Stack]<UL><LI>Max Depth = 592<LI>Call Chain = errorPrint &rArr; printStdout &rArr; printTerm &rArr; printNewLine &rArr; printChar &rArr; clearTerm &rArr; GUI_drawRectangle &rArr; printDebugMsg &rArr; GUI_disNum &rArr;  printDebugMsg (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setErrMode
@@ -1180,10 +1178,11 @@ Global Symbols
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeKeyPad
 </UL>
 
-<P><STRONG><a name="[116]"></a>getFirst</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, stack.o(.text.getFirst))
+<P><STRONG><a name="[f7]"></a>getFirst</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, stack.o(.text.getFirst))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = getFirst
 </UL>
 <BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printCMD
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;duplStack
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_token
 </UL>
 
@@ -1197,9 +1196,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nextChar
 </UL>
 
-<P><STRONG><a name="[119]"></a>getSize</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stack.o(.text.getSize))
-<BR><BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
+<P><STRONG><a name="[118]"></a>getSize</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stack.o(.text.getSize))
+<BR><BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;popTopTwoElements
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
 </UL>
 
 <P><STRONG><a name="[104]"></a>handle_error</STRONG> (Thumb, 60 bytes, Stack size 32 bytes, errno.o(.text.handle_error))
@@ -1278,7 +1278,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[10f]"></a>multiply</STRONG> (Thumb, 366 bytes, Stack size 48 bytes, operator.o(.text.multiply))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = multiply &rArr; popTopTwoElements &rArr; pop
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = multiply &rArr; popTopTwoElements &rArr; pop
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;popTopTwoElements
 </UL>
@@ -1301,23 +1301,23 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;digitCount
 </UL>
-<BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
+<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printCMD
 </UL>
 
 <P><STRONG><a name="[10e]"></a>parse_token</STRONG> (Thumb, 258 bytes, Stack size 32 bytes, parser.o(.text.parse_token))
 <BR><BR>[Stack]<UL><LI>Max Depth = 632<LI>Call Chain = parse_token &rArr; printAllCMD &rArr; printStdout &rArr; printTerm &rArr; printNewLine &rArr; printChar &rArr; clearTerm &rArr; GUI_drawRectangle &rArr; printDebugMsg &rArr; GUI_disNum &rArr;  printDebugMsg (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swapCMD
+<BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swapCMD
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;duplCMD
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;deleteCMD
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printCMD
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;multiply
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;divide
 <LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;subtract
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFirst
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFirst
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -1326,21 +1326,20 @@ Global Symbols
 <P><STRONG><a name="[11a]"></a>peek</STRONG> (Thumb, 90 bytes, Stack size 12 bytes, stack.o(.text.peek))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = peek
 </UL>
-<BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
+<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
 </UL>
 
-<P><STRONG><a name="[f7]"></a>pop</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, stack.o(.text.pop))
+<P><STRONG><a name="[119]"></a>pop</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, stack.o(.text.pop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = pop
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;popTopTwoElements
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;duplStack
 </UL>
 
-<P><STRONG><a name="[ee]"></a>popTopTwoElements</STRONG> (Thumb, 96 bytes, Stack size 32 bytes, stack.o(.text.popTopTwoElements))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = popTopTwoElements &rArr; pop
+<P><STRONG><a name="[ee]"></a>popTopTwoElements</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, stack.o(.text.popTopTwoElements))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = popTopTwoElements &rArr; pop
 </UL>
-<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSize
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
+<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSize
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;multiply
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;divide
@@ -1348,12 +1347,12 @@ Global Symbols
 <LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add
 </UL>
 
-<P><STRONG><a name="[118]"></a>printAllCMD</STRONG> (Thumb, 92 bytes, Stack size 24 bytes, command.o(.text.printAllCMD))
+<P><STRONG><a name="[117]"></a>printAllCMD</STRONG> (Thumb, 92 bytes, Stack size 24 bytes, command.o(.text.printAllCMD))
 <BR><BR>[Stack]<UL><LI>Max Depth = 600<LI>Call Chain = printAllCMD &rArr; printStdout &rArr; printTerm &rArr; printNewLine &rArr; printChar &rArr; clearTerm &rArr; GUI_drawRectangle &rArr; printDebugMsg &rArr; GUI_disNum &rArr;  printDebugMsg (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;numberToString
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSize
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;peek
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSize
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printStdout
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearStdout
 </UL>
@@ -1364,7 +1363,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 592<LI>Call Chain = printCMD &rArr; printStdout &rArr; printTerm &rArr; printNewLine &rArr; printChar &rArr; clearTerm &rArr; GUI_drawRectangle &rArr; printDebugMsg &rArr; GUI_disNum &rArr;  printDebugMsg (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;numberToString
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFirst
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFirst
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printStdout
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearStdout
 </UL>
@@ -1399,7 +1398,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printTerm
 </UL>
-<BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
+<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printAllCMD
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printCMD
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;errorPrint
 </UL>
@@ -1422,8 +1421,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nextToken
 </UL>
 
-<P><STRONG><a name="[f8]"></a>push</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, stack.o(.text.push))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = push
+<P><STRONG><a name="[f8]"></a>push</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, stack.o(.text.push))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = push
+</UL>
+<BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSize
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;duplStack
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_token
@@ -1461,14 +1462,14 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[114]"></a>subtract</STRONG> (Thumb, 212 bytes, Stack size 40 bytes, operator.o(.text.subtract))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = subtract &rArr; popTopTwoElements &rArr; pop
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = subtract &rArr; popTopTwoElements &rArr; pop
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;popTopTwoElements
 </UL>
 <BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_token
 </UL>
 
-<P><STRONG><a name="[117]"></a>swapCMD</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, command.o(.text.swapCMD))
+<P><STRONG><a name="[116]"></a>swapCMD</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, command.o(.text.swapCMD))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = swapCMD &rArr; swapStack
 </UL>
 <BR>[Calls]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swapStack
@@ -1476,10 +1477,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_token
 </UL>
 
-<P><STRONG><a name="[11f]"></a>swapStack</STRONG> (Thumb, 102 bytes, Stack size 8 bytes, stack.o(.text.swapStack))
+<P><STRONG><a name="[11f]"></a>swapStack</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, stack.o(.text.swapStack))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = swapStack
 </UL>
-<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swapCMD
+<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swapCMD
 </UL>
 
 <P><STRONG><a name="[12d]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)

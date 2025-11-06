@@ -9,66 +9,66 @@
 #define STACK_H
 
 /**
-  * @brief      Speichert eine Nummer im Stack
+  * @brief      pushes value onto the stack
   * 
-  * @return     int Fehlercode
+  * @return     errorcode (NO_ERROR, STACK_OVERFLOW)
   */
 int push(int v);
 
 /**
-  * @brief      Abrufen der obersten Zahl vom Stack 
+  * @brief      pops and removes top element of stack 
   *
-  * @param      int* Zielspeicherort der Variable
+  * @param      int* val target memory for value
   * 
-  * @return     int Fehlercode
+  * @return     errorcode (NO_ERROR, STACK_UNDERFLOW)
   */
 int pop(int* v);
 
  /**
-  * @brief      vertauschen der oberen beiden Variablen auf dem Stack
+  * @brief      swaps top two elements of Stack
   * 
-  * @return     int Fehlercode
+  * @return     errorcode (NO_ERROR, STACK_UNDERFLOW)
   */
 int swapStack();
 
 /**
-  * @brief      dupliziere oberste Variable auf dem Stack
+  * @brief      duplicates top element
   * 
-  * @return     int Fehlercode
+  * @return     errorcode (NO_ERROR, STACK_UNDERFLOW, STACK_OVERFLOW)
   */
 int duplStack();
 
 /**
-  * @brief      lösche alle Werte aus dem Stack
+  * @brief      deletes all elements
   * 
   * @return     void
   */
 void deleteStack();
 
 /**
-  * @brief      gibt die oberste Zahl des Stack aus, ohne diese zu entfernen
+  * @brief      returns top element without removing
   * 
-  * @param      Zeiger auf Zeilspeicherort des Wertes
+  * @param      int* val target memory for value
   * 
-  * @return     int Fehlercode
+  * @return     errorcode (NO_ERROR, STACK_UNDERFLOW) 
   */
 int getFirst(int* v);
 
 /**
-  * @brief      speichert den Wert 
+  * @brief      gives value to index 
   *
-  * @param      int* val Zielspeicher des Wertes
+  * @param      int* val target memory for value
   *
-  * @param      int Index Position im Stack
+  * @param      int index - request for value at index
   * 
-  * @return     Fehlercode 
+  * @return     errorcode (NO_ERROR, EMPTY_FIELD)
   */
 int peek(int* val, int index);
 
 /**
-  * @brief      Gibt aus, wie viele Elemente auf dem Stack liegen
+  * @brief      returns number of elements on the stack
   * 
-  * @return     Größe des Stacks 
+  * @return     number of element
   */
 int getSize();
 
@@ -77,7 +77,7 @@ int getSize();
   *             them into the respective call-by-reference parameters.
   *
   * @param      int* top:    top element of stack will be written to this
-  *             int* bottom: bottom element of stack will be written to this
+  * @param      int* bottom: bottom element of stack will be written to this
   * 
   * @return     one of the error codes in errno.h can be NO_ERROR and 
   *             STACK_UNDERFLOW in case there are less than 2 elements on the stack.

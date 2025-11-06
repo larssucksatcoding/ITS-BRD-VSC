@@ -14,17 +14,17 @@
 #define STACK_OVERFLOW      -3      // Stack voll
 #define STACK_UNDERFLOW     -4      // Stack leer
 #define NEGATIVE_INPUT      -5      // negative Zahl wurde eingegeben
-#define EMPTY_FIELD         -7      // Stackfeld nicht belegt oder nicht vorhanden
+#define EMPTY_FIELD         -6      // Stackfeld nicht belegt oder nicht vorhanden
 
 
 /**
-  * @brief      if the error code indicates an error, set the display to
-  *             error mode, display error text and wait until user inputs
+  * @brief      if the error code indicates an error call function
+  *             which deals with error display and wait until user inputs
   *             the clear command.
   *
   * @param      int error: the error message to handle
   * 
-  * @return     ~ ~
+  * @return     void
   */
 void handle_error(int error);
 

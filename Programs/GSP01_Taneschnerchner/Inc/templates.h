@@ -16,8 +16,3 @@
   * @return     ~ ~
   */
 
-
-// TODO:
-// operator.h
-// main.h -- brauchen wir diese Datei?
-// errno.c -- brauchen wir diese Datei?
