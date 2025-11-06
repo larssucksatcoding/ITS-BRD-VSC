@@ -41,7 +41,6 @@ int parse_token(T_token input, int* result) {
 		}
 		case PRT: {
 			printCMD();
-			getFirst(result); // return first element as result. used by tests.
 			break;
 		}
 		case SWAP: {

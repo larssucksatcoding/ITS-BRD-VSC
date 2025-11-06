@@ -32,8 +32,8 @@ int main(void) {
 	initITSboard();
 	initDisplay();
 
-	// in case a test fails, the program halts.
-	// run_tests();
+	// running tests will print stuff on the screen, so don't run this if you don't have to
+	run_tests();
 
 	while(1) {
 		T_token input = nextToken();
