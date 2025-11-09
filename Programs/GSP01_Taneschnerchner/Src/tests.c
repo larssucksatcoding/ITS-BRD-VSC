@@ -456,8 +456,8 @@ int test20() {
 
 int test21() {
     char* test_name = "test21";
-    int expected_error = STACK_OVERFLOW;
-    int expected_result = 0;
+    int expected_error = NO_ERROR;
+    int expected_result = 9;
 
     T_token input[] = {
         {.tok = NUMBER, .val = 1},
@@ -484,6 +484,78 @@ int test21() {
 // TESTS FOR STACK UNDERFLOW
 // =========================
 
+int test22() {
+    char* test_name = "test22";
+    int expected_error = STACK_UNDERFLOW;
+    int expected_result = 0;
+
+    T_token input[] = {
+        {.tok = SWAP,  .val = 0},
+        {.tok = ENTER, .val = 0}
+    };
+
+    int test_result = test_input(
+        input, test_name, expected_result, expected_error
+    );
+
+    return test_result;
+}
+
+int test23() {
+    char* test_name = "test23";
+    int expected_error = STACK_UNDERFLOW;
+    int expected_result = 0;
+
+    T_token input[] = {
+        {.tok = NUMBER, .val = 1},
+        {.tok = SWAP,   .val = 0},
+        {.tok = ENTER,  .val = 0}
+    };
+
+    int test_result = test_input(
+        input, test_name, expected_result, expected_error
+    );
+
+    return test_result;
+}
+
+int test24() {
+    char* test_name = "test24";
+    int expected_error = NO_ERROR;
+    int expected_result = 1;
+
+    T_token input[] = {
+        {.tok = NUMBER, .val = 1},
+        {.tok = NUMBER, .val = 2},
+        {.tok = SWAP,   .val = 0},
+        {.tok = ENTER,  .val = 0}
+    };
+
+    int test_result = test_input(
+        input, test_name, expected_result, expected_error
+    );
+
+    return test_result;
+}
+
+int test25() {
+    char* test_name = "test25";
+    int expected_error = NO_ERROR;
+    int expected_result = 1;
+
+    T_token input[] = {
+        {.tok = NUMBER, .val = 1},
+        {.tok = DOUBLE, .val = 0},
+        {.tok = SWAP,   .val = 0},
+        {.tok = ENTER,  .val = 0}
+    };
+
+    int test_result = test_input(
+        input, test_name, expected_result, expected_error
+    );
+
+    return test_result;
+}
 
 
 void run_tests() {
@@ -497,23 +569,25 @@ void run_tests() {
     if (test3() == TEST_FAILED) return;
     if (test4() == TEST_FAILED) return;
     if (test5() == TEST_FAILED) return;
+    if (test6() == TEST_FAILED) return;
+    if (test7() == TEST_FAILED) return;
+    if (test8() == TEST_FAILED) return;
+    if (test11() == TEST_FAILED) return;
+    if (test12() == TEST_FAILED) return;
+    if (test13() == TEST_FAILED) return;
+    if (test14() == TEST_FAILED) return;
+    if (test15() == TEST_FAILED) return;
+    if (test16() == TEST_FAILED) return;
+    if (test17() == TEST_FAILED) return;
+    if (test18() == TEST_FAILED) return;
+    if (test19() == TEST_FAILED) return;
+    if (test20() == TEST_FAILED) return;
+    if (test21() == TEST_FAILED) return;
+    if (test22() == TEST_FAILED) return;
+    if (test23() == TEST_FAILED) return;
+    if (test24() == TEST_FAILED) return;
+    if (test25() == TEST_FAILED) return;
 
     // if all tests pass, print that on the screen
     printStdout("all tests passed :)\nhave a slightly\nabove average day!\n");
 }
-
-/*
-### STACK_UNDERFLOW
-
-`r` sollte STACK_UNDERFLOW werfen.
-`1 r` sollte STACK_UNDERFLOW werfen.
-`1 2 r` sollte NO_ERROR zurückgeben.
-`1 d r` sollte NO_ERROR zurückgeben. (setzt `d` size korrect?)
-
-`p` sollte STACK_UNDERFLOW werfen.
-`1 p 2 p p` sollte STACK_UNDERFLOW werfen. (wird size korrekt gesetzt?)
-`1 2 3 4 C 1 p p` sollte STACK_UNDERFLOW werfen. (wird size zurückgesetzt?)
-
-`d` sollte STACK_OVERFLOW werfen.
-`1 d` sollte NO_ERROR zurückgeben.
-*/
