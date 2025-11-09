@@ -57,7 +57,9 @@ int test_input(T_token* input, char* test_name, int expected_result, int expecte
     }
 
     // check if our test yielded the expected result. if not, print error message.
-    if (result != expected_result) {
+    // we only need to check for the results if we expected no error, since the
+    // result does not matter in case we were just checking for an error.
+    if ((result != expected_result) && (expected_error == NO_ERROR)) {
         setErrMode();
 
         char error_msg[ERROR_STR_LEN];
@@ -83,8 +85,7 @@ int test1() {
     T_token input[] = {
         {.tok = NUMBER, .val = 25},
         {.tok = NUMBER, .val = 8},
-        {.tok = NUMBER, .val = 6},
-        {.tok = NUMBER, .val = 7},
+        {.tok = NUMBER, .val = 67},
         {.tok = PLUS,   .val = 0},
         {.tok = SWAP,   .val = 0},
         {.tok = DIV,    .val = 0},
@@ -120,10 +121,9 @@ int test2() {
 int test3() {
     char* test_name = "test3";
     int expected_error = NO_ERROR;
-    int expected_result = -3;
+    int expected_result = -12;
 
     T_token input[] = {
-        {.tok = NUMBER, .val = 1},
         {.tok = NUMBER, .val = 2},
         {.tok = NUMBER, .val = 3},
         {.tok = NUMBER, .val = 4},
