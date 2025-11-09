@@ -10,9 +10,7 @@
 #include "errno.h"
 #include "stack.h"
 #include "stdbool.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include "limits.h"
 
 #define MAX_LENGTH 12 
 // längste Zahle ist -2^31 10 Stellen + Nullterminater + Minuszeichen

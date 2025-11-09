@@ -1,11 +1,9 @@
 
 
 #include "tests.h"
-#include "command.h"
 #include "display.h"
 #include "errno.h"
 #include "stack.h"
-#include "operator.h"
 #include "token.h"
 #include "parser.h"
 #include <limits.h>
