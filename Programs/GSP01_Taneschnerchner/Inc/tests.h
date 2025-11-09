@@ -10,7 +10,7 @@
 
 /**
   * @brief     run tests. if the tests fail, the screen will be set to error
-  *            mode and further input will be locked until the screen is cleared.
+  *            mode and an appropriate error debug message will be printed.
   *
   * @param      ~ ~
   * 

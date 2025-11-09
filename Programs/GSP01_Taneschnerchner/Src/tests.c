@@ -18,6 +18,19 @@
 #define ERROR_STR_LEN 200
 
 
+/**
+  * @brief      takes a list of token inputs and saves the first occuring error as well
+  *             the top value of the stack after processing the list. these are then
+  *             compared to an expected result and error afterwards.
+  *             if the expectations don't match, print error message on screen.
+  *
+  * @param      input: the input token list to test.
+  *             test_name: name for the test. used for printed error message.
+  *             expected_result: the expected result for this token list.
+  *             expected_error: the expected error for this token list.
+  * 
+  * @return     either TEST_PASSED or TEST_FAILED.
+  */
 int test_input(T_token* input, char* test_name, int expected_result, int expected_error) {
     deleteStack();
 
@@ -76,6 +89,9 @@ int test_input(T_token* input, char* test_name, int expected_result, int expecte
     return TEST_PASSED;
 }
 
+// =============
+// GENERAL TESTS
+// =============
 
 int test1() {
     char* test_name = "test1";
@@ -557,6 +573,9 @@ int test25() {
     return test_result;
 }
 
+// ===============
+// OTHER TEST CODE
+// ===============
 
 void run_tests() {
     clearStdout();
