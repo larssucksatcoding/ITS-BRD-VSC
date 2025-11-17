@@ -6,6 +6,22 @@
 # Ignore User specific setting
 /Programs/*/*.uvguix.*
 
+
+# Ignore vscode settings
+/Programs/.vscode/
+/Programs/*/.vscode/
+
+# Ignore C compilation files
+/Programs/*/tmp/
+/Programs/*/out/
+/Programs/*/.clangd
+
+# Ignore yml files
+/Programs/*/*.cbuild-idx.yml
+/Programs/*/*.cbuild-pack.yml
+/Programs/*/*.cbuild-set.yml
+/Programs/*/*.csolution.yml
+
 ### macOS ###
 # General
 .DS_Store
