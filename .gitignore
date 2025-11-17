@@ -2,6 +2,7 @@
 /Programs/*/DebugConfig/
 /Programs/*/ITSboard/
 /Programs/*/RTE/
+/Programs/*/.cmsis/
 
 # Ignore User specific setting
 /Programs/*/*.uvguix.*
