@@ -65,7 +65,7 @@ int subtract(int* result) {
     // them cannot lead to underflow, and when both are negative, subtracting
     // them cannot lead to overflow.
     *result = second_number - top_number;
-    bool can_overflow  = (second_number > 0) && (top_number < 0);
+    bool can_overflow  = (second_number >= 0) && (top_number < 0);
     bool can_underflow = (second_number < 0) && (top_number > 0);
     
     // special case: 0 - INT_MIN will overflow.
@@ -107,6 +107,10 @@ int divide(int* result) {
     // arithmetic over-/ underflow not possible
     if (top_number == 0) {
         return DIVISION_BY_ZERO;
+    }
+
+    if ((top_number == -1) && (second_number == INT_MIN)) {
+        return ARITHMETIC_OVERFLOW;
     }
 
     *result = second_number / top_number;

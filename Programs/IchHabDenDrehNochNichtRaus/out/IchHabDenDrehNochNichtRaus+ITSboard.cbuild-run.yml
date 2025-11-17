@@ -2,6 +2,7 @@ cbuild-run:
   generated-by: csolution version 2.12.0
   solution: ../IchHabDenDrehNochNichtRaus.csolution.yml
   target-type: ITSboard
+  target-set: <default>
   compiler: AC6
   board: STMicroelectronics::NUCLEO-F429ZI:Rev.B
   board-pack: Keil::STM32NUCLEO_BSP@1.8.1

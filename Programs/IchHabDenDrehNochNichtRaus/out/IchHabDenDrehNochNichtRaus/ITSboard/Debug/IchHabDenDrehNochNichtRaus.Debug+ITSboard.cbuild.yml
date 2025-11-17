@@ -325,6 +325,20 @@ build:
       files:
         - file: ../../../../../../ITS_BRD_LIB/Inc/lcd.h
           category: header
+        - file: ../../../../Inc/encoder_direction.h
+          category: header
+        - file: ../../../../Inc/encoder_display.h
+          category: header
+        - file: ../../../../Inc/encoder_angle.h
+          category: header
+        - file: ../../../../Inc/error_handler.h
+          category: header
+        - file: ../../../../Inc/status_io.h
+          category: header
+        - file: ../../../../Inc/gpio.h
+          category: header
+        - file: ../../../../Inc/time.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c

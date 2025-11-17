@@ -20,13 +20,13 @@ int main(void) {
 	initDisplay();
 
 	// running tests will print stuff on the screen, so don't run this if you don't have to
-	run_tests();
+	// run_tests();
+
+	T_token input;
+	int error, result;
 
 	while(1) {
-		T_token input = nextToken();
-
-		int error = NO_ERROR;
-		int result = 0;
+		input = nextToken();
 
 		// parser checks input, if thrown returns error
 		error = parse_token(input, &result);

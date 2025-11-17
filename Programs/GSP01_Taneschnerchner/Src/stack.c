@@ -19,7 +19,7 @@ static int top_element_index = -1;  // index des obersten Elements
 static int stack[MAX_SIZE];
 
 int push(int v) {
-    if(getSize() == MAX_SIZE) {
+    if(getSize() >= MAX_SIZE) {
         return STACK_OVERFLOW;
     }
 
