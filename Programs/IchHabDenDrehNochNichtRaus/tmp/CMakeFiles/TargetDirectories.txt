@@ -1,8 +1,0 @@
-/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/database.dir
-/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard.dir
-/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard-build.dir
-/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure.dir
-/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard-executes.dir
-/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard-database.dir
-/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/edit_cache.dir
-/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/rebuild_cache.dir

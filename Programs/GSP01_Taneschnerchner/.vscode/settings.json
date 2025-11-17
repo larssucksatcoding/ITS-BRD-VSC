@@ -1,6 +1,0 @@
-{
-    "clangd.arguments": [
-        "--compile-commands-dir=c:\\Users\\Uni\\Desktop\\ITS-BRD-VSC\\Programs\\GSP01_Taneschnerchner\\out\\GSP01_Taneschnerchner\\ITSboard\\Debug"
-    ],
-    "debug.hideSlowPreLaunchWarning": true
-}
