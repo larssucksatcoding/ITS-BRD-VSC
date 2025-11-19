@@ -2,7 +2,6 @@
 /Programs/*/DebugConfig/
 /Programs/*/ITSboard/
 /Programs/*/RTE/
-/Programs/*/.cmsis/
 
 # Ignore User specific setting
 /Programs/*/*.uvguix.*
@@ -20,13 +19,6 @@
 # Ignore other files
 *.log
 .htm
-
-# Ignore yml files
-*.yml
-!*.cproject.yml
-
-# Ignroe json files
-*.json
 
 ### macOS ###
 # General
