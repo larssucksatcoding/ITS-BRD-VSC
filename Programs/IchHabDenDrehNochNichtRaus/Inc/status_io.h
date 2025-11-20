@@ -11,27 +11,28 @@
 #include "stdbool.h"
 
 /**
-  * @brief      -
+  * @brief      checks whether reset button is pressed
   *
   * @param      -
   * 
-  * @return     -
+  * @return     true / false
   */
 bool is_reset_button_pressed();
 
 
 /**
-  * @brief      -
+  * @brief      sets led to represent last measured direction of rotation:
+  *             d23 on: clockwise, d22 on: counter clockwise
   *
-  * @param      -
+  * @param      integer dir - contains information of rotation direction
   * 
-  * @return     -
+  * @return     void
   */
 void set_dir_led(int dir);
 
 
 /**
-  * @brief      -
+  * @brief      reveals total amount of phase shifts (subtract counterclockwise?)
   *
   * @param      -
   * 

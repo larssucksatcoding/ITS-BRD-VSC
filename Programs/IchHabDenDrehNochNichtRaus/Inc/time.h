@@ -58,9 +58,9 @@ bool is_timewindow_over();
   *
   * @param      -
   * 
-  * @return     -
+  * @return     
   */
-double time_s_since_timewindow_start();
+double duration_timewindow();
 
 /**
   * @brief      returns 

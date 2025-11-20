@@ -187,11 +187,13 @@ project:
         - file: Inc/status_io.h
         - file: Inc/gpio.h
         - file: Inc/time.h
+        - file: Inc/test_lcd.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
       files:
         - file: Src/main.c
+        - file: Src/encoder_direction.c
 
   components:
     - component: ARM::CMSIS:CORE

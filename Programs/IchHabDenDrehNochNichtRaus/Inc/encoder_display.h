@@ -2,25 +2,26 @@
   * @file       encoder_display.h
   * @author     Lars Müller-Stumpf, Noah Rajko
   * @date       Nov 2025
-  * @brief      
+  * @brief      displaying Encoder Information
   */
 
 #ifndef ENCODER_DISPLAY_H
 #define ENCODER_DISPLAY_H
 
 /**
-  * @brief      -
+  * @brief      initializes the display for output with stat values and descriptions
   *
   * @param      -
   * 
-  * @return     -
+  * @return     void
   */
 void init_encoder_display();
 
 /**
-  * @brief      -
+  * @brief      updates the display (only changed values)
   *
-  * @param      -
+  * @param      double angle - recently calculated angle
+  * @param      double angular_momentum
   * 
   * @return     -
   */

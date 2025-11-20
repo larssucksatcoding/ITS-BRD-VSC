@@ -1,10 +1,11 @@
 /**
-  ******************************************************************************
-  * @file    main.c
-  * @author  Franz Korf
-  * @brief   Kleines Testprogramm fuer neu erstelle Fonts.
-  ******************************************************************************
-  */
+* @file       main.c
+* @author     Lars Müller-Stumpf, Noah Rajko
+* @date       Nov 2025
+* @brief      
+*/
+
+
 /* Includes ------------------------------------------------------------------*/
 
 #include "encoder_display.h"
@@ -25,6 +26,8 @@
 #include "status_io.h"
 #include "time.h"
 
+
+/* Functions ------------------------------------------------------------------*/
 
 void init_modules() {
 	init_gpio();
