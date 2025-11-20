@@ -15,7 +15,20 @@
   * 
   * @return     -
   */
-double get_angle(int phase_transition_count);
+double get_angle(int phase_count);
+
+/**
+  * @brief      -
+  *
+  * @param      double angle - 
+  * @param      int time_s - 
+  * 
+  * @return     double angular momentum 
+  */
+double get_angular_momentum(double angle, int time_s);
+
+
+#endif
 
 /**
   * @brief      -
@@ -24,7 +37,3 @@ double get_angle(int phase_transition_count);
   * 
   * @return     -
   */
-double get_angular_momentum(double angle, int time_s);
-
-
-#endif

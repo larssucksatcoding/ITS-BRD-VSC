@@ -8,7 +8,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 
-#include "encoder_display.h"
+#include "display.h"
 #include "stm32f4xx_hal.h"
 #include "init.h"
 #include "LCD_GUI.h"
@@ -29,12 +29,26 @@
 
 /* Functions ------------------------------------------------------------------*/
 
+/**
+  * @brief      -
+  *
+  * @param      -
+  * 
+  * @return     -
+  */
 void init_modules() {
 	init_gpio();
 	init_encoder_direction();
-	init_encoder_display();
+	init_display();
 }
 
+/**
+  * @brief      -
+  *
+  * @param      -
+  * 
+  * @return     -
+  */
 void reset_state() {
 	start_new_timewindow();
 	read_gpio_state();
@@ -68,10 +82,10 @@ int main(void) {
 
 		// process inputs
 		encoder_direction = get_direction();
-
+		// DIR_ERROR in der Error Datei definiert (Änderung durch Noah)
 		switch (encoder_direction) {
 			case DIR_ERROR: {
-				handle_error();
+				handle_error(DIR_ERROR);
 				// reset
 				// - maybe extract reset to own function?
 				// - maybe have reset instead of init method in modules?
@@ -83,12 +97,12 @@ int main(void) {
 			case DIR_FORWARDS: {
 				phase_transition_count++;
 				save_timestamp();
-				time_s = time_s_since_timewindow_start();
+				time_s = duration_timewindow();
 			}			
 			case DIR_BACKWARDS: {
 				phase_transition_count--;
 				save_timestamp();
-				time_s = time_s_since_timewindow_start();
+				time_s = duration_timewindow();
 			}
 		}
 

@@ -1,5 +1,7 @@
 {
     "clangd.arguments": [
         "--compile-commands-dir=c:\\Users\\Uni\\Desktop\\ITS-BRD-VSC\\Programs\\IchHabDenDrehNochNichtRaus\\out\\IchHabDenDrehNochNichtRaus\\ITSboard\\Debug"
-    ]
+    ],
+    "debug.hideSlowPreLaunchWarning": true,
+    "debug.showInStatusBar": "never"
 }

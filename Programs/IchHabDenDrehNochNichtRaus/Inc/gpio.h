@@ -8,25 +8,43 @@
 #ifndef GPIO_H
 #define GPIO_H
 
+/*  Includes  ----------------------------------------*/
+#include "stdbool.h"
+
+
+
 /**
-  * @brief      initializes the module for first use. always call this before
-  *             doing anything else.
-  *
-  * @param      -
-  * 
-  * @return     -
+  * @brief      initializes the module for first use, clears registers
   */
 void init_gpio();
 
 /**
-  * @brief      reads and save current gpio save. **all read functions in this module
-  *             will only return what was saved by this function.**
-  *
-  * @param      -
+  * @brief      checks whether reset button is pressed
   * 
-  * @return     -
+  * @return     true / false
   */
-int read_gpio_state();
+bool is_reset_button_pressed();
+
+/**
+  * @brief      sets led to represent last measured direction of rotation:
+  *             d23 on: clockwise, d22 on: counter clockwise
+  *
+  * @param      integer dir - contains information of rotation direction
+  * 
+  * @return     void
+  */
+void set_dir_led(int dir);
+
+
+/**
+  * @brief      reveals total amount of phase shifts (subtract counterclockwise?)
+  *
+  * @param      int phase_count - Anzahl der insgesamten Phasenwechsel
+  */
+void set_phase_led(int phase_count);
+
+
+
 
 /**
   * @brief      -
@@ -57,3 +75,11 @@ void get_gpiof_state();
 
 
 #endif
+
+/**
+  * @brief      -
+  *
+  * @param      -
+  * 
+  * @return     -
+  */

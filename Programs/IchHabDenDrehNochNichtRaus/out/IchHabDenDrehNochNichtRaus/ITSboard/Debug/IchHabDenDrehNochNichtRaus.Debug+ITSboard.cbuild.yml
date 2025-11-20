@@ -327,11 +327,7 @@ build:
           category: header
         - file: ../../../../Inc/encoder_direction.h
           category: header
-        - file: ../../../../Inc/encoder_display.h
-          category: header
         - file: ../../../../Inc/encoder_angle.h
-          category: header
-        - file: ../../../../Inc/error_handler.h
           category: header
         - file: ../../../../Inc/status_io.h
           category: header
@@ -341,11 +337,19 @@ build:
           category: header
         - file: ../../../../Inc/test_lcd.h
           category: header
+        - file: ../../../../Inc/error_handler.h
+          category: header
+        - file: ../../../../Inc/display.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
           category: sourceC
         - file: ../../../../Src/encoder_direction.c
+          category: sourceC
+        - file: ../../../../Src/time.c
+          category: sourceC
+        - file: ../../../../Src/gpio.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h

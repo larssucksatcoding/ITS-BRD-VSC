@@ -10,13 +10,20 @@
 
 #include "stdbool.h"
 
+
+/* für C -Datei:
+    variablen: 
+      - start Zeit
+      - letzter TimeStamp
+      - 
+
+
+*/
+
+
 /**
   * @brief      initializes the module for first use. always call this before
   *             doing anything else.
-  *
-  * @param      -
-  * 
-  * @return     -
   */
 void init_time();
 
@@ -39,22 +46,26 @@ void save_timestamp();
   * @return     -
   */
 void start_new_timewindow();
+// wofür brauchen wir ein Time Window? ich checke nicht
+// können wir nicht einfach immer checken, wie viel Zeit
+// seit unserem letzten TimeStamp vergangen ist oder?
 
 
 /**
   * @brief      checks whether the time window is over.
-  *
-  * @param      -
   * 
   * @return     true if time window exceeded 
   */
 bool is_timewindow_over();
+// equal to - did 500 ms since last time stamp pass?
 
 
 /**
   * @brief      the total time in seconds since the time window
   *             has been started. this will use the latest timestamp
   *             by gpio, even if it has not been saved yet.
+  *   ---> --->  --->  --->    Was ist der Unterschied zwischen dem gpio timestamp 
+  *            und unserem eigenen timestamp?
   *
   * @param      -
   * 
@@ -63,7 +74,7 @@ bool is_timewindow_over();
 double duration_timewindow();
 
 /**
-  * @brief      returns 
+  * @brief      returns notting?
   *
   * @param      -
   * 
@@ -72,3 +83,11 @@ double duration_timewindow();
 void time_s_in_timewindow();
 
 #endif
+
+/**
+  * @brief      -
+  *
+  * @param      -
+  * 
+  * @return     -
+  */
