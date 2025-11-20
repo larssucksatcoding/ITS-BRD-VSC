@@ -96,14 +96,29 @@ int getSize() {
 }
 
 int popTopTwoElements(int* top, int* bottom) {
-    if (getSize() < 2) {
+    /* if (getSize() < 2) {
         // check if there are enough elements
         // to perform task
-        return STACK_UNDERFLOW;
+       return STACK_UNDERFLOW;
     }
 
-    pop(top);
-    pop(bottom);
+    pop (top);
+    pop (bottom); */
+
+    // geändert, damit es doch nicht komplett dumm ist in der
+    // pop Funktion einen error zu returnen
+
+    int error = NO_ERROR;
+    error = pop(top);
+    if ( error != NO_ERROR) {
+        return error;
+    }
+    error = pop(bottom);
+    if (error != NO_ERROR) {
+        // müssten hier nicht pushen, Stack wird bei error eh gelöscht
+        push(*top);
+        return error;
+    }
 
     return NO_ERROR;
 }

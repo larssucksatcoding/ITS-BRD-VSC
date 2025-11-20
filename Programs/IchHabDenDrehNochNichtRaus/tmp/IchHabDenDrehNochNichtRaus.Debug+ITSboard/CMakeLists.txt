@@ -37,7 +37,6 @@ add_library(${CONTEXT}_GLOBAL INTERFACE)
 # Includes
 target_include_directories(${CONTEXT} PUBLIC
   $<$<COMPILE_LANGUAGE:C,CXX>:
-    "${SOLUTION_ROOT}/Inc"
     "${SOLUTION_ROOT}/../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
     "${SOLUTION_ROOT}/../../stm32cubef4/Drivers/CMSIS/Include"
     "${SOLUTION_ROOT}/../../stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Inc"
@@ -50,6 +49,7 @@ target_include_directories(${CONTEXT} PUBLIC
   "${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include"
   "${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include"
   "${SOLUTION_ROOT}/../../ITS_BRD_LIB/Inc"
+  "${SOLUTION_ROOT}/Inc"
 )
 
 # Defines

@@ -193,6 +193,7 @@ add_library(Group_Program_User_Inc INTERFACE)
 target_include_directories(Group_Program_User_Inc INTERFACE
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>
   "${SOLUTION_ROOT}/../../ITS_BRD_LIB/Inc"
+  "${SOLUTION_ROOT}/Inc"
 )
 target_compile_definitions(Group_Program_User_Inc INTERFACE
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_COMPILE_DEFINITIONS>
@@ -205,6 +206,7 @@ target_link_libraries(Group_Program_User_Inc_ABSTRACTIONS INTERFACE
 # group Program/User/Src
 add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/main.c"
+  "${SOLUTION_ROOT}/Src/encoder_direction.c"
 )
 target_include_directories(Group_Program_User_Src PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>
