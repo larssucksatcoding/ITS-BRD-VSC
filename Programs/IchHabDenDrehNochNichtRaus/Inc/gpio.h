@@ -35,6 +35,20 @@ bool is_reset_button_pressed();
   */
 void set_dir_led(int dir);
 
+/**
+  * @brief      sets error led, in case something went wrong
+  * 
+  * @return     void
+  */
+void set_err_led_on();
+
+/**
+  * @brief      turns error led off, after error has been handled
+  * 
+  * @return     void
+  */
+void set_err_led_off();
+
 
 /**
   * @brief      reveals total amount of phase shifts (subtract counterclockwise?)
@@ -44,34 +58,15 @@ void set_dir_led(int dir);
 void set_phase_led(int phase_count);
 
 
-
-
 /**
-  * @brief      -
+  * @brief      tells you whether a and b sensor are on (true, not disrupted) or of (false, disruption)
   *
-  * @param      -
+  * @param      bool *a_on - target memory for sensor a 
+  * @param      bool *b_on - target memory for sensor b
   * 
   * @return     -
   */
-void write_gpiod_led(int mask);
-
-/**
-  * @brief      -
-  *
-  * @param      -
-  * 
-  * @return     -
-  */
-void write_gpioe_led(int mask);
-
-/**
-  * @brief      -
-  *
-  * @param      -
-  * 
-  * @return     -
-  */
-void get_gpiof_state();
+void get_input_state(bool* a_on, bool* b_on);
 
 
 #endif

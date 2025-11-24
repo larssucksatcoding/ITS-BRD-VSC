@@ -10,25 +10,29 @@
 #include <stdbool.h>
 #include "stm32f4xx.h"
 
+/*  Register  ----------------------------------------*/
+
 #define INPUT               GPIOF
 #define PHASE_COUNT_LEDS    GPIOD
 #define STATUS_LEDS         GPIOE
 
 /*  Output  ------------------------------------------*/
 
-#define FORWARDS_LED            23
-#define BACKWARDS_LED           22
-#define ERROR_LED               21
-#define PHASE_COUNT_LED_MASK    0x00FF    // Maske für die Anzeige des Phasen Counts
-#define RESET_MASK              0x0000    // Maske um Register auf 0 zu setzen. 
+#define FORWARDS_LED_MASK       0b10000000
+#define BACKWARDS_LED_MASK      0b01000000
+#define ERROR_LED_MASK          0b00100000
+#define PHASE_COUNT_LED_MASK    0x00FF          // Maske für die Anzeige des Phasen Counts
+#define RESET_MASK              0x00            // Maske um 16-Bit-Register auf 0 zu setzen. 
 
 /*  Input  -------------------------------------------*/
 
 #define ERROR_BUTTON_MASK       (1<<6)     
-#define ENCODER_A_INPUT_MASK    0b0000 0001     // Maske für den Input 
-#define ENCODER_B_INPUT_MASK    0b0000 0010
+#define ENCODER_A_INPUT_MASK    0b00000010     // Maske für den Input 
+#define ENCODER_B_INPUT_MASK    0b00000001
 
-
+int current_status;
+int current_phase_count;
+int input;
 
 void init_gpio(){
     // set GPIO registers to zero 
@@ -41,20 +45,45 @@ bool is_reset_button_pressed(){
 }
 
 void set_dir_led(int dir) {
+    // was ist Während eines Fehlers? werden dann richtungen noch geupdated? 
     switch (dir) {
         case DIR_FORWARDS: {
-            // set Forwards LED
+            if(current_status != FORWARDS_LED_MASK) {
+                // Forwards LED is not on
+                STATUS_LEDS->ODR = FORWARDS_LED_MASK;
+                current_status = FORWARDS_LED_MASK;
+            }
         }
         case DIR_BACKWARDS: {
-            // set Backwards LED
+            if(current_status != BACKWARDS_LED_MASK) {
+                // Backwards LED is not on
+                STATUS_LEDS->ODR = BACKWARDS_LED_MASK;
+                current_status = BACKWARDS_LED_MASK;
+            }
         }
     }
 }
 
-/**
-  * @brief      reads and save current gpio save. **all read functions in this module
-  *             will only return what was saved by this function.**
-  * 
-  * @return     int - 
-  */
-int read_gpio_state();
+void set_err_led_on() {
+    STATUS_LEDS->ODR = ERROR_LED_MASK;
+    current_status = ERROR_LED_MASK;
+}
+
+void set_err_led_off() {
+    STATUS_LEDS->ODR = RESET_MASK;
+    current_status = 0;
+}
+
+void set_phase_led(int phase_count) {
+    current_phase_count = phase_count & PHASE_COUNT_LED_MASK;
+    PHASE_COUNT_LEDS->ODR = current_phase_count;
+}
+
+void get_input_state(bool *a_on, bool *b_on) {
+    input = INPUT->IDR;
+    *a_on = (input & ENCODER_A_INPUT_MASK) != 0;
+    *b_on = (input & ENCODER_B_INPUT_MASK) != 0;
+}
+
+
+// EOF
