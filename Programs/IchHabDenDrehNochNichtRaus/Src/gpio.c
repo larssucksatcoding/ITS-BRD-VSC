@@ -43,6 +43,15 @@ void init_gpio(){
     // set GPIO registers to zero 
     PHASE_COUNT_LEDS->ODR = PHASE_COUNT_LEDS->ODR & RESET_MASK;
     STATUS_LEDS->ODR = STATUS_LEDS->ODR & RESET_MASK;
+
+    current_status = RESET_MASK;
+    current_phase_count = RESET_MASK;
+    input = RESET_MASK;
+
+    a_on_previous = false;
+    b_on_previous = false;
+    a_on = false;
+    b_on = false;
 }
 
 bool is_reset_button_pressed(){
