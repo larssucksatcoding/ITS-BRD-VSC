@@ -327,8 +327,6 @@ build:
           category: header
         - file: ../../../../Inc/encoder_direction.h
           category: header
-        - file: ../../../../Inc/status_io.h
-          category: header
         - file: ../../../../Inc/gpio.h
           category: header
         - file: ../../../../Inc/time.h

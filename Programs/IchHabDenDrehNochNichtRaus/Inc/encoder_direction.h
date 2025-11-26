@@ -14,8 +14,15 @@
 #define DIR_BACKWARDS   2
 
 
+extern int direction;
+
+
 /**
   * @brief      -
+  *
+  * @param      -
+  * 
+  * @return     -
   */
 void init_encoder_direction();
 
@@ -26,7 +33,7 @@ void init_encoder_direction();
   * 
   * @return     -
   */
-int get_direction();
+int refresh_direction();
 
 
 #endif

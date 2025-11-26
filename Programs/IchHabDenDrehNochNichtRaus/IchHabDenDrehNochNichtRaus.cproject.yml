@@ -181,7 +181,6 @@ project:
       files:
         - file: ../../ITS_BRD_LIB/Inc/lcd.h
         - file: Inc/encoder_direction.h
-        - file: Inc/status_io.h
         - file: Inc/gpio.h
         - file: Inc/time.h
         - file: Inc/test_lcd.h
