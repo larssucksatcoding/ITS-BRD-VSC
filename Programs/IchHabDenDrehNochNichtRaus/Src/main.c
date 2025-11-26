@@ -54,7 +54,7 @@ void init_modules() {
   */
 void reset_state() {
 	start_new_timewindow();
-	get_input_state(&a_on, &b_on);
+	refresh_input_state();
 }
 
 
@@ -75,7 +75,7 @@ int main(void) {
 
 	// read all inputs once right before superloop to avoid
 	// immediate DIR_ERROR after the superloop starts
-	get_input_state(&a_on, &b_on);
+	refresh_input_state();
 	start_new_timewindow(); // this should be in a reset function!   ?
 
 	while(1) {
@@ -94,7 +94,7 @@ int main(void) {
 				// - maybe have reset instead of init method in modules?
 				// thsi should also just be in the handle_error method
 				init_modules();
-				get_input_state(&a_on, &b_on);
+				refresh_input_state();
 				continue;
 			}
 			case DIR_FORWARDS: {

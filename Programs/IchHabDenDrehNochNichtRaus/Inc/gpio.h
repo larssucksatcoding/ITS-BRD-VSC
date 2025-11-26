@@ -11,7 +11,8 @@
 /*  Includes  ----------------------------------------*/
 #include "stdbool.h"
 
-
+extern bool a_on;
+extern bool b_on;
 
 /**
   * @brief      initializes the module for first use, clears registers
@@ -66,7 +67,7 @@ void set_phase_led(int phase_count);
   * 
   * @return     -
   */
-void get_input_state(bool* a_on, bool* b_on);
+void refresh_input_state();
 
 
 #endif
