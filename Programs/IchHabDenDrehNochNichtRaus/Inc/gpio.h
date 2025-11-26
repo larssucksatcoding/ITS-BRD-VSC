@@ -11,6 +11,8 @@
 /*  Includes  ----------------------------------------*/
 #include "stdbool.h"
 
+extern bool a_on_previous;
+extern bool b_on_previous;
 extern bool a_on;
 extern bool b_on;
 
