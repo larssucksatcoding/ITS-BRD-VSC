@@ -81,7 +81,7 @@ int main(void) {
 	while(1) {
 
 		// read all inputs (including timer?)
-		get_input_state(&a_on, &b_on);
+		refresh_input_state();
 
 		// process inputs
 		encoder_direction = get_direction();

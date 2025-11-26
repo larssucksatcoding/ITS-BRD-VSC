@@ -30,9 +30,12 @@
 #define ENCODER_A_INPUT_MASK    0b00000010     // Maske für den Input 
 #define ENCODER_B_INPUT_MASK    0b00000001
 
-int current_status;
-int current_phase_count;
-int input;
+static int current_status;
+static int current_phase_count;
+static int input;
+
+bool a_on;
+bool b_on;
 
 void init_gpio(){
     // set GPIO registers to zero 
@@ -79,10 +82,10 @@ void set_phase_led(int phase_count) {
     PHASE_COUNT_LEDS->ODR = current_phase_count;
 }
 
-void get_input_state(bool *a_on, bool *b_on) {
+void refresh_input_state() {
     input = INPUT->IDR;
-    *a_on = (input & ENCODER_A_INPUT_MASK) != 0;
-    *b_on = (input & ENCODER_B_INPUT_MASK) != 0;
+    a_on = (input & ENCODER_A_INPUT_MASK) != 0;
+    b_on = (input & ENCODER_B_INPUT_MASK) != 0;
 }
 
 
