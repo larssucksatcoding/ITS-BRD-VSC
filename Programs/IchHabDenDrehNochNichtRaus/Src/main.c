@@ -29,6 +29,9 @@
 
 /* Functions ------------------------------------------------------------------*/
 
+bool a_on;
+bool b_on;
+
 /**
   * @brief      -
   *
@@ -43,7 +46,7 @@ void init_modules() {
 }
 
 /**
-  * @brief      -
+  * @brief      - iiii dddd kkkk 
   *
   * @param      -
   * 
@@ -51,7 +54,7 @@ void init_modules() {
   */
 void reset_state() {
 	start_new_timewindow();
-	read_gpio_state();
+	get_input_state(&a_on, &b_on);
 }
 
 
@@ -72,13 +75,13 @@ int main(void) {
 
 	// read all inputs once right before superloop to avoid
 	// immediate DIR_ERROR after the superloop starts
-	read_gpio_state();
-	start_new_timewindow(); // this should be in a reset function!
+	get_input_state(&a_on, &b_on);
+	start_new_timewindow(); // this should be in a reset function!   ?
 
 	while(1) {
 
 		// read all inputs (including timer?)
-		read_gpio_state();
+		get_input_state(&a_on, &b_on);
 
 		// process inputs
 		encoder_direction = get_direction();
@@ -91,7 +94,7 @@ int main(void) {
 				// - maybe have reset instead of init method in modules?
 				// thsi should also just be in the handle_error method
 				init_modules();
-				read_gpio_state();
+				get_input_state(&a_on, &b_on);
 				continue;
 			}
 			case DIR_FORWARDS: {
