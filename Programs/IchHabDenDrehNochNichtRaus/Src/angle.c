@@ -5,3 +5,17 @@
 * @brief      reading input & writing output of GPIOs
 */
 
+#define PHASESWITCHES_TURN  1200
+
+
+double angle;
+double angular_momentum;
+
+
+void recalculate(int phase_count, int time_s) {
+    
+
+
+}
+
+// EOF

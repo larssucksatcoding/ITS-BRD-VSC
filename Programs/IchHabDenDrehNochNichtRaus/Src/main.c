@@ -82,6 +82,10 @@ int main(void) {
 
 		// read all inputs (including timer?)
 		refresh_input_state();
+		// -----------------------------------
+		// refresh input state 2* bei phase total count = 1
+		// (um dirr err zu vermeiden, weil am Anfang alles au ffalse ist)
+		// -------------------------------------------------
 
 		// process inputs
 		encoder_direction = get_direction();

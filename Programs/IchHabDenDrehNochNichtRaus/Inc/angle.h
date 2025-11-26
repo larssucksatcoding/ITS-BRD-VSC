@@ -8,24 +8,18 @@
 #ifndef ANGLE_H
 #define ANGLE_H
 
-/**
-  * @brief      -
-  *
-  * @param      -
-  * 
-  * @return     -
-  */
-double get_angle(int phase_count);
+extern double angle;
+extern double angular_momentum;
 
 /**
-  * @brief      -
+  * @brief      recalculates Values of angle and angular momentum
   *
-  * @param      double angle - 
+  * @param      int phase_count - 
   * @param      int time_s - 
   * 
-  * @return     double angular momentum 
+  * @return     
   */
-double get_angular_momentum(double angle, int time_s);
+void recalculate(int phase_count, int time_s);
 
 
 #endif
