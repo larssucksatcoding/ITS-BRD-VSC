@@ -41,12 +41,12 @@ int get_phase(bool a, bool b) {
 }
 
 
-void init_encoder_direction() {
+void init_encoder() {
     direction = DIR_NONE;
 }
 
 
-int refresh_direction() {
+int refresh_encoder() {
     int last_phase = get_phase(a_on_previous, b_on_previous);
     int curr_phase = get_phase(a_on, b_on);
 

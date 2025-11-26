@@ -20,7 +20,7 @@
 #include "timer.h"
 
 #include "gpio.h"
-#include "encoder_direction.h"
+#include "encoder.h"
 #include "encoder_angle.h"
 #include "error_handler.h"
 #include "status_io.h"
@@ -88,7 +88,7 @@ int main(void) {
 		// -------------------------------------------------
 
 		// calculations
-		refresh_direction();
+		refresh_encoder();
 
 		if (direction == DIR_ERROR) {
 			handle_error(DIR_ERROR);
