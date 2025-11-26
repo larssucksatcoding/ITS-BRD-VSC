@@ -7,7 +7,7 @@
 
 
 /* Includes ------------------------------------------------------------------*/
-#include "encoder_direction.h"
+#include "encoder.h"
 #include "gpio.h"
 #include "error_handler.h"
 #include "stdbool.h"

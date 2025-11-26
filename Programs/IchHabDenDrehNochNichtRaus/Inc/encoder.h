@@ -1,12 +1,12 @@
 /**
-  * @file       encoder_direction.h
+  * @file       encoder.h
   * @author     Lars Müller-Stumpf, Noah Rajko
   * @date       Nov 2025
   * @brief      
   */
 
-#ifndef ENCODER_DIRECTION_H
-#define ENCODER_DIRECTION_H
+#ifndef ENCODER_H
+#define ENCODER_H
 
 
 #define DIR_NONE        0
