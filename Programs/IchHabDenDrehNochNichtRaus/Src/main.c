@@ -40,7 +40,7 @@ bool b_on;
   */
 void init_modules() {
 	init_gpio();
-	init_encoder_direction();
+	init_encoder();
 	init_display();
 }
 
