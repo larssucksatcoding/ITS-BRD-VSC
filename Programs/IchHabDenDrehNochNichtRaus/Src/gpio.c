@@ -34,6 +34,8 @@ static int current_status;
 static int current_phase_count;
 static int input;
 
+bool a_on_previous;
+bool b_on_previous;
 bool a_on;
 bool b_on;
 
