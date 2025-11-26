@@ -87,33 +87,26 @@ int main(void) {
 		// (um dirr err zu vermeiden, weil am Anfang alles au ffalse ist)
 		// -------------------------------------------------
 
-		// process inputs
-		encoder_direction = get_direction();
-		// DIR_ERROR in der Error Datei definiert (Änderung durch Noah)
-		switch (encoder_direction) {
-			case DIR_ERROR: {
-				handle_error(DIR_ERROR);
-				// reset
-				// - maybe extract reset to own function?
-				// - maybe have reset instead of init method in modules?
-				// thsi should also just be in the handle_error method
-				init_modules();
-				refresh_input_state();
-				continue;
-			}
-			case DIR_FORWARDS: {
-				phase_transition_count++;
-				save_timestamp();
-				time_s = duration_timewindow();
-			}			
-			case DIR_BACKWARDS: {
-				phase_transition_count--;
-				save_timestamp();
-				time_s = duration_timewindow();
-			}
+		// calculations
+		refresh_direction();
+
+		if (direction == DIR_ERROR) {
+			handle_error(DIR_ERROR);
+			// reset
+			// - maybe extract reset to own function?
+			// - maybe have reset instead of init method in modules?
+			// thsi should also just be in the handle_error method
+			init_modules();
+			refresh_input_state();
+			continue;
 		}
 
-		if (encoder_direction != DIR_NONE) {
+		if (direction != DIR_NONE) {
+			save_timestamp();
+			time_s = duration_timewindow();
+
+			phase_transition_count += (direction == DIR_FORWARDS) ? 1 : -1;
+
 			// update status LEDs
 			set_dir_led(encoder_direction);
 			set_phase_led(phase_transition_count);
