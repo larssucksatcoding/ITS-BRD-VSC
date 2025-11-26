@@ -10,6 +10,7 @@
 #include "encoder_direction.h"
 #include "gpio.h"
 #include "error_handler.h"
+#include "stdbool.h"
 
 
 #define PHASE_A 0
@@ -20,7 +21,16 @@
 int direction;
 
 
-int coole_methode(bool a, bool b) {
+
+
+/**
+  * @brief      gets the phase, in your phase. based. on hardware input.
+  *
+  * @param      
+  * 
+  * @return     -
+  */
+int get_phase(bool a, bool b) {
     if (a) {
         if (b)  { return PHASE_C; }
         else    { return PHASE_B; }
@@ -32,13 +42,13 @@ int coole_methode(bool a, bool b) {
 
 
 void init_encoder_direction() {
-
+    direction = DIR_NONE;
 }
 
 
 int refresh_direction() {
-    int last_phase = coole_methode(a_on_previous, b_on_previous);
-    int curr_phase = coole_methode(a_on, b_on);
+    int last_phase = get_phase(a_on_previous, b_on_previous);
+    int curr_phase = get_phase(a_on, b_on);
 
     switch (last_phase) {
         case PHASE_A: {
