@@ -180,22 +180,22 @@ project:
     - group: Program/User/Inc
       files:
         - file: ../../ITS_BRD_LIB/Inc/lcd.h
-        - file: Inc/encoder_direction.h
         - file: Inc/gpio.h
         - file: Inc/time.h
         - file: Inc/test_lcd.h
         - file: Inc/error_handler.h
         - file: Inc/display.h
         - file: Inc/angle.h
+        - file: Inc/encoder.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
       files:
         - file: Src/main.c
-        - file: Src/encoder_direction.c
         - file: Src/time.c
         - file: Src/gpio.c
         - file: Src/angle.c
+        - file: Src/encoder.c
 
   components:
     - component: ARM::CMSIS:CORE

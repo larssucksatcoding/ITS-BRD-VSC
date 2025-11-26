@@ -14,8 +14,6 @@ double angular_momentum;
 
 void recalculate(int phase_count, int time_s) {
     
-
-
 }
 
 // EOF
