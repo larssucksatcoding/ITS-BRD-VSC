@@ -21,9 +21,8 @@
 
 #include "gpio.h"
 #include "encoder.h"
-#include "encoder_angle.h"
+#include "angle.h"
 #include "error_handler.h"
-#include "status_io.h"
 #include "time.h"
 
 
