@@ -62,12 +62,9 @@ void set_phase_led(int phase_count);
 
 
 /**
-  * @brief      tells you whether a and b sensor are on (true, not disrupted) or of (false, disruption)
-  *
-  * @param      bool *a_on - target memory for sensor a 
-  * @param      bool *b_on - target memory for sensor b
+  * @brief      updates value of the intern Input Variables
   * 
-  * @return     -
+  * @return     void
   */
 void refresh_input_state();
 

@@ -85,6 +85,8 @@ void set_phase_led(int phase_count) {
 }
 
 void refresh_input_state() {
+    a_on_previous = a_on;
+    b_on_previous = b_on;
     input = INPUT->IDR;
     a_on = (input & ENCODER_A_INPUT_MASK) != 0;
     b_on = (input & ENCODER_B_INPUT_MASK) != 0;

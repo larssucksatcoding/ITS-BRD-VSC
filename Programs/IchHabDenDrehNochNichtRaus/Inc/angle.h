@@ -1,12 +1,12 @@
 /**
-  * @file       encoder_angle.h
+  * @file       angle.h
   * @author     Lars Müller-Stumpf, Noah Rajko
   * @date       Nov 2025
   * @brief      
   */
 
-#ifndef ENCODER_ANGLE_H
-#define ENCODER_ANGLE_H
+#ifndef ANGLE_H
+#define ANGLE_H
 
 /**
   * @brief      -

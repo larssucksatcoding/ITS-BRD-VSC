@@ -327,8 +327,6 @@ build:
           category: header
         - file: ../../../../Inc/encoder_direction.h
           category: header
-        - file: ../../../../Inc/encoder_angle.h
-          category: header
         - file: ../../../../Inc/status_io.h
           category: header
         - file: ../../../../Inc/gpio.h
@@ -341,6 +339,8 @@ build:
           category: header
         - file: ../../../../Inc/display.h
           category: header
+        - file: ../../../../Inc/angle.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -350,6 +350,8 @@ build:
         - file: ../../../../Src/time.c
           category: sourceC
         - file: ../../../../Src/gpio.c
+          category: sourceC
+        - file: ../../../../Src/angle.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h

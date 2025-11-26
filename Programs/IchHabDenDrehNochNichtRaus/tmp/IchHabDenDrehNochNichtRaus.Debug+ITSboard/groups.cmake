@@ -209,6 +209,7 @@ add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/encoder_direction.c"
   "${SOLUTION_ROOT}/Src/time.c"
   "${SOLUTION_ROOT}/Src/gpio.c"
+  "${SOLUTION_ROOT}/Src/angle.c"
 )
 target_include_directories(Group_Program_User_Src PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>
