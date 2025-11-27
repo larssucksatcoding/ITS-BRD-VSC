@@ -25,6 +25,20 @@ void recalculate_angular_momentum();
   */
 void recalculate_angle();
 
+/**
+  * @brief      returns value of angle
+  * 
+  * @return     double angle
+  */
+double get_angle();
+
+/**
+  * @brief      returns value of angular momentum
+  * 
+  * @return     double angular momentum
+  */
+double get_angular_momentum();
+
 #endif
 
 /**
