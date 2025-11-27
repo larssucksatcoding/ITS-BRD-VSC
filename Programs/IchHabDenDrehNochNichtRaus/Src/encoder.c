@@ -58,7 +58,7 @@ void reset_encoder() {
 }
 
 
-void refresh_encoder() {
+void recalculate_encoder() {
     int last_phase = get_phase(a_on_previous, b_on_previous);
     int curr_phase = get_phase(a_on, b_on);
 
@@ -123,5 +123,8 @@ void increment_window_phase_count(int direction) {
 
 void update_total_phase_count() {
     total_phase_count += window_phase_count;
+}
+
+void reset_window_phase_count() {
     window_phase_count = 0;
 }

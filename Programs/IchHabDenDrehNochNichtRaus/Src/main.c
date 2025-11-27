@@ -78,7 +78,10 @@ int main(void) {
 
 	while(1) {
 
-		// read all inputs (including timer?)
+		// ===============
+		// HARDWARE INPUTS
+		// ===============
+
 		refresh_input_state();
 		refresh_timer();
 
@@ -87,10 +90,13 @@ int main(void) {
 		// (um dirr err zu vermeiden, weil am Anfang alles au ffalse ist)
 		// -------------------------------------------------
 
-		// calculations
+		// ============
+		// CALCULATIONS
+		// ============
+
+		// --- ENCODER ENSHMODER ---
+
 		refresh_encoder();
-		
-		// get stuff
 		encoder_direction = get_direction();
 
 		if (encoder_direction == DIR_ERROR) {
@@ -107,26 +113,35 @@ int main(void) {
 		if (encoder_direction != DIR_NONE) {
 			save_timestamp();
 			increment_window_phase_count(encoder_direction);
-
-			// update status LEDs
-			set_dir_led(encoder_direction);
-			set_phase_led(phase_transition_count);
 		}
+
+		// --- ANKLE ---
 
 		recalculate_angle();
 		recalculate_angular_momentum();
 
-		
+		// ======
+		// OUTPUT
+		// ======
+
+		// --- BLINKY BLINK ---
+
+		set_dir_led(encoder_direction);
+		set_phase_led(phase_transition_count);
+
+		// --- DISPLAY ---
+
 		if(is_timewindow_over()) {
 			update_total_phase_count();
 
 			// display this shit
+			// this still needs to be written.
+			// update(double angle, double angular_momentum);
+
+			// new time window
+			start_new_timewindow();
+			reset_window_phase_count(); // does this belong here or inside the function above?
 		}
-
-
-		// output
-
-		HAL_Delay(10000);
 	}
 }
 

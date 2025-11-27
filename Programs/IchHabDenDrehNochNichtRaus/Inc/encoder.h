@@ -30,7 +30,7 @@ void reset_encoder();
   * 
   * @return     -
   */
-void refresh_encoder();
+void recalculate_encoder();
 
 
 // getter
@@ -48,9 +48,14 @@ void increment_window_phase_count(int direction);
 
 /**
   * @brief      increase the total_time_window by the amount that is currently
-  *             in window_phase_count. resets the window_phase_count to 0.
+  *             in window_phase_count.
   */
 void update_total_phase_count();
+
+/**
+  * @brief      resets the window_phase_count to 0.
+  */
+void reset_window_phase_count();
 
 
 
