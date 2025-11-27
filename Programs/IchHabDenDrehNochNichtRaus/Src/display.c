@@ -58,7 +58,7 @@ void print_error(char *e){
 }
 
 
-void init_Display(void) {
+void init_display(void) {
    GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
    GUI_clear(default_color);
 }

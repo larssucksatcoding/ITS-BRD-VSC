@@ -123,7 +123,7 @@ int main(void) {
 			recalculate_angular_momentum();
 
 			// display this shit
-			update();
+			//update();
 
 			// new time window
 			start_new_timewindow();
