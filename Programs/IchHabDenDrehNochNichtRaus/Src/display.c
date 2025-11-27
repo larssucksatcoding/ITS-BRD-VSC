@@ -20,8 +20,8 @@
 /*  Variables  -------------------------*/
 
 Coordinate angle_c = {3, 3};
-Coordinate angular_momentum_c = {3, 7};
-Coordinate error_c = {3, 10};
+Coordinate angular_momentum_c = {3, 50};
+Coordinate error_c = {20, 100};
 
 double old_angle;
 double old_angular_momentum;
@@ -34,27 +34,27 @@ int default_font_color = WHITE;
 /*  Functions  -------------------------*/ 
 
 void update(double angle, double angular_momentum){
-    if (angle != old_angle) {
+    if (true){//if (angle != old_angle) {
         char aa[10];
         // angle to string
         sprintf(aa, "%4.2f", angle);
         GUI_disStr(angle_c, aa, 
-            &Font8, default_color, default_font_color);
+            &Font20, default_color, default_font_color);
         old_angle = angle;
     }
 
-    if (angular_momentum != old_angular_momentum) {
+    if (true) {//if (angular_momentum != old_angular_momentum) {
         char aam[10];
         // angle to string
-        sprintf(aam, "%4.2f", angle);
+        sprintf(aam, "%4.2f", angular_momentum);
         GUI_disStr(angular_momentum_c, aam, 
-            &Font8, default_color, default_font_color);
+            &Font20, default_color, default_font_color);
         old_angular_momentum = angular_momentum;
     }
 }
 
 void print_error(char *e){
-    GUI_disStr(error_c, e, &Font8, err_color, default_font_color);
+    GUI_disStr(error_c, e, &Font20, err_color, default_font_color);
 }
 
 

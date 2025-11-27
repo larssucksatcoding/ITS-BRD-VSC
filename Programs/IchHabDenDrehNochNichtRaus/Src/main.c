@@ -66,7 +66,14 @@ void reset_state() {
 int main(void) {
 	init_modules();
 
-	lcd_shit();
+	while (1) {
+		lcd_shit();
+		HAL_Delay(1000);
+	}
+
+	
+
+	/*
 
 	int encoder_direction = DIR_NONE;
 	int total_phase_transition_count = 0;
@@ -130,6 +137,8 @@ int main(void) {
 			reset_window_phase_count(); // does this belong here or inside the function above?
 		}
 	}
+
+	*/
 }
 
 // EOF

@@ -1,77 +1,105 @@
 # ninja log v6
-6347	7244	7859404709298219	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/testsoftware.o	43b6b313f34d575
-6496	6900	7859404710796674	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Debug.o	bb9985cd794c3bba
-902	1748	7859404654854996	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o	b5b1151ee953bd1b
-34	192	7859409509862103	CMakeFiles/database	2f0d6d1e7931228e
-1929	3108	7859404665027494	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o	1bd7d20a45c715ff
-2395	2960	7859404669781121	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font16.o	ec4b572187393180
-842	1928	7859404654251307	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o	de991d26be919aed
-34	192	7859409509862103	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	2f0d6d1e7931228e
-16	994	7859404645902470	CMakeFiles/Group_Drivers_Board.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/startup_stm32f429xx.o	fa76c538b1d22641
-4796	5531	7859404693775007	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium40.o	a1b6333ffc5b8b8b
-3288	4210	7859404678709178	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold60.o	97499908b9ac56af
-5279	5776	7859404698620652	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/fontsFLASH.o	8c787b74791c19fd
-28	985	7859404646033980	CMakeFiles/Group_Drivers_Board.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/stm32f4xx_it.o	bc139b9cd4dae81
-11	798	7859404645902470	CMakeFiles/Group_Drivers_BSP_STM32F4xx_Nucleo_144.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.o	5f533ff27c2dcbe0
-41	841	7859404646246061	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o	7c4e52425e12ccf8
-35	901	7859404646175995	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o	8eb45f7be2afcaf
-23	1010	7859404646033980	CMakeFiles/Group_Drivers_Board.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/system_stm32f4xx.o	9c9c2da3c5c69aab
-2793	3288	7859404673772529	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font24.o	c1e4d3ae5f440c64
-985	1940	7859404655686712	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o	f0481131e9127a4b
-2960	3943	7859404675389345	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas80.o	7856baaafaecd915
-7999	8409	7859404725817530	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/angle.o	6e730336b39c6a89
-801	1960	7859404654009671	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o	bffd32bea60333ed
-5776	6604	7859404703555666	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Touch.o	c8641a91e2b1e6e2
-1010	2386	7859404655851824	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o	f1e7b95dbbf251f8
-2941	3368	7859404675242699	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas40.o	d87706604c194b7
-3944	4384	7859404685269882	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold40.o	52f735e3ea538397
-7065	7998	7859404716474520	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/delay.o	945422a59d2a1bd8
-1961	2394	7859404665357971	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font8.o	43d05f7c34d33f03
-994	2672	7859404655709589	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o	40109bfeb3f9da88
-1748	2793	7859404663191028	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o	acb5393808dc068e
-1940	2940	7859404665229057	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o	3b3eefcdb2a0f1ff
-4311	4881	7859404688934404	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono40.o	9dcc777ce061d6
-4881	5784	7859404694639245	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium60.o	75cac9a99feae66c
-2386	2950	7859404669691098	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font12.o	4fd67024ca82d1b9
-2673	3123	7859404672536128	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font20.o	15d4033622c42fde
-7000	7648	7859404715837265	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/keypad.o	9e0121396b07cb19
-2950	3742	7859404675332692	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas60.o	2ac2dc13ea9fad77
-3123	3757	7859404677031650	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold40.o	331a46ec1df52250
-3108	4311	7859404676866125	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas90.o	7752d3a7a58f4b72
-8150	8520	7859404727334146	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/encoder.o	de6f3e34dcfb7364
-3758	4393	7859404683370568	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNew48.o	4697167c5c72dedb
-3368	4428	7859404679431143	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold80.o	b0c0fbab0b9c72b1
-3742	4796	7859404683281238	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold90.o	a71389b94e0cc0f2
-4385	4986	7859404689650780	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono60.o	fd859bc871c70bcb
-4210	4996	7859404687930774	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold60.o	c4bf4237ba02bf9c
-4393	5278	7859404689769697	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono80.o	216a24c123947f43
-7244	8149	7859404718274902	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/timer.o	c769b489749e258f
-4428	5746	7859404690062733	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono90.o	d265b4c2d3226533
-4996	5976	7859404695797411	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium90.o	f0480c97106f135
-7979	8597	7859404725586332	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/gpio.o	b623e4456bc595be
-4986	6070	7859404695562261	CMakeFiles/Group_Utils.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium80.o	510e0bd5ce4d022a
-5531	6233	7859404701052330	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Driver.o	89036a221d449525
-5747	6346	7859404703298994	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GUI.o	82ce819cdc7801c3
-5784	6496	7859404703555666	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_SPI.o	db00bf00c04a74ff
-6693	7065	7859404712765993	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/lcd.o	672c9bbf879e75ef
-5976	6667	7859404705558289	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GPIO.o	e1315b9a757adc7
-6070	6693	7859404706571016	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_TIM.o	81fd8fe0398fa71c
-6233	6701	7859404708072627	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Tools.o	786881c2d5163ea4
-6605	7000	7859404711884438	CMakeFiles/Group_LCD.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Demos.o	ba1ea7a8db6fd009
-6900	7496	7859404714962640	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/terminal.o	9db4d6f1690b1103
-6667	7532	7859404712455045	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/error.o	7e8ce5a2134755ce
-6701	7542	7859404712845952	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/init.o	937966b8015cb49b
-7532	7979	7859404721110523	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/stdinout_USART.o	ded38bd46d6af6b9
-7648	8497	7859404722320803	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/time.o	c6bd4a2183fa0c8c
-7496	8612	7859404720914089	CMakeFiles/Group_ITS_BRD_LIB.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/ITS_BRD_LIB/Src/USART_STM32F4xx.o	ed224f41a6111124
-69	350	7859407010547417	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/test_lcd.o	6e82a603ea0f304c
-40	297	7859405675609880	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	e0fda50a38cefe8
-11	2560	7859409671466095	build.ninja	e455ba61a33297bb
-21	2057	7859409671466095	build.ninja	e455ba61a33297bb
-30	143	7859409672250848	CMakeFiles/database	2f0d6d1e7931228e
-30	143	7859409672250848	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	2f0d6d1e7931228e
-35	283	7859409697944657	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/error_handler.o	655eb98c498573c6
-27	356	7859409697864652	CMakeFiles/Group_Program_User_Src.dir/C_/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/display.o	ea8c302b55c06343
-356	594	7859409701156746	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	449dd73dd6f59aac
-51	179	7859409706178141	CMakeFiles/database	2f0d6d1e7931228e
-51	179	7859409706178141	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	2f0d6d1e7931228e
+3	7	1764237814109137743	CMakeFiles/database	8a0f55e8ef0d0e6d
+3	7	1764237814109137743	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	8	1764237826131099777	CMakeFiles/database	8a0f55e8ef0d0e6d
+3	8	1764237826131099777	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	44	1764237835213569256	CMakeFiles/Group_Drivers_Board.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/startup_stm32f429xx.o	e775ccad955ecd8a
+3	141	1764237835213773469	CMakeFiles/Group_Drivers_Board.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/system_stm32f4xx.o	ebed3ea1ebf8c76d
+5	153	1764237835215831435	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o	18eee6c3f99b5eca
+4	154	1764237835214697385	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o	cce8966eb524f3de
+6	169	1764237835216304335	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o	9f085ba97a810920
+8	218	1764237835217071082	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o	7a6395db39e69dc4
+12	235	1764237835221071069	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o	3199834e631ef099
+218	274	1764237835427070419	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font8.o	e83289481cc6886f
+235	287	1764237835444070365	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font12.o	44bbef547cc7ddce
+4	315	1764237835214035212	CMakeFiles/Group_Drivers_Board.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/stm32f4xx_it.o	9c7b3bbc2369a864
+274	343	1764237835483070242	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font16.o	138924732253fb0
+9	348	1764237835218071079	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o	b58fa5da58ed7602
+3	353	1764237835212071098	CMakeFiles/Group_Drivers_BSP_STM32F4xx_Nucleo_144.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.o	ac4537be3a04fe8c
+287	356	1764237835496070201	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font20.o	9f22ac82def6ca0a
+153	406	1764237835362070624	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o	a4567999fa3670ec
+316	407	1764237835525070109	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font24.o	19cf6966ccf2048b
+169	415	1764237835378070574	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o	4520b1d2efc23bec
+154	451	1764237835363070621	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o	38212a12f4131773
+141	479	1764237835350070662	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o	c1827cece0f1b5b
+343	481	1764237835553240385	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas40.o	898f8a22af498609
+406	494	1764237835615069825	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold40.o	bfae86ad419e34c3
+407	542	1764237835616069822	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold60.o	7a7b4f8db6de7ece
+348	566	1764237835557070008	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas60.o	494d14b50df3b1bf
+44	610	1764237835254211561	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o	93eae6213a1c9eeb
+481	617	1764237835690069588	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold40.o	91813891d1906a8e
+415	623	1764237835624069797	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold80.o	7cccb0a2cef34227
+543	626	1764237835752069393	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono40.o	eae7d89e59026f6b
+480	637	1764237835689069591	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNew48.o	85b65f157cb6b026
+494	649	1764237835703069547	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold60.o	c3f8fc18ca1f0090
+353	658	1764237835562069992	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas80.o	1a78b6be5e34dd22
+452	716	1764237835661069680	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold90.o	34a5fc8d0b35881a
+659	727	1764237835868069026	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/fontsFLASH.o	9532524bf36c64f2
+566	735	1764237835775069320	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono60.o	b080eb7edfdfeb6d
+623	774	1764237835832320735	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium40.o	4f3d31126e8ea4dd
+626	795	1764237835835069130	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium60.o	c47cf5873385ff0
+356	807	1764237835565069983	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas90.o	1fb8c04d0acb0297
+727	857	1764237835936068811	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GUI.o	5dcebf8a29aaee3c
+716	878	1764237835925068846	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Driver.o	7cec35f6963ed714
+610	895	1764237835819069181	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono80.o	fd42b9c113f1ba85
+649	909	1764237835858069058	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium90.o	120a1ee99f1ac09a
+637	916	1764237835846069096	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium80.o	da16319cb2691fe6
+895	943	1764237836104068281	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Debug.o	9748a60f3d174539
+774	965	1764237835983068663	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_SPI.o	7d7ec2dfec907dcc
+735	971	1764237835944068786	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Touch.o	16e0da5be95adf2c
+910	991	1764237836119068233	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Demos.o	a6829138d86d241e
+617	998	1764237835826069159	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono90.o	d425ba85d73c0a81
+943	1009	1764237836152068129	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/lcd.o	ff8181f742509221
+796	1027	1764237836005068593	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GPIO.o	b800c0a80b9064de
+972	1048	1764237836181068038	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/terminal.o	6b1752166dde9903
+807	1066	1764237836016068559	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_TIM.o	c61df78f65bd65e
+991	1094	1764237836200067978	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/keypad.o	72d81a9ca9694e99
+858	1107	1764237836067068398	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Tools.o	907c9f1d1aa2f205
+916	1119	1764237836126068211	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/error.o	a57c36f3043d8d49
+1049	1126	1764237836258067794	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/stdinout_USART.o	ec1953f4adaba773
+1119	1173	1764237836328067573	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/angle.o	11a4b371d0ae2f72
+878	1181	1764237836087068334	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/testsoftware.o	be21273e9c3c995
+965	1184	1764237836174068060	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/init.o	7c28f41a0351379f
+1010	1196	1764237836219067918	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/timer.o	55fbec497d3bcb0
+1126	1196	1764237836335067551	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/encoder.o	95bdb5cf91105991
+1066	1225	1764237836275067741	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+1181	1229	1764237836390067378	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/display.o	41462ec6a9dcb1ee
+1184	1231	1764237836393067368	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/error_handler.o	c73dec0925af1346
+999	1232	1764237836208067952	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/delay.o	c8ce64d74a49d8f0
+1094	1272	1764237836303067652	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/time.o	6bc4791c24f0d5c0
+1107	1284	1764237836316067611	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/gpio.o	651ba1a7b520fa0
+1173	1304	1764237836382067403	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/test_lcd.o	fe4a59ea9841b440
+1029	1351	1764237836238067858	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/USART_STM32F4xx.o	cf9623e47ac41505
+1351	1411	1764237836560066841	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	6	1764237836630066620	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764237836630066620	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	70	1764238039413426211	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+70	127	1764238039480426000	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	7	1764238039547425788	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	7	1764238039547425788	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	25	1764238140520106909	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/display.o	41462ec6a9dcb1ee
+25	76	1764238140542106839	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	5	1764238140603106646	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	5	1764238140603106646	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	104	1764238200364917886	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/display.o	41462ec6a9dcb1ee
+104	165	1764238200465917567	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	7	1764238200536917343	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	7	1764238200536917343	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	28	1764238255648743296	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/display.o	41462ec6a9dcb1ee
+28	88	1764238255673743217	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	5	1764238255743742996	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	5	1764238255743742996	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764238348063451459	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764238348063451459	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	69	1764238455279112860	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+69	125	1764238455345112652	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	6	1764238455410112446	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764238455410112446	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	26	1764238503844959474	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/display.o	41462ec6a9dcb1ee
+26	79	1764238503867959401	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	5	1764238503929959205	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	5	1764238503929959205	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	146	1764238815907962922	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+146	201	1764238816052094766	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	6	1764238816115962253	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764238816115962253	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
