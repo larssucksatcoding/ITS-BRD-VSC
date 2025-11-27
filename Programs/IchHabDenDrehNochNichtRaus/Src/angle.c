@@ -9,6 +9,7 @@
 
 #include "encoder.h"
 #include "time.h"
+#include "encoder.h"
 
 #define PHASESWITCHES_TURN  1200
 
@@ -18,18 +19,16 @@ double angular_momentum;
 
 
 void recalculate_angular_momentum() {
-    int phase_count = 0;
-    // get (window_phase_count)
-    int time_ms = 0;
-    // get timeframe
-    double prozentumdrehung = phase_count/PHASESWITCHES_TURN;
-    double angular_momentum = time_ms*prozentumdrehung;
+    int phase_count = get_window_phase_count();
+    int time_ms = ms_since_timewindow_start();
+
+    double prozentumdrehung = (double) phase_count / (double) PHASESWITCHES_TURN;
+    double angular_momentum = time_ms * prozentumdrehung;
 }
 
 void recalculate_angle() {
-    int total_phase_count = 0;
-    // get_total_phase_count
-    angle = 360 * (total_phase_count/PHASESWITCHES_TURN);
+    int total_phase_count = get_total_phase_count();
+    angle = 360 * ((double) total_phase_count / (double) PHASESWITCHES_TURN);
 }
 
 double get_angle() {
