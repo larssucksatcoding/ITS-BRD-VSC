@@ -1,11 +1,11 @@
 
 cmake_minimum_required(VERSION 3.15)
 
-set(command "C:/Users/Uni/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake.exe;-G;Ninja;-S;C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard;-B;C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1;-DSOLUTION_ROOT=C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus;-DCMSIS_PACK_ROOT=C:/Users/Uni/AppData/Local/arm/packs;-DCMSIS_COMPILER_ROOT=C:/Users/Uni/.vcpkg/artifacts/2139c4c6/tools.open.cmsis.pack.cmsis.toolbox/2.12.0/etc")
+set(command "/home/bazzite/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake;-G;Ninja;-S;/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard;-B;/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1;-DSOLUTION_ROOT=/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus;-DCMSIS_PACK_ROOT=/home/bazzite/.cache/arm/packs;-DCMSIS_COMPILER_ROOT=/home/bazzite/.vcpkg/artifacts/2139c4c6/tools.open.cmsis.pack.cmsis.toolbox/2.12.0/etc")
 set(log_merged "")
 set(log_output_on_failure "ON")
-set(stdout_log "C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure-out.log")
-set(stderr_log "C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure-err.log")
+set(stdout_log "/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure-out.log")
+set(stderr_log "/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure-err.log")
 execute_process(
   COMMAND ${command}
   RESULT_VARIABLE result
@@ -31,7 +31,7 @@ if(result)
   if (${log_merged})
     set(msg "${msg}\nSee also\n  ${stderr_log}")
   else()
-    set(msg "${msg}\nSee also\n  C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure-*.log")
+    set(msg "${msg}\nSee also\n  /home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure-*.log")
   endif()
   if (${log_output_on_failure})
     message(SEND_ERROR "${msg}")
@@ -50,7 +50,7 @@ if(result)
   endif()
 else()
   if(NOT "Ninja" MATCHES "Ninja")
-    set(msg "IchHabDenDrehNochNichtRaus.Debug+ITSboard configure command succeeded.  See also C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure-*.log")
+    set(msg "IchHabDenDrehNochNichtRaus.Debug+ITSboard configure command succeeded.  See also /home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure-*.log")
     message(STATUS "${msg}")
   endif()
 endif()

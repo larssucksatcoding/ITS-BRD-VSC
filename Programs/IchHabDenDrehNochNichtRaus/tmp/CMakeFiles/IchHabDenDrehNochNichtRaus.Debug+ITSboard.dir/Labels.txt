@@ -1,16 +1,16 @@
 # Target labels
  IchHabDenDrehNochNichtRaus.Debug+ITSboard
 # Source files and their labels
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard-complete.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-build.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-database.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-download.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-executes.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-install.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-mkdir.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-patch.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-test.rule
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-update.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/CMakeFiles/IchHabDenDrehNochNichtRaus.Debug+ITSboard-complete.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-build.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-configure.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-database.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-download.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-executes.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-install.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-mkdir.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-patch.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-test.rule
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/IchHabDenDrehNochNichtRaus.Debug+ITSboard/src/IchHabDenDrehNochNichtRaus.Debug+ITSboard-stamp/IchHabDenDrehNochNichtRaus.Debug+ITSboard-update.rule

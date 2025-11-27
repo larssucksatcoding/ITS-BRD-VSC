@@ -15,3 +15,30 @@
 static int start;
 static int last_timestamp;
 
+
+
+void init_time();
+
+
+
+void save_timestamp();
+
+
+
+void start_new_timewindow();
+// wofür brauchen wir ein Time Window? ich checke nicht
+// können wir nicht einfach immer checken, wie viel Zeit
+// seit unserem letzten TimeStamp vergangen ist oder?
+
+
+
+bool is_timewindow_over();
+// equal to - did 500 ms since last time stamp pass?
+
+
+
+double duration_timewindow();
+
+
+
+void time_s_in_timewindow();

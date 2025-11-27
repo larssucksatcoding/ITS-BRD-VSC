@@ -16,6 +16,9 @@
 
 extern int direction;
 
+extern int total_phase_count;
+extern int window_phase_count;
+
 
 /**
   * @brief      -
@@ -24,7 +27,7 @@ extern int direction;
   * 
   * @return     -
   */
-void init_encoder_direction();
+void init_encoder();
 
 /**
   * @brief      -
@@ -33,7 +36,7 @@ void init_encoder_direction();
   * 
   * @return     -
   */
-int refresh_direction();
+int refresh_encoder();
 
 
 #endif
