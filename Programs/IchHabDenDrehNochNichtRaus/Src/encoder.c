@@ -111,7 +111,7 @@ int get_window_phase_count() {
     return window_phase_count;
 }
 
-void increment_window_phase_count(int direction) {
+void increment_window_phase_count() {
     if (direction == DIR_FORWARDS) {
         window_phase_count++;
     }

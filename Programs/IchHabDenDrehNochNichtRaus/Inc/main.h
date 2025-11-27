@@ -1,1 +1,3 @@
-// empty file
+
+// resets the state :)
+void reset_state();
