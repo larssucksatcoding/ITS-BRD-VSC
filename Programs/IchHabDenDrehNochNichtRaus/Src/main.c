@@ -101,11 +101,6 @@ int main(void) {
 			increment_window_phase_count();
 		}
 
-		// --- ANKLE ---
-
-		recalculate_angle();
-		recalculate_angular_momentum();
-
 		// ======
 		// OUTPUT
 		// ======
@@ -119,6 +114,10 @@ int main(void) {
 
 		if(is_timewindow_over()) {
 			update_total_phase_count();
+
+			// ankle only after updating total phase count yes yes
+			recalculate_angle();
+			recalculate_angular_momentum();
 
 			// display this shit
 			update();
