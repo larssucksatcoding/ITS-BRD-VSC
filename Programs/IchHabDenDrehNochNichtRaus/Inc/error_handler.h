@@ -10,8 +10,7 @@
 
 /*  ERROR CODES ------------------------------------*/
 #define   NO_ERROR      0         // no error occurred
-#define   PHASE_JUMP    -1        // phase has been skipped
-#define   DIR_ERROR     -2        // ein Fehler in der Bewegung? idk
+#define   DIR_ERROR     -1        // phase has been skipped
 
 
 /**
@@ -20,8 +19,6 @@
   * @param      integer error - Errorcode, der gecheckt werden soll
   */
 void handle_error(int error);
-
-
 
 #endif
 

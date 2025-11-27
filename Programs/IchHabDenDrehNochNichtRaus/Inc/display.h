@@ -22,6 +22,14 @@ void init_display();
 void update(double angle, double angular_momentum);
 
 
+void print_error(char *e);
+
+void init_Display(void);
+
+void setErrMode(void);
+
+void setNormalMode(void);
+
 #endif
 
 /**
