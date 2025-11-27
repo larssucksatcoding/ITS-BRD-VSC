@@ -62,6 +62,14 @@ void start_new_timewindow();
 bool is_timewindow_over();
 
 
+/**
+  * @brief      milliseconds since time window was started.
+  * 
+  * @return     time duration in ms.
+  */
+int ms_since_timewindow_start();
+
+
 
 #endif
 
