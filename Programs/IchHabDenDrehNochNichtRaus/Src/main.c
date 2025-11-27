@@ -81,6 +81,8 @@ int main(void) {
 
 		// read all inputs (including timer?)
 		refresh_input_state();
+		refresh_time();
+
 		// -----------------------------------
 		// refresh input state 2* bei phase total count = 1
 		// (um dirr err zu vermeiden, weil am Anfang alles au ffalse ist)
@@ -110,8 +112,6 @@ int main(void) {
 			set_dir_led(encoder_direction);
 			set_phase_led(phase_transition_count);
 		}
-
-
 
 		// calculate angle and angular momentum
 		// kind of weird, since a new timestamp will only be set when 

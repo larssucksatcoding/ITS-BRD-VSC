@@ -16,6 +16,9 @@
 
 extern int direction;
 
+extern int total_phase_count;
+extern int window_phase_count;
+
 
 /**
   * @brief      -

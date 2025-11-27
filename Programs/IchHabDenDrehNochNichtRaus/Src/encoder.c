@@ -20,6 +20,8 @@
 
 int direction;
 
+int total_phase_count;
+int window_phase_count;
 
 
 
