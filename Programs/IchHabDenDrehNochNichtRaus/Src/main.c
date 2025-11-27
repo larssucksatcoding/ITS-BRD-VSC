@@ -65,11 +65,6 @@ int main(void) {
 	init_modules();
 
 	int encoder_direction = DIR_NONE;
-	int phase_transition_count = 0;
-
-	double time_s = 0.0;
-	double angle = 0.0;
-	double angular_momentum = 0.0;
 
 	// read all inputs once right before superloop to avoid
 	// immediate DIR_ERROR after the superloop starts

@@ -50,7 +50,7 @@ int get_phase(bool a, bool b) {
 // ==============
 
 
-void reset_encoder() {
+void init_encoder() {
     direction = DIR_NONE;
 
     total_phase_count = 0;

@@ -21,7 +21,7 @@
   * 
   * @return     -
   */
-void reset_encoder();
+void init_encoder();
 
 /**
   * @brief      -
