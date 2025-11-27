@@ -81,11 +81,6 @@ int main(void) {
 		refresh_input_state();
 		refresh_timer();
 
-		// -----------------------------------
-		// refresh input state 2* bei phase total count = 1
-		// (um dirr err zu vermeiden, weil am Anfang alles au ffalse ist)
-		// -------------------------------------------------
-
 		// ============
 		// CALCULATIONS
 		// ============
