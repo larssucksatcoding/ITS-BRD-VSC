@@ -96,7 +96,7 @@ int main(void) {
 
 		// --- ENCODER ENSHMODER ---
 
-		refresh_encoder();
+		recalculate_encoder();
 		encoder_direction = get_direction();
 
 		if (encoder_direction == DIR_ERROR) {
