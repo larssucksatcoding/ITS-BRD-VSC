@@ -12,7 +12,12 @@ double angle;
 double angular_momentum;
 
 
-void recalculate(int phase_count, int time_s) {
+void recalculate_angular_momentum(int phase_count, int time_ms) {
+    double prozentumdrehung = phase_count/PHASESWITCHES_TURN;
+    double angular_momentum = time_ms*prozentumdrehung;
+}
+
+void recalculate_angle() {
     
 }
 

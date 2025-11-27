@@ -6,7 +6,7 @@
 */
 
 #include "gpio.h"
-#include "encoder_direction.h"
+#include "encoder.h"
 #include <stdbool.h>
 #include "stm32f4xx.h"
 

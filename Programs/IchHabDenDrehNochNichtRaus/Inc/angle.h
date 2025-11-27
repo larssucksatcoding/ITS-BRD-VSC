@@ -13,14 +13,17 @@ extern double angular_momentum;
 
 /**
   * @brief      recalculates Values of angle and angular momentum
-  *
-  * @param      int phase_count - 
-  * @param      int time_s - 
-  * 
-  * @return     
   */
-void recalculate(int phase_count, int time_s);
+void recalculate_angular_momentum();
 
+/**
+  * @brief      recalculates current angle 
+  *
+  * @param      -
+  * 
+  * @return     -
+  */
+void recalculate_angle();
 
 #endif
 
