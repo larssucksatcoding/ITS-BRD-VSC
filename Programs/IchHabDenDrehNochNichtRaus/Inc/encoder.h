@@ -14,11 +14,14 @@
 #define DIR_BACKWARDS   2
 
 
-extern int direction;
-
-extern int total_phase_count;
-extern int window_phase_count;
-
+/**
+  * @brief      -
+  *
+  * @param      -
+  * 
+  * @return     -
+  */
+void reset_encoder();
 
 /**
   * @brief      -
@@ -27,16 +30,28 @@ extern int window_phase_count;
   * 
   * @return     -
   */
-void init_encoder();
+void refresh_encoder();
+
+
+// getter
+int get_direction();
+int get_total_phase_count();
+int get_window_phase_count();
+
+// setter
+/**
+  * @brief      increment window phase count by one.
+  *
+  * @param      direction: the encoder spin direction.
+  */
+void increment_window_phase_count(int direction);
 
 /**
-  * @brief      -
-  *
-  * @param      -
-  * 
-  * @return     -
+  * @brief      increase the total_time_window by the amount that is currently
+  *             in window_phase_count. resets the window_phase_count to 0.
   */
-int refresh_encoder();
+void update_total_phase_count();
+
 
 
 #endif

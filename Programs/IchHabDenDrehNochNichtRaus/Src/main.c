@@ -90,8 +90,11 @@ int main(void) {
 
 		// calculations
 		refresh_encoder();
+		
+		// get stuff
+		encoder_direction = get_direction();
 
-		if (direction == DIR_ERROR) {
+		if (encoder_direction == DIR_ERROR) {
 			handle_error(DIR_ERROR);
 			// reset
 			// - maybe extract reset to own function?
@@ -102,23 +105,24 @@ int main(void) {
 			continue;
 		}
 
-		if (direction != DIR_NONE) {
+		if (encoder_direction != DIR_NONE) {
 			save_timestamp();
-			time_s = duration_timewindow();
-
-			phase_transition_count += (direction == DIR_FORWARDS) ? 1 : -1;
+			increment_window_phase_count(encoder_direction);
 
 			// update status LEDs
 			set_dir_led(encoder_direction);
 			set_phase_led(phase_transition_count);
 		}
 
-		// calculate angle and angular momentum
-		// kind of weird, since a new timestamp will only be set when 
-		time_s = 
+		recalculate_angle();
+		recalculate_angular_momentum();
 
-		angle = get_angle(phase_transition_count);
-		angular_momentum = get_angular_momentum(angle, time_s);
+		
+		if(is_timewindow_over()) {
+			update_total_phase_count();
+
+			// display this shit
+		}
 
 
 		// output
