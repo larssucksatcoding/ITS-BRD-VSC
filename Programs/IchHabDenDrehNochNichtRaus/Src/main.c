@@ -38,9 +38,11 @@ bool b_on;
   * @return     -
   */
 void init_modules() {
-	init_gpio();
-	init_encoder();
 	init_display();
+
+	init_gpio();
+	init_time();
+	init_encoder();
 }
 
 /**
@@ -69,8 +71,9 @@ int main(void) {
 
 	// read all inputs once right before superloop to avoid
 	// immediate DIR_ERROR after the superloop starts
-	refresh_input_state();
-	start_new_timewindow(); // this should be in a reset function!   ?
+	// refresh_input_state();
+	// start_new_timewindow(); // this should be in a reset function!   ?
+	reset_state();
 
 	while(1) {
 
@@ -103,7 +106,8 @@ int main(void) {
 			// - maybe have reset instead of init method in modules?
 			// thsi should also just be in the handle_error method
 			init_modules();
-			refresh_input_state();
+			// refresh_input_state();
+			reset_state();
 			continue;
 		}
 
