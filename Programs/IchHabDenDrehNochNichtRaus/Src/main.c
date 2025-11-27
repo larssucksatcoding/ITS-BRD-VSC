@@ -17,7 +17,6 @@
 #include "fontsFLASH.h"
 #include "additionalFonts.h"
 #include "error.h"
-#include "timer.h"
 
 #include "gpio.h"
 #include "encoder.h"
@@ -81,7 +80,7 @@ int main(void) {
 
 		// read all inputs (including timer?)
 		refresh_input_state();
-		refresh_time();
+		refresh_timer();
 
 		// -----------------------------------
 		// refresh input state 2* bei phase total count = 1

@@ -29,7 +29,13 @@ void init_time();
 
 
 /**
-  * @brief      saves a new time stamp.
+  * @brief      fetches new timestamp.
+  */
+void refresh_timer();
+
+
+/**
+  * @brief      saves the last fetched timestamp.
   *
   * @param      -
   * 
@@ -46,9 +52,6 @@ void save_timestamp();
   * @return     -
   */
 void start_new_timewindow();
-// wofür brauchen wir ein Time Window? ich checke nicht
-// können wir nicht einfach immer checken, wie viel Zeit
-// seit unserem letzten TimeStamp vergangen ist oder?
 
 
 /**
@@ -57,30 +60,8 @@ void start_new_timewindow();
   * @return     true if time window exceeded 
   */
 bool is_timewindow_over();
-// equal to - did 500 ms since last time stamp pass?
 
 
-/**
-  * @brief      the total time in seconds since the time window
-  *             has been started. this will use the latest timestamp
-  *             by gpio, even if it has not been saved yet.
-  *   ---> --->  --->  --->    Was ist der Unterschied zwischen dem gpio timestamp 
-  *            und unserem eigenen timestamp?
-  *
-  * @param      -
-  * 
-  * @return     
-  */
-double duration_timewindow();
-
-/**
-  * @brief      returns notting?
-  *
-  * @param      -
-  * 
-  * @return     -
-  */
-void time_s_in_timewindow();
 
 #endif
 
