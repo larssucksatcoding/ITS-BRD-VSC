@@ -351,6 +351,8 @@ build:
           category: sourceC
         - file: ../../../../Src/encoder.c
           category: sourceC
+        - file: ../../../../Src/test_lcd.c
+          category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h
       category: header

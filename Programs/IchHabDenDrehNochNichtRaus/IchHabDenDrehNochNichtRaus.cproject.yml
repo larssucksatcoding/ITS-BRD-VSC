@@ -196,6 +196,7 @@ project:
         - file: Src/gpio.c
         - file: Src/angle.c
         - file: Src/encoder.c
+        - file: Src/test_lcd.c
 
   components:
     - component: ARM::CMSIS:CORE
