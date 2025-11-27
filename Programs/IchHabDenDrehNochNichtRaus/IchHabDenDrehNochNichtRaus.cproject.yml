@@ -197,6 +197,8 @@ project:
         - file: Src/angle.c
         - file: Src/encoder.c
         - file: Src/test_lcd.c
+        - file: Src/display.c
+        - file: Src/error_handler.c
 
   components:
     - component: ARM::CMSIS:CORE

@@ -211,6 +211,8 @@ add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/angle.c"
   "${SOLUTION_ROOT}/Src/encoder.c"
   "${SOLUTION_ROOT}/Src/test_lcd.c"
+  "${SOLUTION_ROOT}/Src/display.c"
+  "${SOLUTION_ROOT}/Src/error_handler.c"
 )
 target_include_directories(Group_Program_User_Src PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>
