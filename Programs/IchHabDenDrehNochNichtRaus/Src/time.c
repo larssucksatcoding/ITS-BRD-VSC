@@ -23,32 +23,6 @@ static uint32_t current_timestamp;
 static uint32_t window_start_timestamp;
 static uint32_t last_phase_transition_timestamp;
 
-// ===============
-// PRIVATE METHODS
-// ===============
-
-int ms_since_timewindow_start() {
-    uint32_t timestamp_diff = 0;
-
-    // check for overflow since last time window
-    if (window_start_timestamp >= last_phase_transition_timestamp) {
-
-        // window_start_timestamp was taken before overflow, so we get difference
-        // by getting "distance" to max int + the timestamp after the overflow
-        timestamp_diff = 
-            (UINT32_MAX - window_start_timestamp) + last_phase_transition_timestamp;
-    } else {
-        timestamp_diff = 
-            last_phase_transition_timestamp - window_start_timestamp;
-    }
-
-    return timestamp_diff / TICKS_PER_MS;
-}
-
-// ==============
-// PUBLIC METHODS
-// ==============
-
 void init_time() {
     initTimer();
 
@@ -78,4 +52,22 @@ bool is_timewindow_over() {
     return 
          (time_in_ms >= MAX_WINDOW_DURATION_IN_MS) ||
         ((time_in_ms >= MIN_WINDOW_DURATION_IN_MS) && phase_transition_occured);
+}
+
+int ms_since_timewindow_start() {
+    uint32_t timestamp_diff = 0;
+
+    // check for overflow since last time window
+    if (window_start_timestamp >= last_phase_transition_timestamp) {
+
+        // window_start_timestamp was taken before overflow, so we get difference
+        // by getting "distance" to max int + the timestamp after the overflow
+        timestamp_diff = 
+            (UINT32_MAX - window_start_timestamp) + last_phase_transition_timestamp;
+    } else {
+        timestamp_diff = 
+            last_phase_transition_timestamp - window_start_timestamp;
+    }
+
+    return timestamp_diff / TICKS_PER_MS;
 }
