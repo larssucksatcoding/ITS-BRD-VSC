@@ -23,6 +23,7 @@
 #include "angle.h"
 #include "error_handler.h"
 #include "time.h"
+#include "test_lcd.h"
 
 
 /* Functions ------------------------------------------------------------------*/
@@ -64,6 +65,8 @@ void reset_state() {
 
 int main(void) {
 	init_modules();
+
+	lcd_shit();
 
 	int encoder_direction = DIR_NONE;
 	int total_phase_transition_count = 0;

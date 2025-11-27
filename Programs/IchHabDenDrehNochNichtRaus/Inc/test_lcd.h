@@ -10,6 +10,7 @@
 #define TEST_LCD_H
 
 
+void lcd_shit();
 
 
 #endif
