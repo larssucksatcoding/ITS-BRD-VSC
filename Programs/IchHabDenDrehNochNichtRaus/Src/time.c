@@ -8,37 +8,74 @@
 /*  Includes  -------------------------------------------------*/
 #include "time.h"
 #include "timer.h"
+#include "stdint.h"
 
-#define MIN_WINDOW_DURATION     250     // time windows must be at least 250 ms
-#define MAX_WINDOW_DURATION     500     // time windows mustn't be longer than 500 ms
+#define MIN_WINDOW_DURATION_IN_MS     250     // time windows must be at least 250 ms
+#define MAX_WINDOW_DURATION_IN_MS     500     // time windows mustn't be longer than 500 ms
 
-static int start;
-static int last_timestamp;
+#define TICKS_PER_MS (TICKS_PER_US * 1000)
 
+// current hardware timestamp, set by refresh_timer.
+static uint32_t current_timestamp;
 
+// into these, current_timestamp might be written.
+// used by the time window calculations.
+static uint32_t window_start_timestamp;
+static uint32_t last_phase_transition_timestamp;
 
-void init_time();
+// ===============
+// PRIVATE METHODS
+// ===============
 
+int ms_since_timewindow_start() {
+    uint32_t timestamp_diff = 0;
 
+    // check for overflow since last time window
+    if (window_start_timestamp >= last_phase_transition_timestamp) {
 
-void save_timestamp();
+        // window_start_timestamp was taken before overflow, so we get difference
+        // by getting "distance" to max int + the timestamp after the overflow
+        timestamp_diff = 
+            (UINT32_MAX - window_start_timestamp) + last_phase_transition_timestamp;
+    } else {
+        timestamp_diff = 
+            last_phase_transition_timestamp - window_start_timestamp;
+    }
 
+    return timestamp_diff / TICKS_PER_MS;
+}
 
+// ==============
+// PUBLIC METHODS
+// ==============
 
-void start_new_timewindow();
-// wofür brauchen wir ein Time Window? ich checke nicht
-// können wir nicht einfach immer checken, wie viel Zeit
-// seit unserem letzten TimeStamp vergangen ist oder?
+void init_time() {
+    initTimer();
 
+    current_timestamp = 0;
+    window_start_timestamp = 0;
+    last_phase_transition_timestamp = 0;
+}
 
+void refresh_timer() {
+    current_timestamp = getTimeStamp();
+}
 
-bool is_timewindow_over();
-// equal to - did 500 ms since last time stamp pass?
+void save_timestamp() {
+    last_phase_transition_timestamp = current_timestamp;
+}
 
+void start_new_timewindow() {
+    window_start_timestamp = getTimeStamp();
+}
 
+bool is_timewindow_over() {
+    int time_in_ms = ms_since_timewindow_start();
 
-double duration_timewindow();
+    bool phase_transition_occured = 
+        (last_phase_transition_timestamp == current_timestamp);
 
-
-
-void time_s_in_timewindow();
+    return 
+         (time_in_ms >= MAX_WINDOW_DURATION_IN_MS) ||
+        ((time_in_ms >= MIN_WINDOW_DURATION_IN_MS) && phase_transition_occured);
+}
