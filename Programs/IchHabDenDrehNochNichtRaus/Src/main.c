@@ -65,6 +65,7 @@ int main(void) {
 	init_modules();
 
 	int encoder_direction = DIR_NONE;
+	int total_phase_transition_count = 0;
 
 	// read all inputs once right before superloop to avoid
 	// immediate DIR_ERROR after the superloop starts
@@ -93,6 +94,7 @@ int main(void) {
 
 		recalculate_encoder();
 		encoder_direction = get_direction();
+		total_phase_transition_count = get_total_phase_count();
 
 		if (encoder_direction == DIR_ERROR) {
 			handle_error(DIR_ERROR);
@@ -122,7 +124,7 @@ int main(void) {
 		// --- BLINKY BLINK ---
 
 		set_dir_led(encoder_direction);
-		set_phase_led(phase_transition_count);
+		set_phase_led(total_phase_transition_count);
 
 		// --- DISPLAY ---
 
