@@ -18,19 +18,22 @@
 #define PHASE_C 2
 #define PHASE_D 3
 
+
 int direction;
 
 int total_phase_count;
 int window_phase_count;
 
-
+// ===============
+// PRIVATE METHODS
+// ===============
 
 /**
   * @brief      gets the phase, in your phase. based. on hardware input.
   *
-  * @param      
+  * @param      a, b: hardware input a & b.
   * 
-  * @return     -
+  * @return     returns the current phase the encoder is in.
   */
 int get_phase(bool a, bool b) {
     if (a) {
@@ -42,50 +45,83 @@ int get_phase(bool a, bool b) {
     }
 }
 
+// ==============
+// PUBLIC METHODS
+// ==============
 
-void init_encoder() {
+
+void reset_encoder() {
     direction = DIR_NONE;
+
+    total_phase_count = 0;
+    window_phase_count = 0;
 }
 
 
-int refresh_encoder() {
+void refresh_encoder() {
     int last_phase = get_phase(a_on_previous, b_on_previous);
     int curr_phase = get_phase(a_on, b_on);
 
     switch (last_phase) {
         case PHASE_A: {
             switch (curr_phase) {
-                case PHASE_A: { return DIR_NONE; }
-                case PHASE_B: { return DIR_FORWARDS; }
-                case PHASE_C: { return DIR_ERROR; }
-                case PHASE_D: { return DIR_BACKWARDS; }
+                case PHASE_A: { direction = DIR_NONE; break; }
+                case PHASE_B: { direction = DIR_FORWARDS; break; }
+                case PHASE_C: { direction = DIR_ERROR; break; }
+                case PHASE_D: { direction = DIR_BACKWARDS; break; }
             }
         }
         case PHASE_B: {
             switch (curr_phase) {
-                case PHASE_A: { return DIR_BACKWARDS; }
-                case PHASE_B: { return DIR_NONE; }
-                case PHASE_C: { return DIR_FORWARDS; }
-                case PHASE_D: { return DIR_ERROR; }
+                case PHASE_A: { direction = DIR_BACKWARDS; break; }
+                case PHASE_B: { direction = DIR_NONE; break; }
+                case PHASE_C: { direction = DIR_FORWARDS; break; }
+                case PHASE_D: { direction = DIR_ERROR; break; }
             }
         }
         case PHASE_C: {
             switch (curr_phase) {
-                case PHASE_A: { return DIR_ERROR; }
-                case PHASE_B: { return DIR_BACKWARDS; }
-                case PHASE_C: { return DIR_NONE; }
-                case PHASE_D: { return DIR_FORWARDS; }
+                case PHASE_A: { direction = DIR_ERROR; break; }
+                case PHASE_B: { direction = DIR_BACKWARDS; break; }
+                case PHASE_C: { direction = DIR_NONE; break; }
+                case PHASE_D: { direction = DIR_FORWARDS; break; }
             }
         }
         case PHASE_D: {
             switch (curr_phase) {
-                case PHASE_A: { return DIR_FORWARDS; }
-                case PHASE_B: { return DIR_ERROR; }
-                case PHASE_C: { return DIR_BACKWARDS; }
-                case PHASE_D: { return DIR_NONE; }
+                case PHASE_A: { direction = DIR_FORWARDS; break; }
+                case PHASE_B: { direction = DIR_ERROR; break; }
+                case PHASE_C: { direction = DIR_BACKWARDS; break; }
+                case PHASE_D: { direction = DIR_NONE; break; }
             }
         }
     }
+}
 
-    return DIR_ERROR;
+
+int get_direction() {
+    return direction;
+}
+
+int get_total_phase_count() {
+    return total_phase_count;
+}
+
+int get_window_phase_count() {
+    return window_phase_count;
+}
+
+void increment_window_phase_count(int direction) {
+    if (direction == DIR_FORWARDS) {
+        window_phase_count++;
+    }
+
+    if (direction == DIR_BACKWARDS) {
+        window_phase_count--;
+    }
+}
+
+void update_total_phase_count() {
+    total_phase_count += window_phase_count;
+    window_phase_count = 0;
 }
