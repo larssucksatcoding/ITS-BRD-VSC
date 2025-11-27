@@ -8,6 +8,8 @@ Neues Programm neues Glück
     - [ ] Sensor Input: in GPio - defines: Sensor A kommt in INF1, Sensor B kommt n INF0.
     - [ ] refresh input state 2* bei phase total count = 1 (um dirr err zu vermeiden, weil am Anfang alles au ffalse ist)
     - [ ] angle.c getter Aufrufee einbauen
+    - [ ] errror handler: update set Modes (camel case to _)
+    - [ ] error handler: fuse print Err into set err mode
 
 ACHTE: (passt nicht recht unter TO-DO aber musste mir Notizen machen)
 - einheitliche Vorgehensweise zur Bitmanipulation (gibts da mehrere?)

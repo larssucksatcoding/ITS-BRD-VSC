@@ -16,18 +16,41 @@ void init_display();
 /**
   * @brief      updates the display (only changed values)
   *
-  * @param      double angle - recently calculated angle
-  * @param      double angular_momentum
+  * @param      double angle - current value of angular momentum
+  * @param      double angular_momentum - current value of angular momentum
   */
 void update(double angle, double angular_momentum);
 
-
+/**
+  * @brief      prints an error message to the display
+  *
+  * @param      char *e - String, error message
+  * 
+  * @return     void
+  */
 void print_error(char *e);
 
+/**
+  * @brief      initializes display
+  * 
+  * @return     void
+  */
 void init_Display(void);
 
+/**
+  * @brief      sets the Display to Error Mode (changes background color) 
+  *             + clears Output
+  * 
+  * @return     void
+  */
 void setErrMode(void);
 
+/**
+  * @brief      sets the Display to Normal Mode(changes background color)
+  *             + clears Output
+  * 
+  * @return     void
+  */
 void setNormalMode(void);
 
 #endif

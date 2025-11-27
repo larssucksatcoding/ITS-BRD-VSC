@@ -1,12 +1,9 @@
 /**
-  * @file display.c
-  * @author Franz Korf, HAW Hamburg 
-  * @date Mar 2016
-  * @brief This modules implements a simple output module. 
-  *        It places two terminals in the terminal area of keypad.
-  *        One terminal will be used for standard output. The other one
-  *        echos pressed digit keys.
-  */
+* @file       display.c
+* @author     Lars Müller-Stumpf, Noah Rajko
+* @date       Nov 2025
+* @brief      This module implements the display interface. 
+*/
 
 
 /*  Includes  ------------------------*/
@@ -34,28 +31,15 @@ int default_color = GBLUE;
 int err_color = MAGENTA;
 int default_font_color = WHITE;
 
-// private functions
-
-void clear_display(COLOR color){
-    GUI_clear(color);
-}
-
-void print_angle(char *a){
-    GUI_disStr(angle_c, a, &Font8, default_color, default_font_color);
-}
-
-void print_angular_momentum(char *am){
-    GUI_disStr(angular_momentum_c, am, &Font8, default_color, default_font_color);
-}
-
-// public functions 
+/*  Functions  -------------------------*/ 
 
 void update(double angle, double angular_momentum){
     if (angle != old_angle) {
         char aa[10];
         // angle to string
         sprintf(aa, "%4.2f", angle);
-        print_angle(aa);
+        GUI_disStr(angle_c, aa, 
+            &Font8, default_color, default_font_color);
         old_angle = angle;
     }
 
@@ -63,7 +47,8 @@ void update(double angle, double angular_momentum){
         char aam[10];
         // angle to string
         sprintf(aam, "%4.2f", angle);
-        print_angle(aam);
+        GUI_disStr(angular_momentum_c, aam, 
+            &Font8, default_color, default_font_color);
         old_angular_momentum = angular_momentum;
     }
 }
@@ -75,15 +60,15 @@ void print_error(char *e){
 
 void init_Display(void) {
    GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-   clear_display(GBLUE);
+   GUI_clear(default_color);
 }
 
 void setErrMode(void) {
-    clear_display(err_color);
+    GUI_clear(err_color);
 }
 
 void setNormalMode(void) {
-    clear_display(default_color);
+    GUI_clear(default_color);
 }
 
 // EOF
