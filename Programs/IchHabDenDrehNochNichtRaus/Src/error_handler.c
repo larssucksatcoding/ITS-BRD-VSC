@@ -5,21 +5,23 @@
 * @brief      
 */
 
-/* Includes  ----------------------------*/
+
 #include "error_handler.h"
 #include "gpio.h"
+#include "main.h"
+#include "display.h"
 
-
-/*  Functions  --------------------------*/
 
 void handle_error(int error){
-    if (error != NO_ERROR){
-        
-    }
-    while(!is_reset_button_pressed()){
-
+    if (error == NO_ERROR) {
+        return;
     }
 
-    // init everything
+    setErrMode();
+    print_error("Deine Oma liebt dich nicht");
 
+    while(!is_reset_button_pressed()) {}
+
+    setNormalMode();
+    reset_state();
 }

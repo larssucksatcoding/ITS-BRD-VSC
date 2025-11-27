@@ -44,7 +44,7 @@ int get_window_phase_count();
   *
   * @param      direction: the encoder spin direction.
   */
-void increment_window_phase_count(int direction);
+void increment_window_phase_count();
 
 /**
   * @brief      increase the total_time_window by the amount that is currently

@@ -27,9 +27,6 @@
 
 /* Functions ------------------------------------------------------------------*/
 
-bool a_on;
-bool b_on;
-
 /**
   * @brief      -
   *
@@ -38,9 +35,16 @@ bool b_on;
   * @return     -
   */
 void init_modules() {
-	init_gpio();
-	init_encoder();
+	// initialize board, display and imported modules
+	initITSboard();
+	GUI_init(DEFAULT_BRIGHTNESS);
+	TP_Init(false);
+
+	// init self-written modules
 	init_display();
+	init_gpio();
+	init_time();
+	init_encoder();
 }
 
 /**
@@ -51,17 +55,14 @@ void init_modules() {
   * @return     -
   */
 void reset_state() {
-	start_new_timewindow();
 	refresh_input_state();
+	refresh_timer();
+
+	start_new_timewindow();
 }
 
 
 int main(void) {
-
-	// initialize board, display and imported modules
-	initITSboard();
-	GUI_init(DEFAULT_BRIGHTNESS);
-	TP_Init(false);
 	init_modules();
 
 	int encoder_direction = DIR_NONE;
@@ -69,8 +70,7 @@ int main(void) {
 
 	// read all inputs once right before superloop to avoid
 	// immediate DIR_ERROR after the superloop starts
-	refresh_input_state();
-	start_new_timewindow(); // this should be in a reset function!   ?
+	reset_state();
 
 	while(1) {
 
@@ -80,11 +80,6 @@ int main(void) {
 
 		refresh_input_state();
 		refresh_timer();
-
-		// -----------------------------------
-		// refresh input state 2* bei phase total count = 1
-		// (um dirr err zu vermeiden, weil am Anfang alles au ffalse ist)
-		// -------------------------------------------------
 
 		// ============
 		// CALCULATIONS
@@ -98,24 +93,13 @@ int main(void) {
 
 		if (encoder_direction == DIR_ERROR) {
 			handle_error(DIR_ERROR);
-			// reset
-			// - maybe extract reset to own function?
-			// - maybe have reset instead of init method in modules?
-			// thsi should also just be in the handle_error method
-			init_modules();
-			refresh_input_state();
 			continue;
 		}
 
 		if (encoder_direction != DIR_NONE) {
 			save_timestamp();
-			increment_window_phase_count(encoder_direction);
+			increment_window_phase_count();
 		}
-
-		// --- ANKLE ---
-
-		recalculate_angle();
-		recalculate_angular_momentum();
 
 		// ======
 		// OUTPUT
@@ -131,9 +115,12 @@ int main(void) {
 		if(is_timewindow_over()) {
 			update_total_phase_count();
 
+			// ankle only after updating total phase count yes yes
+			recalculate_angle();
+			recalculate_angular_momentum();
+
 			// display this shit
-			// this still needs to be written.
-			// update(double angle, double angular_momentum);
+			update();
 
 			// new time window
 			start_new_timewindow();
