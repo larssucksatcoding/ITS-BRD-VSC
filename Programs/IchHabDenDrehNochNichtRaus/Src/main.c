@@ -66,15 +66,6 @@ void reset_state() {
 int main(void) {
 	init_modules();
 
-	while (1) {
-		lcd_shit();
-		HAL_Delay(1000);
-	}
-
-	
-
-	/*
-
 	int encoder_direction = DIR_NONE;
 	int total_phase_transition_count = 0;
 
@@ -130,15 +121,13 @@ int main(void) {
 			recalculate_angular_momentum();
 
 			// display this shit
-			//update();
+			update();
 
 			// new time window
 			start_new_timewindow();
 			reset_window_phase_count(); // does this belong here or inside the function above?
 		}
 	}
-
-	*/
 }
 
 // EOF

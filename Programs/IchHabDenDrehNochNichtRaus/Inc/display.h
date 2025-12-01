@@ -15,11 +15,8 @@ void init_display();
 
 /**
   * @brief      updates the display (only changed values)
-  *
-  * @param      double angle - current value of angular momentum
-  * @param      double angular_momentum - current value of angular momentum
   */
-void update(double angle, double angular_momentum);
+void update();
 
 /**
   * @brief      prints an error message to the display

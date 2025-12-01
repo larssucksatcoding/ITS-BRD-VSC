@@ -15,6 +15,7 @@
 #include "LCD_general.h"
 #include "fonts.h"
 #include <stdio.h>
+#include "angle.h"
 
 
 /*  Variables  -------------------------*/
@@ -33,7 +34,10 @@ int default_font_color = WHITE;
 
 /*  Functions  -------------------------*/ 
 
-void update(double angle, double angular_momentum){
+void update() {
+    double angle = get_angle();
+    double angular_momentum = get_angular_momentum();
+
     if (true){//if (angle != old_angle) {
         char aa[10];
         // angle to string
