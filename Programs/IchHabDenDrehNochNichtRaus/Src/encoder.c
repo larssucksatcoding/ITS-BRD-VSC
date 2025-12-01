@@ -70,6 +70,7 @@ void recalculate_encoder() {
                 case PHASE_C: { direction = DIR_ERROR; break; }
                 case PHASE_D: { direction = DIR_BACKWARDS; break; }
             }
+            break;
         }
         case PHASE_B: {
             switch (curr_phase) {
@@ -78,6 +79,7 @@ void recalculate_encoder() {
                 case PHASE_C: { direction = DIR_FORWARDS; break; }
                 case PHASE_D: { direction = DIR_ERROR; break; }
             }
+            break;
         }
         case PHASE_C: {
             switch (curr_phase) {
@@ -86,6 +88,7 @@ void recalculate_encoder() {
                 case PHASE_C: { direction = DIR_NONE; break; }
                 case PHASE_D: { direction = DIR_FORWARDS; break; }
             }
+            break;
         }
         case PHASE_D: {
             switch (curr_phase) {
@@ -94,6 +97,7 @@ void recalculate_encoder() {
                 case PHASE_C: { direction = DIR_BACKWARDS; break; }
                 case PHASE_D: { direction = DIR_NONE; break; }
             }
+            break;
         }
     }
 }
@@ -111,18 +115,16 @@ int get_window_phase_count() {
     return window_phase_count;
 }
 
-void increment_window_phase_count() {
+void increment_phase_count() {
     if (direction == DIR_FORWARDS) {
         window_phase_count++;
+        total_phase_count++;
     }
 
     if (direction == DIR_BACKWARDS) {
         window_phase_count--;
+        total_phase_count--;
     }
-}
-
-void update_total_phase_count() {
-    total_phase_count += window_phase_count;
 }
 
 void reset_window_phase_count() {

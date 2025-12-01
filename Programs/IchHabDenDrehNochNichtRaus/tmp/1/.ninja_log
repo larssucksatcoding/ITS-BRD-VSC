@@ -103,3 +103,80 @@
 146	201	1764238816052094766	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
 2	6	1764238816115962253	CMakeFiles/database	8a0f55e8ef0d0e6d
 2	6	1764238816115962253	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+80	86	1764605803855627787	CMakeFiles/database	8a0f55e8ef0d0e6d
+80	86	1764605803855627787	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+4	354	1764606424224634016	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/error_handler.o	c73dec0925af1346
+4	354	1764606424224463491	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/display.o	41462ec6a9dcb1ee
+3	394	1764606424222223003	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+4	395	1764606424223223000	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/test_lcd.o	fe4a59ea9841b440
+395	565	1764606424614221713	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	7	1764606424793221125	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	7	1764606424793221125	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+4	89	1764607113206106591	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/error_handler.o	c73dec0925af1346
+89	150	1764607113291106361	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	6	1764607113363106166	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764607113363106166	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+4	145	1764607310489525924	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+145	203	1764607310630525507	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	5	1764607310699525302	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	5	1764607310699525302	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	24	1764607678400335660	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/encoder.o	95bdb5cf91105991
+24	78	1764607678421335590	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	6	1764607678485335374	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764607678485335374	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	147	1764608161774639419	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/gpio.o	651ba1a7b520fa0
+147	199	1764608161918638919	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	5	1764608161980638704	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	5	1764608161980638704	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	80	1764608241940361796	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/gpio.o	651ba1a7b520fa0
+80	133	1764608242017361531	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+1	5	1764608242079361319	CMakeFiles/database	8a0f55e8ef0d0e6d
+1	5	1764608242079361319	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+4	81	1764608343698493681	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/gpio.o	651ba1a7b520fa0
+4	84	1764608343697014367	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+84	139	1764608343777014095	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	6	1764608343841013878	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764608343841013878	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	124	1764608519987698179	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/error_handler.o	c73dec0925af1346
+3	129	1764608519987549027	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/encoder.o	95bdb5cf91105991
+3	147	1764608519986443697	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+3	190	1764608519987370791	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/gpio.o	651ba1a7b520fa0
+190	247	1764608520173443098	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	6	1764608520239442887	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764608520239442887	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	85	1764608721788800504	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/gpio.o	651ba1a7b520fa0
+85	144	1764608721870800244	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	6	1764608721940800022	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764608721940800022	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764608753112700914	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764608753112700914	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	141	1764609852966283449	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+141	196	1764609853104283016	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	6	1764609853169282812	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764609853169282812	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764610194667247604	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764610194667247604	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+3	122	1764610382296774667	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/angle.o	11a4b371d0ae2f72
+4	125	1764610382296966979	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/encoder.o	95bdb5cf91105991
+3	167	1764610382296543346	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/gpio.o	651ba1a7b520fa0
+3	189	1764610382295676405	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+189	242	1764610382481675839	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	5	1764610382543675651	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	5	1764610382543675651	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+4	26	1764610718469530329	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/error_handler.o	c73dec0925af1346
+4	29	1764610718469286011	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/encoder.o	95bdb5cf91105991
+3	82	1764610718467665370	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+4	88	1764610718468665367	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/gpio.o	651ba1a7b520fa0
+88	144	1764610718552665113	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	7	1764610718617664916	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	7	1764610718617664916	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+4	181	1764610863416228380	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/main.o	64414f2c965acde2
+181	232	1764610863593227850	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	5	1764610863655227664	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	5	1764610863655227664	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764610947715976453	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	6	1764610947715976453	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d
+4	23	1764611165007331633	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/Src/angle.o	11a4b371d0ae2f72
+23	78	1764611165026331576	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf	38dd4e57176108eb
+2	5	1764611165091331378	CMakeFiles/database	8a0f55e8ef0d0e6d
+2	5	1764611165091331378	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/IchHabDenDrehNochNichtRaus/tmp/1/CMakeFiles/database	8a0f55e8ef0d0e6d

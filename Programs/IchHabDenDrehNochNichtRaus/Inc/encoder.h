@@ -40,17 +40,11 @@ int get_window_phase_count();
 
 // setter
 /**
-  * @brief      increment window phase count by one.
+  * @brief      increment phase count by one.
   *
   * @param      direction: the encoder spin direction.
   */
-void increment_window_phase_count();
-
-/**
-  * @brief      increase the total_time_window by the amount that is currently
-  *             in window_phase_count.
-  */
-void update_total_phase_count();
+void increment_phase_count();
 
 /**
   * @brief      resets the window_phase_count to 0.
