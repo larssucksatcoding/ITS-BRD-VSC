@@ -8,7 +8,9 @@
 #include "gpio.h"
 #include "encoder.h"
 #include <stdbool.h>
+#include <stdlib.h>
 #include "stm32f4xx.h"
+#include "math.h"
 
 /*  Register  ----------------------------------------*/
 
@@ -55,10 +57,12 @@ void init_gpio(){
 }
 
 bool is_reset_button_pressed(){
-    return (INPUT->IDR & ERROR_BUTTON_MASK) != 0;
+    return ((~INPUT->IDR) & ERROR_BUTTON_MASK) != 0;
 }
 
-void set_dir_led(int dir) {
+void set_dir_led() {
+    int dir = get_direction();
+
     // was ist Während eines Fehlers? werden dann richtungen noch geupdated? 
     switch (dir) {
         case DIR_FORWARDS: {
@@ -67,6 +71,7 @@ void set_dir_led(int dir) {
                 STATUS_LEDS->ODR = FORWARDS_LED_MASK;
                 current_status = FORWARDS_LED_MASK;
             }
+            break;
         }
         case DIR_BACKWARDS: {
             if(current_status != BACKWARDS_LED_MASK) {
@@ -74,8 +79,14 @@ void set_dir_led(int dir) {
                 STATUS_LEDS->ODR = BACKWARDS_LED_MASK;
                 current_status = BACKWARDS_LED_MASK;
             }
+            break;
         }
     }
+}
+
+void set_dir_led_off() {
+    STATUS_LEDS->ODR = RESET_MASK;
+    current_status = RESET_MASK;
 }
 
 void set_err_led_on() {
@@ -88,7 +99,8 @@ void set_err_led_off() {
     current_status = 0;
 }
 
-void set_phase_led(int phase_count) {
+void set_phase_led() {
+    int phase_count = abs(get_total_phase_count());
     current_phase_count = phase_count & PHASE_COUNT_LED_MASK;
     PHASE_COUNT_LEDS->ODR = current_phase_count;
 }
@@ -96,7 +108,7 @@ void set_phase_led(int phase_count) {
 void refresh_input_state() {
     a_on_previous = a_on;
     b_on_previous = b_on;
-    input = INPUT->IDR;
+    input = (~INPUT->IDR);
     a_on = (input & ENCODER_A_INPUT_MASK) != 0;
     b_on = (input & ENCODER_B_INPUT_MASK) != 0;
 }

@@ -56,8 +56,15 @@ void init_modules() {
   * @return     -
   */
 void reset_state() {
+	init_encoder(); // badly named, sets phase_count to 0
+
 	refresh_input_state();
 	refresh_timer();
+
+	recalculate_encoder();
+
+	set_dir_led_off();
+	set_phase_led();
 
 	start_new_timewindow();
 }
@@ -65,8 +72,6 @@ void reset_state() {
 
 int main(void) {
 	init_modules();
-
-	lcd_shit();
 
 	int encoder_direction = DIR_NONE;
 	int total_phase_transition_count = 0;
@@ -92,8 +97,7 @@ int main(void) {
 
 		recalculate_encoder();
 		encoder_direction = get_direction();
-		total_phase_transition_count = get_total_phase_count();
-
+		
 		if (encoder_direction == DIR_ERROR) {
 			handle_error(DIR_ERROR);
 			continue;
@@ -101,7 +105,7 @@ int main(void) {
 
 		if (encoder_direction != DIR_NONE) {
 			save_timestamp();
-			increment_window_phase_count();
+			increment_phase_count();
 		}
 
 		// ======
@@ -110,20 +114,18 @@ int main(void) {
 
 		// --- BLINKY BLINK ---
 
-		set_dir_led(encoder_direction);
-		set_phase_led(total_phase_transition_count);
+		set_dir_led();
+		set_phase_led();
 
 		// --- DISPLAY ---
 
 		if(is_timewindow_over()) {
-			update_total_phase_count();
-
 			// ankle only after updating total phase count yes yes
 			recalculate_angle();
 			recalculate_angular_momentum();
 
 			// display this shit
-			//update();
+			update();
 
 			// new time window
 			start_new_timewindow();

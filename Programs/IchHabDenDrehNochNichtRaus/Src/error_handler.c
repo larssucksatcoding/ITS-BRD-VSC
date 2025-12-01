@@ -20,7 +20,9 @@ void handle_error(int error){
     setErrMode();
     print_error("Deine Oma liebt dich nicht");
 
-    while(!is_reset_button_pressed()) {}
+    while(!is_reset_button_pressed()) {
+        // just wait :3
+    }
 
     setNormalMode();
     reset_state();

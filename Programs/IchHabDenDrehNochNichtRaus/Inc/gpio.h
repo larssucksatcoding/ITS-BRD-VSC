@@ -36,7 +36,12 @@ bool is_reset_button_pressed();
   * 
   * @return     void
   */
-void set_dir_led(int dir);
+void set_dir_led();
+
+/**
+  * @brief      turn dir led off :c
+  */
+void set_dir_led_off();
 
 /**
   * @brief      sets error led, in case something went wrong
@@ -58,7 +63,7 @@ void set_err_led_off();
   *
   * @param      int phase_count - Anzahl der insgesamten Phasenwechsel
   */
-void set_phase_led(int phase_count);
+void set_phase_led();
 
 
 /**
