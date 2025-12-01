@@ -40,7 +40,7 @@ void save_timestamp() {
 }
 
 void start_new_timewindow() {
-    window_start_timestamp = getTimeStamp();
+    window_start_timestamp = current_timestamp;
 }
 
 bool is_timewindow_over() {
@@ -58,15 +58,15 @@ int ms_since_timewindow_start() {
     uint32_t timestamp_diff = 0;
 
     // check for overflow since last time window
-    if (window_start_timestamp >= last_phase_transition_timestamp) {
+    if (window_start_timestamp >= current_timestamp) {
 
         // window_start_timestamp was taken before overflow, so we get difference
         // by getting "distance" to max int + the timestamp after the overflow
         timestamp_diff = 
-            (UINT32_MAX - window_start_timestamp) + last_phase_transition_timestamp;
+            (UINT32_MAX - window_start_timestamp) + current_timestamp;
     } else {
         timestamp_diff = 
-            last_phase_transition_timestamp - window_start_timestamp;
+            current_timestamp - window_start_timestamp;
     }
 
     return timestamp_diff / TICKS_PER_MS;

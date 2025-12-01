@@ -20,10 +20,10 @@ double angular_momentum;
 
 void recalculate_angular_momentum() {
     int phase_count = get_window_phase_count();
-    int time_ms = ms_since_timewindow_start();
+    double time_s = (double) ms_since_timewindow_start() / 1000.0;
 
     double prozentumdrehung = (double) phase_count / (double) PHASESWITCHES_TURN;
-    angular_momentum = time_ms * prozentumdrehung;
+    angular_momentum = (prozentumdrehung * 360) / time_s;
 }
 
 void recalculate_angle() {
