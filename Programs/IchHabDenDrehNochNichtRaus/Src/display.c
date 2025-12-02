@@ -27,6 +27,7 @@
 #define INTEGER_PART_LEN 4
 #define DECIMAL_PART_LEN 2
 #define CHAR_LEN (INTEGER_PART_LEN + DECIMAL_PART_LEN + 2)
+#define FORMAT_STR str()
 
 
 Coordinate angle_c = {3, 3};
@@ -115,6 +116,12 @@ void init_display(void) {
 
     display_is_updating = false;
     index = 0;
+
+    /*
+    // maybe this is one way to make the format string use our macro definitions?
+    char format[20];
+    sprintf(format, "\%%d.%df", INTEGER_PART_LEN, DECIMAL_PART_LEN);
+    */
 
     sprintf(angle_display, "%04.2f", 0.0);
     sprintf(angular_momentum_display, "%04.2f", 0.0);
