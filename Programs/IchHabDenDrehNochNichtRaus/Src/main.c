@@ -119,13 +119,17 @@ int main(void) {
 
 		// --- DISPLAY ---
 
+		// displays new values on the display, if any 
+		// new have been set by recalcuate_display()
+		update_display();
+
 		if(is_timewindow_over()) {
 			// ankle only after updating total phase count yes yes
 			recalculate_angle();
 			recalculate_angular_momentum();
 
-			// display this shit
-			update();
+			// fetch new values
+			check_display_data();
 
 			// new time window
 			start_new_timewindow();

@@ -14,9 +14,14 @@
 void init_display();
 
 /**
-  * @brief      updates the display (only changed values)
+  * @brief      fetch new values to be displayed on the display. yes yes.
   */
-void update();
+void check_display_data();
+
+/**
+  * @brief      updates one single digit of the display, needs to be called continously.
+  */
+void update_display();
 
 /**
   * @brief      prints an error message to the display
