@@ -27,15 +27,11 @@
 #define INTEGER_PART_LEN 4
 #define DECIMAL_PART_LEN 2
 #define CHAR_LEN (INTEGER_PART_LEN + DECIMAL_PART_LEN + 2)
-#define FORMAT_STR str()
 
 
 Coordinate angle_c = {3, 3};
 Coordinate angular_momentum_c = {3, 50};
 Coordinate error_c = {20, 100};
-
-double old_angle;
-double old_angular_momentum;
 
 
 int default_color = GBLUE;
