@@ -1,0 +1,8 @@
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/database.dir
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard.dir
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-build.dir
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-configure.dir
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-executes.dir
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-database.dir
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/edit_cache.dir
+/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/rebuild_cache.dir
