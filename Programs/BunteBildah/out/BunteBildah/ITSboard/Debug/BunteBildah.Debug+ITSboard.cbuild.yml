@@ -345,6 +345,8 @@ build:
         - file: ../../../../Inc/button.h
 >>>>>>> 36b4c7af101231727482745235433f5d0f9acf8f
           category: header
+        - file: ../../../../Inc/color.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -364,6 +366,8 @@ build:
           category: sourceC
         - file: ../../../../Src/button.c
 >>>>>>> 36b4c7af101231727482745235433f5d0f9acf8f
+          category: sourceC
+        - file: ../../../../Src/color.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h

@@ -191,6 +191,7 @@ project:
         - file: Inc/reader.h
         - file: Inc/writer.h
         - file: Inc/button.h
+        - file: Inc/color.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -203,6 +204,7 @@ project:
         - file: Src/reader.c
         - file: Src/writer.c
         - file: Src/button.c
+        - file: Src/color.c
 
   components:
     - component: ARM::CMSIS:CORE

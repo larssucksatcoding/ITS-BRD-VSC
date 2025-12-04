@@ -48,7 +48,7 @@ typedef struct tagRGBQUAD {
   unsigned char    rgbGreen;
   unsigned char    rgbRed;
   unsigned char    rgbReserved;
-} __attribute__((__packed__)) RGBQUAD;
+} __attribute__((__packed__)) RGBQUAD, *PRGBQUAD;
 
 typedef struct tagRGBTRIPLE {
   unsigned char rgbtBlue;
