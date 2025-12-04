@@ -5,6 +5,16 @@
 #define MAX_INT_6_BIT 64
 #define MAX_INT_8_BIT_F 256.0f
 
+// =================
+// PRIVATE FUNCTIONS
+// =================
+
+/**
+  * @brief  helper function that takes actual 8-bit rgb values and
+  *         converts them to a 16-bit color
+  * @param  the rgb values
+  * @retval the matching display color
+  */
 COLOR bmp_to_display_color(char rgbBlue, char rgbGreen, char rgbRed) {
     COLOR color = BLACK; // BLACK is 0
 
@@ -25,6 +35,10 @@ COLOR bmp_to_display_color(char rgbBlue, char rgbGreen, char rgbRed) {
 
     return color;
 }
+
+// ================
+// PUBLIC FUNCTIONS
+// ================
 
 COLOR rgbtriple_to_display_color(RGBTRIPLE* triple) {
     return bmp_to_display_color(
