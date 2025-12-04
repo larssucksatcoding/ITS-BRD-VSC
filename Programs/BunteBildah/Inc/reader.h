@@ -27,35 +27,16 @@
   * 
   * @return     Error Code if picture is
   */
-int load_picture();
-
-/**
-  * @brief      checks if input file is usable
-  *
-  * @param      -
-  * 
-  * @return     Error code (NOK/ EOK)
-  */
-int valid_input();
+extern int load_picture();
 
 /**
   * @brief      fetches next Pixel line from .bmp
   *
   * @param      -
   * 
-  * @return     WORD Array (uint16_t) next line
+  * @return     COLOR Array (uint16_t) for each pixel in next line one color
   */
-WORD* get_next_Line();
-
-/**
-  * @brief      returns color of next Pixel
-  *
-  * @param      -
-  * 
-  * @return     BYTE* (uint8_t) containing 3 values (red, green, blue)
-  */
-PRGBTRIPLE get_color();
-
+COLOR* get_next_Line();
 
 
 #endif 
