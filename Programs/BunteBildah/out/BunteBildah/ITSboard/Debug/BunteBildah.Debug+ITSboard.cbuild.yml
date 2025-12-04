@@ -337,6 +337,8 @@ build:
           category: header
         - file: ../../../../Inc/MS_basetypes.h
           category: header
+        - file: ../../../../Inc/reader.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -348,6 +350,8 @@ build:
         - file: ../../../../Src/input.c
           category: sourceC
         - file: ../../../../Src/varlenarr.c
+          category: sourceC
+        - file: ../../../../Src/reader.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h

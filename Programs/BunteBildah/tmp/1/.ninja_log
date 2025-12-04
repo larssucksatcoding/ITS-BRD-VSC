@@ -1,7 +1,6 @@
 # ninja log v6
-2	91	1764776159097826277	build.ninja	1363dd248f325812
-2	6	1764776148703435118	CMakeFiles/database	71b17b3cf4e70018
-2	6	1764776148703435118	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-2	83	1764776159097826277	build.ninja	1363dd248f325812
-2	6	1764776159104380437	CMakeFiles/database	71b17b3cf4e70018
-2	6	1764776159104380437	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+33	265	7865459435748186	CMakeFiles/database	79bdcc056e13a158
+33	265	7865459435748186	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	79bdcc056e13a158
+36	4244	7865459751534458	build.ninja	f3d3b7fa5d088a41
+71	272	7865459753369505	CMakeFiles/database	79bdcc056e13a158
+71	272	7865459753369505	C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	79bdcc056e13a158
