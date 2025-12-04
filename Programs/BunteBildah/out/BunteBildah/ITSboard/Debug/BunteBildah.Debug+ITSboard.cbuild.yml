@@ -337,6 +337,10 @@ build:
           category: header
         - file: ../../../../Inc/MS_basetypes.h
           category: header
+        - file: ../../../../Inc/writer.h
+          category: header
+        - file: ../../../../Inc/button.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -348,6 +352,10 @@ build:
         - file: ../../../../Src/input.c
           category: sourceC
         - file: ../../../../Src/varlenarr.c
+          category: sourceC
+        - file: ../../../../Src/writer.c
+          category: sourceC
+        - file: ../../../../Src/button.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h

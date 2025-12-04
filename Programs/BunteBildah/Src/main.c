@@ -16,6 +16,15 @@
 #include "additionalFonts.h"
 #include "error.h"
 
+#include "input.h"
+#include "BMP_types.h"
+#include "errorhandler.h"
+#include "headers.h"
+#include "MS_basetypes.h"
+
+#include "writer.h"
+#include "button.h"
+
 
 int main(void) {
 	initITSboard();    // Initialisierung des ITS Boards
@@ -31,6 +40,17 @@ int main(void) {
 		HAL_Delay(10000);
 	}
 	
+
+	// teilaufgabe 1
+
+	initInput();
+
+	while (true) {
+		openNextFile();
+		draw_picture();
+
+		wait_until_button_pressed();
+	}
 }
 
 // EOF

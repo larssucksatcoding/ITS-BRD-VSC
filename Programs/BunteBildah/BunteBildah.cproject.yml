@@ -186,6 +186,8 @@ project:
         - file: Inc/input.h
         - file: Inc/main.h
         - file: Inc/MS_basetypes.h
+        - file: Inc/writer.h
+        - file: Inc/button.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -195,6 +197,8 @@ project:
         - file: Src/headers.c
         - file: Src/input.c
         - file: Src/varlenarr.c
+        - file: Src/writer.c
+        - file: Src/button.c
 
   components:
     - component: ARM::CMSIS:CORE
