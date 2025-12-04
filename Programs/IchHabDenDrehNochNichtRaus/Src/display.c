@@ -52,6 +52,22 @@ int index = 0;
 
 /*  Functions  -------------------------*/ 
 
+void display_index_angle(int index) {
+    Coordinate current_angle_c = angle_c;
+    current_angle_c.x += index * CHAR_X_LENGTH;
+
+    GUI_disChar(current_angle_c, angle_new[index], 
+        &Font20, default_color, default_font_color);
+}
+
+void display_index_angular_momentum(int index) {
+    Coordinate current_angular_momentum_c = angular_momentum_c;
+    current_angular_momentum_c.x += index * CHAR_X_LENGTH;
+
+    GUI_disChar(current_angular_momentum_c, angular_momentum_new[index], 
+        &Font20, default_color, default_font_color);
+}
+
 void update_display() {
     // do nothing if display does not need to be updated
     // this is set to true by check_display_data()
@@ -61,21 +77,13 @@ void update_display() {
 
     // update displayed angle if digit does not match at current index
     if (angle_display[index] != angle_new[index]) {
-        Coordinate current_angle_c = angle_c;
-        current_angle_c.x += index * CHAR_X_LENGTH;
-
-        GUI_disChar(current_angle_c, angle_new[index], 
-            &Font20, default_color, default_font_color);
+        display_index_angle(index);
         angle_display[index] = angle_new[index];
     }
 
     // update displayed angular momentum if digit does not match at current index
     if (angular_momentum_display[index] != angular_momentum_new[index]) {
-        Coordinate current_angular_momentum_c = angular_momentum_c;
-        current_angular_momentum_c.x += index * CHAR_X_LENGTH;
-
-        GUI_disChar(current_angular_momentum_c, angular_momentum_new[index], 
-            &Font20, default_color, default_font_color);
+        display_index_angular_momentum(index);
         angular_momentum_display[index] = angular_momentum_new[index];
     }
 
@@ -131,16 +139,8 @@ void reset_display() {
     sprintf(angular_momentum_new, FORMAT_STR, 0.0);
 
     for (int i = 0; i < CHAR_LEN - 1; i++) {
-        Coordinate current_angle_c = angle_c;
-        Coordinate current_angular_momentum_c = angular_momentum_c;
-
-        current_angle_c.x += i * CHAR_X_LENGTH;
-        current_angular_momentum_c.x += i * CHAR_X_LENGTH;
-
-        GUI_disChar(current_angle_c, angle_new[i], 
-            &Font20, default_color, default_font_color);
-        GUI_disChar(current_angular_momentum_c, angular_momentum_new[i], 
-            &Font20, default_color, default_font_color);
+        display_index_angle(i);
+        display_index_angular_momentum(i);
     }
 }
 
