@@ -116,7 +116,9 @@
   ],
   "cmake.ignoreCMakeListsMissing": true,
   "C_Cpp_Runner.msvcBatchPath": "",
-  "clangd.arguments": [],
+  "clangd.arguments": [
+    "--compile-commands-dir=c:\\Users\\Uni\\Desktop\\ITS-BRD-VSC\\Programs\\BunteBildah\\out\\BunteBildah\\ITSboard\\Debug"
+  ],
   "debug.hideSlowPreLaunchWarning": true,
   "debug.showInStatusBar": "never"
 }
