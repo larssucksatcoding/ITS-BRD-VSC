@@ -21,7 +21,7 @@
    typedef unsigned short      WORD;
 */
 
-typedef int8_t 			CHAR;
+typedef int8_t 			  CHAR;
 typedef int16_t 			SHORT;
 typedef int32_t 			LONG;
 typedef uint32_t 			DWORD;
