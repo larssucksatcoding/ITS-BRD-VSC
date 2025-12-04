@@ -57,6 +57,7 @@ void init_modules() {
   */
 void reset_state() {
 	init_encoder(); // badly named, sets phase_count to 0
+	reset_display();
 
 	refresh_input_state();
 	refresh_timer();

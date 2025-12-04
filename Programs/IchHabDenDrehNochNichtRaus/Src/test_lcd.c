@@ -13,6 +13,6 @@
 
 void lcd_shit(){
     GPIOE->ODR = 0b10000000;
-    update(12.34, 56.78);
+    // update(12.34, 56.78);
     GPIOE->ODR = 0b00000000;
 }

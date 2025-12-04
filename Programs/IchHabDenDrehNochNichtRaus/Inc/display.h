@@ -39,6 +39,8 @@ void print_error(char *e);
   */
 void init_Display(void);
 
+void reset_display();
+
 /**
   * @brief      sets the Display to Error Mode (changes background color) 
   *             + clears Output
