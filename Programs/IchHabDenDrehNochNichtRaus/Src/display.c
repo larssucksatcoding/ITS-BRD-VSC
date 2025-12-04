@@ -47,7 +47,7 @@ char angular_momentum_display[CHAR_LEN];
 char angle_new[CHAR_LEN];
 char angular_momentum_new[CHAR_LEN];
 
-bool display_is_updating = false;
+static bool display_is_updating = false;
 int index = 0;
 
 /*  Functions  -------------------------*/ 
