@@ -123,6 +123,7 @@ project:
     # Nützliche Zusatzdateien (z.B. Fonts)
     - group: Utils
       files:
+        - file: ../../stm32cubef4/Utilities/Fonts/fonts.h
         - file: ../../stm32cubef4/Utilities/Fonts/font8.c
         - file: ../../stm32cubef4/Utilities/Fonts/font12.c
         - file: ../../stm32cubef4/Utilities/Fonts/font16.c
@@ -162,6 +163,7 @@ project:
         - file: ../../DisplayWaveshare/Src/testsoftware.c
         - file: ../../DisplayWaveshare/Src/LCD_Debug.c
         - file: ../../DisplayWaveshare/Src/LCD_Demos.c
+        - file: ../../DisplayWaveshare/Inc/LCD_GUI.h
 
     # ITS_BRD_LIB-spezifische Dateien
     - group: ITS_BRD_LIB
@@ -186,12 +188,9 @@ project:
         - file: Inc/input.h
         - file: Inc/main.h
         - file: Inc/MS_basetypes.h
-<<<<<<< HEAD
         - file: Inc/reader.h
-=======
         - file: Inc/writer.h
         - file: Inc/button.h
->>>>>>> 36b4c7af101231727482745235433f5d0f9acf8f
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -201,12 +200,9 @@ project:
         - file: Src/headers.c
         - file: Src/input.c
         - file: Src/varlenarr.c
-<<<<<<< HEAD
         - file: Src/reader.c
-=======
         - file: Src/writer.c
         - file: Src/button.c
->>>>>>> 36b4c7af101231727482745235433f5d0f9acf8f
 
   components:
     - component: ARM::CMSIS:CORE

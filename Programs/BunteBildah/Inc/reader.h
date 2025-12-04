@@ -14,6 +14,7 @@
 #define READER_H
 #include "BMP_types.h"
 #include "MS_basetypes.h"
+#include "LCD_GUI.h"
 
 
 // FUNCTION
@@ -54,6 +55,7 @@ WORD* get_next_Line();
   * @return     BYTE* (uint8_t) containing 3 values (red, green, blue)
   */
 PRGBTRIPLE get_color();
+
 
 
 #endif 

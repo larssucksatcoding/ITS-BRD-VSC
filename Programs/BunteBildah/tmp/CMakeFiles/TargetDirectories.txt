@@ -1,8 +1,0 @@
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/database.dir
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard.dir
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-build.dir
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-configure.dir
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-executes.dir
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-database.dir
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/edit_cache.dir
-C:/Users/Uni/Desktop/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/rebuild_cache.dir
