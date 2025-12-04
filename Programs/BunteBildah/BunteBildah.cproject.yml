@@ -123,7 +123,6 @@ project:
     # Nützliche Zusatzdateien (z.B. Fonts)
     - group: Utils
       files:
-        - file: ../../stm32cubef4/Utilities/Fonts/fonts.h
         - file: ../../stm32cubef4/Utilities/Fonts/font8.c
         - file: ../../stm32cubef4/Utilities/Fonts/font12.c
         - file: ../../stm32cubef4/Utilities/Fonts/font16.c
@@ -163,7 +162,6 @@ project:
         - file: ../../DisplayWaveshare/Src/testsoftware.c
         - file: ../../DisplayWaveshare/Src/LCD_Debug.c
         - file: ../../DisplayWaveshare/Src/LCD_Demos.c
-        - file: ../../DisplayWaveshare/Inc/LCD_GUI.h
 
     # ITS_BRD_LIB-spezifische Dateien
     - group: ITS_BRD_LIB
