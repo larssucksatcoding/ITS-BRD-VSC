@@ -1,9 +1,9 @@
 
 #include "color.h"
 
-#define MAX_INT_5_BIT 32
-#define MAX_INT_6_BIT 64
-#define MAX_INT_8_BIT_F 256.0f
+#define UINT5_MAX 32
+#define UINT6_MAX 64
+#define UINT8_MAX 256
 
 // =================
 // PRIVATE FUNCTIONS
@@ -19,14 +19,14 @@ COLOR bmp_to_display_color(char rgbBlue, char rgbGreen, char rgbRed) {
     COLOR color = BLACK; // BLACK is 0
 
     // normalize 8bit values to values between 0.0 and 1.0
-    double blue_float = (double) rgbBlue / MAX_INT_8_BIT_F;
-    double green_float = (double) rgbGreen / MAX_INT_8_BIT_F;
-    double red_float = (double) rgbRed / MAX_INT_8_BIT_F;
+    double blue_float = (double) rgbBlue / UINT8_MAX;
+    double green_float = (double) rgbGreen / UINT8_MAX;
+    double red_float = (double) rgbRed / UINT8_MAX;
 
     // multiply normalized values by max of target values
-    int blue_int = (int) blue_float * MAX_INT_5_BIT;
-    int green_int = (int) green_float * MAX_INT_6_BIT;
-    int red_int = (int) red_float * MAX_INT_5_BIT;
+    int blue_int = (int) blue_float * UINT5_MAX;
+    int green_int = (int) green_float * UINT6_MAX;
+    int red_int = (int) red_float * UINT5_MAX;
 
     // shift values into correct bit-indeces of color
     color |= blue_int;
