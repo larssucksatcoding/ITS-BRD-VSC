@@ -39,6 +39,11 @@ void print_error(char *e);
   */
 void init_Display(void);
 
+void reset_display();
+
+void display_index_angle(int index);
+void display_index_angular_momentum(int index);
+
 /**
   * @brief      sets the Display to Error Mode (changes background color) 
   *             + clears Output

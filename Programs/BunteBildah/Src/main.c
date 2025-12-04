@@ -16,19 +16,28 @@
 #include "additionalFonts.h"
 #include "error.h"
 
+#include "input.h"
+#include "BMP_types.h"
+#include "errorhandler.h"
+#include "headers.h"
+#include "MS_basetypes.h"
+
+#include "writer.h"
+#include "button.h"
+
 
 int main(void) {
-	initITSboard();    // Initialisierung des ITS Boards
-	
-	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 
-  // Begruessungstext	
-	lcdPrintlnS("Hallo liebes TI-Labor (c-project)");
-	
-	// Test in Endlosschleife
-	while(1) {
-		HAL_Delay(10000);
+	// init
+	initITSboard();    // Initialisierung des ITS Boards
+	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
+	initInput();
+
+	while (true) {
+		load_picture();
+		draw_picture();
+
+		wait_until_button_pressed();
 	}
 }
 

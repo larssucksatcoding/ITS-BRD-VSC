@@ -57,6 +57,7 @@ void init_modules() {
   */
 void reset_state() {
 	init_encoder(); // badly named, sets phase_count to 0
+	reset_display();
 
 	refresh_input_state();
 	refresh_timer();
@@ -80,7 +81,24 @@ int main(void) {
 	// immediate DIR_ERROR after the superloop starts
 	reset_state();
 
+	// while(1) {
+	// 	lcd_shit();
+	// 	HAL_Delay(20);
+	// }
+
+	bool toggle = false;
+
 	while(1) {
+
+		if (toggle) {
+			GPIOE->ODR |= 0b00010000;
+		} else {
+			GPIOE->ODR &= ~0b00010000;
+		}
+
+		toggle = !toggle;
+
+		
 
 		// ===============
 		// HARDWARE INPUTS
@@ -112,17 +130,6 @@ int main(void) {
 		// OUTPUT
 		// ======
 
-		// --- BLINKY BLINK ---
-
-		set_dir_led();
-		set_phase_led();
-
-		// --- DISPLAY ---
-
-		// displays new values on the display, if any 
-		// new have been set by recalcuate_display()
-		update_display();
-
 		if(is_timewindow_over()) {
 			// ankle only after updating total phase count yes yes
 			recalculate_angle();
@@ -135,7 +142,21 @@ int main(void) {
 			start_new_timewindow();
 			reset_window_phase_count(); // does this belong here or inside the function above?
 		}
+		
+		// --- BLINKY BLINK ---
+
+		set_dir_led();
+		set_phase_led();
+
+		// --- DISPLAY ---
+
+		// displays new values on the display, if any 
+		// new have been set by recalcuate_display()
+		update_display();
+
+		
 	}
+
 }
 
 // EOF

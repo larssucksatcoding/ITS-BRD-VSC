@@ -210,7 +210,12 @@ add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/headers.c"
   "${SOLUTION_ROOT}/Src/input.c"
   "${SOLUTION_ROOT}/Src/varlenarr.c"
+<<<<<<< HEAD
   "${SOLUTION_ROOT}/Src/reader.c"
+=======
+  "${SOLUTION_ROOT}/Src/writer.c"
+  "${SOLUTION_ROOT}/Src/button.c"
+>>>>>>> 36b4c7af101231727482745235433f5d0f9acf8f
 )
 target_include_directories(Group_Program_User_Src PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>
