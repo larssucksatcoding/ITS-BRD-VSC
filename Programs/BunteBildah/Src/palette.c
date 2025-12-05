@@ -7,41 +7,47 @@
 
 #include "palette.h"
 #include "BMP_types.h"
+#include "LCD_GUI.h"
 #include "input.h"
 #include "errorhandler.h"
 #include <mm_malloc.h>
+#include "LCD_general.h"
 
-
-PRGBQUAD palette;
+COLOR *palette;
+PRGBQUAD palette_quad;
 int size;
 
 
 void create_palette(int elements){
-    palette = (PRGBQUAD) malloc (elements);
     size = elements;
-    RGBQUAD color;
+    palette = (COLOR*) malloc (size);
+    RGBTRIPLE color;
+    BYTE reserved;
     for(int i = 0; i < size; i++) {
-        color.rgbRed = nextChar();
-        color.rgbGreen = nextChar();
-        color.rgbBlue = nextChar();
-        color.rgbReserved = nextChar();
+        color.rgbtRed = nextChar();
+        color.rgbtGreen = nextChar();
+        color.rgbtBlue = nextChar();
+        reserved = nextChar();
+        //palette[i] = convert color;
     }
 }
 
-int get_color(int index, PRGBTRIPLE rgb){
+int get_color(int index, COLOR* color){
     int error = false == (index >= size);
-
-    ERR_HANDLER(error == NOK, "angeforderte Farbindex nicht existent (index out of bounds)");
-    rgb->rgbtRed = palette[index].rgbRed;
-    rgb->rgbtGreen = palette[index].rgbGreen;
-    rgb->rgbtBlue = palette[index].rgbBlue;
+    if ( error == NOK) {
+        ERR_HANDLER(error == NOK, "angeforderte Farbindex nicht existent (index out of bounds)");
+        *color = WHITE;
+        return error;
+    }
+    
+    *color = palette[index];
     return error;
 }
 
 void delete_palette(){
-    if(palette != NULL) {
-        free(palette);
-        palette = NULL;
+    if(palette_quad != NULL) {
+        free(palette_quad);
+        palette_quad = NULL;
     }
 }
 

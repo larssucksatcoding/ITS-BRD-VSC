@@ -8,7 +8,7 @@
 #ifndef PALETTE_H
 #define PALETTE_H
 
-#include "BMP_types.h"
+#include "LCD_general.h"
 
 /**
   * @brief      creates a color palette with specified number of elements
@@ -27,7 +27,7 @@ void create_palette(int size);
   *
   * @return     int error code (pssible error: index out of bounds)
   */
-int get_color(int index, PRGBTRIPLE);
+int get_color(int index, COLOR* color);
 
 /**
   * @brief      deletes palette to free memory
