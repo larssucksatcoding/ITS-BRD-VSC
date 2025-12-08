@@ -4,8 +4,8 @@
 
 #include "LCD_GUI.h"
 
-COLOR read_rgbtriple();
+COLOR read_rgbtriple_as_color();
 
-COLOR read_rgbquad();
+COLOR read_rgbquad_as_color();
 
 #endif

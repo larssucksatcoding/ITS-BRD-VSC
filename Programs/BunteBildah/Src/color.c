@@ -71,12 +71,12 @@ COLOR rgbquad_to_display_color(RGBQUAD* quad) {
 // PUBLIC FUNCTIONS
 // ================
 
-COLOR read_rgbtriple() {
+COLOR read_rgbtriple_as_color() {
     COMread((char *) &triple, sizeof(RGBTRIPLE), 1);
     return rgbtriple_to_display_color(&triple);
 }
 
-COLOR read_rgbquad() {
+COLOR read_rgbquad_as_color() {
     COMread((char *) &quad, sizeof(RGBQUAD), 1);
     return rgbquad_to_display_color(&quad);
 }

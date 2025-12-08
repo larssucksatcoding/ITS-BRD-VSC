@@ -119,7 +119,7 @@ static void skip_to_next_line() {
 static void RGB_line() {
   for(int index = 0; INDEX_IN_WIDTH && !eof; index++) {
     // TODO: save line in line* here
-    line[index] = read_rgbtriple();
+    line[index] = read_rgbtriple_as_color();
   }
   if (big_width){
     skip_to_next_line();

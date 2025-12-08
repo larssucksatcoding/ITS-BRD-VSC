@@ -24,7 +24,7 @@ void create_palette(int elements){
     palette = (COLOR*) malloc (size);
 
     for(int i = 0; i < size; i++) {
-        palette[i] = read_rgbquad();
+        palette[i] = read_rgbquad_as_color();
     }
 }
 
