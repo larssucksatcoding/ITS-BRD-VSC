@@ -337,13 +337,11 @@ build:
           category: header
         - file: ../../../../Inc/MS_basetypes.h
           category: header
-<<<<<<< HEAD
         - file: ../../../../Inc/reader.h
-=======
+          category: header
         - file: ../../../../Inc/writer.h
           category: header
         - file: ../../../../Inc/button.h
->>>>>>> 36b4c7af101231727482745235433f5d0f9acf8f
           category: header
         - file: ../../../../Inc/color.h
           category: header
@@ -359,13 +357,11 @@ build:
           category: sourceC
         - file: ../../../../Src/varlenarr.c
           category: sourceC
-<<<<<<< HEAD
         - file: ../../../../Src/reader.c
-=======
+          category: sourceC
         - file: ../../../../Src/writer.c
           category: sourceC
         - file: ../../../../Src/button.c
->>>>>>> 36b4c7af101231727482745235433f5d0f9acf8f
           category: sourceC
         - file: ../../../../Src/color.c
           category: sourceC

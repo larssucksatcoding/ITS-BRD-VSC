@@ -5,8 +5,8 @@
             "name": "STLink@pyOCD (launch)",
             "type": "gdbtarget",
             "request": "launch",
-            "cwd": "${workspaceFolder}/Programs/IchHabDenDrehNochNichtRaus",
-            "program": "out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf",
+            "cwd": "${workspaceFolder}/Programs/BunteBildah",
+            "program": "out/BunteBildah/ITSboard/Debug/BunteBildah.axf",
             "gdb": "arm-none-eabi-gdb",
             "preLaunchTask": "CMSIS Load",
             "initCommands": [
@@ -46,8 +46,8 @@
             "name": "STLink@pyOCD (attach)",
             "type": "gdbtarget",
             "request": "attach",
-            "cwd": "${workspaceFolder}/Programs/IchHabDenDrehNochNichtRaus",
-            "program": "out/IchHabDenDrehNochNichtRaus/ITSboard/Debug/IchHabDenDrehNochNichtRaus.axf",
+            "cwd": "${workspaceFolder}/Programs/BunteBildah",
+            "program": "out/BunteBildah/ITSboard/Debug/BunteBildah.axf",
             "gdb": "arm-none-eabi-gdb",
             "initCommands": [
                 ""

@@ -210,6 +210,7 @@ add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/headers.c"
   "${SOLUTION_ROOT}/Src/input.c"
   "${SOLUTION_ROOT}/Src/varlenarr.c"
+  "${SOLUTION_ROOT}/Src/reader.c"
   "${SOLUTION_ROOT}/Src/writer.c"
   "${SOLUTION_ROOT}/Src/button.c"
   "${SOLUTION_ROOT}/Src/color.c"
