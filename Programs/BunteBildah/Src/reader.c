@@ -16,6 +16,7 @@
 #include "BMP_types.h"
 #include "MS_basetypes.h"
 #include "palette.h"
+#include "color.h"
 
 
 #define BITCOUNT_PALETTE      8
@@ -28,7 +29,7 @@
 #define DELTA                 0x02
 
 #define INDEX_IN_WIDTH        ((index < width) && (index < LCD_WIDTH))
-#define LINE_WIDTH            (width <= LCD_WIDTH ? width : LCD_WIDTH)
+#define LINE_WIDTH            ((width <= LCD_WIDTH) ? width : LCD_WIDTH)
 
 
 
@@ -92,6 +93,7 @@ static BYTE next_byte() {
   }
   return (BYTE) nextbyte;
 }
+
 /**
 * @brief      reads bytes from file, that won't be displayed,
 *             because the pic is wider than our display,
@@ -120,6 +122,9 @@ static void RGB_line() {
     rgb.rgbtBlue = next_byte();
     rgb.rgbtGreen = next_byte();
     rgb.rgbtRed = next_byte();
+
+    // TODO: save line in line* here
+    line[index] = rgbtriple_to_display_color(&rgb); 
   }
   if (big_width){
     skip_to_next_line();
@@ -237,6 +242,7 @@ extern int load_picture() {
     return error;
   }
 
+  // i think readHeaders() does this already
   getFileHeader(fileheader);
   getInfoHeader(infoheader);
   
