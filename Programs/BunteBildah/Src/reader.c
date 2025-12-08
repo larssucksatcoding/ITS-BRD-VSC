@@ -1,9 +1,9 @@
 /**
-  * @file       reader.c
-  * @author     Lars Müller-Stumpf, Noah Rajko
-  * @date       Dec 2025
-  * @brief      Loads, checks and handles information from input file
-  */
+* @file       reader.c
+* @author     Lars Müller-Stumpf, Noah Rajko
+* @date       Dec 2025
+* @brief      Loads, checks and handles information from input file
+*/
 
 #include "reader.h"
 #include "BMP_types.h"
@@ -16,6 +16,7 @@
 #include "BMP_types.h"
 #include "MS_basetypes.h"
 #include "palette.h"
+#include "line.h"
 
 
 #define BITCOUNT_PALETTE      8
@@ -28,7 +29,7 @@
 #define DELTA                 0x02
 
 #define INDEX_IN_WIDTH        ((index < width) && (index < LCD_WIDTH))
-#define LINE_WIDTH            (width <= LCD_WIDTH ? width : LCD_WIDTH)
+#define LINE_WIDTH            (width <= LCD_WIDTH ? width : LCD_WIDTH)  //
 
 
 
@@ -47,8 +48,8 @@ static COLOR *line;
 // flags + info, if we already read info for following pixels
 static bool   next_pxl_absolute;
 static bool   next_pxl_encoded;
-static int    pixel_count;
-static COLOR  start_color;
+static int    pixel_count;          // that many pixel we know aboout
+static COLOR  start_color;          // color of pixel we know about (encoded)
 static bool   delta;
 static int    delta_x;
 static int    delta_y;
@@ -193,7 +194,7 @@ static int RLE8_compressed_line(){
       }
       else { // absolute mode
         int pixels_in_absolute = secondByte;
-        if((index + pixels_in_absolute) > width || (index + pixels_in_absolute)) {
+        if((index + pixels_in_absolute) > LINE_WIDTH) {
           next_pxl_absolute = true;
           if(big_width) {
             int leftover = LCD_WIDTH - index;
