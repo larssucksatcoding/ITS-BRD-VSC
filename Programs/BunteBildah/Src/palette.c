@@ -22,14 +22,9 @@ int size;
 void create_palette(int elements){
     size = elements;
     palette = (COLOR*) malloc (size);
-    RGBTRIPLE color;
-    BYTE reserved;
+
     for(int i = 0; i < size; i++) {
-        color.rgbtRed = nextChar();
-        color.rgbtGreen = nextChar();
-        color.rgbtBlue = nextChar();
-        reserved = nextChar();
-        palette[i] = rgbtriple_to_display_color(&color);
+        palette[i] = read_rgbquad();
     }
 }
 

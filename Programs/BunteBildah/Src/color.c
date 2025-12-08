@@ -1,9 +1,14 @@
 
 #include "color.h"
+#include "BMP_types.h"
+#include "input.h"
 
 #define UINT5_MAX 32
 #define UINT6_MAX 64
 #define UINT8_MAX 256
+
+static RGBTRIPLE triple;
+static RGBQUAD quad;
 
 // =================
 // PRIVATE FUNCTIONS
@@ -36,10 +41,11 @@ COLOR bmp_to_display_color(char rgbBlue, char rgbGreen, char rgbRed) {
     return color;
 }
 
-// ================
-// PUBLIC FUNCTIONS
-// ================
-
+/**
+  * @brief  convert 24-bit rgbtriple to 16-bits needed by display.
+  * @param  triple  the rgbtriple
+  * @retval the matching display color
+  */
 COLOR rgbtriple_to_display_color(RGBTRIPLE* triple) {
     return bmp_to_display_color(
         triple->rgbtBlue,
@@ -48,11 +54,30 @@ COLOR rgbtriple_to_display_color(RGBTRIPLE* triple) {
     );
 }
 
+/**
+  * @brief  convert 8-bit rgbquad to 16-bits needed by display.
+  * @param  triple  the rgbquad
+  * @retval the matching display color
+  */
 COLOR rgbquad_to_display_color(RGBQUAD* quad) {
     return bmp_to_display_color(
         quad->rgbBlue,
         quad->rgbGreen,
         quad->rgbRed
     );
+}
+
+// ================
+// PUBLIC FUNCTIONS
+// ================
+
+COLOR read_rgbtriple() {
+    COMread((char *) &triple, sizeof(RGBTRIPLE), 1);
+    return rgbtriple_to_display_color(&triple);
+}
+
+COLOR read_rgbquad() {
+    COMread((char *) &quad, sizeof(RGBQUAD), 1);
+    return rgbquad_to_display_color(&quad);
 }
 

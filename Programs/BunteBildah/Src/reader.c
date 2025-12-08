@@ -117,14 +117,9 @@ static void skip_to_next_line() {
 * @return     void pixel data will be safed in static line (COLOR[])
 */
 static void RGB_line() {
-  RGBTRIPLE rgb; 
   for(int index = 0; INDEX_IN_WIDTH && !eof; index++) {
-    rgb.rgbtBlue = next_byte();
-    rgb.rgbtGreen = next_byte();
-    rgb.rgbtRed = next_byte();
-
     // TODO: save line in line* here
-    line[index] = rgbtriple_to_display_color(&rgb); 
+    line[index] = read_rgbtriple();
   }
   if (big_width){
     skip_to_next_line();
@@ -242,7 +237,6 @@ extern int load_picture() {
     return error;
   }
 
-  // i think readHeaders() does this already
   getFileHeader(fileheader);
   getInfoHeader(infoheader);
   
