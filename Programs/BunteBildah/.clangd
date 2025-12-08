@@ -1,6 +1,7 @@
 CompileFlags:
   CompilationDatabase: >-
-    c:\Users\Uni\Desktop\ITS-BRD-VSC\Programs\BunteBildah\out\BunteBildah\ITSboard\Debug
+    /home/bazzite/Documents/code
+    projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug
   Add:
     - '-D_ILP32=1'
     - '-D_USE_STATIC_INLINE=1'
