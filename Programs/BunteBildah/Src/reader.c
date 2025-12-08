@@ -193,17 +193,17 @@ static int RLE8_compressed_line(){
       }
       else { // absolute mode
         int pixels_in_absolute = secondByte;
-        if((index + pixels_in_absolute) > width || (index + pixels_in_absolute)) {
+
+        bool exceeds_picture_width = (index + pixels_in_absolute) > width;
+        bool exceeds_display_width = (index + pixels_in_absolute) > LCD_WIDTH;
+
+        if(exceeds_picture_width || exceeds_display_width) {
           next_pxl_absolute = true;
-          if(big_width) {
-            int leftover = LCD_WIDTH - index;
-            pixel_count = pixels_in_absolute - leftover;
-          }
-          else {
-            int leftover = width - index;
-            pixel_count = pixels_in_absolute - leftover;
-          }
+
+          int leftover = (big_width ? LCD_WIDTH : width) - index;
+          pixel_count = pixels_in_absolute - leftover;
         }
+        
         for(int i = 0; i < pixels_in_absolute && INDEX_IN_WIDTH && !eof; i++, index++){
           error = get_color(next_byte(), &LCD_color);
           line[index] = LCD_color;
