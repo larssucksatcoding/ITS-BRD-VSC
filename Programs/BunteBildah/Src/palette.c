@@ -14,13 +14,14 @@
 #include <mm_malloc.h>
 #include "LCD_general.h"
 
-COLOR *palette;
-PRGBQUAD palette_quad;
-int size;
+static COLOR *palette = NULL;
+static int size;
 
-
-void create_palette(int elements){
+void create_palette(int elements) {
     size = elements;
+
+    // muss das nicht malloc(sizeof(COLOR) * size)?
+    // ist der parameter für malloc in byte?
     palette = (COLOR*) malloc (size);
 
     for(int i = 0; i < size; i++) {
@@ -28,7 +29,8 @@ void create_palette(int elements){
     }
 }
 
-int get_color(int index, COLOR* color){
+int get_color(int index, COLOR* color) {
+    // warum prüft man nicht direkt index >= in if statement?
     int error = false == (index >= size);
     if ( error == NOK) {
         ERR_HANDLER(error == NOK, "angeforderte Farbindex nicht existent (index out of bounds)");
@@ -40,10 +42,10 @@ int get_color(int index, COLOR* color){
     return error;
 }
 
-void delete_palette(){
-    if(palette_quad != NULL) {
-        free(palette_quad);
-        palette_quad = NULL;
+void delete_palette() {
+    if(palette != NULL) {
+        free(palette);
+        palette = NULL;
     }
 }
 
