@@ -8,6 +8,7 @@
 #include "palette.h"
 #include "BMP_types.h"
 #include "LCD_GUI.h"
+#include "color.h"
 #include "input.h"
 #include "errorhandler.h"
 #include <mm_malloc.h>
@@ -28,7 +29,7 @@ void create_palette(int elements){
         color.rgbtGreen = nextChar();
         color.rgbtBlue = nextChar();
         reserved = nextChar();
-        //palette[i] = convert color;
+        palette[i] = rgbtriple_to_display_color(&color);
     }
 }
 
