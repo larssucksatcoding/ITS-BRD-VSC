@@ -194,16 +194,17 @@ static int RLE8_compressed_line(){
       else { // absolute mode
         int pixels_in_absolute = secondByte;
 
-        bool exceeds_picture_width = (index + pixels_in_absolute) > width;
-        bool exceeds_display_width = (index + pixels_in_absolute) > LCD_WIDTH;
+        bool exceeds_width = (index + pixels_in_absolute) > LINE_WIDTH;
 
-        if(exceeds_picture_width || exceeds_display_width) {
+        if(exceeds_width) {
           next_pxl_absolute = true;
 
+          // would like to use LINE_WIDTH macro, but it does not
+          // check for big_width.
           int leftover = (big_width ? LCD_WIDTH : width) - index;
           pixel_count = pixels_in_absolute - leftover;
         }
-        
+
         for(int i = 0; i < pixels_in_absolute && INDEX_IN_WIDTH && !eof; i++, index++){
           error = get_color(next_byte(), &LCD_color);
           line[index] = LCD_color;
