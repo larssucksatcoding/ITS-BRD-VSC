@@ -22,6 +22,7 @@
 #include "headers.h"
 #include "MS_basetypes.h"
 
+#include "reader.h"
 #include "writer.h"
 #include "button.h"
 

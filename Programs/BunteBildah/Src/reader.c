@@ -17,6 +17,7 @@
 #include "MS_basetypes.h"
 #include "palette.h"
 #include "line.h"
+#include "color.h"
 
 
 #define BITCOUNT_PALETTE      8
@@ -29,7 +30,7 @@
 #define DELTA                 0x02
 
 #define INDEX_IN_WIDTH        ((index < width) && (index < LCD_WIDTH))
-#define LINE_WIDTH            (width <= LCD_WIDTH ? width : LCD_WIDTH)  //
+#define LINE_WIDTH            ((width <= LCD_WIDTH) ? width : LCD_WIDTH)
 
 
 
@@ -93,6 +94,7 @@ static BYTE next_byte() {
   }
   return (BYTE) nextbyte;
 }
+
 /**
 * @brief      reads bytes from file, that won't be displayed,
 *             because the pic is wider than our display,
@@ -116,11 +118,9 @@ static void skip_to_next_line() {
 * @return     void pixel data will be safed in static line (COLOR[])
 */
 static void RGB_line() {
-  RGBTRIPLE rgb; 
   for(int index = 0; INDEX_IN_WIDTH && !eof; index++) {
-    rgb.rgbtBlue = next_byte();
-    rgb.rgbtGreen = next_byte();
-    rgb.rgbtRed = next_byte();
+    // TODO: save line in line* here
+    line[index] = read_rgbtriple_as_color();
   }
   if (big_width){
     skip_to_next_line();
@@ -194,17 +194,18 @@ static int RLE8_compressed_line(){
       }
       else { // absolute mode
         int pixels_in_absolute = secondByte;
-        if((index + pixels_in_absolute) > LINE_WIDTH) {
+
+        bool exceeds_width = (index + pixels_in_absolute) > LINE_WIDTH;
+
+        if(exceeds_width) {
           next_pxl_absolute = true;
-          if(big_width) {
-            int leftover = LCD_WIDTH - index;
-            pixel_count = pixels_in_absolute - leftover;
-          }
-          else {
-            int leftover = width - index;
-            pixel_count = pixels_in_absolute - leftover;
-          }
+
+          // would like to use LINE_WIDTH macro, but it does not
+          // check for big_width.
+          int leftover = (big_width ? LCD_WIDTH : width) - index;
+          pixel_count = pixels_in_absolute - leftover;
         }
+
         for(int i = 0; i < pixels_in_absolute && INDEX_IN_WIDTH && !eof; i++, index++){
           error = get_color(next_byte(), &LCD_color);
           line[index] = LCD_color;
