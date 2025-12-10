@@ -206,11 +206,11 @@ extern int RLE8_compressed_line(COLOR* line) {
     COLOR LCD_color;
 
     // check if we completed last line with leftover information
-    check_info_first_pxl(&index, line);
+    error = check_info_first_pxl(&index, line);
 
     BYTE firstByte, secondByte;
 
-    do {
+    while(index < pic_width) {
         firstByte = next_byte();
         secondByte = next_byte();
 
@@ -243,8 +243,8 @@ extern int RLE8_compressed_line(COLOR* line) {
             error = get_color(secondByte, &LCD_color);
             encoded_mode(&index, line, firstByte, LCD_color);
         }
-    } while(index < pic_width);
-    
+    }
+
     return error;
 }
 
