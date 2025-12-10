@@ -157,6 +157,8 @@ static int absolute_mode(int* index, COLOR* line, int pxl_amount) {
 
 
 static void encoded_mode(int* index, COLOR* line, int pxl_amount, COLOR color) {
+    // do you need to save the color somewhere here?
+    // pixel_color = color;
 
     if((*index + pxl_amount) > PIXEL_WIDTH) {
         next_pxl_encoded = true;

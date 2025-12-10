@@ -25,6 +25,7 @@ functionality
 - [ ] how to proceed with new height? (or new picture size in general)
 - [ ] how does the delta work? is it implemented correctly in line.c
             especially line 194+/- in line.c
+- [ ] at some point save pixel_color because it will always be WHITE otherwise!
 
 semantics
 - [ ] just based on names, shouldn't the line be saved in the line module?
