@@ -38,6 +38,8 @@ static void draw_line(Coordinate coordinate) {
 }
 
 extern void draw_picture() {
+    GUI_clear(LCD_BACKGROUND);
+
     Coordinate coordinate = {0, 0};
 
     for (int position_y = 0; position_y < LCD_HEIGHT; position_y++) {

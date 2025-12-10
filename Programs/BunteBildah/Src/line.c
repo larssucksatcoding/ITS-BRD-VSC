@@ -25,7 +25,6 @@
 #define END_OF_BITMAP         0x01
 #define DELTA                 0x02
 
-#define BACKGROUND              WHITE
 
 #define PIXEL_WIDTH              ((pic_width <= LCD_WIDTH) ? pic_width : LCD_WIDTH) // nr of pixels in line
 #define LINE_WIDTH              LCD_WIDTH
@@ -48,7 +47,7 @@ static int      pic_width;
 
 extern void clear_line(COLOR* line) {
   for(int index = 0; index < LINE_WIDTH; index ++){
-    line[index] = BACKGROUND;
+    line[index] = LCD_BACKGROUND;
   }
 }
 
@@ -139,7 +138,7 @@ static void encoded_mode(int* index, COLOR* line, int pxl_amount, COLOR color) {
     else if (next_pxl_encoded) {
         next_pxl_encoded = false;
         pixel_count = 0;
-        pixel_color = BACKGROUND;
+        pixel_color = LCD_BACKGROUND;
     }
 
     for ( ;(pxl_amount > 0) && (*index < PIXEL_WIDTH); (*index)++, pxl_amount--) {
