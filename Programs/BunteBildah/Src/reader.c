@@ -18,6 +18,8 @@
 #include "palette.h"
 #include "line.h"
 #include "color.h"
+#include <mm_malloc.h>
+#include <stdlib.h>
 
 
 #define BITCOUNT_PALETTE      8
@@ -25,12 +27,10 @@
 
 #define END_OF_FILE           -1
 
-#define END_OF_LINE           0x00
-#define END_OF_BITMAP         0x01
-#define DELTA                 0x02
+
 
 #define INDEX_IN_WIDTH        ((index < width) && (index < LCD_WIDTH))
-#define LINE_WIDTH            ((width <= LCD_WIDTH) ? width : LCD_WIDTH)
+#define LINE_WIDTH            (width <= LCD_WIDTH ? width : LCD_WIDTH)
 
 
 
@@ -43,17 +43,7 @@ static bool big_height;
 static bool compressed;
 static bool eof;
 
-static COLOR *line;
-
-
-// flags + info, if we already read info for following pixels
-static bool   next_pxl_absolute;
-static bool   next_pxl_encoded;
-static int    pixel_count;          // that many pixel we know aboout
-static COLOR  start_color;          // color of pixel we know about (encoded)
-static bool   delta;
-static int    delta_x;
-static int    delta_y;
+extern COLOR line[LCD_WIDTH];
 
 /*
 *                           (Breite der Zeile)*(Anzahl Bits pro Eintrag) + 31
@@ -72,162 +62,18 @@ static void reset_variables() {
   compressed = false;
   eof = false;
 
-  next_pxl_absolute = false;
-  next_pxl_encoded = false;
-  pixel_count = 0;
-  delta = false;
-  delta_x = 0;
-  delta_y = 0;
-  eof = false;
+  // reset line module??
 }
 
-/**
-* @brief      reads next Char and sets end of file flag, as soon as 
-*             the end has come upon  us
-* 
-* @return     value of nextByte 
-*/
-static BYTE next_byte() {
+
+
+extern BYTE next_byte() {
   int nextbyte = nextChar(); 
   if (nextbyte == END_OF_FILE) {
     eof = true;
   }
   return (BYTE) nextbyte;
 }
-
-/**
-* @brief      reads bytes from file, that won't be displayed,
-*             because the pic is wider than our display,
-*             until we reach the next Line
-*/
-static void skip_to_next_line() {
-  for (int i = LCD_WIDTH; i < width; i++) {
-    while(!eof) {
-      next_byte();
-      if(!palette) {
-        next_byte();
-        next_byte();
-      }
-    }
-  }
-}
-
-/**
-* @brief      gets pixels of new line in RGB format
-* 
-* @return     void pixel data will be safed in static line (COLOR[])
-*/
-static void RGB_line() {
-  for(int index = 0; INDEX_IN_WIDTH && !eof; index++) {
-    // TODO: save line in line* here
-    line[index] = read_rgbtriple_as_color();
-  }
-  if (big_width){
-    skip_to_next_line();
-  }
-}
-
-/**
-* @brief      gets pixels of new line in uncompressed rle8 format
-* 
-* @return     COLOR* containing colors for LCD display
-*/
-static int RLE8_uncompressed_line() {
-  int error = EOK;  
-  BYTE nextPixel = next_byte();
-  COLOR color;
-  for(int index = 0; INDEX_IN_WIDTH && !eof; index++) {
-    error = get_color(nextPixel, &color);
-    line[index] = color;
-    nextPixel = next_byte();
-  }
-  // check if we reached end of file
-  if (big_width) {
-    skip_to_next_line();
-  }
-  return error;
-}
-
-/**
-* @brief      interprets info from compressed rle8 format to get information 
-*             for each pixel in new line (sets flags, if we get information for more than this line)
-* 
-* @return     error if something went wrong
-*/
-static int RLE8_compressed_line(){
-  BYTE firstByte = (BYTE) next_byte();
-  BYTE secondByte = (BYTE) next_byte();
-  int index = 0;
-  int error = EOK;
-  COLOR LCD_color;
-  RGBTRIPLE rgb;
-
-  // check if we know anything about first pixels
-
-  if(next_pxl_absolute) {
-    
-    
-  }
-  else if (next_pxl_encoded) {
-
-
-  }
-  else if (delta) {
-
-
-  }
-
-  while (INDEX_IN_WIDTH && !eof) {
-    if(firstByte == 0) {
-      if(secondByte == END_OF_LINE) {
-        return error;
-      }
-      else if(secondByte == END_OF_BITMAP) {
-        eof = true;
-        return error;
-      }
-      else if(secondByte == DELTA) {
-        BYTE horizontalDelta = next_byte();
-        BYTE verticalDelta = next_byte();
-        
-        return error;
-      }
-      else { // absolute mode
-        int pixels_in_absolute = secondByte;
-
-        bool exceeds_width = (index + pixels_in_absolute) > LINE_WIDTH;
-
-        if(exceeds_width) {
-          next_pxl_absolute = true;
-
-          // would like to use LINE_WIDTH macro, but it does not
-          // check for big_width.
-          int leftover = (big_width ? LCD_WIDTH : width) - index;
-          pixel_count = pixels_in_absolute - leftover;
-        }
-
-        for(int i = 0; i < pixels_in_absolute && INDEX_IN_WIDTH && !eof; i++, index++){
-          error = get_color(next_byte(), &LCD_color);
-          line[index] = LCD_color;
-        }
-
-      }
-    }
-    else {
-      // Encoded mode, no escape value
-      int pxl_with_next_color = firstByte;
-      BYTE index = next_byte();
-      error = get_color(index, &LCD_color);
-      // = convert rgb
-      for (int i = 0; i < pxl_with_next_color && index + i < width; i++) {
-        line[index+i] = LCD_color;
-      }
-    }
-    firstByte = next_byte();
-  }
-}
-
-
 
 extern int load_picture() {
   reset_variables();
@@ -256,38 +102,54 @@ extern int load_picture() {
   }
 
   width = infoheader->biWidth;
-  COLOR array[width];
-  line = &array[0];
-
+  // reset line module 
   if(palette) {
-    int size = infoheader->biClrUsed;
-    if (size == 0) {
-      size = MAX_COLOR_TABLE_SIZE;
+    int pal_size = infoheader->biClrUsed;
+    if (pal_size == 0) {
+      pal_size = MAX_COLOR_TABLE_SIZE;
     }
-    create_palette(size);
+    create_palette(pal_size);
   }
+  
   return error;
 }
 
-
 COLOR* get_next_Line(){
 
+  int error = EOK;
   // format: RGB
   if(!palette){
-    return RGB_line();
+    RGB_line(line);
+    // skip to next Line?
   }
 
   // format: RLE8, uncompressed
   else if(!compressed) {
-    return RLE8_uncompressed_line();
+    error =  RLE8_uncompressed_line(line);
+    // skip to next line?
   }
 
   // format: RLE8, compressed
-  else if (compressed) {
-    return RLE8_compressed_line();
+  else {
+    error =  RLE8_compressed_line(line);
+    // skip to next line?
   }
+}
 
-  return line;
+extern int get_width(){
+  return infoheader->biWidth;
+}
+
+extern void set_width(int new_width){
+  width = new_width; 
+}
+
+extern int get_height(){
+  return infoheader->biHeight;
+}
+
+extern void set_height(int new_height){
+  // width = new_width; 
 }
 
 
