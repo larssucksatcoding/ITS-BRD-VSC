@@ -10,6 +10,8 @@
 #include "LCD_general.h"
 #include "reader.h"
 
+// switch to drawing individual pixels by commenting out this define.
+// you need to recompile afterwards.
 #define WRITER_C_LINE_DRAW_MODE
 
 /**
@@ -30,7 +32,7 @@ static void draw_line(Coordinate coordinate) {
     #else
     for (int position_x = 0; position_x < LCD_WIDTH; position_x++) {
         coordinate.x = position_x;
-        GUI_drawPoint(coordinate, line[position_x], DOT_PIXEL_1X1, DOT_FILL_RIGHTUP);
+        GUI_drawPoint(coordinate, line[position_x], DOT_PIXEL_1X1, DOT_FILL_AROUND);
     }
     #endif
 }
