@@ -24,7 +24,7 @@ static void skip_to_next_line(bool palette);
 * 
 * @return     void
 */
-static void clear_line(COLOR* line);
+extern void clear_line(COLOR* line);
 
 /**
 * @brief      -
@@ -61,6 +61,7 @@ static int check_info_first_pxl(int* index, COLOR* line);
 
 // PUBLIC FUNCTIONS
 
+extern void reset_line_module();
 
 /**
 * @brief      gets pixels of new line in RGB format

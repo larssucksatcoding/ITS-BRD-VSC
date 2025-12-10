@@ -17,7 +17,6 @@
 #include "palette.h"
 #include "line.h"
 #include "color.h"
-#include <mm_malloc.h>
 #include <stdlib.h>
 
 
@@ -61,6 +60,7 @@ static void reset_variables() {
   compressed = false;
   eof = false;
 
+  reset_line_module();
   // reset line module??
 }
 
@@ -114,6 +114,8 @@ extern int load_picture() {
 }
 
 COLOR* get_next_Line(){
+  
+  clear_line(line);
 
   int error = EOK;
   // format: RGB

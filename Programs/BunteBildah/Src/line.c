@@ -46,7 +46,7 @@ static int      pic_width;
 
 // STATIC FUNCTIONS
 
-static void clear_line(COLOR* line) {
+extern void clear_line(COLOR* line) {
   for(int index = 0; index < LINE_WIDTH; index ++){
     line[index] = BACKGROUND;
   }
@@ -62,7 +62,7 @@ static void skip_to_next_line(bool palette) {
   }
 }
 
-static void reset_line_module() {
+extern void reset_line_module() {
     next_pxl_absolute = false;
     ends_at_word_boundary = true;
     next_pxl_encoded = false;
