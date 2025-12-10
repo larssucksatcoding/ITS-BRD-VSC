@@ -11,7 +11,6 @@
 #include "input.h"
 #include "errorhandler.h"
 #include <stdbool.h>
-#include <stdio.h>
 #include "LCD_general.h" // contains information about LCD width/height
 #include "BMP_types.h"
 #include "MS_basetypes.h"
@@ -150,6 +149,10 @@ extern int get_height(){
 
 extern void set_height(int new_height){
   // width = new_width; 
+}
+
+extern void end_of_file(){
+  eof = true;
 }
 
 

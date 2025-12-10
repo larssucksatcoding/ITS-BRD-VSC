@@ -6,10 +6,8 @@
 */
 
 #include "palette.h"
-#include "BMP_types.h"
 #include "LCD_GUI.h"
 #include "color.h"
-#include "input.h"
 #include "errorhandler.h"
 #include <mm_malloc.h>
 #include "LCD_general.h"

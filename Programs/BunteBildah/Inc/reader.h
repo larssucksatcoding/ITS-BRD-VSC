@@ -82,6 +82,10 @@ extern int get_height();
 */
 extern void set_height(int new_height);
 
+/**
+* @brief      tells us we reached end of file, stores information in reader.
+*/
+extern void end_of_file();
 
 #endif 
 
