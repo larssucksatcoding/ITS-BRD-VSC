@@ -20,6 +20,7 @@
 #include "line.h"
 #include "color.h"
 #include <mm_malloc.h>
+#include "math.h"
 
 #define END_OF_LINE           0x00
 #define END_OF_BITMAP         0x01
@@ -42,6 +43,8 @@ static int      delta_y;
 
 static int      pic_width;
 
+static int      uncompressed_bytes_per_line_with_padding; // this line is very long.
+
 
 // STATIC FUNCTIONS
 
@@ -52,6 +55,13 @@ extern void clear_line(COLOR* line) {
 }
 
 static void skip_to_next_line(bool palette) {
+
+    // this function needs special treatment for uncompressed images
+    // because of the whole padding shenanigans.
+    // i created uncompressed_bytes_per_line_with_padding for this
+    // but i still don't understand how to calcuate it correctly. 
+
+
   for (int i = LINE_WIDTH; i < pic_width; i++) {
     next_byte();
     if(!palette) {
@@ -70,7 +80,24 @@ extern void reset_line_module() {
     delta = false;
     delta_x = 0;
     delta_y = 0;
+
     pic_width = get_width();
+    
+    // calculation for how many padding bytes there are when the
+    // picture is uncompressed.
+
+    int bits_per_pixel = get_bits_per_pixel();
+
+    int expected_bits_per_line = pic_width * bits_per_pixel;
+    bool needs_padding = (expected_bits_per_line % 4) == 0;
+
+    // see formular at the bottom of page 8
+    // HOWEVER; the formular does not make sense at all? every time i
+    // insert values i just get values out which are not dividable by 4???
+    // so not using it for now.
+    uncompressed_bytes_per_line_with_padding = (needs_padding)
+        ? (int) ceil(((double) ((expected_bits_per_line) + 31) / 32.0) * 4.0)
+        : expected_bits_per_line;
 }
 
 static int check_info_first_pxl(int* index, COLOR* line) {
@@ -149,6 +176,7 @@ static void encoded_mode(int* index, COLOR* line, int pxl_amount, COLOR color) {
 
 // PUBLIC FUNCTIONS
 
+// 24-bit (must be uncompressed)
 extern void RGB_line(COLOR* line) {
   for(int index = 0; index < PIXEL_WIDTH; index++) {
     line[index] = read_rgbtriple_as_color();
@@ -156,6 +184,7 @@ extern void RGB_line(COLOR* line) {
   skip_to_next_line(false);
 }
 
+// 8-bit (uncompressed)
 extern int RLE8_uncompressed_line(COLOR* line) {
   int error = EOK;  
   BYTE pal_index = next_byte();
@@ -169,6 +198,7 @@ extern int RLE8_uncompressed_line(COLOR* line) {
   return error;
 }
 
+// 8-bit (compressed)
 extern int RLE8_compressed_line(COLOR* line) {
     int index = 0;
     int error = EOK;

@@ -74,6 +74,15 @@ extern void set_width(int new_width);
 extern int get_height();
 
 /**
+* @brief      returns bit count per pixel (biBitCount)
+*
+* @param      -
+* 
+* @return     int height
+*/
+extern int get_bits_per_pixel();
+
+/**
 * @brief      for when we make our picture smaller
 *
 * @param      -

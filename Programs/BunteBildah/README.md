@@ -19,12 +19,15 @@ Templates
 
 ~ ~ ~ ~ ~  T O  -  D O   ~ ~ ~ ~ ~
 
-
+functionality
 - [ ] reader.c: überarbeite das RLE8 compressed line gedöns
 - [ ] reader / line skip to next Line und eof checken 
 - [ ] how to proceed with new height? (or new picture size in general)
 - [ ] how does the delta work? is it implemented correctly in line.c
             especially line 194+/- in line.c
 
-
-- [x] color palette: do we really want to safe them as rgbquad, reserved value is never used, rgbtriple should be enough
+semantics
+- [ ] just based on names, shouldn't the line be saved in the line module?
+- [ ] just based on names, get_color() should return the color no matter
+        if we use a palette or not. maybe we should combine palette and
+        color into one module?

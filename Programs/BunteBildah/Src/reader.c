@@ -120,19 +120,19 @@ COLOR* get_next_Line(){
   // if big_width, we need to compress the image (exercise c)
 
   int error = EOK;
-  // format: RGB
+  // format: 24-bit RGB
   if(!palette){
     RGB_line(line);
     // skip to next Line?
   }
 
-  // format: RLE8, uncompressed
+  // format: 8-bit, uncompressed
   else if(!compressed) {
     error =  RLE8_uncompressed_line(line);
     // skip to next line?
   }
 
-  // format: RLE8, compressed
+  // format: 8-bit, compressed
   else {
     error =  RLE8_compressed_line(line);
     // skip to next line?
@@ -151,6 +151,10 @@ extern void set_width(int new_width){
 
 extern int get_height(){
   return infoheader->biHeight;
+}
+
+extern int get_bits_per_pixel() {
+  return infoheader->biBitCount;
 }
 
 extern void set_height(int new_height){
