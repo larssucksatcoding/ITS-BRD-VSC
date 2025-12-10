@@ -207,10 +207,12 @@ extern int RLE8_compressed_line(COLOR* line) {
     // check if we completed last line with leftover information
     check_info_first_pxl(&index, line);
 
-    BYTE firstByte = next_byte();
-    BYTE secondByte = next_byte();
+    BYTE firstByte, secondByte;
 
-    while (index < pic_width) {
+    do {
+        firstByte = next_byte();
+        secondByte = next_byte();
+
         if(firstByte == 0) {
             if(secondByte == END_OF_LINE) {
                 return error;
@@ -222,6 +224,12 @@ extern int RLE8_compressed_line(COLOR* line) {
             else if(secondByte == DELTA) {
                 delta_x = next_byte() + index;
                 delta_y = next_byte() - 1;
+
+                // idea:
+                // LCD_color = last color that was drawn (needs new function)
+                // pixel_count = (LINE_WIDTH * delta_y) + delta_x;
+                // encoded_mode(&index, line, pixel_count, LCD_color);
+        
                 return error;
             }
             else { // absolute mode
@@ -234,9 +242,7 @@ extern int RLE8_compressed_line(COLOR* line) {
             error = get_color(secondByte, &LCD_color);
             encoded_mode(&index, line, firstByte, LCD_color);
         }
-        firstByte = next_byte();
-        secondByte = next_byte();
-    }
+    } while(index < pic_width);
     
     return error;
 }
