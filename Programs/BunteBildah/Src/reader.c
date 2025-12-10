@@ -21,7 +21,6 @@
 
 
 #define BITCOUNT_PALETTE      8
-#define COMPRESSED            1
 
 #define END_OF_FILE           -1
 
@@ -96,7 +95,7 @@ extern int load_picture() {
   if(infoheader->biBitCount == BITCOUNT_PALETTE) {
     palette = true;
   }
-  if(infoheader->biCompression == COMPRESSED) {
+  if(infoheader->biCompression == BI_RLE8) {
     compressed = true;
   }
 
@@ -117,6 +116,9 @@ COLOR* get_next_Line(){
   
   clear_line(line);
 
+  // TODO:
+  // if big_width, we need to compress the image (exercise c)
+
   int error = EOK;
   // format: RGB
   if(!palette){
@@ -135,6 +137,8 @@ COLOR* get_next_Line(){
     error =  RLE8_compressed_line(line);
     // skip to next line?
   }
+
+  return line;
 }
 
 extern int get_width(){
