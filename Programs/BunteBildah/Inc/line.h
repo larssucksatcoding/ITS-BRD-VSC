@@ -22,36 +22,42 @@ static void skip_to_next_line(bool palette);
 /**
 * @brief      clears color information out of line
 * 
-* @return      
+* @return     void
 */
 static void clear_line(COLOR* line);
 
 /**
 * @brief      -
 *
-* @param      -
+* @param      int* index - current index we are at
+* @param      COLOR* line - line, Color[] where we safe color for each pixel
+* @param      int pxl_amount - nr of pixels that are in absolute mode
 * 
-* @return     -
+* @return     int error code (when we get a Index for palette which is not existent)
 */
 static int absolute_mode(int* index, COLOR* line, int pxl_amount);
 
 /**
-* @brief      -
+* @brief      enters color for encoded pixels in line
 *
-* @param      -
+* @param      int* index - current index we are at
+* @param      COLOR* line - line, Color[] where we safe color for each pixel
+* @param      int pxl_amount - nr of pixels with color
+* @param      COLOR color - color of the pixels
 * 
-* @return     -
+* @return     void - there is no error that can occur
 */
 static void encoded_mode(int* index, COLOR* line, int pxl_amount, COLOR color);
 
 /**
-* @brief      -
+* @brief      checks if we left last line with lefotver information about next pixels or about a delta
 *
-* @param      -
+* @param      int* index - current index
+* @param      COLOR* line - line where we safe information bout our pixels
 * 
-* @return     -
+* @return     int error code
 */
-static int check_info_first_pxl(int index, COLOR* line);
+static int check_info_first_pxl(int* index, COLOR* line);
 
 // PUBLIC FUNCTIONS
 

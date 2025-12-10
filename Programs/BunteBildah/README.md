@@ -23,6 +23,8 @@ Templates
 - [ ] reader.c: überarbeite das RLE8 compressed line gedöns
 - [ ] reader / line skip to next Line und eof checken 
 - [ ] how to proceed with new height? (or new picture size in general)
+- [ ] how does the delta work? is it implemented correctly in line.c
+            especially line 194+/- in line.c
 
 
 - [x] color palette: do we really want to safe them as rgbquad, reserved value is never used, rgbtriple should be enough
