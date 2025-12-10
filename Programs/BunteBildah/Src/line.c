@@ -5,6 +5,7 @@
 * @brief      reads a line from bmp
 */
 
+#include "LCD_GUI.h"
 #include "fonts.h"
 #include "reader.h"
 #include "BMP_types.h"
@@ -76,7 +77,7 @@ extern void reset_line_module() {
     ends_at_word_boundary = true;
     next_pxl_encoded = false;
     pixel_count = 0;
-    pixel_color = WHITE;
+    pixel_color = LCD_BACKGROUND;
     delta = false;
     delta_x = 0;
     delta_y = 0;
@@ -118,7 +119,7 @@ static int check_info_first_pxl(int* index, COLOR* line) {
             return error; // empty line
         }
         while (delta_x > 0) {
-            line[*index] = WHITE;
+            line[*index] = LCD_BACKGROUND;
             delta_x --;
             (*index) ++;
         }
