@@ -7,41 +7,11 @@
 
 #ifndef WRITER_H
 #define WRITER_H
-#include "LCD_general.h"
 
 /**
-* @brief        -
-*
-* @param        -
-* 
-* @return       -
-*/
-static void draw_pixel(COLOR color);
-
-/**
-* @brief        -
-*
-* @param        -
-* 
-* @return       -
-*/
-static void draw_line();
-
-/**
-* @brief        -
-*
-* @param        -
-* 
-* @return       -
+* @brief        draws the picture that was loaded with load_picture
+*               to the screen of the ITS-Board.
 */
 extern void draw_picture();
 
 #endif
-
-/**
-* @brief        -
-*
-* @param        -
-* 
-* @return       -
-*/
