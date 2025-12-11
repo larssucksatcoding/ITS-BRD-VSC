@@ -36,7 +36,7 @@ static int      delta_y;
 
 static int      pic_width;
 
-static int      padding_bytes;
+static int      padded_line_width_in_bytes;
 
 // STATIC FUNCTIONS
 
@@ -50,9 +50,7 @@ static void skip_to_next_line(bool palette) {
 
     // this function is only called by uncompressed lines
 
-    int line_width_with_padding = pic_width + padding_bytes;
-
-  for (int i = LINE_WIDTH; i < line_width_with_padding; i++) {
+  for (int i = LINE_WIDTH; i < padded_line_width_in_bytes; i++) {
     next_byte();
   }
 }
@@ -71,14 +69,9 @@ extern void reset_line_module() {
     
     // calculation for how many padding bytes there are when the
     // picture is uncompressed. the amount of bytes per line
-    // must be divisible by 4.
-    int bytes_per_pixel = get_bits_per_pixel() * 8;
-    int expected_bytes_per_line = pic_width * bytes_per_pixel;
-    if ((expected_bytes_per_line % 4) == 0) {
-        padding_bytes = 0; // no need to pad if already divisible by 4
-    } else {
-        padding_bytes = 4 - (expected_bytes_per_line % 4);
-    }
+    // must be divisible by 4. see page 8 at the bottom
+    int bits_per_pixel = get_bits_per_pixel();
+    padded_line_width_in_bytes = (int) floor((double) (pic_width * bits_per_pixel) + 31.0 / 32.0) * 4;
 }
 
 static int check_info_first_pxl(int* index, COLOR* line) {
