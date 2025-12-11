@@ -29,8 +29,8 @@
 
 
 
-PBITMAPFILEHEADER fileheader;
-PBITMAPINFOHEADER infoheader;
+static BITMAPFILEHEADER fileheader;
+static BITMAPINFOHEADER infoheader;
 static int  width;
 static bool palette;
 static bool big_width;
@@ -57,7 +57,7 @@ static void reset_variables() {
   compressed = false;
   eof = false;
 
-  reset_line_module();
+  // reset_line_module();
   // reset line module??
 }
 
@@ -71,7 +71,7 @@ extern BYTE next_byte() {
 
 static int get_palette_size() {
   // bfOffBits is a misleading name, since it contains the offset in bytes!!!
-  int pixel_data_start_adress = fileheader->bfOffBits;
+  int pixel_data_start_adress = fileheader.bfOffBits;
   int palette_start_adress = sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
   int palette_size_in_bytes = pixel_data_start_adress - palette_start_adress;
   return palette_size_in_bytes / sizeof(RGBQUAD);
@@ -87,23 +87,27 @@ extern int load_picture() {
     return error;
   }
 
-  getFileHeader(fileheader);
-  getInfoHeader(infoheader);
+  getFileHeader(&fileheader);
+  getInfoHeader(&infoheader);
+
+  // i know, missplaced, but this needs some variables
+  // from the headers as of now.
+  reset_line_module();
   
-  if(infoheader->biHeight > LCD_HEIGHT) {
+  if(infoheader.biHeight > LCD_HEIGHT) {
     big_height = true;
   }
-  if(infoheader->biWidth > LCD_WIDTH) {
+  if(infoheader.biWidth > LCD_WIDTH) {
     big_width = true;
   }
-  if(infoheader->biBitCount == BITCOUNT_PALETTE) {
+  if(infoheader.biBitCount == BITCOUNT_PALETTE) {
     palette = true;
   }
-  if(infoheader->biCompression == BI_RLE8) {
+  if(infoheader.biCompression == BI_RLE8) {
     compressed = true;
   }
 
-  width = infoheader->biWidth;
+  width = infoheader.biWidth;
   // reset line module 
   if(palette) {
     int pal_size = get_palette_size();
@@ -143,7 +147,7 @@ COLOR* get_next_Line(){
 }
 
 extern int get_width(){
-  return infoheader->biWidth;
+  return infoheader.biWidth;
 }
 
 extern void set_width(int new_width){
@@ -151,11 +155,11 @@ extern void set_width(int new_width){
 }
 
 extern int get_height(){
-  return infoheader->biHeight;
+  return infoheader.biHeight;
 }
 
 extern int get_bits_per_pixel() {
-  return infoheader->biBitCount;
+  return infoheader.biBitCount;
 }
 
 extern void set_height(int new_height){

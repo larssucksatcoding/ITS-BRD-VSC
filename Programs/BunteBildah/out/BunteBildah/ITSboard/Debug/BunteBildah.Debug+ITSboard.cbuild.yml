@@ -345,6 +345,8 @@ build:
           category: header
         - file: ../../../../Inc/color.h
           category: header
+        - file: ../../../../Inc/line.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -364,6 +366,10 @@ build:
         - file: ../../../../Src/button.c
           category: sourceC
         - file: ../../../../Src/color.c
+          category: sourceC
+        - file: ../../../../Src/line.c
+          category: sourceC
+        - file: ../../../../Src/palette.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h
