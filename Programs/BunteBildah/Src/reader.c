@@ -69,6 +69,14 @@ extern BYTE next_byte() {
   return (BYTE) nextbyte;
 }
 
+static int get_palette_size() {
+  // bfOffBits is a misleading name, since it contains the offset in bytes!!!
+  int pixel_data_start_adress = fileheader->bfOffBits;
+  int palette_start_adress = sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
+  int palette_size_in_bytes = pixel_data_start_adress - palette_start_adress;
+  return palette_size_in_bytes / sizeof(RGBQUAD);
+}
+
 extern int load_picture() {
   reset_variables();
 
@@ -98,10 +106,7 @@ extern int load_picture() {
   width = infoheader->biWidth;
   // reset line module 
   if(palette) {
-    int pal_size = infoheader->biClrUsed;
-    if (pal_size == 0) {
-      pal_size = MAX_COLOR_TABLE_SIZE;
-    }
+    int pal_size = get_palette_size();
     create_palette(pal_size);
   }
   
