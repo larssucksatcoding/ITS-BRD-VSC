@@ -20,4 +20,12 @@ COLOR read_rgbtriple_as_color();
   */
 COLOR read_rgbquad_as_color();
 
+/**
+  * @brief  draws a few test strips on the screen to test the color
+  *         conversion code. in totla seven strips will be drawn:
+  *         red, green, blue, red + green, red + blue, green + blue,
+  *         and then rgb combined.
+  */
+void test_color_conversion();
+
 #endif

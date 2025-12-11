@@ -24,7 +24,7 @@
 *               screen individually.
 */
 static void draw_line(Coordinate coordinate) {
-    const COLOR* line = get_next_Line(); // change this somehow!!! we do not want this twice!!!!!
+    COLOR* line = get_next_Line();
 
     #ifdef WRITER_C_LINE_DRAW_MODE
     GUI_WriteLine(coordinate, LCD_WIDTH, line);
