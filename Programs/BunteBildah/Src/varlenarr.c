@@ -40,6 +40,7 @@
 #include <stdlib.h>  
 // #include <malloc.h> 
 #include <stdio.h>
+#include "main.h"
 
 /* 
  * Beispiel 1: Ein eindimensionales Array, dessen Laenge erst zur 
@@ -220,13 +221,14 @@ void test4(unsigned int dim_1, unsigned int dim_2, unsigned int dim_3) {
 #define DIM_1    5
 #define DIM_2    7
 #define DIM_3    4
-
+/*
 int main(void) {
    test1(DIM_1);
    test2(DIM_1, DIM_2);
    test3(DIM_1, DIM_2, DIM_3);
    test4(DIM_1, DIM_2, DIM_3);
 }
+   */
 
 // EOF
 
