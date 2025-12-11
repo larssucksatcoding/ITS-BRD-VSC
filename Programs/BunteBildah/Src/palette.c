@@ -11,21 +11,18 @@
 #include "errorhandler.h"
 #include "LCD_general.h"
 
-#define PALETTE_SIZE        256
+#define MAX_PALETTE_SIZE        256
 
-static COLOR palette[PALETTE_SIZE];
+static COLOR palette[MAX_PALETTE_SIZE];
 static int size;
 
 void create_palette(int palette_size) {
 
-    // muss das nicht malloc(sizeof(COLOR) * size)?
-    // ist der parameter für malloc in byte?
-    for (int i = 0; i < PALETTE_SIZE; i++) {
-        palette[i] = LCD_BACKGROUND;
-    }
-
     for(int i = 0; i < palette_size; i++) {
         palette[i] = read_rgbquad_as_color();
+    }
+    for (int i = palette_size; i < MAX_PALETTE_SIZE; i++) {
+        palette[i] = LCD_BACKGROUND;
     }
 }
 

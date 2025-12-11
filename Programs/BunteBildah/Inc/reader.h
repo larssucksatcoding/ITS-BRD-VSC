@@ -43,7 +43,7 @@ extern int load_picture();
 *
 * @param      -
 * 
-* @return     COLOR Array (uint16_t) for each pixel in next line one color
+* @return     COLOR* Pointer for each pixel in next line one color
 */
 extern COLOR* get_next_Line();
 
