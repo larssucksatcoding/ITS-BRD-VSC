@@ -9,14 +9,15 @@
 #include "LCD_GUI.h"
 #include "color.h"
 #include "errorhandler.h"
-#include <mm_malloc.h>
+//#include <mm_malloc.h>
+#include <stdlib.h>
 #include "LCD_general.h"
 
 static COLOR *palette = NULL;
 static int size;
 
-void create_palette(int elements) {
-    size = elements;
+void create_palette(int palette_size) {
+    size = palette_size;
 
     // muss das nicht malloc(sizeof(COLOR) * size)?
     // ist der parameter für malloc in byte?

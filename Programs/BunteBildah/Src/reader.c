@@ -16,8 +16,6 @@
 #include "MS_basetypes.h"
 #include "palette.h"
 #include "line.h"
-#include "color.h"
-#include <stdlib.h>
 
 
 #define BITCOUNT_PALETTE      8
@@ -40,7 +38,7 @@ static bool big_height;
 static bool compressed;
 static bool eof;
 
-extern COLOR line[LCD_WIDTH];
+COLOR line[LCD_WIDTH];
 
 /*
 *                           (Breite der Zeile)*(Anzahl Bits pro Eintrag) + 31
@@ -62,8 +60,6 @@ static void reset_variables() {
   reset_line_module();
   // reset line module??
 }
-
-
 
 extern BYTE next_byte() {
   int nextbyte = nextChar(); 

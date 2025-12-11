@@ -6,21 +6,14 @@
 */
 
 #include "LCD_GUI.h"
-#include "fonts.h"
 #include "reader.h"
-#include "BMP_types.h"
-#include "headers.h"
-#include "input.h"
 #include "errorhandler.h"
 #include <stdbool.h>
-#include <stdio.h>
 #include "LCD_general.h" // contains information about LCD width/height
-#include "BMP_types.h"
 #include "MS_basetypes.h"
 #include "palette.h"
 #include "line.h"
 #include "color.h"
-#include <mm_malloc.h>
 #include "math.h"
 
 #define END_OF_LINE           0x00

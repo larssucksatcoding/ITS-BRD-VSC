@@ -205,6 +205,7 @@ project:
         - file: Src/button.c
         - file: Src/color.c
         - file: Src/line.c
+        - file: Src/palette.c
 
   components:
     - component: ARM::CMSIS:CORE

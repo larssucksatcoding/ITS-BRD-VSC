@@ -12,10 +12,11 @@
 // current file struct
 #ifndef READER_H
 #define READER_H
-#include "BMP_types.h"
-#include "MS_basetypes.h"
-#include "LCD_GUI.h"
 
+#include "MS_basetypes.h"
+#include "LCD_general.h"
+
+extern COLOR line[];
 
 // FUNCTION
 

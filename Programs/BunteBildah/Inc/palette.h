@@ -17,7 +17,7 @@
   * 
   * @return     -
   */
-void create_palette(int size);
+void create_palette(int palette_size);
 
 /**
   * @brief      returns color form Color Palette

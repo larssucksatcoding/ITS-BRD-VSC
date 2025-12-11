@@ -22,26 +22,30 @@
 #define MAX_COLOR_TABLE_SIZE   256
 
 typedef struct tagBITMAPFILEHEADER {
-  WORD    bfType;
-  DWORD   bfSize;
-  WORD    bfReserved1;
-  WORD    bfReserved2;
-  DWORD   bfOffBits;
+  WORD    bfType;               // 2Byte
+  DWORD   bfSize;               // 4BYte
+  WORD    bfReserved1;          // 2Byte
+  WORD    bfReserved2;          // 2Byte
+  DWORD   bfOffBits;            // 4Byte
 } __attribute__((__packed__)) BITMAPFILEHEADER, *PBITMAPFILEHEADER;
 
+// 14 Byte
+
 typedef struct tagBITMAPINFOHEADER{
-  DWORD  biSize;
-  LONG   biWidth;
-  LONG   biHeight;
-  WORD   biPlanes;
-  WORD   biBitCount;
-  DWORD  biCompression;
-  DWORD  biSizeImage;
-  LONG   biXPelsPerMeter;
-  LONG   biYPelsPerMeter;
-  DWORD  biClrUsed;
-  DWORD  biClrImportant;
+  DWORD  biSize;                // 4Byte
+  LONG   biWidth;               // 4Byte
+  LONG   biHeight;              // 4Byte
+  WORD   biPlanes;              // 2Byte
+  WORD   biBitCount;            // 2Byte
+  DWORD  biCompression;         // 4Byte
+  DWORD  biSizeImage;           // 4Byte
+  LONG   biXPelsPerMeter;       // 4Byte
+  LONG   biYPelsPerMeter;       // 4Byte
+  DWORD  biClrUsed;             // 4Byte
+  DWORD  biClrImportant;        // 4Byte
 } __attribute__((__packed__)) BITMAPINFOHEADER, *PBITMAPINFOHEADER;
+
+// 40 Byte
 
 typedef struct tagRGBQUAD {
   unsigned char    rgbBlue;
