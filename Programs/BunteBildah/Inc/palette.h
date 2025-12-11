@@ -29,13 +29,6 @@ void create_palette(int palette_size);
   */
 int get_color(int index, COLOR* color);
 
-/**
-  * @brief      deletes palette to free memory
-  *
-  * @param      -
-  * 
-  * @return     -
-  */
-void delete_palette();
+
 
 #endif

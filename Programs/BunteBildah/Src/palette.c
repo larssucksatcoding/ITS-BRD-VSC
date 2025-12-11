@@ -9,21 +9,22 @@
 #include "LCD_GUI.h"
 #include "color.h"
 #include "errorhandler.h"
-//#include <mm_malloc.h>
-#include <stdlib.h>
 #include "LCD_general.h"
 
-static COLOR *palette = NULL;
+#define PALETTE_SIZE        256
+
+static COLOR palette[PALETTE_SIZE];
 static int size;
 
 void create_palette(int palette_size) {
-    size = palette_size;
 
     // muss das nicht malloc(sizeof(COLOR) * size)?
     // ist der parameter für malloc in byte?
-    palette = (COLOR*) malloc (size);
+    for (int i = 0; i < PALETTE_SIZE; i++) {
+        palette[i] = LCD_BACKGROUND;
+    }
 
-    for(int i = 0; i < size; i++) {
+    for(int i = 0; i < palette_size; i++) {
         palette[i] = read_rgbquad_as_color();
     }
 }
@@ -39,12 +40,5 @@ int get_color(int index, COLOR* color) {
     
     *color = palette[index];
     return error;
-}
-
-void delete_palette() {
-    if(palette != NULL) {
-        free(palette);
-        palette = NULL;
-    }
 }
 
