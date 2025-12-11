@@ -37,8 +37,7 @@ static int      delta_y;
 
 static int      pic_width;
 
-static int      uncompressed_bytes_per_line_with_padding; // this line is very long.
-
+static int      padding_bytes;
 
 // STATIC FUNCTIONS
 
@@ -50,18 +49,12 @@ extern void clear_line(COLOR* line) {
 
 static void skip_to_next_line(bool palette) {
 
-    // this function needs special treatment for uncompressed images
-    // because of the whole padding shenanigans.
-    // i created uncompressed_bytes_per_line_with_padding for this
-    // but i still don't understand how to calcuate it correctly. 
+    // this function is only called by uncompressed lines
 
+    int line_width_with_padding = pic_width + padding_bytes;
 
-  for (int i = LINE_WIDTH; i < pic_width; i++) {
+  for (int i = LINE_WIDTH; i < line_width_with_padding; i++) {
     next_byte();
-    if(!palette) {
-        next_byte();
-        next_byte();
-    }
   }
 }
 
@@ -78,20 +71,11 @@ extern void reset_line_module() {
     pic_width = get_width();
     
     // calculation for how many padding bytes there are when the
-    // picture is uncompressed.
-
-    int bits_per_pixel = get_bits_per_pixel();
-
-    int expected_bits_per_line = pic_width * bits_per_pixel;
-    bool needs_padding = (expected_bits_per_line % 4) == 0;
-
-    // see formular at the bottom of page 8
-    // HOWEVER; the formular does not make sense at all? every time i
-    // insert values i just get values out which are not dividable by 4???
-    // so not using it for now.
-    uncompressed_bytes_per_line_with_padding = (needs_padding)
-        ? (int) ceil(((double) ((expected_bits_per_line) + 31) / 32.0) * 4.0)
-        : expected_bits_per_line;
+    // picture is uncompressed. the amount of bytes per line
+    // must be divisible by 4.
+    int bytes_per_pixel = get_bits_per_pixel() * 8;
+    int expected_bytes_per_line = pic_width * bytes_per_pixel;
+    padding_bytes = (expected_bytes_per_line % 4);
 }
 
 static int check_info_first_pxl(int* index, COLOR* line) {
