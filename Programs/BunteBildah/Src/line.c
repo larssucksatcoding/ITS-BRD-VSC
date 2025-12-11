@@ -20,7 +20,6 @@
 #define END_OF_BITMAP         0x01
 #define DELTA                 0x02
 
-
 #define PIXEL_WIDTH              ((pic_width <= LCD_WIDTH) ? pic_width : LCD_WIDTH) // nr of pixels in line
 #define LINE_WIDTH              LCD_WIDTH
 
@@ -75,7 +74,11 @@ extern void reset_line_module() {
     // must be divisible by 4.
     int bytes_per_pixel = get_bits_per_pixel() * 8;
     int expected_bytes_per_line = pic_width * bytes_per_pixel;
-    padding_bytes = (expected_bytes_per_line % 4);
+    if ((expected_bytes_per_line % 4) == 0) {
+        padding_bytes = 0; // no need to pad if already divisible by 4
+    } else {
+        padding_bytes = 4 - (expected_bytes_per_line % 4);
+    }
 }
 
 static int check_info_first_pxl(int* index, COLOR* line) {
