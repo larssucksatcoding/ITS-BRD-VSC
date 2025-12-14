@@ -37,6 +37,7 @@ static void draw_line(Coordinate coordinate) {
     #endif
 }
 
+// picture needs to be loaded first.
 extern void draw_picture() {
     GUI_clear(LCD_BACKGROUND);
 
@@ -45,5 +46,9 @@ extern void draw_picture() {
     for (int position_y = 0; position_y < LCD_HEIGHT; position_y++) {
         coordinate.y = position_y;
         draw_line(coordinate);
+
+        if (reached_eof()) {
+            break;
+        }
     }
 }

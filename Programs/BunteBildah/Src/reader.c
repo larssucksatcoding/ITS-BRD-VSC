@@ -170,6 +170,8 @@ extern void end_of_file(){
   eof = true;
 }
 
-
+extern bool reached_eof() {
+  return eof;
+}
 
 

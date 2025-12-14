@@ -15,6 +15,7 @@
 
 #include "MS_basetypes.h"
 #include "LCD_general.h"
+#include "stdbool.h"
 
 extern COLOR line[];
 
@@ -96,6 +97,8 @@ extern void set_height(int new_height);
 * @brief      tells us we reached end of file, stores information in reader.
 */
 extern void end_of_file();
+
+extern bool reached_eof();
 
 #endif 
 
