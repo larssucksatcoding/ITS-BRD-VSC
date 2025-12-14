@@ -5,6 +5,7 @@
 * @brief      reads a line from bmp
 */
 
+#include "BMP_types.h"
 #include "LCD_GUI.h"
 #include "reader.h"
 #include "errorhandler.h"
@@ -36,7 +37,7 @@ static int      delta_y;
 
 static int      pic_width;
 
-static int      padded_line_width_in_bytes;
+static int      padded_line_width;
 
 // STATIC FUNCTIONS
 
@@ -50,8 +51,16 @@ static void skip_to_next_line(bool palette) {
 
     // this function is only called by uncompressed lines
 
-  for (int i = PIXEL_WIDTH; i < padded_line_width_in_bytes; i++) {
-    next_byte();
+  for (int i = PIXEL_WIDTH; i < padded_line_width; i++) {
+    if (palette) {
+        // 8-bit encodings
+        next_byte();
+    } else {
+        // 24-bit encodings
+        next_byte();
+        next_byte();
+        next_byte();
+    }
   }
 }
 
@@ -67,11 +76,20 @@ extern void reset_line_module() {
 
     pic_width = get_width();
     
+    // TODO: refactor this so that the reader module already
+    // returns the picture width with padding maybe?
     // calculation for how many padding bytes there are when the
     // picture is uncompressed. the amount of bytes per line
     // must be divisible by 4. see page 8 at the bottom
     int bits_per_pixel = get_bits_per_pixel();
-    padded_line_width_in_bytes = (int) floor((double) ((pic_width * bits_per_pixel) + 31.0) / 32.0) * 4;
+    padded_line_width = (int) floor((double) ((pic_width * bits_per_pixel) + 31.0) / 32.0) * 4;
+    
+    // it is more convenient to have the padding in pixels and not in bytes.
+    // in 8-bit encodings, this is already the case since one byte
+    // correlates to one pixel. this is not the case for 24-bit encodings.
+    if (bits_per_pixel == 24) {
+        padded_line_width /= sizeof(RGBTRIPLE);
+    }
 }
 
 static int check_info_first_pxl(int* index, COLOR* line) {
