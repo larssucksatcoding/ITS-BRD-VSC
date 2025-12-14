@@ -43,7 +43,13 @@ extern void draw_picture() {
 
     Coordinate coordinate = {0, 0};
 
-    for (int position_y = 0; position_y < LCD_HEIGHT; position_y++) {
+    // refactor this
+    int picture_height = get_height();
+    if (picture_height > LCD_HEIGHT) {
+        picture_height = LCD_HEIGHT;
+    }
+
+    for (int position_y = 0; position_y < picture_height; position_y++) {
         coordinate.y = position_y;
         draw_line(coordinate);
 
