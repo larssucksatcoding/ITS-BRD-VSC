@@ -132,11 +132,11 @@ static int absolute_mode(int* index, COLOR* line, int pxl_amount) {
         pixel_count = 0;
     }
 
-    BYTE palette_index = next_byte();
-    for ( ; (pxl_amount > 0) && (*index < PIXEL_WIDTH) ; (*index)++ , pxl_amount --) {
+  BYTE palette_index;
+  for (; (pxl_amount > 0) && (*index < PIXEL_WIDTH); (*index)++, pxl_amount--) {
+    palette_index = next_byte();
         error = get_color(palette_index, &LCD_color);
         line[*index] = LCD_color;
-        palette_index = next_byte();
     }
 
     if(!next_pxl_absolute && !ends_at_word_boundary) {
