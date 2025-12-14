@@ -1,185 +1,166 @@
 # ninja log v6
-7	21	1765192716912554764	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-7	21	1765192716912554764	CMakeFiles/database	71b17b3cf4e70018
-4	361	1765449308160906690	build.ninja	1363dd248f325812
-4	156	1765449308176317071	CMakeFiles/Group_Drivers_Board.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/startup_stm32f429xx.o	c2ec3662a2d2c8d2
-5	573	1765449308176712711	CMakeFiles/Group_Drivers_Board.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/system_stm32f4xx.o	69a79282abe51d23
-6	621	1765449308177519822	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o	489fd8de916f2623
-4	645	1765449308174906625	CMakeFiles/Group_Drivers_BSP_STM32F4xx_Nucleo_144.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.o	d3960f6abd9169aa
-5	658	1765449308177134885	CMakeFiles/Group_Drivers_Board.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/stm32f4xx_it.o	5544d42681ac8017
-6	691	1765449308177881836	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o	3f6908ee99ae04fb
-691	769	1765449308861903448	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font8.o	4e98e59745a9cd9c
-6	790	1765449308178228516	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o	ea56c8d6f91ac688
-7	795	1765449308178695389	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o	bdaafa259b2ddc77
-7	825	1765449308179049157	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o	59d458440a541581
-769	842	1765449308939903087	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font12.o	3115e2451b85c4e3
-795	878	1765449308965902966	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font20.o	bec242ade78c9a1
-13	891	1765449308183906584	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o	1cedfa79fd938fc
-790	904	1765449308960902990	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font16.o	25788a6c74b0fdd0
-827	928	1765449308997902818	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font24.o	f4246d07edaf4c8d
-842	975	1765449309012902749	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas40.o	e022640eef97949e
-622	1024	1765449308792903767	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o	bae823ffdec7dc14
-879	1119	1765449309049902578	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas60.o	c6c708262de225b8
-156	1133	1765449308326905922	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o	8fbbfb558355ffc4
-975	1157	1765449309145902134	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold60.o	81d51638eabdc3ff
-928	1164	1765449309098902351	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold40.o	5991fb89c29f53f0
-645	1260	1765449308815903660	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o	c90bc4f103b9008b
-658	1270	1765449308828903600	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o	ef6cee59c619193e
-1135	1324	1765449309305901394	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNew48.o	b04b83c0139befd
-1157	1349	1765449309327901292	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold40.o	dfef7e1bcbf806ca
-905	1359	1765449309075902458	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas90.o	d3101c41ca5f1b41
-575	1363	1765449308745903984	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o	4b174d881d46a14c
-891	1507	1765449309061902522	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas80.o	76cf37541e1bdca
-1024	1546	1765449309194901907	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold80.o	1159dbae0fec6487
-1164	1557	1765449309334901260	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold60.o	ef378db2189a1fbe
-1271	1566	1765449309441900765	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono60.o	2301fe16c21d269d
-1260	1570	1765449309430900815	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono40.o	390ef7daf9dac5a6
-1359	1573	1765449309529900357	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium40.o	3b706215f7a00b93
-1363	1637	1765449309533900339	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium60.o	9b164bb4d309f958
-1557	1659	1765449309727899442	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/fontsFLASH.o	8576168b09fc11f2
-1570	1774	1765449309740899381	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GUI.o	9fa5908f804334e3
-1350	1790	1765449309520900399	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono90.o	f2edb8ef021956c1
-1119	1832	1765449309289901468	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold90.o	d4ac7e47d3ee5b78
-1325	1846	1765449309495900515	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono80.o	b3268443852dfd9c
-1847	1908	1765449310018927029	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Debug.o	e2f274fab7861be5
-1566	1913	1765449309736899400	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Driver.o	91abf4e5a23eb3de
-1573	1935	1765449309743899368	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Touch.o	161b8cb1568bbef4
-1909	1993	1765449310081204297	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Demos.o	13f2d4bc51fee77b
-1640	2017	1765449309811761348	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_SPI.o	d99758e224c9a2c5
-1790	2044	1765449309960898364	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Tools.o	4cd25d8db4e9e66a
-1939	2068	1765449310109897675	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/lcd.o	1511e4eab2535af6
-1774	2081	1765449309944898438	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_TIM.o	5ab7441240dc4311
-1660	2104	1765449309830898965	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GPIO.o	c884a2c9bb651c41
-1507	2107	1765449309677899673	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium80.o	b71d24d57dacf064
-2018	2126	1765449310190120564	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/terminal.o	a3c4f7e293157cb1
-1546	2153	1765449309716899492	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium90.o	6fc897cbb4c5f1c4
-1913	2208	1765449310083897795	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/error.o	85319e38354786b2
-2044	2231	1765449310214897189	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/keypad.o	19cd105b0da49d64
-2153	2239	1765449310323896685	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/errorhandler.o	22f8408b5801d3c2
-1994	2246	1765449310166058585	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/init.o	a3489f8ed208e234
-2107	2306	1765449310277896897	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/stdinout_USART.o	224d0cf8cd8f1b8f
-2069	2316	1765449310240447456	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/delay.o	61ff7fb1b03e1c1f
-2246	2317	1765449310416896254	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/reader.o	bba21ef49a850862
-2209	2337	1765449310379896426	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/headers.o	d64c469b70e36246
-1832	2346	1765449310002898170	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/testsoftware.o	567e0bfc86b5b20a
-2081	2353	1765449310251897018	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/timer.o	b82908f36818e74e
-2127	2380	1765449310298707869	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/main.o	5bcbecbe9fc8d680
-2239	2401	1765449310410212046	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/varlenarr.o	f1ead8949688450a
-2307	2402	1765449310477895972	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/writer.o	bad38e42556a5f42
-2318	2412	1765449310488895921	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-2346	2439	1765449310516895792	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/palette.o	532b7cd567250d30
-2337	2454	1765449310507895833	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
-2316	2544	1765449310486895931	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/button.o	2f81523a87cec2fa
-2105	2585	1765449310275896907	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/USART_STM32F4xx.o	aa0c2338ea216400
-2232	2597	1765449310402896319	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/input.o	ef6f673420037d45
-2597	3030	1765449310767894631	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-11	30	1765449311249892401	CMakeFiles/database	71b17b3cf4e70018
-11	30	1765449311249892401	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	10	1765449385062550956	CMakeFiles/database	71b17b3cf4e70018
-3	10	1765449385062550956	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-4	13	1765450087212380299	CMakeFiles/database	71b17b3cf4e70018
-4	13	1765450087212380299	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-6	175	1765450794625290361	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/reader.o	bba21ef49a850862
-175	279	1765450794794289623	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-6	13	1765450794919289077	CMakeFiles/database	71b17b3cf4e70018
-6	13	1765450794919289077	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	92	1765451526914130683	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/reader.o	bba21ef49a850862
-92	147	1765451527003130299	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765451527068130019	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765451527068130019	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	27	1765451845796755271	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/reader.o	bba21ef49a850862
-28	85	1765451845821755163	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	6	1765451845887754878	CMakeFiles/database	71b17b3cf4e70018
-2	6	1765451845887754878	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-2	7	1765451855753712448	CMakeFiles/database	71b17b3cf4e70018
-2	7	1765451855753712448	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-2	6	1765452040271926071	CMakeFiles/database	71b17b3cf4e70018
-2	6	1765452040271926071	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-2	87	1765452241731067493	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/writer.o	bad38e42556a5f42
-87	147	1765452241816067131	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-1	6	1765452241884066841	CMakeFiles/database	71b17b3cf4e70018
-1	6	1765452241884066841	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	22	1765452337236660467	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/writer.o	bad38e42556a5f42
-22	77	1765452337255660386	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765452337320660109	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765452337320660109	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-2	5	1765452346065622839	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765452346065622839	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	92	1765452783403701518	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-3	125	1765452783404180711	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/palette.o	532b7cd567250d30
-3	141	1765452783403962182	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
-2	179	1765452783402759005	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/main.o	5bcbecbe9fc8d680
-179	232	1765452783579758250	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765452783640757990	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765452783640757990	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	73	1765453123385444640	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/main.o	5bcbecbe9fc8d680
-73	133	1765453123456444377	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	6	1765453123524444126	CMakeFiles/database	71b17b3cf4e70018
-2	6	1765453123524444126	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	115	1765454210677937241	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
-3	126	1765454210676846951	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-3	128	1765454210678179829	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/palette.o	532b7cd567250d30
-2	181	1765454210675846953	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/main.o	5bcbecbe9fc8d680
-181	239	1765454210854846545	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	6	1765454210921846393	CMakeFiles/database	71b17b3cf4e70018
-2	6	1765454210921846393	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	143	1765454488520213375	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/main.o	5bcbecbe9fc8d680
-143	204	1765454488660213056	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-1	5	1765454488729212899	CMakeFiles/database	71b17b3cf4e70018
-1	5	1765454488729212899	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	24	1765454588208986065	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-24	82	1765454588229986017	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765454588296985864	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765454588296985864	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	23	1765454740135639627	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-23	81	1765454740155639581	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765454740224639424	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765454740224639424	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	25	1765454829206436491	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-25	80	1765454829229436439	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765454829294436290	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765454829294436290	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	22	1765454921225226677	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-22	75	1765454921244226634	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765454921306226493	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765454921306226493	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	23	1765454987737030722	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-23	82	1765454987757030653	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765454987826030416	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765454987826030416	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-2	89	1765455066790759004	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-89	168	1765455066877758705	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765455066965758402	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765455066965758402	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	23	1765455091381674482	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-23	115	1765455091401674413	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-3	7	1765455091504674059	CMakeFiles/database	71b17b3cf4e70018
-3	7	1765455091504674059	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	23	1765455119503577825	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-23	78	1765455119523577756	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	6	1765455119588577533	CMakeFiles/database	71b17b3cf4e70018
-2	6	1765455119588577533	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-2	23	1765455187961342527	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-24	83	1765455187983342452	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765455188052342215	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765455188052342215	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	78	1765455342102812722	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/main.o	5bcbecbe9fc8d680
-78	133	1765455342177812465	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765455342242812241	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765455342242812241	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-2	7	1765455356461763369	CMakeFiles/database	71b17b3cf4e70018
-2	7	1765455356461763369	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	28	1765455437843483659	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-28	84	1765455437868483573	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-2	5	1765455437935483343	CMakeFiles/database	71b17b3cf4e70018
-2	5	1765455437935483343	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-2	7	1765455537772140187	CMakeFiles/database	71b17b3cf4e70018
-2	7	1765455537772140187	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
-3	135	1765456054045304254	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/writer.o	bad38e42556a5f42
+3	194	1765707789769601941	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
 4	135	1765456054045891133	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/palette.o	532b7cd567250d30
 4	139	1765456054045465587	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/color.o	63a07b7d46d0f5d2
-3	159	1765456054043404657	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/main.o	5bcbecbe9fc8d680
-4	159	1765456054045707491	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
-159	213	1765456054199406742	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
-1	5	1765456054262407584	CMakeFiles/database	71b17b3cf4e70018
-1	5	1765456054262407584	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	127	1765708735801367033	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/reader.o	bba21ef49a850862
+2069	2316	1765449310240447456	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/delay.o	61ff7fb1b03e1c1f
+2107	2306	1765449310277896897	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/stdinout_USART.o	224d0cf8cd8f1b8f
+2	29	1765708034023728869	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/writer.o	bad38e42556a5f42
+1913	2208	1765449310083897795	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/error.o	85319e38354786b2
+2018	2126	1765449310190120564	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/terminal.o	a3c4f7e293157cb1
+1507	2107	1765449309677899673	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium80.o	b71d24d57dacf064
+1832	2346	1765449310002898170	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/testsoftware.o	567e0bfc86b5b20a
+1660	2104	1765449309830898965	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GPIO.o	c884a2c9bb651c41
+1774	2081	1765449309944898438	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_TIM.o	5ab7441240dc4311
+1939	2068	1765449310109897675	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/lcd.o	1511e4eab2535af6
+1790	2044	1765449309960898364	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Tools.o	4cd25d8db4e9e66a
+645	1260	1765449308815903660	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o	c90bc4f103b9008b
+1024	1546	1765449309194901907	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold80.o	1159dbae0fec6487
+174	228	1765709462673990826	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+842	975	1765449309012902749	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas40.o	e022640eef97949e
+2	146	1765709462500991404	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/main.o	5bcbecbe9fc8d680
+827	928	1765449308997902818	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font24.o	f4246d07edaf4c8d
+13	891	1765449308183906584	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o	1cedfa79fd938fc
+4	645	1765449308174906625	CMakeFiles/Group_Drivers_BSP_STM32F4xx_Nucleo_144.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.o	d3960f6abd9169aa
+1260	1570	1765449309430900815	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono40.o	390ef7daf9dac5a6
+975	1157	1765449309145902134	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold60.o	81d51638eabdc3ff
+1119	1832	1765449309289901468	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold90.o	d4ac7e47d3ee5b78
+879	1119	1765449309049902578	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas60.o	c6c708262de225b8
+2209	2337	1765449310379896426	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/headers.o	d64c469b70e36246
+795	878	1765449308965902966	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font20.o	bec242ade78c9a1
+7	795	1765449308178695389	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o	bdaafa259b2ddc77
+2044	2231	1765449310214897189	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/keypad.o	19cd105b0da49d64
+2	5	1765709462736990615	CMakeFiles/database	71b17b3cf4e70018
+1994	2246	1765449310166058585	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/init.o	a3489f8ed208e234
+575	1363	1765449308745903984	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o	4b174d881d46a14c
+2105	2585	1765449310275896907	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/USART_STM32F4xx.o	aa0c2338ea216400
+4	361	1765449308160906690	build.ninja	1363dd248f325812
+1546	2153	1765449309716899492	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium90.o	6fc897cbb4c5f1c4
+4	156	1765449308176317071	CMakeFiles/Group_Drivers_Board.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/startup_stm32f429xx.o	c2ec3662a2d2c8d2
+769	842	1765449308939903087	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font12.o	3115e2451b85c4e3
+5	658	1765449308177134885	CMakeFiles/Group_Drivers_Board.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/stm32f4xx_it.o	5544d42681ac8017
+2232	2597	1765449310402896319	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/input.o	ef6f673420037d45
+622	1024	1765449308792903767	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o	bae823ffdec7dc14
+6	621	1765449308177519822	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o	489fd8de916f2623
+1847	1908	1765449310018927029	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Debug.o	e2f274fab7861be5
+2	5	1765709462736990615	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+928	1164	1765449309098902351	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold40.o	5991fb89c29f53f0
+5	573	1765449308176712711	CMakeFiles/Group_Drivers_Board.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/system_stm32f4xx.o	69a79282abe51d23
+6	691	1765449308177881836	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o	3f6908ee99ae04fb
+2239	2401	1765449310410212046	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/varlenarr.o	f1ead8949688450a
+691	769	1765449308861903448	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font8.o	4e98e59745a9cd9c
+6	790	1765449308178228516	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o	ea56c8d6f91ac688
+790	904	1765449308960902990	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font16.o	25788a6c74b0fdd0
+1640	2017	1765449309811761348	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_SPI.o	d99758e224c9a2c5
+658	1270	1765449308828903600	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o	ef6cee59c619193e
+891	1507	1765449309061902522	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas80.o	76cf37541e1bdca
+1135	1324	1765449309305901394	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNew48.o	b04b83c0139befd
+1909	1993	1765449310081204297	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Demos.o	13f2d4bc51fee77b
+1164	1557	1765449309334901260	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold60.o	ef378db2189a1fbe
+3	174	1765709462501991400	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/button.o	2f81523a87cec2fa
+1271	1566	1765449309441900765	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono60.o	2301fe16c21d269d
+2081	2353	1765449310251897018	CMakeFiles/Group_ITS_BRD_LIB.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Src/timer.o	b82908f36818e74e
+1359	1573	1765449309529900357	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium40.o	3b706215f7a00b93
+1363	1637	1765449309533900339	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium60.o	9b164bb4d309f958
+1157	1349	1765449309327901292	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold40.o	dfef7e1bcbf806ca
+1557	1659	1765449309727899442	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/fontsFLASH.o	8576168b09fc11f2
+1570	1774	1765449309740899381	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GUI.o	9fa5908f804334e3
+2153	2239	1765449310323896685	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/errorhandler.o	22f8408b5801d3c2
+156	1133	1765449308326905922	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o	8fbbfb558355ffc4
+1350	1790	1765449309520900399	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono90.o	f2edb8ef021956c1
+7	825	1765449308179049157	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o	59d458440a541581
+1325	1846	1765449309495900515	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono80.o	b3268443852dfd9c
+1566	1913	1765449309736899400	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Driver.o	91abf4e5a23eb3de
+905	1359	1765449309075902458	CMakeFiles/Group_Utils.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas90.o	d3101c41ca5f1b41
+1573	1935	1765449309743899368	CMakeFiles/Group_LCD.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Touch.o	161b8cb1568bbef4
+3	96	1765710041061394507	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/reader.o	bba21ef49a850862
+3	128	1765710041061653627	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/writer.o	bad38e42556a5f42
+3	144	1765710041061894228	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+3	180	1765710041061086178	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/main.o	5bcbecbe9fc8d680
+180	238	1765710041237085620	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	5	1765710041306085401	CMakeFiles/database	71b17b3cf4e70018
+2	5	1765710041306085401	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	7	1765711250592622577	CMakeFiles/database	71b17b3cf4e70018
+3	7	1765711250592622577	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+4	106	1765712287517472684	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+106	165	1765712287619472396	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	5	1765712287688472200	CMakeFiles/database	71b17b3cf4e70018
+2	5	1765712287688472200	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+2	6	1765712641069471880	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765712641069471880	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	7	1765712949364599185	CMakeFiles/database	71b17b3cf4e70018
+3	7	1765712949364599185	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	105	1765713230992889051	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+105	161	1765713231094888798	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+1	5	1765713231159888636	CMakeFiles/database	71b17b3cf4e70018
+1	5	1765713231159888636	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+2	6	1765713281222764456	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765713281222764456	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	6	1765713495260233510	CMakeFiles/database	71b17b3cf4e70018
+3	6	1765713495260233510	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	108	1765713603579964824	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+108	172	1765713603684964563	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	6	1765713603757964382	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765713603757964382	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+4	43	1765713701985720736	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+43	99	1765713702024720640	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	6	1765713702089720478	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765713702089720478	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+2	37	1765713783829517723	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+37	101	1765713783864517636	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	6	1765713783937517455	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765713783937517455	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	23	1765714107547699125	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/writer.o	bad38e42556a5f42
+24	81	1765714107568699069	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+1	5	1765714107634698893	CMakeFiles/database	71b17b3cf4e70018
+1	5	1765714107634698893	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	26	1765714171802528280	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/writer.o	bad38e42556a5f42
+27	140	1765714171826528216	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+1	7	1765714171951527884	CMakeFiles/database	71b17b3cf4e70018
+1	7	1765714171951527884	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	111	1765714386688956935	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+111	174	1765714386796956648	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	6	1765714386868956457	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765714386868956457	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+2	7	1765714437290822390	CMakeFiles/database	71b17b3cf4e70018
+2	7	1765714437290822390	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	108	1765717848488444701	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+108	171	1765717848593444548	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	6	1765717848665444444	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765717848665444444	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+2	109	1765718804236707520	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+109	165	1765718804343707220	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+3	7	1765718804410707032	CMakeFiles/database	71b17b3cf4e70018
+3	7	1765718804410707032	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	112	1765719025849091518	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+112	168	1765719025957091216	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	6	1765719026023091032	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765719026023091032	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+1	5	1765719032876071880	CMakeFiles/database	71b17b3cf4e70018
+1	5	1765719032876071880	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+4	110	1765729840192969262	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+110	168	1765729840298968880	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	6	1765729840367968631	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765729840367968631	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	41	1765730083821091124	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+41	100	1765730083859090987	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	7	1765730083927090742	CMakeFiles/database	71b17b3cf4e70018
+2	7	1765730083927090742	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	111	1765732618612476656	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+111	165	1765732618720476296	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	5	1765732618784476082	CMakeFiles/database	71b17b3cf4e70018
+2	5	1765732618784476082	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+2	43	1765732721904131854	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+43	102	1765732721945131717	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+1	5	1765732722014131486	CMakeFiles/database	71b17b3cf4e70018
+1	5	1765732722014131486	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	43	1765732728937108379	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+43	98	1765732728977108245	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	6	1765732729042108028	CMakeFiles/database	71b17b3cf4e70018
+2	6	1765732729042108028	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+2	7	1765732755288020424	CMakeFiles/database	71b17b3cf4e70018
+2	7	1765732755288020424	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018
+3	108	1765733931449244787	CMakeFiles/Group_Program_User_Src.dir/home/bazzite/Documents/code_projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/Src/line.o	5afee929942c591
+109	175	1765733931555244449	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	5313c75d5c0c2a97
+2	5	1765733931631244206	CMakeFiles/database	71b17b3cf4e70018
+2	5	1765733931631244206	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/1/CMakeFiles/database	71b17b3cf4e70018

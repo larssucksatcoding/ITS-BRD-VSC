@@ -25,6 +25,7 @@
 #include "reader.h"
 #include "writer.h"
 #include "button.h"
+#include <stdint.h>
 
 
 int main(void) {
