@@ -50,7 +50,7 @@ static void skip_to_next_line(bool palette) {
 
     // this function is only called by uncompressed lines
 
-  for (int i = LINE_WIDTH; i < padded_line_width_in_bytes; i++) {
+  for (int i = PIXEL_WIDTH; i < padded_line_width_in_bytes; i++) {
     next_byte();
   }
 }
