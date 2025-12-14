@@ -163,13 +163,16 @@ extern void RGB_line(COLOR* line) {
 // 8-bit (uncompressed)
 extern int RLE8_uncompressed_line(COLOR* line) {
   int error = EOK;  
-  BYTE pal_index = next_byte();
+  BYTE pal_index;
   COLOR color;
+
   for(int index = 0; index < PIXEL_WIDTH; index++) {
-    error = get_color(pal_index, &color);
-    line[index] = color;
     pal_index = next_byte();
+    error = get_color(pal_index, &color);
+
+    line[index] = color;
   }
+  
   skip_to_next_line(true);
   return error;
 }
