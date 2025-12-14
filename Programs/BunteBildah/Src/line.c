@@ -71,7 +71,7 @@ extern void reset_line_module() {
     // picture is uncompressed. the amount of bytes per line
     // must be divisible by 4. see page 8 at the bottom
     int bits_per_pixel = get_bits_per_pixel();
-    padded_line_width_in_bytes = (int) floor((double) (pic_width * bits_per_pixel) + 31.0 / 32.0) * 4;
+    padded_line_width_in_bytes = (int) floor((double) ((pic_width * bits_per_pixel) + 31.0) / 32.0) * 4;
 }
 
 static int check_info_first_pxl(int* index, COLOR* line) {
@@ -172,7 +172,7 @@ extern int RLE8_uncompressed_line(COLOR* line) {
 
     line[index] = color;
   }
-  
+
   skip_to_next_line(true);
   return error;
 }
