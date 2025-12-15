@@ -17,6 +17,10 @@
 #include "LCD_general.h"
 #include "stdbool.h"
 
+
+#define MAX_WIDTH             5*480
+#define MAX_HEIGHT            5*320
+
 extern COLOR line[];
 
 // FUNCTION

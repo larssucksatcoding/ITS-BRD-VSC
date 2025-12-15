@@ -17,15 +17,17 @@
 #include "reader.h"
 #include <stdbool.h>
 
-#define END_OF_LINE 0x00
-#define END_OF_BITMAP 0x01
-#define DELTA 0x02
+#define END_OF_LINE     0x00
+#define END_OF_BITMAP   0x01
+#define DELTA           0x02
 
 #define PIXEL_WIDTH                                                            \
-  ((pic_width <= LCD_WIDTH) ? pic_width : LCD_WIDTH) // nr of pixels in line
-#define LINE_WIDTH LCD_WIDTH
+    ((pic_width <= LCD_WIDTH) ? pic_width : LCD_WIDTH) // nr of pixels in line
+#define LINE_WIDTH        LCD_WIDTH
 
 // flags + info, if we already read info for following pixels
+
+static int line_width;
 static bool next_pxl_absolute;
 static bool ends_at_word_boundary;
 static bool next_pxl_encoded;
@@ -37,12 +39,51 @@ static int delta_y;
 
 static int pic_width;
 
+static bool padded;
 static int padded_line_width;
 
-// STATIC FUNCTIONS
+
+
+
+extern void reset_line_module() {
+  next_pxl_absolute     = false;
+  ends_at_word_boundary = true;
+  next_pxl_encoded      = false;
+  pixel_count           = 0;
+  pixel_color           = LCD_BACKGROUND;
+  delta                 = false;
+  delta_x               = 0;
+  delta_y               = 0;
+
+  pic_width = get_width();
+
+  // TODO: refactor this so that the reader module already
+  // returns the picture width with padding maybe?
+  // calculation for how many padding bytes there are when the
+  // picture is uncompressed. the amount of bytes per line
+  // must be divisible by 4. see page 8 at the bottom
+  int bits_per_pixel = get_bits_per_pixel();
+  padded_line_width =
+      (int)floor((double)((pic_width * bits_per_pixel) + 31.0) / 32.0) * 4;
+
+  padded = padded_line_width != pic_width;
+
+  // it is more convenient to have the padding in pixels and not in bytes.
+  // in 8-bit encodings, this is already the case since one byte
+  // correlates to one pixel. this is not the case for 24-bit encodings.
+
+  if (bits_per_pixel == 24) {
+    padded_line_width /= sizeof(RGBTRIPLE);
+  }
+
+  //clear line
+  for (int index = 0; index < MAX_WIDTH; index++) {
+    line[index] = LCD_BACKGROUND;
+  }
+}
 
 extern void clear_line(COLOR *line) {
-  for (int index = 0; index < LINE_WIDTH; index++) {
+  for (int index = 0; index < pic_width; index++) {
     line[index] = LCD_BACKGROUND;
   }
 }
@@ -61,35 +102,6 @@ static void skip_to_next_line(bool palette) {
       next_byte();
       next_byte();
     }
-  }
-}
-
-extern void reset_line_module() {
-  next_pxl_absolute = false;
-  ends_at_word_boundary = true;
-  next_pxl_encoded = false;
-  pixel_count = 0;
-  pixel_color = LCD_BACKGROUND;
-  delta = false;
-  delta_x = 0;
-  delta_y = 0;
-
-  pic_width = get_width();
-
-  // TODO: refactor this so that the reader module already
-  // returns the picture width with padding maybe?
-  // calculation for how many padding bytes there are when the
-  // picture is uncompressed. the amount of bytes per line
-  // must be divisible by 4. see page 8 at the bottom
-  int bits_per_pixel = get_bits_per_pixel();
-  padded_line_width =
-      (int)floor((double)((pic_width * bits_per_pixel) + 31.0) / 32.0) * 4;
-
-  // it is more convenient to have the padding in pixels and not in bytes.
-  // in 8-bit encodings, this is already the case since one byte
-  // correlates to one pixel. this is not the case for 24-bit encodings.
-  if (bits_per_pixel == 24) {
-    padded_line_width /= sizeof(RGBTRIPLE);
   }
 }
 
@@ -123,9 +135,9 @@ static int check_info_first_pxl(int *index, COLOR *line) {
 static int absolute_mode(int *index, COLOR *line, int pxl_amount) {
   int error = EOK;
   COLOR LCD_color;
-  if ((*index + pxl_amount) > PIXEL_WIDTH) {
+  if ((*index + pxl_amount) > pic_width) {
     next_pxl_absolute = true;
-    int leftover = PIXEL_WIDTH - *index; // pixels leftover in this line
+    int leftover = pic_width - *index; // pixels leftover in this line
     pixel_count = pxl_amount - leftover; // pixel in absolute in next line
   } else if (next_pxl_absolute) {
     next_pxl_absolute = false;
@@ -133,7 +145,7 @@ static int absolute_mode(int *index, COLOR *line, int pxl_amount) {
   }
 
   BYTE palette_index;
-  for (; (pxl_amount > 0) && (*index < PIXEL_WIDTH); (*index)++, pxl_amount--) {
+  for (     ; (pxl_amount > 0) && (*index < pic_width); (*index)++, pxl_amount--) {
     palette_index = next_byte();
     error = get_color(palette_index, &LCD_color);
     line[*index] = LCD_color;
@@ -150,7 +162,7 @@ static void encoded_mode(int *index, COLOR *line, int pxl_amount, COLOR color) {
   // do you need to save the color somewhere here?
   // pixel_color = color;
 
-  if ((*index + pxl_amount) > PIXEL_WIDTH) {
+  if ((*index + pxl_amount) > pic_width) {
     next_pxl_encoded = true;
     int leftover = PIXEL_WIDTH - *index; // pixels leftover in this line
     pixel_count = pxl_amount - leftover; // pixel in encoded in next line
@@ -160,7 +172,7 @@ static void encoded_mode(int *index, COLOR *line, int pxl_amount, COLOR color) {
     pixel_color = LCD_BACKGROUND;
   }
 
-  for (; (pxl_amount > 0) && (*index < PIXEL_WIDTH); (*index)++, pxl_amount--) {
+  for (   ; (pxl_amount > 0) && (*index < pic_width); (*index)++, pxl_amount--) {
     line[*index] = color;
   }
 }
@@ -169,10 +181,15 @@ static void encoded_mode(int *index, COLOR *line, int pxl_amount, COLOR color) {
 
 // 24-bit (must be uncompressed)
 extern void RGB_line(COLOR *line) {
-  for (int index = 0; index < PIXEL_WIDTH; index++) {
+  int index = 0;
+  for (     ; index < pic_width; index++) {
     line[index] = read_rgbtriple_as_color();
   }
-  skip_to_next_line(false);
+  if (padded) {
+    for (     ; index < padded_line_width; index ++) {
+      read_rgbtriple_as_color();
+    }
+  }
 }
 
 // 8-bit (uncompressed)
@@ -180,15 +197,18 @@ extern int RLE8_uncompressed_line(COLOR *line) {
   int error = EOK;
   BYTE pal_index;
   COLOR color;
+  int index = 0;
 
-  for (int index = 0; index < PIXEL_WIDTH; index++) {
+  for (   ; index < pic_width; index++) {
     pal_index = next_byte();
-    error = get_color(pal_index, &color);
-
+    error = get_color(pal_index, &color) && error && EOK;
     line[index] = color;
   }
-
-  skip_to_next_line(true);
+  if(padded) {
+    for (   ; index < padded_line_width; index ++){
+      next_byte();
+    }
+  }
   return error;
 }
 

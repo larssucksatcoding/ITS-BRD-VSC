@@ -23,7 +23,6 @@
 #define END_OF_FILE           -1
 
 
-
 #define INDEX_IN_WIDTH        ((index < width) && (index < LCD_WIDTH))
 #define LINE_WIDTH            (width <= LCD_WIDTH ? width : LCD_WIDTH)
 
@@ -38,7 +37,7 @@ static bool big_height;
 static bool compressed;
 static bool eof;
 
-COLOR line[LCD_WIDTH];
+COLOR line[MAX_WIDTH];
 
 /*
 *                           (Breite der Zeile)*(Anzahl Bits pro Eintrag) + 31
@@ -51,7 +50,7 @@ COLOR line[LCD_WIDTH];
 * @brief      sets static variables to default values
 */
 static void reset_variables() {
-  palette =  false;
+  palette   =  false;
   big_width = false;
   big_height = false;
   compressed = false;
