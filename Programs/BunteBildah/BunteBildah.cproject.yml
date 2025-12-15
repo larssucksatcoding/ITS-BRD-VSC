@@ -191,6 +191,7 @@ project:
         - file: Inc/button.h
         - file: Inc/color.h
         - file: Inc/line.h
+        - file: Inc/makesmoll.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -206,6 +207,7 @@ project:
         - file: Src/color.c
         - file: Src/line.c
         - file: Src/palette.c
+        - file: Src/makesmoll.c
 
   components:
     - component: ARM::CMSIS:CORE
