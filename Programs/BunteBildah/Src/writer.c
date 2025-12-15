@@ -39,6 +39,7 @@ static void draw_line(Coordinate coordinate) {
 
 // picture needs to be loaded first.
 extern void draw_picture() {
+
     GUI_clear(LCD_BACKGROUND);
 
     Coordinate coordinate = {0, 0};
@@ -49,11 +50,12 @@ extern void draw_picture() {
         picture_height = LCD_HEIGHT;
     }
 
-    for (int position_y = 0; position_y < picture_height; position_y++) {
+    // always start from bottom
+    for (int position_y = picture_height -1; position_y >= 0; position_y--) {
         coordinate.y = position_y;
-        draw_line(coordinate);
+        draw_line (coordinate);
 
-        if (reached_eof()) {
+        if( reached_eof()) {
             break;
         }
     }
