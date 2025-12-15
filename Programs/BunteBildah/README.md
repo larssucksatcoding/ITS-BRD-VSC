@@ -19,6 +19,9 @@ Templates
 
 ~ ~ ~ ~ ~  T O  -  D O   ~ ~ ~ ~ ~
 
+TO-DO:
+- [ ] adjust line array length to be max. 5 times the LCD_WIDTH, like needed for assignment c.
+
 functionality
 - [ ] reader.c: überarbeite das RLE8 compressed line gedöns
 - [ ] reader / line skip to next Line und eof checken 
