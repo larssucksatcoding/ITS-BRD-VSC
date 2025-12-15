@@ -23,17 +23,10 @@
 #define END_OF_FILE           -1
 
 
-#define INDEX_IN_WIDTH        ((index < width) && (index < LCD_WIDTH))
-#define LINE_WIDTH            (width <= LCD_WIDTH ? width : LCD_WIDTH)
-
-
-
 static BITMAPFILEHEADER fileheader;
 static BITMAPINFOHEADER infoheader;
 static int  width;
 static bool palette;
-static bool big_width;
-static bool big_height;
 static bool compressed;
 static bool eof;
 
@@ -51,8 +44,6 @@ COLOR line[MAX_WIDTH];
 */
 static void reset_variables() {
   palette   =  false;
-  big_width = false;
-  big_height = false;
   compressed = false;
   eof = false;
 
@@ -93,12 +84,6 @@ extern int load_picture() {
   // from the headers as of now.
   reset_line_module();
   
-  if(infoheader.biHeight > LCD_HEIGHT) {
-    big_height = true;
-  }
-  if(infoheader.biWidth > LCD_WIDTH) {
-    big_width = true;
-  }
   if(infoheader.biBitCount == BITCOUNT_PALETTE) {
     palette = true;
   }
@@ -171,6 +156,10 @@ extern void end_of_file(){
 
 extern bool reached_eof() {
   return eof;
+}
+
+extern bool compressed_formate() {
+  return compressed;
 }
 
 
