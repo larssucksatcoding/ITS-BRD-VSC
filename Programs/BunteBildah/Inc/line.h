@@ -12,12 +12,6 @@
 #include <stdbool.h>
 
 
-/**
-* @brief      reads bytes from file, that won't be displayed,
-*             because the pic is wider than our display,
-*             until we reach the next Line
-*/
-static void skip_to_next_line(bool palette);
 
 /**
 * @brief      clears color information out of line

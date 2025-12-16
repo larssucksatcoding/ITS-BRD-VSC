@@ -21,8 +21,6 @@
 #define END_OF_BITMAP   0x01
 #define DELTA           0x02
 
-#define PIXEL_WIDTH                                                            \
-    ((pic_width <= LCD_WIDTH) ? pic_width : LCD_WIDTH) // nr of pixels in line
 #define LINE_WIDTH        LCD_WIDTH
 
 // flags + info, if we already read info for following pixels
@@ -88,23 +86,6 @@ extern void clear_line(COLOR *line) {
   }
 }
 
-static void skip_to_next_line(bool palette) {
-
-  // this function is only called by uncompressed lines
-
-  for (int i = PIXEL_WIDTH; i < padded_line_width; i++) {
-    if (palette) {
-      // 8-bit encodings
-      next_byte();
-    } else {
-      // 24-bit encodings
-      next_byte();
-      next_byte();
-      next_byte();
-    }
-  }
-}
-
 static int check_info_first_pxl(int *index, COLOR *line) {
   int error = EOK;
   COLOR LCD_color;
@@ -159,21 +140,21 @@ static int absolute_mode(int *index, COLOR *line, int pxl_amount) {
 }
 
 static void encoded_mode(int *index, COLOR *line, int pxl_amount, COLOR color) {
-  // do you need to save the color somewhere here?
-  // pixel_color = color;
-
-  if ((*index + pxl_amount) > pic_width) {
-    next_pxl_encoded = true;
-    int leftover = PIXEL_WIDTH - *index; // pixels leftover in this line
-    pixel_count = pxl_amount - leftover; // pixel in encoded in next line
-  } else if (next_pxl_encoded) {
-    next_pxl_encoded = false;
-    pixel_count = 0;
-    pixel_color = LCD_BACKGROUND;
-  }
 
   for (   ; (pxl_amount > 0) && (*index < pic_width); (*index)++, pxl_amount--) {
     line[*index] = color;
+  }
+ 
+  bool leftover = pxl_amount > 0;
+  if(leftover) {
+    next_pxl_encoded = true;
+    pixel_count = pxl_amount;
+    pixel_color = color;
+  }
+  else {
+    next_pxl_encoded = false;
+    pixel_count = pxl_amount; // = 0
+    pixel_color = LCD_BACKGROUND;
   }
 }
 
