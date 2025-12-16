@@ -12,12 +12,18 @@
 #include <stdbool.h>
 #include "line.h"
 
+#define MAKESMOL_C_USE_COMPRESSION
+
 static int compression_ratio = 1;
 
 static COLOR compression_line[MAX_WIDTH];
 
 
 bool make_smoll() {
+    #ifndef MAKESMOL_C_USE_COMPRESSION
+    return false;
+
+    #else
     int pic_width = get_width();
     int pic_height = get_height();
 
@@ -31,6 +37,7 @@ bool make_smoll() {
 
     bool fits_on_display = ((pic_width) <= LCD_WIDTH) && ((pic_height) <= LCD_HEIGHT);
     return !fits_on_display;
+    #endif
 }
 
 COLOR* get_compressed_line(COLOR* line) {
