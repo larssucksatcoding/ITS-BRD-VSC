@@ -216,6 +216,7 @@ add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/color.c"
   "${SOLUTION_ROOT}/Src/line.c"
   "${SOLUTION_ROOT}/Src/palette.c"
+  "${SOLUTION_ROOT}/Src/makesmoll.c"
 )
 target_include_directories(Group_Program_User_Src PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>

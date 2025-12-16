@@ -1,39 +1,28 @@
 # ninja log v6
-15	31	1765732755279020454	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-database	e29a4e3a836941e6
-60	851	1765192687472641762	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-configure	4b23a061b3e62df6
-15	31	1765732755279020454	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-database	e29a4e3a836941e6
-179	190	1765732755443019907	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-install	994986db0feee1e4
-46	60	1765192686681644100	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-patch	fc27ac8e2b935397
-46	60	1765192686681644100	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-patch	fc27ac8e2b935397
-2	18	1765192686639644224	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-mkdir	582395d81957692d
-209	235	1765732755497019726	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-complete	2eb7b689e016bbe8
-190	208	1765732755470019817	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-test	f84c76ec7393e334
-3411	3431	1765449311224892517	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-executes	6837889429cb1d8c
-30	46	1765192686667644141	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-update	51abd51cc806539
-1	15	1765732755265020501	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	c3e96d5572b144e8
-18	30	1765192686652644185	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-download	91fa3affcf1359a0
-179	190	1765732755443019907	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-install	994986db0feee1e4
-209	235	1765732755497019726	CMakeFiles/BunteBildah.Debug+ITSboard-complete	2eb7b689e016bbe8
-18	30	1765192686652644185	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-download	91fa3affcf1359a0
-209	235	1765732755497019726	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-done	2eb7b689e016bbe8
-1	15	1765732755265020501	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-build	c3e96d5572b144e8
-190	208	1765732755470019817	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-test	f84c76ec7393e334
-60	851	1765192687472641762	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-configure	4b23a061b3e62df6
-30	46	1765192686667644141	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-update	51abd51cc806539
-1	15	1765732755265020501	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-build	c3e96d5572b144e8
 3411	3431	1765449311224892517	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-executes	6837889429cb1d8c
-2	18	1765192686639644224	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-mkdir	582395d81957692d
-209	235	1765732755497019726	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-done	2eb7b689e016bbe8
-1	183	1765733931440244815	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-build	c3e96d5572b144e8
-1	183	1765733931440244815	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	c3e96d5572b144e8
 1	183	1765733931440244815	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-build	c3e96d5572b144e8
-183	197	1765733931622244235	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-database	e29a4e3a836941e6
-183	197	1765733931622244235	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-database	e29a4e3a836941e6
 197	200	1765733931636244190	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-install	994986db0feee1e4
-197	200	1765733931636244190	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-install	994986db0feee1e4
-200	203	1765733931642244171	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-test	f84c76ec7393e334
-200	203	1765733931642244171	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-test	f84c76ec7393e334
-203	210	1765733931648244152	CMakeFiles/BunteBildah.Debug+ITSboard-complete	2eb7b689e016bbe8
-203	210	1765733931648244152	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-done	2eb7b689e016bbe8
+563	613	1765881027529187856	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-database	e29a4e3a836941e6
+2	18	1765192686639644224	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-mkdir	582395d81957692d
 203	210	1765733931648244152	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/CMakeFiles/BunteBildah.Debug+ITSboard-complete	2eb7b689e016bbe8
+200	203	1765733931642244171	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-test	f84c76ec7393e334
+3411	3431	1765449311224892517	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-executes	6837889429cb1d8c
+1	183	1765733931440244815	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/out/BunteBildah/ITSboard/Debug/BunteBildah.axf	c3e96d5572b144e8
+17	30	1765881026995190578	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-update	51abd51cc806539
+31	44	1765881027008190512	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-patch	fc27ac8e2b935397
+31	44	1765881027008190512	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-patch	fc27ac8e2b935397
+2	18	1765192686639644224	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-mkdir	582395d81957692d
+203	210	1765733931648244152	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-done	2eb7b689e016bbe8
+44	563	1765881027527187867	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-configure	4b23a061b3e62df6
+563	613	1765881027529187856	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-database	e29a4e3a836941e6
+2	17	1765881026981190650	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-download	91fa3affcf1359a0
+197	200	1765733931636244190	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-install	994986db0feee1e4
+203	210	1765733931648244152	CMakeFiles/BunteBildah.Debug+ITSboard-complete	2eb7b689e016bbe8
+2	17	1765881026981190650	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-download	91fa3affcf1359a0
 203	210	1765733931648244152	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-done	2eb7b689e016bbe8
+1	183	1765733931440244815	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-build	c3e96d5572b144e8
+200	203	1765733931642244171	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-test	f84c76ec7393e334
+44	563	1765881027527187867	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-configure	4b23a061b3e62df6
+17	30	1765881026995190578	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-update	51abd51cc806539
+6	71	1765881079609932998	BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-database	e29a4e3a836941e6
+6	71	1765881079609932998	/home/bazzite/Documents/code projects/uni/gs/Aufgabe1/ITS-BRD-VSC/Programs/BunteBildah/tmp/BunteBildah.Debug+ITSboard/src/BunteBildah.Debug+ITSboard-stamp/BunteBildah.Debug+ITSboard-database	e29a4e3a836941e6
