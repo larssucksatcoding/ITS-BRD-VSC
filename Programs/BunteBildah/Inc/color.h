@@ -4,6 +4,9 @@
 
 #include "LCD_general.h"
 
+void extract_rgb_of_display_color(
+	COLOR color, unsigned char* r, unsigned char* g, unsigned char* b);
+
 /**
   * @brief  reads the next 3 bytes of the file and returns them to the native
   *         16 bit format used by the ITS-Board display. see RGBTRIPLE

@@ -51,6 +51,21 @@ COLOR rgb_to_display_color(unsigned char rgbBlue, unsigned char rgbGreen, unsign
 // PUBLIC FUNCTIONS
 // ================
 
+void extract_rgb_of_display_color(
+	COLOR color, unsigned char* r, unsigned char* g, unsigned char* b) {
+		unsigned char r_part = (color >> 1) & UINT5_MAX;
+		unsigned char g_part = (color >> 5) & UINT6_MAX;
+		unsigned char b_part = color & UINT5_MAX;
+
+		double r_float = (double) r_part / (double) UINT5_MAX;
+		double g_float = (double) g_part / (double) UINT6_MAX;
+		double b_float = (double) b_part / (double) UINT5_MAX;
+
+		*r = (unsigned char) (r_float * UINT8_MAX);
+		*g = (unsigned char) (b_float * UINT8_MAX);
+		*b = (unsigned char) (b_float * UINT8_MAX);
+}
+
 COLOR read_rgbtriple_as_color() {
     COMread((char *) &triple, sizeof(RGBTRIPLE), 1);
     return rgb_to_display_color(
