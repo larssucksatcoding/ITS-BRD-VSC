@@ -16,10 +16,11 @@
 #include "MS_basetypes.h"
 #include "LCD_general.h"
 #include "stdbool.h"
+#include "makesmoll.h"
 
 
-#define MAX_WIDTH             5*480
-#define MAX_HEIGHT            5*320
+#define MAX_WIDTH             LCD_WIDTH * MAX_COMPRESSION_RATIO
+#define MAX_HEIGHT            LCD_HEIGHT * MAX_COMPRESSION_RATIO
 
 extern COLOR line[];
 

@@ -8,6 +8,8 @@
 #ifndef MAKESMOLL_H
 #define MAKESMOLL_H
 
+#define MAX_COMPRESSION_RATIO 5
+
 /**
 * @brief      -
 *
