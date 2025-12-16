@@ -20,10 +20,6 @@ static COLOR compression_line[MAX_WIDTH];
 
 
 bool make_smoll() {
-    #ifndef MAKESMOL_C_USE_COMPRESSION
-    return false;
-
-    #else
     int pic_width = get_width();
     int pic_height = get_height();
 
@@ -34,7 +30,11 @@ bool make_smoll() {
     if (compression_ratio > MAX_COMPRESSION_RATIO) {
         // throw a temper tantrum.
     }
+    
+    #ifndef MAKESMOL_C_USE_COMPRESSION
+    return false;
 
+    #else
     bool fits_on_display = ((pic_width) <= LCD_WIDTH) && ((pic_height) <= LCD_HEIGHT);
     return !fits_on_display;
     #endif
