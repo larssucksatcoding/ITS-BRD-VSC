@@ -21,6 +21,10 @@ Templates
 
 TO-DO:
 - [ ] adjust line array length to be max. 5 times the LCD_WIDTH, like needed for assignment c.
+- [ ] error when needed compression ratio is too large, also change placement if file is too large because makesmol is a weird place for that error to occur
+- [ ] error when picture signature is borked
+- [ ] handle error in get_next_line.
+- [ ] comment and rename
 
 functionality
 - [ ] reader.c: überarbeite das RLE8 compressed line gedöns

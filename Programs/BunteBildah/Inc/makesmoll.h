@@ -8,6 +8,15 @@
 #ifndef MAKESMOLL_H
 #define MAKESMOLL_H
 
+#include "LCD_general.h"
+#include "stdbool.h"
+
+#define MAX_COMPRESSION_RATIO 5
+
+bool make_smoll();
+
+COLOR* get_compressed_line(COLOR* line);
+
 /**
 * @brief      -
 *

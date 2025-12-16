@@ -16,6 +16,7 @@
 #include "MS_basetypes.h"
 #include "palette.h"
 #include "line.h"
+#include "makesmoll.h"
 
 
 #define BITCOUNT_PALETTE      8
@@ -29,6 +30,9 @@ static int  width;
 static bool palette;
 static bool compressed;
 static bool eof;
+
+static int compression_ratio;
+static bool made_smoll;
 
 COLOR line[MAX_WIDTH];
 
@@ -46,6 +50,7 @@ static void reset_variables() {
   palette   =  false;
   compressed = false;
   eof = false;
+  compression_ratio = 1;
 
   // reset_line_module();
   // reset line module??
@@ -92,6 +97,8 @@ extern int load_picture() {
   }
 
   width = infoheader.biWidth;
+  made_smoll = make_smoll();
+
   // reset line module 
   if(palette) {
     int pal_size = get_palette_size();
@@ -101,31 +108,35 @@ extern int load_picture() {
   return error;
 }
 
-COLOR* get_next_Line(){
-  
+COLOR* get_printable_line() {
+  if(made_smoll) {
+    return get_compressed_line(line);
+  } else {
+    return get_next_Line(line);
+  }
+}
+
+COLOR* get_next_Line(COLOR* line) {
   clear_line(line);
 
-  // TODO:
-  // if big_width, we need to compress the image (exercise c)
-
   int error = EOK;
+
   // format: 24-bit RGB
   if(!palette){
     RGB_line(line);
-    // skip to next Line?
   }
 
   // format: 8-bit, uncompressed
   else if(!compressed) {
     error =  RLE8_uncompressed_line(line);
-    // skip to next line?
   }
 
   // format: 8-bit, compressed
   else {
     error =  RLE8_compressed_line(line);
-    // skip to next line?
   }
+
+  // TODO: handle error
 
   return line;
 }

@@ -24,7 +24,7 @@
 *               screen individually.
 */
 static void draw_line(Coordinate coordinate) {
-    COLOR* line = get_next_Line();
+    COLOR* line = get_printable_line();
 
     #ifdef WRITER_C_LINE_DRAW_MODE
     GUI_WriteLine(coordinate, LCD_WIDTH, line);

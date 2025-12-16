@@ -16,10 +16,11 @@
 #include "MS_basetypes.h"
 #include "LCD_general.h"
 #include "stdbool.h"
+#include "makesmoll.h"
 
 
-#define MAX_WIDTH             5*480
-#define MAX_HEIGHT            5*320
+#define MAX_WIDTH             LCD_WIDTH * MAX_COMPRESSION_RATIO
+#define MAX_HEIGHT            LCD_HEIGHT * MAX_COMPRESSION_RATIO
 
 extern COLOR line[];
 
@@ -43,6 +44,9 @@ extern BYTE next_byte();
 */
 extern int load_picture();
 
+
+extern COLOR* get_printable_line();
+
 /**
 * @brief      fetches next Pixel line from .bmp
 *
@@ -50,7 +54,7 @@ extern int load_picture();
 * 
 * @return     COLOR* Pointer for each pixel in next line one color
 */
-extern COLOR* get_next_Line();
+extern COLOR* get_next_Line(COLOR* line);
 
 /**
 * @brief      returns width of picture (either og picture width or LCD_width if picture width exceed Lcd width)
