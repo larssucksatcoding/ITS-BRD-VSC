@@ -44,6 +44,9 @@ extern BYTE next_byte();
 */
 extern int load_picture();
 
+
+extern COLOR* get_printable_line();
+
 /**
 * @brief      fetches next Pixel line from .bmp
 *
@@ -51,7 +54,7 @@ extern int load_picture();
 * 
 * @return     COLOR* Pointer for each pixel in next line one color
 */
-extern COLOR* get_next_Line();
+extern COLOR* get_next_Line(COLOR* line);
 
 /**
 * @brief      returns width of picture (either og picture width or LCD_width if picture width exceed Lcd width)
