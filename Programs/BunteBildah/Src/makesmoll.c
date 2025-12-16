@@ -6,6 +6,7 @@
 */
 
 #include "makesmoll.h"
+#include "LCD_GUI.h"
 #include "LCD_general.h"
 #include "reader.h"
 #include <math.h>
@@ -41,12 +42,19 @@ bool make_smoll() {
 }
 
 COLOR* get_compressed_line(COLOR* line) {
+    
+    // since we incrementally add up the colors of the
+    // surrounding pixels, the initial pixel needs to
+    // have a value of 0.
+    for (int i = 0; i < MAX_WIDTH; i++) {
+        line[i] = (COLOR) 0;
+    }
+
     // e.g. if compression ratio is 5, every pixel in one "box"
     // counts as 1 / 25 of the final pixel of a box
     float pixel_strength = 1 / pow(compression_ratio, 2.0);
 
     int compressed_picture_width = get_width() / compression_ratio;
-    int compressed_picture_height = get_height() / compression_ratio;
 
     for (int y = 0; y < compression_ratio; y++) {
         clear_line(compression_line);
@@ -54,11 +62,11 @@ COLOR* get_compressed_line(COLOR* line) {
         
         // nyow compwess :3
         for (int x = 0; x < compressed_picture_width; x++) {
-            int start_index = x * compressed_picture_width;
-            int end_index = (x + 1) * compressed_picture_width; 
+            int start_index = x * compression_ratio;
+            int end_index = (x + 1) * compression_ratio; 
 
             for (int dx = start_index; dx < end_index; dx++) {
-                line[x] = compression_line[dx] * pixel_strength;
+                line[x] += compression_line[dx] * pixel_strength;
             }
         }
 
