@@ -1,12 +1,17 @@
 
 #include "color.h"
 #include "BMP_types.h"
+#include "MS_basetypes.h"
 #include "input.h"
 #include "LCD_GUI.h"
 #include "limits.h"
 
-#define UINT5_MAX 0b00011111
-#define UINT6_MAX 0b00111111
+#define BLUE_MASK 	0b00011111
+#define GREEN_MASK 	0b00111111
+#define RED_MASK	0b00011111
+
+#define RED_SHIFT 11
+#define GREEN_SHIFT 5
 #define UINT8_MAX 0b11111111
 
 static RGBTRIPLE triple;
@@ -34,9 +39,9 @@ COLOR rgb_to_display_color(unsigned char rgbBlue, unsigned char rgbGreen, unsign
     // multiply normalized values by max of target values
     // note that green uses 6 bit and red and blue 5 bit
     // in the encoding used by the ITS-Board display.
-    int blue_int = (int) (blue_float * UINT5_MAX);
-    int green_int = (int) (green_float * UINT6_MAX);
-    int red_int = (int) (red_float * UINT5_MAX);
+    int blue_int = (int) (blue_float * BLUE_MASK);
+    int green_int = (int) (green_float * GREEN_MASK);
+    int red_int = (int) (red_float * RED_MASK);
 
     // shift values into correct bit-indeces of color
     color |= blue_int & BLUE;
@@ -52,18 +57,28 @@ COLOR rgb_to_display_color(unsigned char rgbBlue, unsigned char rgbGreen, unsign
 // ================
 
 void extract_rgb_of_display_color(
-	COLOR color, unsigned char* r, unsigned char* g, unsigned char* b) {
-		unsigned char r_part = (color >> 1) & UINT5_MAX;
-		unsigned char g_part = (color >> 5) & UINT6_MAX;
-		unsigned char b_part = color & UINT5_MAX;
+	COLOR color, BYTE* r, BYTE* g, BYTE* b) {
+		*r = (color >> RED_SHIFT) & RED_MASK;
+		*g = (color >> GREEN_SHIFT) & GREEN_MASK;
+		*b = color & BLUE_MASK;
 
-		double r_float = (double) r_part / (double) UINT5_MAX;
-		double g_float = (double) g_part / (double) UINT6_MAX;
-		double b_float = (double) b_part / (double) UINT5_MAX;
+		/*
+		double r_float = (double) r_part / (double) RED_MASK;
+		double g_float = (double) g_part / (double) GREEN_MASK;
+		double b_float = (double) b_part / (double) BLUE_MASK;
 
 		*r = (unsigned char) (r_float * UINT8_MAX);
 		*g = (unsigned char) (b_float * UINT8_MAX);
 		*b = (unsigned char) (b_float * UINT8_MAX);
+		*/
+}
+
+COLOR rgb_to_color(BYTE red, BYTE green, BYTE blue) {
+	COLOR color = 0;
+	color = red << RED_SHIFT;
+	color += green << GREEN_SHIFT;
+	color += blue;
+	return color;
 }
 
 COLOR read_rgbtriple_as_color() {
