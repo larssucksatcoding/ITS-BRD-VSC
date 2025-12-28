@@ -15,6 +15,8 @@
 
 bool make_smoll();
 
+int get_compression_ratio();
+
 COLOR* get_compressed_line(COLOR* line);
 
 /**
