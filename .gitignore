@@ -12,5 +12,37 @@
 .AppleDouble
 .LSOverride
 
-# EOF
+Programs/One_Wire_Bus/tmp/One_Wire_Bus.Debug+ITSboard/src/One_Wire_Bus.Debug+ITSboard-stamp/*
 
+#Build Artefacts
+*.out
+*.o
+build/
+
+#Debug
+*.dbgconf*
+*Debug*
+
+# wichtige Dateien: (sollten auch mit gepusht werden)
+# *.yml
+# *.cmake
+# *.sct (kommt auf Art an: 
+#       Linker Skript - nicht ignorieren!
+#       Editor-/ Tool- Artefakt - kann man ignorieren)
+# CMakeLists.txt
+
+#CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# clangd i.d.R. nicht unbedingt ignorieren
+# global: als *.idx - Programs/One_Wire_Bus/out/One_Wire_Bus/ITSboard/Debug/.cache/clangd/index/*
+
+# testen:
+*.clangd
+out/
+tmp/ 
+# (1/)
+
+# EOF
