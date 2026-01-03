@@ -43,4 +43,8 @@ out/
 tmp/ 
 # (1/)
 
+# i do not know what the purpose of this file is, but i feel like it is not that important 
+*cbuild-idx.yml
+
 # EOF
+
