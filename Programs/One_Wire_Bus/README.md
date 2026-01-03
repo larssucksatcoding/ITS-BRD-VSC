@@ -42,17 +42,17 @@ Now I will accomplish my duty after all:
 Templates
 
 /**
-* @file       
-* @author     Lars Müller-Stumpf, Noah Rajko
-* @date       Jan 2025
-* @brief      
+* @file     -
+* @author   Lars Müller-Stumpf, Noah Rajko
+* @date     Jan 2025
+* @brief    -
 */
 
 
 /**
-* @brief      -
+* @brief    -
 *
-* @param      -
+* @param    -
 * 
-* @return     -
+* @return   -
 */
