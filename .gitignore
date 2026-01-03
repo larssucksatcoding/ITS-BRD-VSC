@@ -12,8 +12,6 @@
 .AppleDouble
 .LSOverride
 
-Programs/One_Wire_Bus/tmp/One_Wire_Bus.Debug+ITSboard/src/One_Wire_Bus.Debug+ITSboard-stamp/*
-
 #Build Artefacts
 *.out
 *.o
