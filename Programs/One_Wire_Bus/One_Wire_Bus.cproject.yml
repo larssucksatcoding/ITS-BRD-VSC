@@ -181,13 +181,24 @@ project:
       files:
         - file: ../../ITS_BRD_LIB/Inc/lcd.h
         - file: Inc/crc.h
-        - file: Inc/main.h
+        - file: Inc/commands.h
+        - file: Inc/display.h
+        - file: Inc/slaves.h
+        - file: Inc/timer.h
+        - file: Inc/bit_talk.h
+        - file: Inc/manager.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
       files:
         - file: Src/main.c
         - file: Src/crc.c
+        - file: Src/commands.c
+        - file: Src/display.c
+        - file: Src/timer.c
+        - file: Src/slaves.c
+        - file: Src/bit_talk.c
+        - file: Src/manager.c
 
   components:
     - component: ARM::CMSIS:CORE

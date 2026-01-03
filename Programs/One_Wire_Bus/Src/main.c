@@ -1,11 +1,10 @@
 /**
-  ******************************************************************************
-  * @file    main.c
-  * @author  Franz Korf
-  * @brief   Kleines Testprogramm fuer neu erstelle Fonts.
-  ******************************************************************************
-  */
-/* Includes ------------------------------------------------------------------*/
+* @file     main.c
+* @author   Lars Müller-Stumpf, Noah Rajko
+* @date     Jan 2025
+* @brief    it's the main duh
+*/
+
 
 #include "stm32f4xx_hal.h"
 #include "init.h"
@@ -17,19 +16,10 @@
 #include "error.h"
 
 
-int main(void) {
-	initITSboard();    // Initialisierung des ITS Boards
-	
-	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
-
-  // Begruessungstext	
-	lcdPrintlnS("Hallo liebes TI-Labor (c-project)");
-	
-	// Test in Endlosschleife
-	while(1) {
-		HAL_Delay(10000);
-	}
-}
-
-// EOF
+/**
+* @brief    -
+*
+* @param    -
+* 
+* @return   -
+*/
