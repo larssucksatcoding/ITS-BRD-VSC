@@ -15,6 +15,18 @@
 #include "additionalFonts.h"
 #include "error.h"
 
+int main(void) {
+    // Aufgabe 1:
+    while(true){
+
+        // detect slaves
+        // if get_slave_count() == 0
+        // error no slave angeschlossen
+        // else print Family Code + ROM
+        
+    }
+
+}
 
 /**
 * @brief    -
