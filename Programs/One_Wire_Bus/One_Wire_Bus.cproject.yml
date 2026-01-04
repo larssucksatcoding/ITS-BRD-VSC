@@ -184,9 +184,9 @@ project:
         - file: Inc/commands.h
         - file: Inc/display.h
         - file: Inc/slaves.h
-        - file: Inc/timer.h
         - file: Inc/bit_talk.h
         - file: Inc/manager.h
+        - file: Inc/time.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -195,10 +195,10 @@ project:
         - file: Src/crc.c
         - file: Src/commands.c
         - file: Src/display.c
-        - file: Src/timer.c
         - file: Src/slaves.c
         - file: Src/bit_talk.c
         - file: Src/manager.c
+        - file: Src/time.c
 
   components:
     - component: ARM::CMSIS:CORE
