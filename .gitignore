@@ -29,10 +29,14 @@ build/
 #       Editor-/ Tool- Artefakt - kann man ignorieren)
 # CMakeLists.txt
 
-#CMake
+#CMake plus files in tmp/
 CMakeCache.txt
-CMakeFiles/
 cmake_install.cmake
+.ninja_log
+roots.cmake
+1/
+CMakeFiles/
+build.ninja
 
 # clangd i.d.R. nicht unbedingt ignorieren
 # global: als *.idx - Programs/One_Wire_Bus/out/One_Wire_Bus/ITSboard/Debug/.cache/clangd/index/*
@@ -40,8 +44,10 @@ cmake_install.cmake
 # testen:
 *.clangd
 out/
-tmp/ 
-# (1/)
+
+# tmp/ contains the very important file CMakeLists.txt so it cannot be ignored.
+# instead I will ignore everything but CMakeLists.txt (!file not working if
+# parent directory is ignored)
 
 # i do not know what the purpose of this file is, but i feel like it is not that important 
 *cbuild-idx.yml
