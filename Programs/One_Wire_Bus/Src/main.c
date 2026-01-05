@@ -20,12 +20,13 @@
 #define ONE_SEC 1000
 
 int main(void) {
+    initITSboard();
     init_time();
     init_bt();
     while(true) {
-        set_high();
-        wait(ONE_SEC);
         open_drain();
+        wait(ONE_SEC);
+        push_pull();
         wait(ONE_SEC);
     }
 
