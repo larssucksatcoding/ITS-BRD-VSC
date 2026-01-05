@@ -20,7 +20,10 @@
 #define ONE_SEC 1000
 
 int main(void) {
-    initITSboard();
+	initITSboard();
+	GUI_init(DEFAULT_BRIGHTNESS);
+	TP_Init(false);
+
     init_time();
     init_bt();
     while(true) {
