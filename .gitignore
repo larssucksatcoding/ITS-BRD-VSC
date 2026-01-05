@@ -6,6 +6,9 @@
 # Ignore User specific setting
 /Programs/*/*.uvguix.*
 
+#csoluion Toolbox
+*csolution.yml
+
 ### macOS ###
 # General
 .DS_Store
