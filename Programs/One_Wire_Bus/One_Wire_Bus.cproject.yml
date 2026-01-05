@@ -187,6 +187,7 @@ project:
         - file: Inc/bit_talk.h
         - file: Inc/manager.h
         - file: Inc/time.h
+        - file: Inc/error_handler.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -199,6 +200,7 @@ project:
         - file: Src/bit_talk.c
         - file: Src/manager.c
         - file: Src/time.c
+        - file: Src/error_handler.c
 
   components:
     - component: ARM::CMSIS:CORE

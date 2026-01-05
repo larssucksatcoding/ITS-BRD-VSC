@@ -34,6 +34,7 @@ This is the result of a test - the test has been committed and therefore is in r
 - [ ] check scratchpad length of DS18S20 (0x10)
 - [x] figure out how to create a const (u) char array which can be provided to check crc
         - [ ] i did not I provide a non constant char - is illegal?
+- [ ] complete the error_handling whoop whoop
 
 ## Aufgabe 1:
 - [x] Read ROM implementieren (bzw. ganz simple Search ROM? " Mit dem in der Vorlesung dargestellten Ablauf ..." (GS_Aufgabe4_1-Wire_Bus.pdf, S. 1, letzter Abschnitt))

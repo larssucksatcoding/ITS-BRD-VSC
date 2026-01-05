@@ -339,6 +339,8 @@ build:
           category: header
         - file: ../../../../Inc/time.h
           category: header
+        - file: ../../../../Inc/error_handler.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -356,6 +358,8 @@ build:
         - file: ../../../../Src/manager.c
           category: sourceC
         - file: ../../../../Src/time.c
+          category: sourceC
+        - file: ../../../../Src/error_handler.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h
