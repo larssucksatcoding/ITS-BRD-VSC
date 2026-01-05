@@ -36,7 +36,6 @@ build/
 CMakeCache.txt
 cmake_install.cmake
 .ninja_log
-roots.cmake
 1/
 CMakeFiles/
 build.ninja
