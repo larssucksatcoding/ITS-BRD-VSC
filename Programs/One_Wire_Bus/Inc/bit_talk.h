@@ -12,6 +12,23 @@
 #include <stdbool.h>
 
 /**
+* @brief    sets the Output on PD0 and PD1 for OpenDrain Mode
+*
+* @param    -
+* 
+* @return   -
+*/
+void open_drain();
+
+void push_pull();
+
+void set_low();
+
+void set_high();
+
+void init_bt();
+
+/**
 * @brief    master sends 1 to slaves (pulls the line for 6 müs)
 */
 void send_1();
@@ -37,7 +54,7 @@ bool receive();
 /**
 * @brief    master sends reset signal to slaves (pulls line for 480 müs)
 */
-void reset();
+void send_reset();
 
 
 

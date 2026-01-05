@@ -14,16 +14,19 @@
 #include "fontsFLASH.h"
 #include "additionalFonts.h"
 #include "error.h"
+#include "bit_talk.h"
+#include "time.h"
+
+#define ONE_SEC 1000
 
 int main(void) {
-    // Aufgabe 1:
-    while(true){
-
-        // detect slaves
-        // if get_slave_count() == 0
-        // error no slave angeschlossen
-        // else print Family Code + ROM
-        
+    init_time();
+    init_bt();
+    while(true) {
+        set_high();
+        wait(ONE_SEC);
+        open_drain();
+        wait(ONE_SEC);
     }
 
 }
