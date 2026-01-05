@@ -19,28 +19,36 @@ Push-Pull:      the Bus is very high, if PD0 is on.
 *               (Reason for that is that else the current will be to high,
 *               since the resistor can be avoided)
 
-This is the result of a test - the test has been committed and therefore is in repo's git history
-(test: push-pull/ open-drain)
+This is the result of a test - the test has been committed and therefore is in repo's git history(test: push-pull/open-drain)
 
 # To-Do:
-- [ ] Modulkonzept entwerfen
-- [ ] mit Kommentaren
+- [x] Modulkonzept entwerfen
+- [x] mit Kommentaren
 
-- [ ] importieren des Timer Moduls
+- [x] importieren des Timer Moduls
+
+- [x] implement receive() in bit_talk.c
+- [ ] test receive() with oscilloscope
+        - [ ] test everything with oscilloscope?
+- [ ] implement a  recovery time between bytes (or figure out if this is necessary)
+- [ ] check scratchpad length of DS18S20 (0x10)
+- [x] figure out how to create a const (u) char array which can be provided to check crc
+        - [ ] i did not I provide a non constant char - is illegal?
 
 ## Aufgabe 1:
-- [ ] Read ROM implementieren (bzw. ganz simple Search ROM? " Mit dem in der Vorlesung dargestellten Ablauf ..." (GS_Aufgabe4_1-Wire_Bus.pdf, S. 1, letzter Abschnitt))
-- [ ] Checksum der ROM prüfen
+- [x] Read ROM implementieren (bzw. ganz simple Search ROM? " Mit dem in der Vorlesung dargestellten Ablauf ..." (GS_Aufgabe4_1-Wire_Bus.pdf, S. 1, letzter Abschnitt))
+- [x] Checksum der ROM prüfen
 - [ ] zyklisches Abfragen der ROM 
 - [ ] Ausgabe auf Display
 - [ ] Fehlermeldung falls kein Sensor angeschlossen
-- [ ] Reset implementieren
+- [x] Reset implementieren
+    - [ ] should we check for presence pulse more than once? reset() commands.c
 
 ## Aufgabe 2:
 - [ ] bekannte ROMS können verwendet (hardcodiert) werden (Konstanten oder #define)
 - [ ] Implementierung Temperaturmessung
-    - [ ] Convert T
-    - [ ] Read Scratchpad
+    - [x] Convert T
+    - [x] Read Scratchpad
     - [ ] Temperatur berechnen
 - [ ] Display Ausgabe
     - [ ] Family Code

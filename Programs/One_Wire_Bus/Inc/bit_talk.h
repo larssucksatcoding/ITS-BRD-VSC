@@ -13,27 +13,14 @@
 
 /**
 * @brief    sets the Output on PD0 and PD1 for OpenDrain Mode
-*
-* @param    -
-* 
-* @return   -
+*           initializes with Bus high
 */
-
-void set_low_1();
-
-void set_high_1();
-
-
-
 void open_drain();
 
+/**
+* @brief    sets mode to push_pull sets bus high (pd0 & pd1 high)
+*/
 void push_pull();
-
-void set_low();
-
-void set_high();
-
-void init_bt();
 
 /**
 * @brief    master sends 1 to slaves (pulls the line for 6 müs)
@@ -46,17 +33,12 @@ void send_1();
 void send_0();
 
 /**
-* @brief    master sends read bit to slaves 
-*/
-void send_read();
-
-/**
 * @brief    checks information on bus returns whether bus is high or low
 * 
 * @return   bool true - bus is HIGH (1)
 *                false - bus is LOW (0) 
 */
-bool receive();
+char receive();
 
 /**
 * @brief    master sends reset signal to slaves (pulls line for 480 müs)

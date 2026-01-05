@@ -16,6 +16,10 @@
 #define SEND_RESET      480
 #define SEND_READ_BIT   6
 
+#define TEMP_MEASURE    1000
+#define WAIT_FOR_PRESENCE_PULSE 70
+
+
 /**
 * @brief      initializes the module for first use. always call this before
 *             doing anything else.

@@ -13,7 +13,7 @@
 *           stores Information in slave struct [] 
 *           Code: F0h
 */
-void search_ROM();
+int search_ROM();
 
 /**
 * @brief    if only 1 slave on bus -> slave sends ROM
@@ -39,8 +39,9 @@ void convert_T();
 * @brief    reads scratchpad from current slave
 *           saves scratchpad data in struct
 *           Code: BEh
+* @return   Error if Scratchpad Data contains mistakes (didn't pass CRC check)
 */
-void read_scratchpad();
+int read_scratchpad();
 
 
 #endif
