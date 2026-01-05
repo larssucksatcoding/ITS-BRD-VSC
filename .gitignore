@@ -22,7 +22,12 @@ build/
 
 #Debug
 *.dbgconf*
-*Debug*
+.cache/ 
+# i think .cache/ only contains *.idx files, which should be ignored in global git ignore
+# *Debug* we cannot ignore everything with Debug
+*Debug+ITSboard/
+
+#
 
 # wichtige Dateien: (sollten auch mit gepusht werden)
 # *.yml
@@ -45,7 +50,14 @@ build.ninja
 
 # testen:
 *.clangd
-out/
+
+# out/ contains important data like the One_Wire_Bus.Debug+ITSboard.cbuild.yml 
+*.axf* 
+*.htm
+compile_commands.json  
+# (this last one has a lot of directories in it, which will differentiate for each user)
+
+
 
 # tmp/ contains the very important file CMakeLists.txt so it cannot be ignored.
 # instead I will ignore everything but CMakeLists.txt (!file not working if
