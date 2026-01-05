@@ -18,14 +18,18 @@ void init();
 /**
 * @brief    runs repeatedly through Search ROM until all slaves are detected. 
 *           all slaves are stored in slave[] in the slaves module.
+*
+* @return   error code (EOK or no_slave detected)
 */
-void detect_slaves();
+int detect_slaves();
 
 /**
 * @brief    bundles all steps for measuring and calculating temperature with current sensor
 *           (match ROM, convert T, read Scratchpad, calculate Temperate, reset)
+*
+* @return   error code (EOK or NO_SLAVE)
 */
-void measure_temperature();
+int measure_temperature();
 
 #endif
 
