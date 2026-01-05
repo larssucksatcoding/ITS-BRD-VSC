@@ -18,6 +18,13 @@
 * 
 * @return   -
 */
+
+void set_low_1();
+
+void set_high_1();
+
+
+
 void open_drain();
 
 void push_pull();

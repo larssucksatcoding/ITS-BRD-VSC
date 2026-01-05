@@ -19,26 +19,30 @@
 #define PD1_ON          0b00000010
 
 
-void init_bt() {
+void open_drain() {
     GPIOD->OTYPER |= (1<< PD0);
     GPIOD->OTYPER |= (1<< PD1);
 }
 
-void open_drain() {
-    GPIOD->BSRR = (1 << (PD1 + SET_REGISTER));
-    OUTPUT = (1 << (PD0 + RESET_REGISTER));
-}
-
 void push_pull() {
-    OUTPUT = (1 << (PD1 + SET_REGISTER));
-    OUTPUT = (1 << (PD0 + SET_REGISTER));
+    GPIOD->OTYPER &= ~(1<< PD0);
+    GPIOD->OTYPER &= ~(1<< PD1);
 }
 
 void set_low(){
-    open_drain();
+    OUTPUT = (1 << (PD0 + RESET_REGISTER));
 }
 
 void set_high(){
+    OUTPUT = (1 << (PD0 + SET_REGISTER));
+}
+
+void set_low_1(){
+    OUTPUT = (1 << (PD1 + RESET_REGISTER));
+}
+
+void set_high_1(){
+    OUTPUT = (1 << (PD1 + SET_REGISTER));
 }
 
 void send_1(){

@@ -8,7 +8,18 @@
 */
 
 #include "manager.h"
+#include "bit_talk.h"
+#include "init.h"
+#include "LCD_GUI.h"
+#include "time.h"
 
+void init() {
+    initITSboard();
+	GUI_init(DEFAULT_BRIGHTNESS);
+
+    init_time();
+    open_drain();
+}
 
 /**
 * @brief    -

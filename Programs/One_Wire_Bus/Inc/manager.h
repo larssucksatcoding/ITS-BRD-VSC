@@ -11,6 +11,11 @@
 #define MANAGER_H
 
 /**
+* @brief    initializes important stuff
+*/
+void init();
+
+/**
 * @brief    runs repeatedly through Search ROM until all slaves are detected. 
 *           all slaves are stored in slave[] in the slaves module.
 */

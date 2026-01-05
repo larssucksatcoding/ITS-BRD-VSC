@@ -8,6 +8,20 @@ I am aware, that this statement is blasphemic since writing these lines is not n
 
 Now I will accomplish my duty after all:
 
+# How to set the Pins in Push-Pull & Open-Drain?
+
+Open-Drain:     the Bus is high, if PD1 and PD0 are high.
+*               one goes low - Bus goes low/zero
+
+Push-Pull:      the Bus is very high, if PD0 is on. 
+*               PD1 does not seem to make any difference 
+*               BEWARE: task says we're supposed to leave PD1 on in Push-Pull Mode
+*               (Reason for that is that else the current will be to high,
+*               since the resistor can be avoided)
+
+This is the result of a test - the test has been committed and therefore is in repo's git history
+(test: push-pull/ open-drain)
+
 # To-Do:
 - [ ] Modulkonzept entwerfen
 - [ ] mit Kommentaren
