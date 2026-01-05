@@ -26,7 +26,7 @@
 
 
 static char last_difference;
-bool spotted_diff;
+static bool spotted_diff;
 
 /* ~ ~ ~ ~ ~   P R I V A T E - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
@@ -88,7 +88,8 @@ void get_data(int size, char arr[size]){
 /* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 void init_cmds() {
-    last_difference = -1;
+    last_difference = 0;
+    spotted_diff = false;
 }
 
 int search_ROM(){
@@ -269,6 +270,11 @@ int reset(){
         return NO_SLAVE; 
     }
     return EOK;
+}
+
+
+bool more_slaves(){
+    return spotted_diff;
 }
 
 /**

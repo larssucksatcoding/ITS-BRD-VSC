@@ -8,6 +8,13 @@
 #ifndef COMMANDS_H
 #define COMMANDS_H
 
+#include <stdbool.h>
+
+/**
+* @brief    initializes the module (resets field variables)
+*/
+void init_cmds();
+
 /**
 * @brief    executes search_ROM once. Gets ROM for one slave. 
 *           stores Information in slave struct [] 
@@ -42,6 +49,22 @@ void convert_T();
 * @return   Error if Scratchpad Data contains mistakes (didn't pass CRC check)
 */
 int read_scratchpad();
+
+/**
+* @brief    executes reset command
+* 
+* @return   error code (everything alright/ no slave detected)
+*/
+int reset();
+
+/**
+* @brief    returns whether we KNOW are slaves whose ROM Code hasn't
+*           been saved by now
+*           if we never executed Search_ROM succesfully WE DO NOT KNOW!
+* 
+* @return   true if there must be more ROM Codes we did not fully detect yet
+*/
+bool more_slaves();
 
 
 #endif
