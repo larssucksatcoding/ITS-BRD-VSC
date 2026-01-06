@@ -10,8 +10,10 @@
 #define SLAVES_H
 
 #define     ROM_LENGTH          64
-#define     SCRATCHPAD_LENGTH   72    // scratchpad Length of DS18B20 (same for DS18S20?)
+#define     SCRATCHPAD_LENGTH   72    // scratchpad Length of DS18B20 (same for DS18S20?) yes
 #define     MAX_SLAVE           4
+#define     TEMP_LENGTH         16
+#define     FAM_LENGTH          8
 
 #define     B_FAM               0x28  // DS18B20
 #define     S_FAM               0x10
