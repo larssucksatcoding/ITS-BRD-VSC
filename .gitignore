@@ -9,19 +9,6 @@
 #csoluion Toolbox
 *csolution.yml
 
-# Ignore vscode settings
-.vscode/
-/Programs/.vscode/
-/Programs/*/.vscode/
-
-# Ignore compilation files
-/Programs/*/tmp/
-# /Programs/*/out/
-/Programs/*/.clangd
-
-# Ignore other files
-*.log
-.htm
 
 ### macOS ###
 # General
