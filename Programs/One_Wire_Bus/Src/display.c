@@ -14,6 +14,27 @@
 
 
 
+void write_info(){
+    write_fam_code();
+    write_rom();
+    write_temp();
+}
+
+
+void write_fam_code(){
+
+}
+
+
+void write_rom(){
+
+}
+
+
+void write_temp(){
+    
+}
+
 
 /**
 * @brief    -
