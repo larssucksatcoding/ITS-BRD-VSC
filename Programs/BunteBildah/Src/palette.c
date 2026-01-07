@@ -30,9 +30,11 @@ void create_palette(int palette_size) {
 }
 
 void get_color(int index, COLOR* color) {
-    char err_str[200];
-    snprintf(err_str, 200, "palette: index %i >= size %i", index, size);
-    ERR_HANDLER((index >= size), err_str);
+    if (index >= size) {
+        char err_str[200];
+        snprintf(err_str, 200, "palette: index %i >= size %i", index, size);
+        ERR_HANDLER((index >= size), err_str);
+    }
     *color = palette[index];
 }
 
