@@ -18,6 +18,10 @@ int main(void) {
 	init();
     int error = EOK;
 
+    while(true) {
+        wait(2 * ONE_SEC);
+        write_info();
+    }
     /*
     while(true) {
         error = detect_slaves();
@@ -27,5 +31,7 @@ int main(void) {
         }
         wait(ONE_SEC);
     } */
+
+    return 0;
 
 }

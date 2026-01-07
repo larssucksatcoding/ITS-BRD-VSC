@@ -10,10 +10,11 @@
 #include "LCD_general.h"
 #include "fonts.h"
 
+#define     START_Y         5
 #define     FAM_X           5 
-#define     ROM_X           60
-#define     TEMP_X          280
-#define     LINE_HEIGHT     12
+#define     ROM_X           90
+#define     TEMP_X          320
+#define     LINE_HEIGHT     20
 #define     B_NAME          "DS18B20"
 #define     S_NAME          "DS18S20"
 #define     FONT            Font12      //8, 12, 16, 20, 24 exist
@@ -21,31 +22,40 @@
 #define     ROM_STR         "PDROM"
 #define     TEMP_STR        "Temp. [C]"
 
-
-int y = 1;
 Coordinate c;
 
 void display_string(const char *s){
-    GUI_disStr(c, s, &Font12, FONT_BACKGROUND, FONT_FOREGROUND);
+    GUI_disStr(c, s, &Font16, FONT_BACKGROUND, FONT_FOREGROUND);
 }
 
-
-void init_display(){
-    GUI_init(DEFAULT_BRIGHTNESS);
-    c.y = y;
+void display_txt(){
     c.x = FAM_X;
     display_string(FAM_STR);
     c.x = ROM_X;
     display_string(ROM_STR);
     c.x = TEMP_X;
     display_string(TEMP_STR);
-    y += LINE_HEIGHT;
+    c.y += LINE_HEIGHT;
 }
 
+void init_display(){
+    GUI_init(DEFAULT_BRIGHTNESS);
+    c.y = START_Y;
+    display_txt();
+}
+
+void reset_display(){
+    GUI_clear(LCD_BACKGROUND);
+    c.y = START_Y;
+    display_txt();
+}
+
+
 void write_info(){
-    write_fam_code();
-    write_rom();
-    write_temp();
+    if(c.y > 300) {
+        reset_display();
+    }
+    display_txt();
 }
 
 

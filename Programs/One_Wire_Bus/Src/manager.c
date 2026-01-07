@@ -10,6 +10,7 @@
 #include "manager.h"
 #include "bit_talk.h"
 #include "commands.h"
+#include "display.h"
 #include "init.h"
 #include "slaves.h"
 #include "time.h"
@@ -22,6 +23,7 @@ void init() {
     open_drain();
     reset_slaves();
     init_cmds();
+    init_display();
 }
 
 int detect_slaves(){
