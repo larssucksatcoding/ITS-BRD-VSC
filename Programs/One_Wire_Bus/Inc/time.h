@@ -13,9 +13,11 @@
 #define SEND_0          60
 #define SEND_RESET      480
 #define SEND_READ_BIT   6
-
+#define WAIT_FOR_BIT    9
 #define TEMP_MEASURE    1000
-#define WAIT_FOR_PRESENCE_PULSE 70
+#define WAIT_FOR_PRESENCE_PULSE 60
+#define END_READ        55
+#define END_PRESENCE    410
 
 
 /**

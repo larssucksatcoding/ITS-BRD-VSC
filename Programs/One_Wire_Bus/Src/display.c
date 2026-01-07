@@ -97,19 +97,6 @@ void print_temp(){
 void init_display(){
     GUI_init(DEFAULT_BRIGHTNESS);
     print_header_text();
-
-    // Beispiel Daten
-    unsigned char rom[ROM_LENGTH]=
-        {0,0,0,0,1,0,0,0,1,0,1
-            ,0,0,1,0,1,0,0,1,0
-            ,1,0,1,0,1,0,1,0,1
-            ,0,0,1,1,1,1,0,1,0
-            ,0,0,1,0,1,0,1,0,1
-            ,0,0,1,1,1,0,0,0,0
-            ,1,0,1,0,1,0,1,1};
-    new_slave(rom);
-    pslave slave = get_current_slave();
-    slave->temperature = -20.5;
 }
 
 

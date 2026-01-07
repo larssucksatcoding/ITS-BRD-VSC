@@ -14,10 +14,10 @@
 #define TYPE            GPIOD->OTYPER
 #define MODE            GPIOD->MODER
 
-#define INPUT_MASK      0xFFF0
-#define OUTPUT_MASK     0x0005
+#define INPUT_MASK      0xFFFC  // 00 input mode
+#define OUTPUT_MASK     0x0001  // 01 gpom
 
-#define PIN_MASK        0x0003
+#define PIN_MASK        0x0001
 
 #define PD0             0
 #define PD1             1
@@ -82,15 +82,36 @@ char receive(){
     char high = 1;
     send_read();
 
-    // switch to Input mode (both pins?)
-    MODE &= INPUT_MASK;
+    // switch to Input mode
+    // MODE &= INPUT_MASK;
+    
+    wait(WAIT_FOR_BIT);
     int input = GPIOD->IDR;
     input &= PIN_MASK;
     if (input == 0) {
         high = 0;
     }
-    MODE |= OUTPUT_MASK;
+    // MODE |= OUTPUT_MASK;
+    wait(END_READ);
     return high;
+}
+
+char receive_presence(){
+    char high = 1;
+
+    // switch to Input mode (both pins?)
+    // MODE &= INPUT_MASK;
+
+    wait(WAIT_FOR_PRESENCE_PULSE);
+    int input = GPIOD->IDR;
+    input &= PIN_MASK;
+    if (input == 0) {
+        high = 0;
+    }
+    // MODE |= OUTPUT_MASK;
+    wait(END_PRESENCE);
+    return high;
+
 }
 
 void send_reset(){

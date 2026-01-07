@@ -38,7 +38,7 @@ static bool spotted_diff;
 */
 void send_command(int code){
     unsigned char bit;
-    for (int i = COMMAND_LENGTH-1; i >= 0; i--) {
+    for (int i = 0; i < COMMAND_LENGTH; i++) {
         bit = code >> i;
         bit &= LAST_BIT_MASK; // 
         if (bit == 0) {
@@ -263,8 +263,7 @@ int read_scratchpad(){
 
 int reset(){
     send_reset();
-    wait(WAIT_FOR_PRESENCE_PULSE);
-    bool high = receive();
+    bool high = receive_presence();
 
     if(high) {
         return NO_SLAVE; 

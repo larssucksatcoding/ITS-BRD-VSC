@@ -6,10 +6,13 @@
 */
 
 #include <stdbool.h>
+#include "commands.h"
 #include "display.h"
+#include "slaves.h"
 #include "time.h"
 #include "manager.h"
 #include "error_handler.h"
+#include "bit_talk.h"
 
 #define ONE_SEC 1000
 
@@ -18,8 +21,12 @@ int main(void) {
     int error = EOK;
     
     while(true) {
+        reset();
         wait(2 * ONE_SEC);
+        reset_slaves();
+        search_ROM();
         write_info();
+
     }
     /*
     while(true) {
@@ -30,6 +37,8 @@ int main(void) {
         }
         wait(ONE_SEC);
     } */
+
+    
 
     return 0;
 

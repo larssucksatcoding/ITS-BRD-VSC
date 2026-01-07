@@ -41,6 +41,13 @@ void send_0();
 char receive();
 
 /**
+* @brief    checks the line for presence pulse
+*
+* @return   1 if there is no presence pulse 0 if there is at least 1 slave present
+*/
+char receive_presence();
+
+/**
 * @brief    master sends reset signal to slaves (pulls line for 480 müs)
 */
 void send_reset();
