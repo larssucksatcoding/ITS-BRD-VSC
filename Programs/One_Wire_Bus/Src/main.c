@@ -21,10 +21,17 @@ int main(void) {
     int error = EOK;
     
     while(true) {
-        reset();
+        error = reset();
+        if (error == NO_SLAVE){
+            handle_the_hand_the_error_EXCLAMATION_MARK_NOW(error);
+        }
         wait(2 * ONE_SEC);
         reset_slaves();
-        search_ROM();
+        error = search_ROM();
+        if ( error == NO_SLAVE) {
+            handle_the_hand_the_error_EXCLAMATION_MARK_NOW(error);
+            break;
+        }
         write_info();
 
     }
