@@ -6,11 +6,69 @@
 # Ignore User specific setting
 /Programs/*/*.uvguix.*
 
+#csoluion Toolbox
+*csolution.yml
+
 ### macOS ###
 # General
 .DS_Store
 .AppleDouble
 .LSOverride
+
+#Build Artefacts
+*.out
+*.o
+build/
+
+#Debug
+*.dbgconf*
+.cache/ 
+# i think .cache/ only contains *.idx files, which should be ignored in global git ignore
+# *Debug* we cannot ignore everything with Debug
+*Debug+ITSboard/
+
+#
+
+# wichtige Dateien: (sollten auch mit gepusht werden)
+# *.yml
+# *.cmake
+# *.sct (kommt auf Art an: 
+#       Linker Skript - nicht ignorieren!
+#       Editor-/ Tool- Artefakt - kann man ignorieren)
+# CMakeLists.txt
+
+#CMake plus files in tmp/
+CMakeCache.txt
+cmake_install.cmake
+.ninja_log
+1/
+CMakeFiles/
+build.ninja
+
+# clangd i.d.R. nicht unbedingt ignorieren
+# global: als *.idx - Programs/One_Wire_Bus/out/One_Wire_Bus/ITSboard/Debug/.cache/clangd/index/*
+
+# testen:
+*.clangd
+
+# out/ contains important data like the One_Wire_Bus.Debug+ITSboard.cbuild.yml 
+*.axf* 
+*.htm
+compile_commands.json  
+# (this last one has a lot of directories in it, which will differentiate for each user)
+
+
+
+# tmp/ contains the very important file CMakeLists.txt so it cannot be ignored.
+# instead I will ignore everything but CMakeLists.txt (!file not working if
+# parent directory is ignored)
+
+# i do not know what the purpose of this file is, but i feel like it is not that important 
+*cbuild-idx.yml
+
+# i think these are not necessary
+createNewProject*
+bin/
 
 # EOF
 
