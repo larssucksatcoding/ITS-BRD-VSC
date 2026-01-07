@@ -8,11 +8,14 @@
 #include "writer.h"
 #include "LCD_GUI.h"
 #include "LCD_general.h"
+#include "makesmoll.h"
 #include "reader.h"
 
 // switch to drawing individual pixels by commenting out this define.
 // you need to recompile afterwards.
 #define WRITER_C_LINE_DRAW_MODE
+
+int draw_width;
 
 /**
 * @brief        helper function that writes one line to the display.
@@ -27,10 +30,10 @@ static void draw_line(Coordinate coordinate) {
     COLOR* line = get_printable_line();
 
     #ifdef WRITER_C_LINE_DRAW_MODE
-    GUI_WriteLine(coordinate, LCD_WIDTH, line);
+    GUI_WriteLine(coordinate, draw_width, line);
 
     #else
-    for (int position_x = 0; position_x < LCD_WIDTH; position_x++) {
+    for (int position_x = 0; position_x < draw_width; position_x++) {
         coordinate.x = position_x;
         GUI_drawPoint(coordinate, line[position_x], DOT_PIXEL_1X1, DOT_FILL_AROUND);
     }
@@ -40,12 +43,24 @@ static void draw_line(Coordinate coordinate) {
 // picture needs to be loaded first.
 extern void draw_picture() {
 
+    int pic_width;
+    if(is_made_smoller()) {
+        pic_width = get_width() / get_compression_ratio();
+    }
+    else {
+        pic_width = get_width();
+    }
+    draw_width = pic_width < LCD_WIDTH ? pic_width : LCD_WIDTH;
+
     GUI_clear(LCD_BACKGROUND);
 
     Coordinate coordinate = {0, 0};
 
     // refactor this
     int picture_height = get_height();
+    if (is_made_smoller()) {
+        picture_height = picture_height / get_compression_ratio();
+    }
     if (picture_height > LCD_HEIGHT) {
         picture_height = LCD_HEIGHT;
     }

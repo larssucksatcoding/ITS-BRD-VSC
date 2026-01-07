@@ -106,6 +106,11 @@ extern void set_height(int new_height);
 */
 extern void end_of_file();
 
+/**
+* @brief      returns true if we make the picture smaller
+*/
+bool is_made_smoller();
+
 extern bool reached_eof();
 
 #endif 

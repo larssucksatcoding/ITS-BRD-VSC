@@ -108,3 +108,6 @@ COLOR* get_compressed_line(COLOR* line) {
     return line;
 }
 
+int get_compression_ratio(){
+    return compression_ratio;
+}

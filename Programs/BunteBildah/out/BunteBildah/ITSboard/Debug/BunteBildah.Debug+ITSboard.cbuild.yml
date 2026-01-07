@@ -1,5 +1,5 @@
 build:
-  generated-by: csolution version 2.12.0
+  generated-by: csolution version 2.12.0+p41-gfeadfc5e
   solution: ../../../../BunteBildah.csolution.yml
   project: ../../../../BunteBildah.cproject.yml
   context: BunteBildah.Debug+ITSboard

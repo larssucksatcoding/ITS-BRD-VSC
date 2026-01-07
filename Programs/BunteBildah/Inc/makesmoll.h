@@ -15,6 +15,10 @@
 
 int check_image_scaling_possible(bool* scale);
 
+bool should_image_be_scaled();
+
+int get_compression_ratio();
+
 COLOR* get_compressed_line(COLOR* line);
 
 /**

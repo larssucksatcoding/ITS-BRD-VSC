@@ -176,4 +176,6 @@ extern bool compressed_formate() {
   return compressed;
 }
 
-
+bool is_made_smoller(){
+  return made_smoll;
+}
