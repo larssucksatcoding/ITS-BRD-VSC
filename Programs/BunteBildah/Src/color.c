@@ -47,7 +47,6 @@ COLOR rgb_to_display_color(unsigned char rgbBlue, unsigned char rgbGreen, unsign
     color |= blue_int & BLUE;
     color |= (green_int << 5) & GREEN;
     color |= (red_int << 11) & RED;
-    // color = (UINT5_MAX << 11);
 
     return color;
 }
@@ -61,16 +60,6 @@ void extract_rgb_of_display_color(
 		*r = (color >> RED_SHIFT) & RED_MASK;
 		*g = (color >> GREEN_SHIFT) & GREEN_MASK;
 		*b = color & BLUE_MASK;
-
-		/*
-		double r_float = (double) r_part / (double) RED_MASK;
-		double g_float = (double) g_part / (double) GREEN_MASK;
-		double b_float = (double) b_part / (double) BLUE_MASK;
-
-		*r = (unsigned char) (r_float * UINT8_MAX);
-		*g = (unsigned char) (b_float * UINT8_MAX);
-		*b = (unsigned char) (b_float * UINT8_MAX);
-		*/
 }
 
 COLOR rgb_to_color(BYTE red, BYTE green, BYTE blue) {
