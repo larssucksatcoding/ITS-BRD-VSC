@@ -30,10 +30,9 @@ typedef struct  {
 
 /**
 * @brief    calculates temperature by converting scratchpad bits into decimal
-* 
-* @return   temperature current slave measured
+*           saves value in struct (current_slave)
 */
-double calculate_temperature();
+void calculate_temperature();
 
 /**
 * @brief    rotates through slave[]. Sets current slave to next slave.

@@ -31,6 +31,20 @@ int detect_slaves();
 */
 int measure_temperature();
 
+/**
+* @brief    copys source array into destination array. 
+*           source array can be bigger than size
+*           (bits 0 - size-1 will be copied from source to destination)
+*
+* @param    size    size of destination array 
+*
+* @param    source  char[] source[0]=LSB, source[source_size]=MSB
+*                   can be bigger than size
+*
+* @param    destination char[] in the end destination[0]=LSB, destination[size]=MSB
+*/
+void copy_arr(int size, const char source[size], char destination[size]);
+
 #endif
 
 

@@ -7,9 +7,11 @@
 */
 
 #include "slaves.h"
+#include <locale.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include "error_handler.h"
+#include "manager.h"
 
 #define     SENSOR_B        0x28
 #define     SENSOR_S        0x10
@@ -24,7 +26,7 @@ int rom_detected(char rom[ROM_LENGTH]){
     char check_rom[ROM_LENGTH];
     bool no_diff = true;
     for(int i = 0; i < slave_count; i++) {
-        check_rom = slaves[i]->rom;
+    copy_arr(ROM_LENGTH, slaves[i].ROM, check_rom);
         bool same_rom = true; // assume they have the same rom - if one number is different - not the same
         for (int j = 0; (j < ROM_LENGTH) && same_rom; j++) {
             if(check_rom[j] != rom[j]) {
@@ -39,7 +41,7 @@ int rom_detected(char rom[ROM_LENGTH]){
     return EOK;
 }
 
-/*
+/**
 * @brief        this method sums up data of a char[] into one number. 
 *               arr[0]=LSB & arr[size]=MSB
 * 
@@ -60,25 +62,23 @@ void char_arr_to_nr(int size, char arr[size], int *number) {
     }
 }
 
-double calculate_temperature(){
+void calculate_temperature(){
     // extract important info from scratchpad
     // last 2 bytes
-    char scratchpad[SCRATCHPAD_LENGTH] = current_slave->scratchpad;
-    char temp[TEMP_LENGTH];
+    char temp_arr[TEMP_LENGTH];
     int temp_int = 0;
     double temp = 0;
 
-    for (int i = 0; i < TEMP_LENGTH; i++) {
-        temp[i] = scratchpad [i];
-    }
-    char_arr_to_nr(TEMP_LENGTH, temp, &temp_int);
+    copy_arr(TEMP_LENGTH, current_slave.scratchpad, temp_arr);
+    char_arr_to_nr(TEMP_LENGTH, temp_arr, &temp_int);
 
-    if(current_slave->family_code == B_FAM) {
-        temp = temp_int /16;
+    if(current_slave.family_code == B_FAM) {
+        temp = (double) temp_int / 16.0;
     }
     else {
-        temp = temp_int /2;
+        temp = (double) temp_int /2.0;
     }
+    current_slave.temperature = temp;
 }
 
 void next_slave(){
@@ -96,11 +96,11 @@ pslave get_current_slave(){
 }
 
 void save_scratchpad(char scratchpad_data[SCRATCHPAD_LENGTH]){
-    current_slave->scratchpad = scratchpad_data;
+    copy_arr(SCRATCHPAD_LENGTH, scratchpad_data, current_slave.scratchpad);
 }
 
 void new_slave(char rom_data[ROM_LENGTH]){
-    if (rom_detected == ROM_ERR) {
+    if (rom_detected(rom_data) == ROM_ERR) {
         return;
     }
     slave_count++;
@@ -113,12 +113,12 @@ void new_slave(char rom_data[ROM_LENGTH]){
     char_arr_to_nr(FAM_LENGTH, fam_code, &fam);
 
     slave new_slave;
-    new_slave.rom = rom_data;
-    if(fam_code == B_FAM){
-        new_slave.fam = B_FAM;
+    copy_arr(ROM_LENGTH, rom_data, current_slave.ROM);
+    if(fam == B_FAM){
+        new_slave.family_code = B_FAM;
     }
     else {
-        new_slave.fam = S_FAM;
+        new_slave.family_code = S_FAM;
     }
     c_s_index = slave_count -1;
     slaves[c_s_index] = new_slave;
