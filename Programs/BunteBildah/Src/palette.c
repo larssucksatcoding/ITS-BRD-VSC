@@ -26,16 +26,8 @@ void create_palette(int palette_size) {
     }
 }
 
-int get_color(int index, COLOR* color) {
-    // warum prüft man nicht direkt index >= in if statement?
-    int error = false == (index >= size);
-    if ( error == NOK) {
-        ERR_HANDLER(error == NOK, "angeforderte Farbindex nicht existent (index out of bounds)");
-        *color = WHITE;
-        return error;
-    }
-    
+void get_color(int index, COLOR* color) {
+    ERR_HANDLER((index >= size), "angeforderte Farbindex nicht existent (index out of bounds)");
     *color = palette[index];
-    return error;
 }
 

@@ -128,7 +128,7 @@ static int absolute_mode(int *index, COLOR *line, int pxl_amount) {
   BYTE palette_index;
   for (     ; (pxl_amount > 0) && (*index < pic_width); (*index)++, pxl_amount--) {
     palette_index = next_byte();
-    error = get_color(palette_index, &LCD_color);
+    get_color(palette_index, &LCD_color);
     line[*index] = LCD_color;
   }
 
@@ -182,7 +182,7 @@ extern int RLE8_uncompressed_line(COLOR *line) {
 
   for (   ; index < pic_width; index++) {
     pal_index = next_byte();
-    error = get_color(pal_index, &color) && error && EOK;
+    get_color(pal_index, &color);
     line[index] = color;
   }
   if(padded) {
@@ -248,7 +248,7 @@ extern int RLE8_compressed_line(COLOR *line) {
         error = absolute_mode(&index, line, secondByte);
       }
     } else {
-      error = get_color(secondByte, &LCD_color);
+      get_color(secondByte, &LCD_color);
       encoded_mode(&index, line, firstByte, LCD_color);
     }
   }
