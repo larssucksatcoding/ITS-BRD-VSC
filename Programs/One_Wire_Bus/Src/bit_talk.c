@@ -54,7 +54,7 @@ void send_read(){
 
 void open_drain() {
     TYPE |= (1 << PD0);
-    TYPE |= (1 << PD1);
+    TYPE &= ~(1 << PD1); // always keep pd1 in push-pull
     OUTPUT = (1 << (PD0 + SET_REGISTER));
     OUTPUT = (1 << (PD1 + SET_REGISTER));
 }
