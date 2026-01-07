@@ -2,9 +2,8 @@
 * @file     manager.c
 * @author   Lars Müller-Stumpf, Noah Rajko
 * @date     Jan 2025
-* @brief    implements abstract information/ operation on the bus.
-*           - Which slaves are connected,
-*           - get Temperature
+* @brief    implements command operations on an abstract level + 
+*           provides operations for the bit arrays
 */
 
 #include "manager.h"
@@ -15,6 +14,9 @@
 #include "slaves.h"
 #include "time.h"
 #include "error_handler.h"
+#include <locale.h>
+
+/* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 void init() {
     initITSboard();
@@ -60,12 +62,52 @@ int measure_temperature(){
     return error;
 }
 
+/* ~ ~ ~ ~ Functions for calculation and array operations ~ ~ ~ ~ */
 
 void copy_arr(int size, const unsigned char source[size], unsigned char destination[size]){
     for(int i = 0; i < size; i ++) {
         destination[i] = source[i];
     }
 }
+
+void bits_to_fam(unsigned char bits[FAM_LENGTH], unsigned int *number) {
+    if (number == NULL) {
+        return;
+    }
+    *number = 0;
+
+    for(int i = FAM_LENGTH-1; i >= 0; i--) {
+        *number = *number << 1;
+        *number += bits[i];
+    }
+}
+
+void bits_to_temp(unsigned char bits[TEMP_LENGTH], int *temp){
+    if (temp == NULL) {
+        return;
+    }
+    int16_t value = 0;  //!< so that 16bit temp will autamtically be
+                        // recognized as + / - 
+
+    for(int i = TEMP_LENGTH-1; i >= 0; i--) {
+        value = value << 1;
+        value += bits[i];
+    }
+    *temp = value;
+}
+
+void bits_to_rom(unsigned char bits[ROM_LENGTH], unsigned long long *rom){
+    if (rom == NULL) {
+        return;
+    }
+    *rom = 0;
+    for(int i = ROM_LENGTH-1; i >= 0; i--) {
+        *rom = *rom << 1;
+        *rom += bits[i];
+    }
+}
+
+
 
 /**
 * @brief    -

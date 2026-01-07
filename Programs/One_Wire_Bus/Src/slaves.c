@@ -7,7 +7,6 @@
 */
 
 #include "slaves.h"
-#include <locale.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include "error_handler.h"
@@ -21,6 +20,7 @@ int c_s_index;
 slave slaves[MAX_SLAVE];
 uint8_t slave_count; 
 
+/* ~ ~ ~ ~ ~   P R I V A T E - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 int rom_detected(unsigned char rom[ROM_LENGTH]){
     unsigned char check_rom[ROM_LENGTH];
@@ -41,26 +41,7 @@ int rom_detected(unsigned char rom[ROM_LENGTH]){
     return EOK;
 }
 
-/**
-* @brief        this method sums up data of a char[] into one number. 
-*               arr[0]=LSB & arr[size]=MSB
-* 
-* @param        size number of elements in char[]
-*
-* @param        arr array which contains 1 and 0 and should be converted into a single number
-*
-* @param        number pointer dereferencing the destination 
-*/
-void char_arr_to_nr(int size, unsigned char arr[size], int *number) {
-    if (number == NULL) {
-        return;
-    }
-    *number = 0;
-    for(int i = size-1; i >= 0; i--) {
-        *number = *number << 1;
-        *number += arr[i];
-    }
-}
+/* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 void calculate_temperature(){
     // extract important info from scratchpad
@@ -70,7 +51,7 @@ void calculate_temperature(){
     double temp = 0;
 
     copy_arr(TEMP_LENGTH, current_slave.scratchpad, temp_arr);
-    char_arr_to_nr(TEMP_LENGTH, temp_arr, &temp_int);
+    bits_to_temp(temp_arr, &temp_int);
 
     if(current_slave.family_code == B_FAM) {
         temp = (double) temp_int / 16.0;
@@ -104,16 +85,14 @@ void new_slave(unsigned char rom_data[ROM_LENGTH]){
         return;
     }
     slave_count++;
-    int fam = 0;
+    unsigned int fam = 0;
     unsigned char fam_code[FAM_LENGTH];
 
-    for (int i = 0; i < FAM_LENGTH; i++){
-        fam_code[i] = rom_data[i];
-    }
-    char_arr_to_nr(FAM_LENGTH, fam_code, &fam);
+    copy_arr(FAM_LENGTH, rom_data, fam_code);
+    bits_to_fam(fam_code, &fam);
 
     slave new_slave;
-    copy_arr(ROM_LENGTH, rom_data, current_slave.ROM);
+    copy_arr(ROM_LENGTH, rom_data, new_slave.ROM);
     if(fam == B_FAM){
         new_slave.family_code = B_FAM;
     }
@@ -122,6 +101,7 @@ void new_slave(unsigned char rom_data[ROM_LENGTH]){
     }
     c_s_index = slave_count -1;
     slaves[c_s_index] = new_slave;
+    current_slave = new_slave;
 }
 
 void reset_slaves(){

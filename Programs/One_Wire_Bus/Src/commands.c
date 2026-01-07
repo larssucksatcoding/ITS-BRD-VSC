@@ -28,6 +28,7 @@
 static char last_difference;
 static bool spotted_diff;
 
+
 /* ~ ~ ~ ~ ~   P R I V A T E - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 /**
@@ -82,8 +83,6 @@ void get_data(int size, unsigned char arr[size]){
         arr[i] = bit;
     }
 }
-
-
 
 /* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 

@@ -2,13 +2,14 @@
 * @file     manager.h
 * @author   Lars Müller-Stumpf, Noah Rajko
 * @date     Jan 2025
-* @brief    implements abstract information/ operation on the bus.
-*           - Which slaves are connected,
-*           - get Temperature
+* @brief    implements command operations on an abstract level + 
+*           provides operations for the bit arrays
 */
 
 #ifndef MANAGER_H
 #define MANAGER_H
+
+#include "slaves.h"
 
 /**
 * @brief    initializes important stuff
@@ -44,6 +45,36 @@ int measure_temperature();
 * @param    destination char[] in the end destination[0]=LSB, destination[size]=MSB
 */
 void copy_arr(int size, const unsigned char source[size], unsigned char destination[size]);
+
+/**
+* @brief        converts the bit data stored in bits into an integer number
+*
+* @param        bits array of length FAM_LENGTH which contains only 0 and 1 
+*               bits[0]=LSB, bits[FAM_LENGTH-1]=MSB
+*
+* @param        number pointer dereferencing the destination 
+*/
+void bits_to_fam(unsigned char bits[FAM_LENGTH], unsigned int *number);
+
+/**
+* @brief        converts the bit data stored in bits into an integer number
+*
+* @param        bits array of length TEMP_LENGTH which contains only 0 and 1 
+*               bits[0]=LSB, bits[TEMP_LENGTH-1]=MSB
+*
+* @param        temp pointer dereferencing the destination 
+*/
+void bits_to_temp(unsigned char bits[TEMP_LENGTH], int *temp);
+
+/**
+* @brief        converts the bit data stored in bits into an integer number
+*
+* @param        bits array of length ROM_LENGTH which contains only 0 and 1 
+*               bits[0]=LSB, bits[ROM_LENGTH-1]=MSB
+*
+* @param        rom pointer dereferencing the destination 
+*/
+void bits_to_rom(unsigned char bits[ROM_LENGTH], unsigned long long *rom);
 
 #endif
 

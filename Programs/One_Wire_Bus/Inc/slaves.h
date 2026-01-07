@@ -21,10 +21,10 @@
 #include <stdint.h>
 
 typedef struct  {
-  uint8_t       family_code;
-  unsigned char          ROM[ROM_LENGTH];
-  unsigned char          scratchpad[SCRATCHPAD_LENGTH]; 
-  double        temperature;
+  uint8_t         family_code;
+  unsigned char   ROM[ROM_LENGTH];
+  unsigned char   scratchpad[SCRATCHPAD_LENGTH]; 
+  double          temperature;
 } slave, *pslave;
 
 
