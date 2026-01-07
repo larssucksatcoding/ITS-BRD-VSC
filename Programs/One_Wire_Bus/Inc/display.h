@@ -19,21 +19,6 @@ void init_display();
 */
 void write_info();
 
-/**
-* @brief    writes family code of current slave to display
-*/
-void write_fam_code();
-
-/**
-* @brief    writes rom code of current slave to display
-*/
-void write_rom();
-
-/**
-* @brief    writes measured (+calculated) temp of current slave to display
-*/
-void write_temp();
-
 #endif
 
 

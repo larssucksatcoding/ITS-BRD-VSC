@@ -5,8 +5,7 @@
 * @brief    it's the main duh
 */
 
-
-#include "bit_talk.h"
+#include <stdbool.h>
 #include "display.h"
 #include "time.h"
 #include "manager.h"
@@ -17,7 +16,7 @@
 int main(void) {
 	init();
     int error = EOK;
-
+    
     while(true) {
         wait(2 * ONE_SEC);
         write_info();
