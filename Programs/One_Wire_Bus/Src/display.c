@@ -95,8 +95,15 @@ void print_temp(){
 /* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 void init_display(){
-    GUI_init(DEFAULT_BRIGHTNESS);
-    print_header_text();
+    GUI_clear(LCD_BACKGROUND);
+    c.y = START_Y;
+    c.x = FAM_X;
+    display_string(FAM_STR);
+    c.x = ROM_X;
+    display_string(ROM_STR);
+    c.x = TEMP_X;
+    display_string(TEMP_STR);
+    c.y += LINE_HEIGHT;
 }
 
 

@@ -92,8 +92,6 @@ void init_cmds() {
 }
 
 int search_ROM(){
-    
-    pslave slave = get_current_slave();
     unsigned char rom[ROM_LENGTH];
     unsigned char bit;
     unsigned char inverse;
@@ -104,6 +102,9 @@ int search_ROM(){
 
     if (spotted_diff) {
         spotted_diff = false; 
+
+        // get rom of last slave and take the same bits up to the difference.
+        // while doing that check, if we receive the same bits this time.
         pslave last_slave = get_current_slave();
         unsigned char last_rom[ROM_LENGTH];
         copy_arr(ROM_LENGTH, last_slave->ROM, last_rom);
@@ -139,6 +140,8 @@ int search_ROM(){
 
         start = last_difference + 1; 
     }
+
+    // now continue (or start) as usual
 
     for (int i = start; i < ROM_LENGTH; i ++) {
         bit = receive();

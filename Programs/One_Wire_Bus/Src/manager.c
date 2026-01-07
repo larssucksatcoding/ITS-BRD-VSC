@@ -15,17 +15,22 @@
 #include "time.h"
 #include "error_handler.h"
 #include <locale.h>
+#include "LCD_GUI.h"
 
 /* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 void init() {
     initITSboard();
+    
+    init_gpio();
+
+    GUI_init(DEFAULT_BRIGHTNESS);
+    init_display();
+    
 
     init_time();
-    open_drain();
     reset_slaves();
     init_cmds();
-    init_display();
 }
 
 int detect_slaves(){
