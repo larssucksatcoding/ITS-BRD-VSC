@@ -72,15 +72,14 @@ static int get_palette_size() {
   return palette_size_in_bytes / sizeof(RGBQUAD);
 }
 
-extern int load_picture() {
+extern void load_picture() {
   reset_variables();
 
   int error = EOK;
   openNextFile();
+
   error = readHeaders();
-  if (error == NOK) {
-    return error;
-  }
+  ERR_HANDLER(error != EOK, "diese header sind scheiße, ich stürz jetzt ab.");
 
   getFileHeader(&fileheader);
   getInfoHeader(&infoheader);
@@ -104,8 +103,6 @@ extern int load_picture() {
     int pal_size = get_palette_size();
     create_palette(pal_size);
   }
-  
-  return error;
 }
 
 COLOR* get_printable_line() {
@@ -136,7 +133,7 @@ COLOR* get_next_Line(COLOR* line) {
     error =  RLE8_compressed_line(line);
   }
 
-  // TODO: handle error
+  ERR_HANDLER(error != EOK, "ich kann so nicht arbeiten.");
 
   return line;
 }

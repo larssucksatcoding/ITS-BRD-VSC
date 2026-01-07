@@ -40,9 +40,9 @@ extern BYTE next_byte();
 *
 * @param      -
 * 
-* @return     Error Code if picture is
+* @return     -
 */
-extern int load_picture();
+extern void load_picture();
 
 
 extern COLOR* get_printable_line();
