@@ -18,6 +18,7 @@ int main(void) {
 	init();
     int error = EOK;
 
+    /*
     while(true) {
         error = detect_slaves();
         handle_the_hand_the_error_EXCLAMATION_MARK_NOW(error);
@@ -25,6 +26,6 @@ int main(void) {
             write_rom();
         }
         wait(ONE_SEC);
-    }
+    } */
 
 }

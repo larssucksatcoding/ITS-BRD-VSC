@@ -22,6 +22,15 @@ Push-Pull:      the Bus is very high, if PD0 is on.
 This is the result of a test - the test has been committed and therefore is in repo's git history(test: push-pull/open-drain)
 
 # To-Do:
+- [ ] I came up with two ideas to copy an array:
+        char other_rom[ROM_LENGTH];
+        char *rom = other_rom;
+
+        char other_rom[ROM_LENGTH];
+        char rom[ROM_LENGTH];
+        copy_arr(ROM_LENGTH, other_rom, rom);
+        which one is better? do it einheitlich!
+- [ ] in copy_arr(...) (manager) can source array be bigger than size?
 - [ ] test receive() with oscilloscope
         - [ ] test everything with oscilloscope?
 - [ ] implement a  recovery time between bytes (or figure out if this is necessary)

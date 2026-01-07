@@ -9,8 +9,6 @@
 #ifndef TIME_H
 #define TIME_H
 
-#include "stdbool.h"
-
 #define SEND_1          6
 #define SEND_0          60
 #define SEND_RESET      480

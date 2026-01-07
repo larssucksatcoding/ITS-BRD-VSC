@@ -24,11 +24,13 @@ void push_pull();
 
 /**
 * @brief    master sends 1 to slaves (pulls the line for 6 müs)
+*           (for open drain)
 */
 void send_1();
 
 /**
 * @brief    master sends 0 to slaves (pulls line for 60 müs)
+*           (for open drain)
 */
 void send_0();
 
