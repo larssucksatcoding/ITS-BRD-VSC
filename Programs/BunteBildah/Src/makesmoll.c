@@ -18,6 +18,8 @@
 #include "errorhandler.h"
 
 #define MAKESMOL_C_USE_COMPRESSION
+
+
 #define RED_INDEX   0
 #define GREEN_INDEX 1
 #define BLUE_INDEX  2
@@ -35,11 +37,9 @@ static void reset_rgb_line() {
     }
 }
 
-int check_image_scaling_possible(bool* scale) {
-
+bool should_image_be_scaled() {
     #ifndef MAKESMOL_C_USE_COMPRESSION
-    *scale = false;
-    return EOK;
+    return false;
 
     #else
     int pic_width = get_width();
@@ -49,14 +49,9 @@ int check_image_scaling_possible(bool* scale) {
     int factor_height =  ceil((double) pic_height / (double) LCD_HEIGHT);
 
     compression_ratio = (factor_width >= factor_height) ? factor_width : factor_height;
-    if (compression_ratio > MAX_COMPRESSION_RATIO) {
-        *scale = false;
-        return NOK;
-    }
 
     bool fits_on_display = ((pic_width) <= LCD_WIDTH) && ((pic_height) <= LCD_HEIGHT);
-    *scale = !fits_on_display;
-    return EOK;
+    return !fits_on_display;
     #endif
 }
 

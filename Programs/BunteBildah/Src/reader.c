@@ -36,13 +36,6 @@ static bool made_smoll;
 
 COLOR line[MAX_WIDTH];
 
-/*
-*                           (Breite der Zeile)*(Anzahl Bits pro Eintrag) + 31
-*  Anzahl Bytes pro Zeile = ---------------------------------------------------  * 4
-*                                                 32
-*
-*/
-
 /**
 * @brief      sets static variables to default values
 */
@@ -99,11 +92,15 @@ extern int load_picture() {
 
   width = infoheader.biWidth;
 
-  error = check_image_scaling_possible(&made_smoll);
+  // check if image fits into our fixed-size buffer. the check factors in the
+  // set compression ratio in makesmol.h
+  error = ((width > MAX_WIDTH) || (infoheader.biHeight > MAX_HEIGHT)) ? NOK : EOK;
   ERR_HANDLER(error != EOK, "ich empfehle eine wilseco d 366 dampfwalze");
   if (error != EOK) {
     return error;
   }
+
+  made_smoll = should_image_be_scaled();
 
   // reset line module 
   if(palette) {
