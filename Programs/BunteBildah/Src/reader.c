@@ -77,7 +77,6 @@ extern int load_picture() {
 
   int error = EOK;
   openNextFile();
-  error = readHeaders();
   if (error == NOK) {
     return error;
   }
@@ -97,7 +96,13 @@ extern int load_picture() {
   }
 
   width = infoheader.biWidth;
-  made_smoll = make_smoll();
+
+  bool made_smoll;
+  error = check_image_scaling_possible(&made_smoll);
+  ERR_HANDLER(error != EOK, "ich empfehle eine wilseco d 366 dampfwalze");
+  if (error != EOK) {
+    return error;
+  }
 
   // reset line module 
   if(palette) {
@@ -136,7 +141,7 @@ COLOR* get_next_Line(COLOR* line) {
     error =  RLE8_compressed_line(line);
   }
 
-  // TODO: handle error
+  ERR_HANDLER(error != EOK, "ich kann so nicht arbeiten");
 
   return line;
 }

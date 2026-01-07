@@ -15,6 +15,7 @@
 #include <math.h>
 #include <stdbool.h>
 #include "line.h"
+#include "errorhandler.h"
 
 #define MAKESMOL_C_USE_COMPRESSION
 #define RED_INDEX   0
@@ -34,24 +35,28 @@ static void reset_rgb_line() {
     }
 }
 
-bool make_smoll() {
+int check_image_scaling_possible(bool* scale) {
+
+    #ifndef MAKESMOL_C_USE_COMPRESSION
+    *scale = false;
+    return EOK;
+
+    #else
     int pic_width = get_width();
     int pic_height = get_height();
 
     int factor_width =  ceil((double) pic_width / (double) LCD_WIDTH);
     int factor_height =  ceil((double) pic_height / (double) LCD_HEIGHT);
 
-    compression_ratio = (factor_width >= factor_height) ? factor_width : factor_height; 
+    compression_ratio = (factor_width >= factor_height) ? factor_width : factor_height;
     if (compression_ratio > MAX_COMPRESSION_RATIO) {
-        // throw a temper tantrum.
+        *scale = false;
+        return NOK;
     }
 
-    #ifndef MAKESMOL_C_USE_COMPRESSION
-    return false;
-
-    #else
     bool fits_on_display = ((pic_width) <= LCD_WIDTH) && ((pic_height) <= LCD_HEIGHT);
-    return !fits_on_display;
+    *scale = !fits_on_display;
+    return EOK;
     #endif
 }
 

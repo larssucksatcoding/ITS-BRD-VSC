@@ -36,9 +36,11 @@ int main(void) {
 	initInput();
 
 	while (true) {
-		load_picture();
-		draw_picture();
-
+		int error = load_picture();
+		if (error == EOK) {
+			draw_picture();
+		}
+		
 		wait_until_button_pressed();
 	}
 }

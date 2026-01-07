@@ -13,7 +13,7 @@
 
 #define MAX_COMPRESSION_RATIO 5
 
-bool make_smoll();
+int check_image_scaling_possible(bool* scale);
 
 COLOR* get_compressed_line(COLOR* line);
 

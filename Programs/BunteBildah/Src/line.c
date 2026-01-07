@@ -211,15 +211,7 @@ extern int RLE8_compressed_line(COLOR *line) {
     if (firstByte == 0) {
       if (secondByte == END_OF_LINE) {
 
-        // ugly hack that might break later:
-        // the 22x16 image is encoded as a sequence
-        // of "16 00 00 00" until the bmp ends.
-        // this while loop exits after "16 00"
-        // because it already read all the required
-        // pixels for the line. so the next time
-        // around it reads "00 00" and just creates
-        // an extra empty line.
-        // so whenever we have a new line as the
+        // whenever we have a new line as the
         // first thing in this loop, just return
         // because cleary we just already had a
         // new line and the "00 00" is just for
