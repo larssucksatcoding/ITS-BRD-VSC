@@ -10,6 +10,7 @@
 #include "color.h"
 #include "errorhandler.h"
 #include "LCD_general.h"
+#include <stdio.h>
 
 #define MAX_PALETTE_SIZE        256
 
@@ -17,6 +18,8 @@ static COLOR palette[MAX_PALETTE_SIZE];
 static int size;
 
 void create_palette(int palette_size) {
+    size = palette_size;
+    ERR_HANDLER(size > MAX_PALETTE_SIZE, "palette is too big for its own good");
 
     for(int i = 0; i < palette_size; i++) {
         palette[i] = read_rgbquad_as_color();
@@ -27,7 +30,9 @@ void create_palette(int palette_size) {
 }
 
 void get_color(int index, COLOR* color) {
-    ERR_HANDLER((index >= size), "angeforderte Farbindex nicht existent (index out of bounds)");
+    char err_str[200];
+    snprintf(err_str, 200, "palette: index %i >= size %i", index, size);
+    ERR_HANDLER((index >= size), err_str);
     *color = palette[index];
 }
 
