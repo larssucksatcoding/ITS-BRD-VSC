@@ -9,6 +9,11 @@
 #define DISPLAY_H
 
 /**
+* @brief    initializes GUI
+*/
+void init_display();
+
+/**
 * @brief    writes Information (Family Code, ROM, temp) of current slave
 *           to display sets y++ (y + Zeilenabstand) afterwards
 */
