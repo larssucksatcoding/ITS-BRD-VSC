@@ -11,6 +11,8 @@
 
 #include <stdbool.h>
 
+void init_gpio();
+
 /**
 * @brief    sets the Output on PD0 and PD1 for OpenDrain Mode
 *           initializes with Bus high

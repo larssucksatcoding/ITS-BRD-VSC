@@ -14,8 +14,8 @@
 #define TYPE            GPIOD->OTYPER
 #define MODE            GPIOD->MODER
 
-#define INPUT_MASK      0xFFFC  // 00 input mode
-#define OUTPUT_MASK     0x0001  // 01 gpom
+#define INPUT_MASK      0xFFF0  // 00 input mode
+#define OUTPUT_MASK     0x0005  // 01 gpom
 
 #define PIN_MASK        0x0001
 
@@ -52,18 +52,24 @@ void send_read(){
 
 /* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
-void open_drain() {
-    TYPE |= (1 << PD0);
-    TYPE &= ~(1 << PD1); // always keep pd1 in push-pull
+void init_gpio() {
+    MODE &= INPUT_MASK;
+    MODE |= OUTPUT_MASK;
+    
+    TYPE |= (1 << PD0);     // pd0 in open-drain
+    TYPE &= ~(1 << PD1);    // pd1 in push-pull
     OUTPUT = (1 << (PD0 + SET_REGISTER));
     OUTPUT = (1 << (PD1 + SET_REGISTER));
 }
 
+void open_drain() {
+    TYPE |= (1 << PD0);
+    OUTPUT = (1 << (PD0 + SET_REGISTER));
+}
+
 void push_pull() {
     TYPE &= ~(1 << PD0);
-    TYPE &= ~(1 << PD1);
     OUTPUT = (1 << (PD0 + SET_REGISTER));
-    OUTPUT = (1 << (PD1 + SET_REGISTER));
 }
 
 void send_1(){
@@ -81,34 +87,36 @@ void send_0(){
 char receive(){
     char high = 1;
     send_read();
-
-    // switch to Input mode
-    // MODE &= INPUT_MASK;
     
     wait(WAIT_FOR_BIT);
-    int input = GPIOD->IDR;
-    input &= PIN_MASK;
-    if (input == 0) {
-        high = 0;
+    int t;
+    for (t = 0; t < 55; t ++) {
+        int input = GPIOD->IDR;
+        input &= PIN_MASK;
+        if (input == 0) {
+            high = 0;
+            break;
+        }
+        wait(1);
     }
     // MODE |= OUTPUT_MASK;
-    wait(END_READ);
+    wait(END_READ-t);
     return high;
 }
 
 char receive_presence(){
     char high = 1;
-
-    // switch to Input mode (both pins?)
-    // MODE &= INPUT_MASK;
-
-    wait(WAIT_FOR_PRESENCE_PULSE);
-    int input = GPIOD->IDR;
-    input &= PIN_MASK;
-    if (input == 0) {
-        high = 0;
+    wait(15);
+    int t = 0;
+    for ( ; t < 100; t++) {
+        wait(1);
+        int input = GPIOD->IDR;
+        input &= PIN_MASK;
+        if (input == 0) {
+            high = 0;
+            break;
+        }
     }
-    // MODE |= OUTPUT_MASK;
     wait(END_PRESENCE);
     return high;
 
