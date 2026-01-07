@@ -77,6 +77,8 @@ extern int load_picture() {
 
   int error = EOK;
   openNextFile();
+
+  error = readHeaders();
   if (error == NOK) {
     return error;
   }
@@ -97,7 +99,6 @@ extern int load_picture() {
 
   width = infoheader.biWidth;
 
-  bool made_smoll;
   error = check_image_scaling_possible(&made_smoll);
   ERR_HANDLER(error != EOK, "ich empfehle eine wilseco d 366 dampfwalze");
   if (error != EOK) {
