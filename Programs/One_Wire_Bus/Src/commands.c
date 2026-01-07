@@ -7,8 +7,8 @@
 
 #include "commands.h"
 #include "crc.h"
+#include "manager.h"
 #include "time.h"
-#include <stdint.h>
 #include <stdbool.h>
 #include "bit_talk.h"
 #include "slaves.h"
@@ -36,7 +36,7 @@ static bool spotted_diff;
 * @param    code (int) - code for a command (e.g. 0xf0 for send_rom)
 */
 void send_command(int code){
-    uint8_t bit;
+    unsigned char bit;
     for (int i = COMMAND_LENGTH-1; i >= 0; i--) {
         bit = code >> i;
         bit &= LAST_BIT_MASK; // 
@@ -54,7 +54,7 @@ void send_command(int code){
 *
 * @param    rom[] ROM Code of slave
 */
-void send_rom(char rom[]) {
+void send_rom(const unsigned char rom[]) {
     for (int i = 0; i < ROM_LENGTH; i ++) {
         if(rom[i] == 0) {
             send_0();
@@ -75,8 +75,8 @@ void send_rom(char rom[]) {
 * 
 * @param    arr - char array to store data
 */
-void get_data(int size, char arr[size]){
-    char bit;
+void get_data(int size, unsigned char arr[size]){
+    unsigned char bit;
     for (int i = 0; i < size; i++) {
         bit = receive();
         arr[i] = bit;
@@ -95,18 +95,19 @@ void init_cmds() {
 int search_ROM(){
     
     pslave slave = get_current_slave();
-    char rom[ROM_LENGTH];
-    char bit;
-    char inverse;
+    unsigned char rom[ROM_LENGTH];
+    unsigned char bit;
+    unsigned char inverse;
     int diff = -1;
-    char start = 0;
+    unsigned char start = 0;
 
     send_command(SEARCH_ROM);
 
     if (spotted_diff) {
         spotted_diff = false; 
         pslave last_slave = get_current_slave();
-        char *last_rom = last_slave->ROM;
+        unsigned char last_rom[ROM_LENGTH];
+        copy_arr(ROM_LENGTH, last_slave->ROM, last_rom);
         for (int i = 0; i < last_difference; i++) {
             bit = receive();
             inverse = receive();
@@ -211,10 +212,10 @@ int search_ROM(){
 
 void read_ROM(){
     send_command(READ_ROM);
-    char rom[ROM_LENGTH];
+    unsigned char rom[ROM_LENGTH];
     get_data(ROM_LENGTH, rom);
     pslave slave = get_current_slave();
-    char* slave_rom = slave->ROM;
+    unsigned char* slave_rom = slave->ROM;
 
     bool no_diff = true;
     for (int i = 0; (i < ROM_LENGTH) & no_diff; i++) {
@@ -246,7 +247,7 @@ void convert_T(){
 
 int read_scratchpad(){
     pslave slave = get_current_slave();
-    char scratchpad[SCRATCHPAD_LENGTH];
+    unsigned char scratchpad[SCRATCHPAD_LENGTH];
 
     send_command(READ_SCRATCHPAD);
     get_data(SCRATCHPAD_LENGTH, scratchpad);

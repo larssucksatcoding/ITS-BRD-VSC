@@ -22,8 +22,8 @@
 
 typedef struct  {
   uint8_t       family_code;
-  char          ROM[ROM_LENGTH];
-  char          scratchpad[SCRATCHPAD_LENGTH]; 
+  unsigned char          ROM[ROM_LENGTH];
+  unsigned char          scratchpad[SCRATCHPAD_LENGTH]; 
   double        temperature;
 } slave, *pslave;
 
@@ -53,14 +53,14 @@ pslave get_current_slave();
 *
 * @param    scratchpad char[] array containing scratchpad data
 */
-void save_scratchpad(char scratchpad[SCRATCHPAD_LENGTH]);
+void save_scratchpad(unsigned char scratchpad[SCRATCHPAD_LENGTH]);
 
 /**
 * @brief    creates new slave with this ROM Code
 *
 * @param    rom array containing rom code of slave
 */
-void new_slave(char rom[ROM_LENGTH]);
+void new_slave(unsigned char rom[ROM_LENGTH]);
 
 /**
 * @brief    deletes all slaves and corresponding data

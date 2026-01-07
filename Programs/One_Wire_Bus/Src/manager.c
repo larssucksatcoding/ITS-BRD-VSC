@@ -11,14 +11,12 @@
 #include "bit_talk.h"
 #include "commands.h"
 #include "init.h"
-#include "LCD_GUI.h"
 #include "slaves.h"
 #include "time.h"
 #include "error_handler.h"
 
 void init() {
     initITSboard();
-	GUI_init(DEFAULT_BRIGHTNESS);
 
     init_time();
     open_drain();
@@ -61,7 +59,7 @@ int measure_temperature(){
 }
 
 
-void copy_arr(int size, const char source[size], char destination[size]){
+void copy_arr(int size, const unsigned char source[size], unsigned char destination[size]){
     for(int i = 0; i < size; i ++) {
         destination[i] = source[i];
     }

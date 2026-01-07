@@ -22,8 +22,8 @@ slave slaves[MAX_SLAVE];
 uint8_t slave_count; 
 
 
-int rom_detected(char rom[ROM_LENGTH]){
-    char check_rom[ROM_LENGTH];
+int rom_detected(unsigned char rom[ROM_LENGTH]){
+    unsigned char check_rom[ROM_LENGTH];
     bool no_diff = true;
     for(int i = 0; i < slave_count; i++) {
     copy_arr(ROM_LENGTH, slaves[i].ROM, check_rom);
@@ -49,9 +49,9 @@ int rom_detected(char rom[ROM_LENGTH]){
 *
 * @param        arr array which contains 1 and 0 and should be converted into a single number
 *
-* @param        *number pointer dereferencing the destination 
+* @param        number pointer dereferencing the destination 
 */
-void char_arr_to_nr(int size, char arr[size], int *number) {
+void char_arr_to_nr(int size, unsigned char arr[size], int *number) {
     if (number == NULL) {
         return;
     }
@@ -65,7 +65,7 @@ void char_arr_to_nr(int size, char arr[size], int *number) {
 void calculate_temperature(){
     // extract important info from scratchpad
     // last 2 bytes
-    char temp_arr[TEMP_LENGTH];
+    unsigned char temp_arr[TEMP_LENGTH];
     int temp_int = 0;
     double temp = 0;
 
@@ -95,17 +95,17 @@ pslave get_current_slave(){
     return &current_slave;
 }
 
-void save_scratchpad(char scratchpad_data[SCRATCHPAD_LENGTH]){
+void save_scratchpad(unsigned char scratchpad_data[SCRATCHPAD_LENGTH]){
     copy_arr(SCRATCHPAD_LENGTH, scratchpad_data, current_slave.scratchpad);
 }
 
-void new_slave(char rom_data[ROM_LENGTH]){
+void new_slave(unsigned char rom_data[ROM_LENGTH]){
     if (rom_detected(rom_data) == ROM_ERR) {
         return;
     }
     slave_count++;
     int fam = 0;
-    char fam_code[FAM_LENGTH];
+    unsigned char fam_code[FAM_LENGTH];
 
     for (int i = 0; i < FAM_LENGTH; i++){
         fam_code[i] = rom_data[i];

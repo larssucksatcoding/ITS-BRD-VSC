@@ -43,7 +43,7 @@ int measure_temperature();
 *
 * @param    destination char[] in the end destination[0]=LSB, destination[size]=MSB
 */
-void copy_arr(int size, const char source[size], char destination[size]);
+void copy_arr(int size, const unsigned char source[size], unsigned char destination[size]);
 
 #endif
 
