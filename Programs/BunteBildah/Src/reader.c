@@ -74,17 +74,15 @@ static int get_palette_size() {
 
 extern void load_picture() {
   reset_variables();
-
-  int error = EOK;
   openNextFile();
 
-  error = readHeaders();
+  int error = readHeaders();
   ERR_HANDLER(error != EOK, "diese header sind scheiße, ich stürz jetzt ab.");
 
   getFileHeader(&fileheader);
   getInfoHeader(&infoheader);
 
-  // i know, missplaced, but this needs some variables
+  // i know, misplaced, but this needs some variables
   // from the headers as of now.
   reset_line_module();
   
@@ -116,8 +114,6 @@ COLOR* get_printable_line() {
 COLOR* get_next_Line(COLOR* line) {
   clear_line(line);
 
-  int error = EOK;
-
   // format: 24-bit RGB
   if(!palette){
     RGB_line(line);
@@ -125,16 +121,14 @@ COLOR* get_next_Line(COLOR* line) {
 
   // format: 8-bit, uncompressed
   else if(!compressed) {
-    error =  RLE8_uncompressed_line(line);
+    RLE8_uncompressed_line(line);
   }
 
   // format: 8-bit, compressed
   else {
-    error =  RLE8_compressed_line(line);
+    RLE8_compressed_line(line);
   }
-
-  ERR_HANDLER(error != EOK, "ich kann so nicht arbeiten.");
-
+  
   return line;
 }
 

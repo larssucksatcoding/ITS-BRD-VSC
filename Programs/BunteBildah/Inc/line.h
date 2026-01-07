@@ -26,10 +26,8 @@ extern void clear_line(COLOR* line);
 * @param      int* index - current index we are at
 * @param      COLOR* line - line, Color[] where we safe color for each pixel
 * @param      int pxl_amount - nr of pixels that are in absolute mode
-* 
-* @return     int error code (when we get a Index for palette which is not existent)
 */
-static int absolute_mode(int* index, COLOR* line, int pxl_amount);
+static void absolute_mode(int* index, COLOR* line, int pxl_amount);
 
 /**
 * @brief      enters color for encoded pixels in line
@@ -38,8 +36,6 @@ static int absolute_mode(int* index, COLOR* line, int pxl_amount);
 * @param      COLOR* line - line, Color[] where we safe color for each pixel
 * @param      int pxl_amount - nr of pixels with color
 * @param      COLOR color - color of the pixels
-* 
-* @return     void - there is no error that can occur
 */
 static void encoded_mode(int* index, COLOR* line, int pxl_amount, COLOR color);
 
@@ -48,10 +44,8 @@ static void encoded_mode(int* index, COLOR* line, int pxl_amount, COLOR color);
 *
 * @param      int* index - current index
 * @param      COLOR* line - line where we safe information bout our pixels
-* 
-* @return     int error code
 */
-static int check_info_first_pxl(int* index, COLOR* line);
+static void check_info_first_pxl(int* index, COLOR* line);
 
 // PUBLIC FUNCTIONS
 
@@ -70,15 +64,13 @@ extern void RGB_line(COLOR* line);
 * 
 * @return     COLOR* containing colors for LCD display
 */
-extern int RLE8_uncompressed_line(COLOR* line);
+extern void RLE8_uncompressed_line(COLOR* line);
 
 
 /**
 * @brief      interprets info from compressed rle8 format to get information 
 *             for each pixel in new line (sets flags, if we get information for more than this line)
-* 
-* @return     error if something went wrong
 */
-extern int RLE8_compressed_line(COLOR* line);
+extern void RLE8_compressed_line(COLOR* line);
 
 #endif
