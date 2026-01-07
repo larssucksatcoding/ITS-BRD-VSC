@@ -24,8 +24,10 @@ void create_palette(int palette_size);
   *
   * @param      index value of pixel (= index in color palette)
   * @param      PRGBTRIPLE pointer to RGBTRIPLE structure, colors in there will be updated 
+  *
+  * @return     int error code (pssible error: index out of bounds)
   */
-void get_color(int index, COLOR* color);
+int get_color(int index, COLOR* color);
 
 
 

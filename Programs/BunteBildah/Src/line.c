@@ -86,10 +86,11 @@ extern void clear_line(COLOR *line) {
   }
 }
 
-static void check_info_first_pxl(int *index, COLOR *line) {
+static int check_info_first_pxl(int *index, COLOR *line) {
+  int error = EOK;
   COLOR LCD_color;
   if (next_pxl_absolute) {
-    absolute_mode(index, line, pixel_count);
+    error = absolute_mode(index, line, pixel_count);
   }
 
   else if (next_pxl_encoded) {
@@ -100,7 +101,7 @@ static void check_info_first_pxl(int *index, COLOR *line) {
     if (delta_y > 0) {
       delta_y--;
       // line = white line
-      return;
+      return error; // empty line
     }
     while (delta_x > 0) {
       line[*index] = LCD_BACKGROUND;
@@ -109,9 +110,11 @@ static void check_info_first_pxl(int *index, COLOR *line) {
     }
     delta = false;
   }
+  return error;
 }
 
-static void absolute_mode(int *index, COLOR *line, int pxl_amount) {
+static int absolute_mode(int *index, COLOR *line, int pxl_amount) {
+  int error = EOK;
   COLOR LCD_color;
   if ((*index + pxl_amount) > pic_width) {
     next_pxl_absolute = true;
@@ -125,7 +128,7 @@ static void absolute_mode(int *index, COLOR *line, int pxl_amount) {
   BYTE palette_index;
   for (     ; (pxl_amount > 0) && (*index < pic_width); (*index)++, pxl_amount--) {
     palette_index = next_byte();
-    get_color(palette_index, &LCD_color);
+    error = get_color(palette_index, &LCD_color);
     line[*index] = LCD_color;
   }
 
@@ -133,6 +136,7 @@ static void absolute_mode(int *index, COLOR *line, int pxl_amount) {
     next_byte();
     ends_at_word_boundary = true;
   }
+  return error;
 }
 
 static void encoded_mode(int *index, COLOR *line, int pxl_amount, COLOR color) {
@@ -170,14 +174,15 @@ extern void RGB_line(COLOR *line) {
 }
 
 // 8-bit (uncompressed)
-extern void RLE8_uncompressed_line(COLOR *line) {
+extern int RLE8_uncompressed_line(COLOR *line) {
+  int error = EOK;
   BYTE pal_index;
   COLOR color;
   int index = 0;
 
   for (   ; index < pic_width; index++) {
     pal_index = next_byte();
-    get_color(pal_index, &color);
+    error = get_color(pal_index, &color) && error && EOK;
     line[index] = color;
   }
   if(padded) {
@@ -185,15 +190,17 @@ extern void RLE8_uncompressed_line(COLOR *line) {
       next_byte();
     }
   }
+  return error;
 }
 
 // 8-bit (compressed)
-extern void RLE8_compressed_line(COLOR *line) {
+extern int RLE8_compressed_line(COLOR *line) {
   int index = 0;
+  int error = EOK;
   COLOR LCD_color;
 
   // check if we completed last line with leftover information
-  check_info_first_pxl(&index, line);
+  error = check_info_first_pxl(&index, line);
 
   BYTE firstByte, secondByte;
 
@@ -204,37 +211,49 @@ extern void RLE8_compressed_line(COLOR *line) {
     if (firstByte == 0) {
       if (secondByte == END_OF_LINE) {
 
-        // whenever we have a new line as the
+        // ugly hack that might break later:
+        // the 22x16 image is encoded as a sequence
+        // of "16 00 00 00" until the bmp ends.
+        // this while loop exits after "16 00"
+        // because it already read all the required
+        // pixels for the line. so the next time
+        // around it reads "00 00" and just creates
+        // an extra empty line.
+        // so whenever we have a new line as the
         // first thing in this loop, just return
         // because cleary we just already had a
         // new line and the "00 00" is just for
         // info.
         if (index == 0) {
-          RLE8_compressed_line(line);
+          error = RLE8_compressed_line(line);
         }
-      } 
-      else if (secondByte == END_OF_BITMAP) {
+
+        return error;
+      } else if (secondByte == END_OF_BITMAP) {
         end_of_file();
-      } 
-      else if (secondByte == DELTA) {
+        return error;
+      } else if (secondByte == DELTA) {
         delta_x = next_byte() + index;
         delta_y = next_byte() - 1;
 
-        // other idea:
+        // idea:
         // LCD_color = last color that was drawn (needs new function)
         // pixel_count = (LINE_WIDTH * delta_y) + delta_x;
         // encoded_mode(&index, line, pixel_count, LCD_color);
-      }
-      else { // absolute mode
+
+        return error;
+      } else { // absolute mode
         // wortgrenze anpassen
         ends_at_word_boundary = (secondByte % 2) == 0;
-        absolute_mode(&index, line, secondByte);
+        error = absolute_mode(&index, line, secondByte);
       }
     } else {
-      get_color(secondByte, &LCD_color);
+      error = get_color(secondByte, &LCD_color);
       encoded_mode(&index, line, firstByte, LCD_color);
     }
   }
+
+  return error;
 }
 
 // EOF
