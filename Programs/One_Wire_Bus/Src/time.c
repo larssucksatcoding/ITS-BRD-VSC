@@ -19,10 +19,10 @@ void init_time() {
 
 
 void wait(int time_müs) {
-    uint32_t start_time = getTimeStamp();
-    uint32_t current_time = getTimeStamp();
+    uint32_t start_time = getTimeStamp() / TICKS_PER_MS;
+    uint32_t current_time = getTimeStamp() / TICKS_PER_MS;
     while((current_time - start_time) < time_müs) {
-        current_time = getTimeStamp();
+        current_time = getTimeStamp() / TICKS_PER_MS;
     }
     return;
 }
