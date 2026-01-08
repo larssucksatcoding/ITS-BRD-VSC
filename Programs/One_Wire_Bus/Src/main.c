@@ -14,7 +14,7 @@
 #include "error_handler.h"
 #include "bit_talk.h"
 
-#define ONE_SEC 1000
+
 
 int main(void) {
 	init();
