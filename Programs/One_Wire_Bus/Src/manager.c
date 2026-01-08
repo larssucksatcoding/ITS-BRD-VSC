@@ -58,10 +58,12 @@ int measure_temperature(){
     }
     match_ROM();
     convert_T();
+
+    reset();
+    match_ROM();
     error = read_scratchpad();
-    for (int i = 2; (error != EOK) & (i > 0); i++) {
-        error = read_scratchpad();
-        // for loop so we do not try reading a corrupt scratchpad for an endless long time
+    if( error != EOK) {
+        return error;
     }
     calculate_temperature();
 
