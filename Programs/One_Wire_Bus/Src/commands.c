@@ -111,18 +111,24 @@ int search_ROM(){
         for (int i = 0; i < last_difference; i++) {
             bit = receive();
             inverse = receive();
-            if (bit == inverse) {
-                if (bit == 1) {
-                    return NO_SLAVE;
-                }
-                else {
-                    diff = i;
-                }
+            if ((bit == 1) & (inverse == 1)) {
+                return NO_SLAVE;
             }
-            if(last_rom[i] != bit) {
+            else if (last_rom[i] != bit) {
                 return ROM_ERR;
             }
-            rom[i] = last_rom[i];
+            else {
+                if (bit == 0) {
+                    send_0();
+                    if (inverse == 0)  {
+                        diff = i;
+                    }
+                }
+                else { // bit == 1
+                    send_1();
+                }
+            }
+            rom[i] = last_rom[i]; // = bit
         }
 
         // choose 1 where last time we chose 1 (last_difference bit)
@@ -137,6 +143,7 @@ int search_ROM(){
             return ROM_ERR;
         }
         rom[last_difference] = 1;
+        send_1();
 
         start = last_difference + 1; 
     }
@@ -146,14 +153,20 @@ int search_ROM(){
     for (int i = start; i < ROM_LENGTH; i ++) {
         bit = receive();
         inverse = receive();
-        if(bit == inverse) {
-            if (bit == 1) {
-                // bit + inverse is 1 -> ERROR (connection to slaves lost)
-                return NO_SLAVE;
+        if((bit == 1) &&  (inverse == 1)) {
+            // bit + inverse is 1 -> ERROR (connection to slaves lost)
+            return NO_SLAVE;
+        }
+        else {
+            if (bit == 0) {
+                send_0();
+                if ( inverse == 0)  {
+                    diff = i;
+                }
             }
-            else{
-                diff = i;
-            } 
+            else { // bit == 1
+                send_1();
+            }
         }
         rom[i] = bit;
     }
