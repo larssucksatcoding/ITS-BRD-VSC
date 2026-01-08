@@ -67,6 +67,19 @@ void new_slave(unsigned char rom[ROM_LENGTH]);
 */
 void reset_slaves();
 
+/**
+* @brief    gibt die Anzahl der Slaves, die gerade auf dem Wire sind aus.
+* 
+* @return   Anzahl der Slaves auf dem Wire (char)
+*/
+char get_slave_count();
+
+/**
+* @brief    gibt die nummer des current slave zurück (index + 1)
+* 
+* @return   char nummer des current slave
+*/
+char get_current_slave_number();
 
 
 

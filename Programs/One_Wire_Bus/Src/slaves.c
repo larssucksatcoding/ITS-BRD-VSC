@@ -109,6 +109,14 @@ void reset_slaves(){
     c_s_index = -1;
 }
 
+char get_slave_count() {
+    return slave_count;
+}
+
+char get_current_slave_number() {
+    return c_s_index + 1;
+}
+
 
 /**
 * @brief    -
