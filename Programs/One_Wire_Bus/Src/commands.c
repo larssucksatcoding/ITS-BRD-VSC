@@ -111,22 +111,28 @@ int search_ROM(){
         for (int i = 0; i < last_difference; i++) {
             bit = receive();
             inverse = receive();
-            if ((bit == 1) & (inverse == 1)) {
+            if ((bit == 1) && (inverse == 1)) {
                 return NO_SLAVE;
             }
-            else if (last_rom[i] != bit) {
-                return ROM_ERR;
+            else if ((bit == 0) && (inverse == 0)){
+                // Diff in den Roms 
+                if ( last_rom[i] == 1) {
+                    // Diff wurde schon abgehandelt.
+                    send_1();
+                }
+                else {
+                    send_0();
+                    diff = i;
+                }
             }
             else {
                 if (bit == 0) {
                     send_0();
-                    if (inverse == 0)  {
-                        diff = i;
-                    }
                 }
                 else { // bit == 1
                     send_1();
                 }
+                
             }
             rom[i] = last_rom[i]; // = bit
         }

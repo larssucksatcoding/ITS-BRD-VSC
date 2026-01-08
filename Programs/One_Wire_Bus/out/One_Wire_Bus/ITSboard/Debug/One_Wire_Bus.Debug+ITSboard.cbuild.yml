@@ -43,6 +43,7 @@ build:
   dbgconf:
     - file: ../../../../.cmsis/One_Wire_Bus+ITSboard.dbgconf
       version: 0.0.0
+      status: missing file
   processor:
     endian: little
     fpu: sp

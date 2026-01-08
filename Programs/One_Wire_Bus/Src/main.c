@@ -21,19 +21,20 @@ int main(void) {
     int error = EOK;
     
     while(true) {
-        error = reset();
-        if (error == NO_SLAVE){
+        init_display();
+        error = detect_slaves();
+        if( error != EOK) {
             handle_the_hand_the_error_EXCLAMATION_MARK_NOW(error);
         }
-        wait(2 * ONE_SEC);
-        reset_slaves();
-        error = search_ROM();
-        if ( error == NO_SLAVE) {
-            handle_the_hand_the_error_EXCLAMATION_MARK_NOW(error);
-            break;
+        int slave_count = get_slave_count();
+        for (int i = 0; i < slave_count; i++) {
+            measure_temperature();
+            calculate_temperature();
+            write_info();
+            wait(ONE_SEC);
+            next_slave();
         }
-        write_info();
-
+        wait(2*ONE_SEC);
     }
     /*
     while(true) {

@@ -23,22 +23,13 @@ This is the result of a test - the test has been committed and therefore is in r
 
 # To-Do:
 
-- [ ] test receive() with oscilloscope
-        - [ ] test everything with oscilloscope?
-- [ ] implement a  recovery time between bytes (or figure out if this is necessary)
 - [ ] complete the error_handling whoop whoop
 
 ## Aufgabe 1:
-- [ ] zyklisches Abfragen der ROM 
-- [ ] Fehlermeldung falls kein Sensor angeschlossen
-- [x] Reset implementieren
-    - [ ] should we check for presence pulse more than once? reset() commands.c
 
 ## Aufgabe 2:
-- [ ] bekannte ROMS können verwendet (hardcodiert) werden (Konstanten oder #define)
 
 ## Aufgabe 3:
-- [ ] Search Rom (jetzt richtig, au weia)
 
 ### DONE 
 
@@ -58,11 +49,20 @@ This is the result of a test - the test has been committed and therefore is in r
         copy_arr(ROM_LENGTH, other_rom, rom);
         which one is better? do it einheitlich!
 - [x] in copy_arr(...) (manager) can source array be bigger than size?
+- [x] test receive() with oscilloscope
+        - [x] test everything with oscilloscope?
+- [x] implement a  recovery time between bytes (or figure out if this is necessary)
+            not necessary
 
 #### Aufgabe 1
 - [x] Read ROM implementieren (bzw. ganz simple Search ROM? " Mit dem in der Vorlesung dargestellten Ablauf ..." (GS_Aufgabe4_1-Wire_Bus.pdf, S. 1, letzter Abschnitt))
 - [x] Checksum der ROM prüfen
 - [x] Ausgabe auf Display
+- [x] zyklisches Abfragen der ROM 
+- [x] Fehlermeldung falls kein Sensor angeschlossen
+- [x] Reset implementieren
+    - [x] should we check for presence pulse more than once? reset() commands.c
+                we do this now
 
 
 #### Aufgabe 2
@@ -74,9 +74,12 @@ This is the result of a test - the test has been committed and therefore is in r
     - [x] Family Code
     - [x] ROM Number
     - [x] Temperatur
+- [x] bekannte ROMS können verwendet (hardcodiert) werden (Konstanten oder #define)
+        einfach search rom vorher implementiert
 
 
 #### Aufgabe 3
+- [x] Search Rom (jetzt richtig, au weia)
 
 # Templates
 
