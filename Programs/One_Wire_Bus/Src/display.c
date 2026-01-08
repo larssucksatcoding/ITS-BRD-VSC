@@ -108,14 +108,11 @@ void init_display(){
 
 
 void write_info(){
-    if(c.y > 300){
-        GUI_clear(LCD_BACKGROUND);
-        print_header_text();
-    }
+    int slave_number = get_current_slave_number();
+    c.y = slave_number * LINE_HEIGHT;
     print_fam_code();
     print_rom();
     print_temp();
-    c.y += LINE_HEIGHT;
 }
 
 /**
