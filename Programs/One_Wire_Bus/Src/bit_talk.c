@@ -76,12 +76,14 @@ void send_1(){
     set_low();
     wait(SEND_1);
     set_high();
+    wait(WAIT_AFTER_1);
 }
 
 void send_0(){
     set_low();
     wait(SEND_0);
     set_high();
+    wait(WAIT_AFTER_0);
 }
 
 char receive(){
@@ -100,13 +102,13 @@ char receive(){
         wait(1);
     }
     // MODE |= OUTPUT_MASK;
-    wait(END_READ-t);
+    wait(END_READ);
     return high;
 }
 
 char receive_presence(){
     char high = 1;
-    wait(15);
+    wait(WAIT_FOR_PRESENCE_PULSE);
     int t = 0;
     for ( ; t < 100; t++) {
         wait(1);
@@ -119,7 +121,6 @@ char receive_presence(){
     }
     wait(END_PRESENCE);
     return high;
-
 }
 
 void send_reset(){
