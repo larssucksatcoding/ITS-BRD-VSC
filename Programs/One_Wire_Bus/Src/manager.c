@@ -35,18 +35,19 @@ void init() {
 
 int detect_slaves(){
     reset_slaves();
+
     int error = reset();
     if (error != EOK) {
         return error;
     }
     error = search_ROM();
-    while (error == ROM_ERR){
-        search_ROM();
-    }
     
+    wait(ONE_SEC);
     while (more_slaves()){
+        error = reset();
         error = search_ROM();
     }
+    next_slave(); // sets current slave to first slave
     return error;
 }
 
