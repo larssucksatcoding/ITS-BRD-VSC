@@ -21,9 +21,49 @@ Push-Pull:      the Bus is very high, if PD0 is on.
 
 This is the result of a test - the test has been committed and therefore is in repo's git history(test: push-pull/open-drain)
 
-# To-Do:
+# How does the Search ROM algorithm work?
 
-- [ ] complete the error_handling whoop whoop
+Wir haben Slaves mit folgenden ROM-Nummern 
+
+0  1  2  3  4  5  6  7 
+----------------------------
+d  0  1  1  1  0  0  1  0
+b  0  0  1  0  1  0  0  0
+c  0  1  1  1  0  0  0  1
+a  0  0  1  0  0  0  0  0
+
+1. Durchlauf 
+Unterschied Bit 1  weiter mit 0
+diff = 1
+Unterschied Bit 4 weiter mit 0
+diff = 4
+Slave a detected
+last_difference = 4
+
+2. Durchlauf 
+Durchlauf bis (exklusiv) Bit 4 (kopie von bit 0-3 von Slave a )
+währenddessen: diff = 1
+Bit 4 jetzt 1 wählen
+Slave b detected
+last_difference = 1
+
+3. Durchlauf
+Durchlauf bis (exklusiv) Bit 1 (kopiere bit 0 von b )
+Unterschied Bit 6 
+diff = 6
+Slave c detected
+last_difference = 6
+
+4. Durchlauf 
+Durchlauf bis (exklusiv) Bit 6 (kopiere bit 0-5 von c )
+kein weiterer Unterschied
+Slave d detected
+last_difference = -1 (oder auch einfach so lassen?)
+
+-> Alle Slaves  erkannt
+
+
+# To-Do:
 
 ## Aufgabe 1:
 
@@ -53,6 +93,8 @@ This is the result of a test - the test has been committed and therefore is in r
         - [x] test everything with oscilloscope?
 - [x] implement a  recovery time between bytes (or figure out if this is necessary)
             not necessary
+- [x] complete the error_handling whoop whoop
+- [x] private function rom_detected in slaves.c can we delete it? - yes, we can!
 
 #### Aufgabe 1
 - [x] Read ROM implementieren (bzw. ganz simple Search ROM? " Mit dem in der Vorlesung dargestellten Ablauf ..." (GS_Aufgabe4_1-Wire_Bus.pdf, S. 1, letzter Abschnitt))

@@ -6,27 +6,46 @@
 */
 
 #include <stdbool.h>
-#include "commands.h"
 #include "display.h"
 #include "slaves.h"
 #include "time.h"
 #include "manager.h"
 #include "error_handler.h"
-#include "bit_talk.h"
 
+void aufgabe_1() {
+    init();
+    int error = EOK;
+    init_display();
+    while(true) {
+        error = detect_slaves();
+        if( error == NO_SLAVE) {
+            handle_the_hand_the_error_EXCLAMATION_MARK_NOW(error);
+        }
+        write_info();
+    }
+}
 
 
 int main(void) {
 	init();
     int error = EOK;
+    init_display();
+    int slave_count = 0;
+    
     
     while(true) {
-        init_display();
         error = detect_slaves();
         if( error != EOK) {
             handle_the_hand_the_error_EXCLAMATION_MARK_NOW(error);
         }
-        int slave_count = get_slave_count();
+        int new_slave_count = get_slave_count();
+        if (new_slave_count != slave_count){
+            if (new_slave_count < slave_count) {
+                clear_sensor_pdrom();
+            }
+            slave_count = new_slave_count;
+        }        
+        clear_temp();
         for (int i = 0; i < slave_count; i++) {
             measure_temperature();
             calculate_temperature();
@@ -36,18 +55,8 @@ int main(void) {
         }
         wait(2*ONE_SEC);
     }
-    /*
-    while(true) {
-        error = detect_slaves();
-        handle_the_hand_the_error_EXCLAMATION_MARK_NOW(error);
-        if (error == EOK){
-            write_rom();
-        }
-        wait(ONE_SEC);
-    } */
-
-    
 
     return 0;
-
 }
+
+//EOF
