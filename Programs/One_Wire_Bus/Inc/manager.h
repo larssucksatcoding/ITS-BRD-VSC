@@ -78,11 +78,4 @@ void bits_to_rom(unsigned char bits[ROM_LENGTH], unsigned long long *rom);
 
 #endif
 
-
-/**
-* @brief    -
-*
-* @param    -
-* 
-* @return   -
-*/
+//EOF

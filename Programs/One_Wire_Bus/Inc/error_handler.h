@@ -1,5 +1,5 @@
 /**
-* @file     error.h
+* @file     error_handler.h
 * @author   Lars Müller-Stumpf, Noah Rajko
 * @date     Jan 2025
 * @brief    error module
@@ -18,7 +18,6 @@
 */
 void handle_the_hand_the_error_EXCLAMATION_MARK_NOW(int error);
 
-
 #endif
 
-
+//EOF

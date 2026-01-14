@@ -10,6 +10,7 @@
 #include "LCD_general.h"
 #include "fonts.h"
 #include "slaves.h"
+#include <stdbool.h>
 #include <stdio.h>
 #include "manager.h"
 

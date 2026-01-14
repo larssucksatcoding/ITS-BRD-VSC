@@ -81,15 +81,6 @@ char get_slave_count();
 */
 char get_current_slave_number();
 
-
-
 #endif
 
-
-/**
-* @brief    -
-*
-* @param    -
-* 
-* @return   -
-*/
+//EOF

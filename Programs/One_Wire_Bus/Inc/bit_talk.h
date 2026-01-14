@@ -54,15 +54,6 @@ char receive_presence();
 */
 void send_reset();
 
-
-
 #endif
 
-
-/**
-* @brief    -
-*
-* @param    -
-* 
-* @return   -
-*/
+//EOF

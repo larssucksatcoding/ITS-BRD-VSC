@@ -2,7 +2,7 @@
 * @file     slaves.c
 * @author   Lars Müller-Stumpf, Noah Rajko
 * @date     Jan 2025
-* @brief    implements struct, stores information bout slaves
+* @brief    provides slave struct, stores information about slaves
 *           and implements slave specific functions
 */
 
@@ -45,7 +45,7 @@ void calculate_temperature(){
 }
 
 void next_slave(){
-    if(c_s_index+1 == slave_count) {
+    if(c_s_index + 1 == slave_count) {
         c_s_index = 0;
     }
     else {
@@ -73,6 +73,7 @@ void new_slave(unsigned char rom_data[ROM_LENGTH]){
 
     slave new_slave;
     copy_arr(ROM_LENGTH, rom_data, new_slave.ROM);
+    
     if(fam == B_FAM){
         new_slave.family_code = B_FAM;
     }
@@ -101,11 +102,4 @@ char get_current_slave_number() {
     return c_s_index + 1;
 }
 
-
-/**
-* @brief    -
-*
-* @param    -
-* 
-* @return   -
-*/
+//EOF

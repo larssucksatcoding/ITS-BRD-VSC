@@ -21,8 +21,7 @@
 #define     READ_SCRATCHPAD     0xbe
 
 #define     COMMAND_LENGTH      8
-
-#define     LAST_BIT_MASK       0x01
+#define     LAST_BIT_MASK       0x01  // needed in send_command()
 
 
 static char last_difference;
@@ -68,8 +67,7 @@ void send_rom(const unsigned char rom[]) {
 
 /**
 * @brief    receives bits from slaves and stores them in array.
-*           The first received bit will be stored in array field 0.
-*           So Bit 0 wil be in field 0
+*           The first received bit will be stored at index 0.
 *           arr[0] - LSB  , arr[size] - MSB         
 *
 * @param    size - size of array/ length of incoming data
@@ -83,6 +81,7 @@ void get_data(int size, unsigned char arr[size]){
         arr[i] = bit;
     }
 }
+
 
 /* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
@@ -180,6 +179,7 @@ int search_ROM(){
         rom[i] = bit;
     }
 
+    // check CRC
     bool passed_checksum;
     passed_checksum = checkCRC(ROM_LENGTH, rom);
     if(passed_checksum) {
@@ -233,15 +233,8 @@ int reset(){
     return EOK;
 }
 
-
 bool more_slaves(){
     return spotted_diff;
 }
 
-/**
-* @brief    -
-*
-* @param    -
-* 
-* @return   -
-*/
+//EOF

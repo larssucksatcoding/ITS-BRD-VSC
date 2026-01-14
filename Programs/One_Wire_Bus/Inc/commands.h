@@ -29,9 +29,8 @@ int search_ROM();
 void match_ROM();
 
 /**
-* @brief    sends conver_T signal to slave(s)
-*           switches power mode to pull up for sufficient power supply
-*           [PD0 and PD1 to 1]
+* @brief    tells slave to start measuring temperature
+*           provides power + waits for slave 
 *           Code: 44h
 */
 void convert_T();
@@ -46,20 +45,17 @@ void read_scratchpad();
 /**
 * @brief    executes reset command
 * 
-* @return   error code (everything alright/ no slave detected)
+* @return   error code 0 if no error, else 
 */
 int reset();
 
 /**
-* @brief    returns whether we KNOW are slaves whose ROM Code hasn't
-*           been saved by now
-*           if we never executed Search_ROM succesfully WE DO NOT KNOW!
+* @brief    checks if we there are ROM Codes on the bus, we did not save yet
 * 
-* @return   true if there must be more ROM Codes we did not fully detect yet
+* @return   true if there, false if we detected all
 */
 bool more_slaves();
 
-
 #endif
 
-
+//EOF

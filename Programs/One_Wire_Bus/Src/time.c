@@ -11,12 +11,12 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define TICKS_PER_MS (TICKS_PER_US * 1000)
+
+/* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 void init_time() {
     initTimer();
 }
-
 
 void wait(int time_müs) {
     uint32_t start_time = getTimeStamp()/ TICKS_PER_US;
@@ -27,12 +27,4 @@ void wait(int time_müs) {
     return;
 }
 
-
-
-/**
-* @brief    -
-*
-* @param    -
-* 
-* @return   -
-*/
+//EOF

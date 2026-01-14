@@ -1,5 +1,5 @@
 /**
-* @file     error.h
+* @file     error_handler.c
 * @author   Lars Müller-Stumpf, Noah Rajko
 * @date     Jan 2025
 * @brief    error module
@@ -17,6 +17,8 @@ static Coordinate c = {50, 150};
 static const char *no_slave = "WO SIND MEINE SKLAVEN"; 
 static Coordinate c2 = {120, 180};
 static const char *dampfwalze = "ich brauche eine wilesco d 366";
+
+/* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 void handle_the_hand_the_error_EXCLAMATION_MARK_NOW(int error){
     if (error == NO_SLAVE) {
