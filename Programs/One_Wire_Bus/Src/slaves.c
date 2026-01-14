@@ -35,8 +35,11 @@ void calculate_temperature(){
     if(current_slave.family_code == B_FAM) {
         temp = (double) temp_int / 16.0;
     }
+    else if (current_slave.family_code == S_FAM) {
+        temp = (double) temp_int / 2.0;
+    }
     else {
-        temp = (double) temp_int /2.0;
+        temp = 0;
     }
     current_slave.temperature = temp;
 }
@@ -73,9 +76,13 @@ void new_slave(unsigned char rom_data[ROM_LENGTH]){
     if(fam == B_FAM){
         new_slave.family_code = B_FAM;
     }
-    else {
+    else if (fam == S_FAM){
         new_slave.family_code = S_FAM;
     }
+    else { // unknown family code
+        new_slave.family_code = 0x00;
+    };
+
     c_s_index = slave_count -1;
     slaves[c_s_index] = new_slave;
     current_slave = new_slave;
