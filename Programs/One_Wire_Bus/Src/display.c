@@ -79,19 +79,6 @@ void print_rom(){
     display_string(rom_buff);
 }
 
-/**
-* @brief    writes last measured temperature of current slave to display
-*/
-void print_temp(){
-    c.x = TEMP_X;
-    char temp[15];
-    int written = snprintf(temp, sizeof(temp), "%09.5lf", get_current_slave()->temperature);
-    if(written < 0) {
-        // error occurred damn it
-    }
-    display_string(temp);
-}
-
 /* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
 void init_display(){
@@ -115,10 +102,16 @@ void write_info(){
     print_temp();
 }
 
-/**
-* @brief    -
-*
-* @param    -
-* 
-* @return   -
-*/
+void clear_temp(){
+    Coordinate temp_tl = {TEMP_X, LINE_HEIGHT*1};
+    Coordinate temp_br = {LCD_WIDTH-1, LINE_HEIGHT*5};
+    GUI_drawRectangle(temp_tl, temp_br, LCD_BACKGROUND, true, DOT_PIXEL_1X1);
+}
+
+void clear_sensor_pdrom() {
+    Coordinate sensor_tl = {FAM_X, LINE_HEIGHT*1};
+    Coordinate sensor_br = {TEMP_X-1, LINE_HEIGHT*5};
+    GUI_drawRectangle(sensor_tl, sensor_br, LCD_BACKGROUND, true, DOT_PIXEL_1X1);
+}
+
+//EOF

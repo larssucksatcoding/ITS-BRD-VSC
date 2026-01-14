@@ -19,13 +19,16 @@ void init_display();
 */
 void write_info();
 
-#endif
-
+/**
+* @brief    clears out the temp data
+*/
+void clear_temp();
 
 /**
-* @brief    -
-*
-* @param    -
-* 
-* @return   -
+* @brief    clears family code and pdrom of all sensors
 */
+void clear_sensor_pdrom();
+
+#endif
+
+//EOF
