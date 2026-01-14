@@ -20,26 +20,6 @@ int c_s_index;
 slave slaves[MAX_SLAVE];
 uint8_t slave_count; 
 
-/* ~ ~ ~ ~ ~   P R I V A T E - F U N C T I O N S   ~ ~ ~ ~ ~ */
-
-int rom_detected(unsigned char rom[ROM_LENGTH]){
-    unsigned char check_rom[ROM_LENGTH];
-    bool no_diff = true;
-    for(int i = 0; i < slave_count; i++) {
-    copy_arr(ROM_LENGTH, slaves[i].ROM, check_rom);
-        bool same_rom = true; // assume they have the same rom - if one number is different - not the same
-        for (int j = 0; (j < ROM_LENGTH) && same_rom; j++) {
-            if(check_rom[j] != rom[j]) {
-                same_rom = false;
-            }
-        }
-        if (same_rom == true) {
-            // we just found a slave with the same rom
-            return ROM_ERR;
-        }
-    }
-    return EOK;
-}
 
 /* ~ ~ ~ ~ ~   P U B L I C - F U N C T I O N S   ~ ~ ~ ~ ~ */
 
@@ -81,9 +61,7 @@ void save_scratchpad(unsigned char scratchpad_data[SCRATCHPAD_LENGTH]){
 }
 
 void new_slave(unsigned char rom_data[ROM_LENGTH]){
-    if (rom_detected(rom_data) == ROM_ERR) {
-        return;
-    }
+    
     slave_count++;
     unsigned int fam = 0;
     unsigned char fam_code[FAM_LENGTH];
