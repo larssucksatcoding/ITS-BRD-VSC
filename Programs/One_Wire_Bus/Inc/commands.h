@@ -23,12 +23,6 @@ void init_cmds();
 int search_ROM();
 
 /**
-* @brief    if only 1 slave on bus -> slave sends ROM
-*           Code: 33h
-*/
-void read_ROM();
-
-/**
 * @brief    sends match ROM signal followed by ROM of current slave
 *           Code: 55h
 */

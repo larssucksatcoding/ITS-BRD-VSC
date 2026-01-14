@@ -191,64 +191,6 @@ int search_ROM(){
     new_slave(rom);
 
     return EOK;
-
-    /*
-    slaves have the following roms
-
-        0  1  2  3  4  5  6  7 
-    ----------------------
-    4)  0  1  1  1  0  0  1  0
-    2)  0  0  1  0  1  0  0  0
-    3)  0  1  1  1  0  0  0  1
-    1)  0  0  1  0  0  0  0  0
-
-    1. Durchlauf 
-     Unterschied Bit 1  weiter mit 0
-     diff = 1
-     Unterschied Bit 4 weiter mit 0
-     diff = 4
-     Slave 1) detected
-     last_difference = 4
-    2. Durchlauf 
-     Durchlauf bis (exklusiv) Bit 4 (kopie von bit 0-3 von Slave 1) )
-     währenddessen: diff = 1
-     Bit 4 jetzt 1 wählen
-     Slave 2) detected
-     last_difference = 1
-    3. Durchlauf
-     Durchlauf bis (exklusiv) Bit 1 (kopiere bit 0 von 2) )
-     Unterschied Bit 6 
-     diff = 6
-     Slave 3) detected
-     last_difference = 6
-    4. Durchlauf 
-     Durchlauf bis (exklusiv) Bit 6 (kopiere bit 0-5 von 3) )
-     kein weiterer Unterschied
-     Slave 4) detected
-     last_difference = -1 (oder auch einfach so lassen?)
- 
-     -> Alle Slaves  erkannt
-    */
-}
-
-void read_ROM(){
-    send_command(READ_ROM);
-    unsigned char rom[ROM_LENGTH];
-    get_data(ROM_LENGTH, rom);
-    pslave slave = get_current_slave();
-    unsigned char* slave_rom = slave->ROM;
-
-    bool no_diff = true;
-    for (int i = 0; (i < ROM_LENGTH) & no_diff; i++) {
-        if(slave_rom[i] != rom[i]) {
-            no_diff = false;
-        }
-    }
-
-    if (!no_diff) {
-        reset_slaves();
-        new_slave(rom);
-    }
 }
 
 void match_ROM(){
