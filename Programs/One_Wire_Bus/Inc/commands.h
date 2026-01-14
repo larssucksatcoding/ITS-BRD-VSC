@@ -41,7 +41,7 @@ void convert_T();
 *           saves scratchpad data in struct
 *           Code: BEh
 */
-int read_scratchpad();
+void read_scratchpad();
 
 /**
 * @brief    executes reset command
