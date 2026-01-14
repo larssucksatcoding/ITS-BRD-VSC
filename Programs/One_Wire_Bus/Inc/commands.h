@@ -40,7 +40,6 @@ void convert_T();
 * @brief    reads scratchpad from current slave
 *           saves scratchpad data in struct
 *           Code: BEh
-* @return   Error if Scratchpad Data contains mistakes (didn't pass CRC check)
 */
 int read_scratchpad();
 

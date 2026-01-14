@@ -9,7 +9,6 @@
 #include "slaves.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "error_handler.h"
 #include "manager.h"
 
 #define     SENSOR_B        0x28

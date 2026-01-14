@@ -10,8 +10,6 @@
 
 #define     EOK             -0
 #define     NO_SLAVE        -1
-#define     ROM_ERR         -2
-#define     SCRATCHPAD_ERR  -3
 
 /**
 * @brief    handles the handed error like the handout had have has us had handicapped

@@ -61,10 +61,7 @@ int measure_temperature(){
 
     reset();
     match_ROM();
-    error = read_scratchpad();
-    if( error != EOK) {
-        return error;
-    }
+    read_scratchpad();
     calculate_temperature();
 
     return error;

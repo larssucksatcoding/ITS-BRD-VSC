@@ -97,6 +97,7 @@ int search_ROM(){
     unsigned char inverse;
     int diff = -1;
     unsigned char start = 0;
+    char error = EOK;
 
     send_command(SEARCH_ROM);
 
@@ -112,7 +113,8 @@ int search_ROM(){
             bit = receive();
             inverse = receive();
             if ((bit == 1) && (inverse == 1)) {
-                return NO_SLAVE;
+                error = NO_SLAVE;
+                return error;
             }
             else if ((bit == 0) && (inverse == 0)){
                 // Diff in den Roms 
@@ -142,11 +144,12 @@ int search_ROM(){
         inverse = receive();
         if (bit != inverse) {
             // this time no diff??
-            return ROM_ERR;
+            return error;
         }
         else if (bit == 1) {
             // both are one -> Error
-            return ROM_ERR;
+            error = NO_SLAVE;
+            return error;
         }
         rom[last_difference] = 1;
         send_1();
@@ -155,13 +158,13 @@ int search_ROM(){
     }
 
     // now continue (or start) as usual
-
     for (int i = start; i < ROM_LENGTH; i ++) {
         bit = receive();
         inverse = receive();
         if((bit == 1) &&  (inverse == 1)) {
-            // bit + inverse is 1 -> ERROR (connection to slaves lost)
-            return NO_SLAVE;
+            // bit + inverse is 1 -> no slaves answering, abort
+            error = NO_SLAVE;
+            return error;
         }
         else {
             if (bit == 0) {
@@ -179,18 +182,15 @@ int search_ROM(){
 
     bool passed_checksum;
     passed_checksum = checkCRC(ROM_LENGTH, rom);
-
-    if(!passed_checksum) {
-        return ROM_ERR;
+    if(passed_checksum) {
+        new_slave(rom);
+        if(diff != -1) {
+            spotted_diff = true;
+            last_difference = diff;
+        }
     }
 
-    if(diff != -1) {
-        spotted_diff = true;
-        last_difference = diff;
-    }
-    new_slave(rom);
-
-    return EOK;
+    return error;
 }
 
 void match_ROM(){
@@ -208,7 +208,7 @@ void convert_T(){
     open_drain();
 }
 
-int read_scratchpad(){
+void read_scratchpad(){
     pslave slave = get_current_slave();
     unsigned char scratchpad[SCRATCHPAD_LENGTH];
 
@@ -218,11 +218,9 @@ int read_scratchpad(){
     bool passed_checksum;
     passed_checksum = checkCRC(SCRATCHPAD_LENGTH, scratchpad);
 
-    if(!passed_checksum) {
-        return SCRATCHPAD_ERR;
+    if(passed_checksum) {
+        save_scratchpad(scratchpad);
     }
-    save_scratchpad(scratchpad);
-    return EOK;
 }
 
 int reset(){
