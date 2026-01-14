@@ -93,6 +93,15 @@ void init_display(){
     c.y += LINE_HEIGHT;
 }
 
+void print_temp(){
+    c.x = TEMP_X;
+    char temp[15];
+    int written = snprintf(temp, sizeof(temp), "%09.5lf", get_current_slave()->temperature);
+    if(written < 0) {
+        // error occurred damn it
+    }
+    display_string(temp);
+}
 
 void write_info(){
     int slave_number = get_current_slave_number();
