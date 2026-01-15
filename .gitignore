@@ -68,7 +68,5 @@ compile_commands.json
 *cbuild-idx.yml
 
 # i think these are not necessary
-createNewProject*
-bin/
 
 # EOF
