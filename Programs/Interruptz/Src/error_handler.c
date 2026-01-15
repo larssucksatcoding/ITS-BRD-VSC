@@ -1,0 +1,29 @@
+/**
+* @file       error_handler.c
+* @author     Lars Müller-Stumpf, Noah Rajko
+* @date       Nov 2025
+* @brief      
+*/
+
+
+#include "error_handler.h"
+#include "gpio.h"
+#include "main.h"
+#include "display.h"
+
+
+void handle_error(int error){
+    if (error == NO_ERROR) {
+        return;
+    }
+
+    setErrMode();
+    print_error("Deine Oma liebt dich nicht");
+
+    while(!is_reset_button_pressed()) {
+        // just wait :3
+    }
+
+    setNormalMode();
+    reset_state();
+}
