@@ -12,12 +12,6 @@
 
 
 void lcd_shit(){
-    GPIOE->ODR = 0b10000000;
-
-    // update(12.34, 56.78);
-
     display_index_angle(0);
     display_index_angular_momentum(0);
-
-    GPIOE->ODR = 0b00000000;
 }

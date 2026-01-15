@@ -26,6 +26,9 @@
 #include "test_lcd.h"
 
 
+#define PIN4	0b00010000
+
+
 /* Functions ------------------------------------------------------------------*/
 
 /**
@@ -91,9 +94,9 @@ int main(void) {
 	while(1) {
 
 		if (toggle) {
-			GPIOE->ODR |= 0b00010000;
+			GPIOE->BSRR = PIN4 << SET_REGISTER;
 		} else {
-			GPIOE->ODR &= ~0b00010000;
+			GPIOE->BSRR = PIN4 << RESET_REGISTER;
 		}
 
 		toggle = !toggle;

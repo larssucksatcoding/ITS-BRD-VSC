@@ -11,6 +11,10 @@
 /*  Includes  ----------------------------------------*/
 #include "stdbool.h"
 
+ 
+#define RESET_REGISTER          16
+#define SET_REGISTER            0
+
 extern bool a_on_previous;
 extern bool b_on_previous;
 extern bool a_on;
