@@ -54,6 +54,29 @@ void init_gpio(){
     b_on_previous = false;
     a_on = false;
     b_on = false;
+
+    // configure interrupts
+
+    // TODO: clean this up with sensible defines?
+    // i just copied this from the lecture slides, don't really understand whats happening.
+    // might be wrong.
+
+    // Enable clocks
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOGEN;	// Clock for GPIO Port G
+	RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN; 	// System conf. Clock enable
+
+    // Route Pin 1 of Port G -> EXTI2
+	SYSCFG->EXTICR[0] &= (0x0f << (4 * 1));	// Remove old selection
+	SYSCFG->EXTICR[0] |=  0x06 << (4 * 1); 	// Select Port G
+    
+    // Route Pin 2 of Port G -> EXTI2
+	SYSCFG->EXTICR[0] &= (0x0f << (4 * 2));	// Remove old selection
+	SYSCFG->EXTICR[0] |=  0x06 << (4 * 2); 	// Select Port G
+
+    // Configure Pin 1
+    EXTI->RTSR |= (1 << 2); // select rising trigger for INT2
+    EXTI->FTSR |= (1 << 2); // select falling trigger for INT2
+    EXTI->IMR  |= (1 << 2); // unmask INT2
 }
 
 bool is_reset_button_pressed(){
