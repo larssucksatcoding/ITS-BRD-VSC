@@ -11,7 +11,7 @@
 
 #define     ROM_LENGTH          64
 #define     SCRATCHPAD_LENGTH   72    // scratchpad Length of DS18B20 (same for DS18S20?) yes
-#define     MAX_SLAVE           4
+#define     MAX_SLAVE           5
 #define     TEMP_LENGTH         16
 #define     FAM_LENGTH          8
 

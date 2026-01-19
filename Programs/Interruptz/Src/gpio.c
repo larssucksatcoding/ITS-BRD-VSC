@@ -8,9 +8,12 @@
 #include "gpio.h"
 #include "encoder.h"
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
+#include "stm32f429xx.h"
 #include "stm32f4xx.h"
 #include "math.h"
+#include "interrupt.h"
 
 /*  Register  ----------------------------------------*/
 
@@ -33,6 +36,15 @@
 #define ENCODER_A_INPUT_MASK    0b00000010      // Maske für den Input 
 #define ENCODER_B_INPUT_MASK    0b00000001
 
+/*  Interrupt  ---------------------------------------*/
+
+#define PORT_RESET      0x00
+#define PORT_G          0x06
+
+#define EXTI_BIT_WIDTH  4
+#define PIN_1           (EXTI_BIT_WIDTH * 1)
+#define PIN_2           (EXTI_BIT_WIDTH * 2)
+
 static int current_status;
 static int current_phase_count;
 static int input;
@@ -41,6 +53,8 @@ bool a_on_previous;
 bool b_on_previous;
 bool a_on;
 bool b_on;
+
+
 
 void init_gpio(){
     // set GPIO registers to zero 
@@ -55,6 +69,10 @@ void init_gpio(){
     b_on_previous = false;
     a_on = false;
     b_on = false;
+
+    // configure interrupts
+    set_up_interrupt(1, PORT_G, 0, true, true);
+    set_up_interrupt(2, PORT_G, 0, true, true);
 }
 
 bool is_reset_button_pressed(){

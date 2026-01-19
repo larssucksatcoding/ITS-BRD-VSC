@@ -138,7 +138,7 @@ int search_ROM(){
             rom[i] = last_rom[i]; // = bit
         }
 
-        // choose 1 where last time we chose 1 (last_difference bit)
+        // choose 1 where last time we chose 0 last_difference bit)
         bit = receive();
         inverse = receive();
         if (bit != inverse) {
