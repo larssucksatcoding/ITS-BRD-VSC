@@ -142,15 +142,13 @@ int main(void) {
 		}
 
 		if (encoder_direction != DIR_NONE) {
-			save_timestamp();
+			save_timestamp(&last_phase_transition_timestamp);
 			increment_phase_count();
 		}
 
-		// ======
-		// OUTPUT
-		// ======
 
-		if(is_timewindow_over()) {
+
+		if(is_timewindow_over(&last_phase_transition_timestamp)) {
 			// ankle only after updating total phase count yes yes
 			recalculate_angle();
 			recalculate_angular_momentum();
@@ -162,6 +160,10 @@ int main(void) {
 			start_new_timewindow();
 			reset_window_phase_count(); // does this belong here or inside the function above?
 		}
+
+		// ======
+		// OUTPUT
+		// ======
 		
 		// --- BLINKY BLINK ---
 
