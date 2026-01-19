@@ -84,20 +84,13 @@ void print_rom(){
 
 void init_display(){
     GUI_clear(LCD_BACKGROUND);
-    c.y = START_Y;
-    c.x = FAM_X;
-    display_string(FAM_STR);
-    c.x = ROM_X;
-    display_string(ROM_STR);
-    c.x = TEMP_X;
-    display_string(TEMP_STR);
-    c.y += LINE_HEIGHT;
+    print_header_text();
 }
 
 void print_temp(){
     c.x = TEMP_X;
     char temp[15];
-    int written = snprintf(temp, sizeof(temp), "%09.5lf", get_current_slave()->temperature);
+    int written = snprintf(temp, sizeof(temp), "%6.2lf", get_current_slave()->temperature);
     if(written < 0) {
         // error occurred damn it
     }
@@ -114,13 +107,13 @@ void write_info(){
 
 void clear_temp(){
     Coordinate temp_tl = {TEMP_X, LINE_HEIGHT*1};
-    Coordinate temp_br = {LCD_WIDTH-1, LINE_HEIGHT*5};
+    Coordinate temp_br = {LCD_WIDTH-1, LINE_HEIGHT*(MAX_SLAVE+1)};
     GUI_drawRectangle(temp_tl, temp_br, LCD_BACKGROUND, true, DOT_PIXEL_1X1);
 }
 
 void clear_sensor_pdrom() {
     Coordinate sensor_tl = {FAM_X, LINE_HEIGHT*1};
-    Coordinate sensor_br = {TEMP_X-1, LINE_HEIGHT*5};
+    Coordinate sensor_br = {TEMP_X-1, LINE_HEIGHT*(MAX_SLAVE+1)};
     GUI_drawRectangle(sensor_tl, sensor_br, LCD_BACKGROUND, true, DOT_PIXEL_1X1);
 }
 
