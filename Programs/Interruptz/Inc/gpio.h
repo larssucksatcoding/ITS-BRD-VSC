@@ -15,15 +15,19 @@
 #define RESET_REGISTER          16
 #define SET_REGISTER            0
 
-extern bool a_on_previous;
-extern bool b_on_previous;
-extern bool a_on;
-extern bool b_on;
 
 /**
   * @brief      initializes the module for first use, clears registers
+  *
+  * @param      a_on will get the new input at pin0
+  *
+  * @param      b_on will get the new input at pin1
+  *
+  * @param      a_on_previous will get value that was at a_on before
+  *
+  * @param      b_on_previous will get value that was at b_on before
   */
-void init_gpio();
+void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
 
 /**
   * @brief      checks whether reset button is pressed
@@ -69,14 +73,18 @@ void set_err_led_off();
   */
 void set_phase_led();
 
-
 /**
-  * @brief      updates value of the intern Input Variables
-  * 
-  * @return     void
+  * @brief      updates current input status
+  *
+  * @param      a_on will get the new input at pin0
+  *
+  * @param      b_on will get the new input at pin1
+  *
+  * @param      a_on_previous will get value that was at a_on before
+  *
+  * @param      b_on_previous will get value that was at b_on before
   */
-void refresh_input_state();
-
+void refresh_input_state(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
 
 #endif
 
