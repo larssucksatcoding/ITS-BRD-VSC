@@ -36,14 +36,6 @@
 #define ENCODER_A_INPUT_MASK    0b00000010      // Maske für den Input 
 #define ENCODER_B_INPUT_MASK    0b00000001
 
-/*  Interrupt  ---------------------------------------*/
-
-#define PORT_RESET      0x00
-#define PORT_G          0x06
-
-#define EXTI_BIT_WIDTH  4
-#define PIN_1           (EXTI_BIT_WIDTH * 1)
-#define PIN_2           (EXTI_BIT_WIDTH * 2)
 
 static int current_status;
 static int current_phase_count;
