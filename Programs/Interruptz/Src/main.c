@@ -29,6 +29,22 @@
 #define PIN4	0b00010000
 
 
+/* Variables ------------------------------------------------------------------*/
+
+// Timestamps
+
+          
+volatile uint32_t last_phase_transition_timestamp;
+volatile bool a_on_previous;
+volatile bool b_on_previous;
+volatile bool a_on;
+volatile bool b_on;
+volatile int total_phase_count;
+
+
+
+
+
 /* Functions ------------------------------------------------------------------*/
 
 /**
@@ -46,8 +62,9 @@ void init_modules() {
 
 	// init self-written modules
 	init_display();
-	init_gpio();
-	init_time();
+
+	init_gpio(&a_on, &b_on, &a_on_previous, &b_on_previous);
+	init_time(&last_phase_transition_timestamp);
 	init_encoder();
 }
 
@@ -62,8 +79,8 @@ void reset_state() {
 	init_encoder(); // badly named, sets phase_count to 0
 	reset_display();
 
-	refresh_input_state();
-	refresh_timer();
+	refresh_input_state(&a_on, &b_on, &a_on_previous, &b_on_previous);
+	update_current();
 
 	recalculate_encoder();
 
@@ -107,8 +124,8 @@ int main(void) {
 		// HARDWARE INPUTS
 		// ===============
 
-		refresh_input_state();
-		refresh_timer();
+		refresh_input_state(&a_on, &b_on, &a_on_previous, &b_on_previous);
+		update_current();
 
 		// ============
 		// CALCULATIONS
@@ -125,15 +142,13 @@ int main(void) {
 		}
 
 		if (encoder_direction != DIR_NONE) {
-			save_timestamp();
+			save_timestamp(&last_phase_transition_timestamp);
 			increment_phase_count();
 		}
 
-		// ======
-		// OUTPUT
-		// ======
 
-		if(is_timewindow_over()) {
+
+		if(is_timewindow_over(&last_phase_transition_timestamp)) {
 			// ankle only after updating total phase count yes yes
 			recalculate_angle();
 			recalculate_angular_momentum();
@@ -145,6 +160,10 @@ int main(void) {
 			start_new_timewindow();
 			reset_window_phase_count(); // does this belong here or inside the function above?
 		}
+
+		// ======
+		// OUTPUT
+		// ======
 		
 		// --- BLINKY BLINK ---
 

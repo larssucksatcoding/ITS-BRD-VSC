@@ -8,12 +8,10 @@
 #include "gpio.h"
 #include "encoder.h"
 #include <stdbool.h>
-#include <stdint.h>
 #include <stdlib.h>
 #include "stm32f429xx.h"
-#include "stm32f4xx.h"
-#include "math.h"
 #include "interrupt.h"
+#include "main.h"
 
 /*  Register  ----------------------------------------*/
 
@@ -28,7 +26,6 @@
 #define ERROR_LED_MASK          0b00100000
 #define PHASE_COUNT_LED_MASK    0x00FF          // Maske für die Anzeige des Phasen Counts
 #define RESET_MASK              0xFF            // Maske um 16-Bit-Register auf 0 zu setzen.
-#define RESETTED                0x00
 
 /*  Input  -------------------------------------------*/
 
@@ -36,19 +33,11 @@
 #define ENCODER_A_INPUT_MASK    0b00000010      // Maske für den Input 
 #define ENCODER_B_INPUT_MASK    0b00000001
 
-
-static int current_status;
-static int current_phase_count;
-static int input;
-
-bool a_on_previous;
-bool b_on_previous;
-bool a_on;
-bool b_on;
+static bool forwards_on;
+static bool backwards_on;
 
 
-
-void init_gpio(){
+void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous){
     // set GPIO registers to zero 
     PHASE_COUNT_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
     STATUS_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
@@ -116,12 +105,12 @@ void set_phase_led() {
     PHASE_COUNT_LEDS->BSRR = current_phase_count << SET_REGISTER;
 }
 
-void refresh_input_state() {
-    a_on_previous = a_on;
-    b_on_previous = b_on;
-    input = (~INPUT->IDR);
-    a_on = (input & ENCODER_A_INPUT_MASK) != 0;
-    b_on = (input & ENCODER_B_INPUT_MASK) != 0;
+void refresh_input_state(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous) {
+    *a_on_previous = *a_on;
+    *b_on_previous = *b_on;
+    int input = (~INPUT->IDR);
+    *a_on = (input & ENCODER_A_INPUT_MASK) != 0;
+    *b_on = (input & ENCODER_B_INPUT_MASK) != 0;
 }
 
 
