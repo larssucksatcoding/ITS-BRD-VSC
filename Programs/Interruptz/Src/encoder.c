@@ -31,16 +31,17 @@ int window_phase_count;
 /**
   * @brief      gets the phase, in your phase. based. on hardware input.
   *
-  * @param      a, b: hardware input a & b.
+  * @param      a Hardware Input pin0
+  * @param      b Hardware Input pin1
   * 
   * @return     returns the current phase the encoder is in.
   */
-int get_phase(bool a, bool b) {
-    if (a) {
-        if (b)  { return PHASE_C; }
+int get_phase(volatile bool *a, volatile bool *b) {
+    if (*a) {
+        if (*b)  { return PHASE_C; }
         else    { return PHASE_B; }
     } else {
-        if (b)  { return PHASE_D; }
+        if (*b)  { return PHASE_D; }
         else    { return PHASE_A; }
     }
 }
@@ -59,8 +60,8 @@ void init_encoder() {
 
 
 void recalculate_encoder() {
-    int last_phase = get_phase(a_on_previous, b_on_previous);
-    int curr_phase = get_phase(a_on, b_on);
+    int last_phase = get_phase(&a_on_previous, &b_on_previous);
+    int curr_phase = get_phase(&a_on, &b_on);
 
     switch (last_phase) {
         case PHASE_A: {

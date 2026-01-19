@@ -31,7 +31,7 @@ void init_time() {
     last_phase_transition_timestamp = 0;
 }
 
-void refresh_timer() {
+void update_current() {
     current_timestamp = getTimeStamp();
 }
 

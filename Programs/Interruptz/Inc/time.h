@@ -31,7 +31,7 @@ void init_time();
 /**
   * @brief      fetches new timestamp.
   */
-void refresh_timer();
+void update_current();
 
 
 /**
