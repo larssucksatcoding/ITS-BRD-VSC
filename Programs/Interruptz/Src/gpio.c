@@ -13,6 +13,7 @@
 #include "stm32f429xx.h"
 #include "stm32f4xx.h"
 #include "math.h"
+#include "interrupt.h"
 
 /*  Register  ----------------------------------------*/
 
@@ -52,65 +53,7 @@ bool b_on_previous;
 bool a_on;
 bool b_on;
 
-unsigned long get_clock_enable_mask(uint16_t port) {
-    /* definitions for clock enables:
-    #define RCC_AHB1ENR_GPIOAEN_Pos     (0U)                                
-    #define RCC_AHB1ENR_GPIOAEN_Msk     (0x1UL << RCC_AHB1ENR_GPIOAEN_Pos)
-    #define RCC_AHB1ENR_GPIOAEN         RCC_AHB1ENR_GPIOAEN_Msk 
-    so its just 0x1UL shifted to the right by the port index. */
-    return 0x1UL << port;
-}
 
-uint32_t get_syscfg_exticr_register(uint16_t pin) {
-    if (pin >  4) { return SYSCFG->EXTICR[0]; }
-    if (pin >  8) { return SYSCFG->EXTICR[1]; }
-    if (pin > 12) { return SYSCFG->EXTICR[2]; }
-    return SYSCFG->EXTICR[3];
-}
-
-void enable_interrupt_clocks(uint16_t port) {
-    unsigned long clock_enable_mask = get_clock_enable_mask(port);
-    RCC->AHB1ENR |= clock_enable_mask;      // clock for port
-    RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;   // enable system conf. clock
-}
-
-void route_interrupt_pins(uint16_t pin, uint16_t port) {
-    uint32_t syscfg_exti_register = get_syscfg_exticr_register(pin);
-	syscfg_exti_register &= 0x00 << pin;	// remove old selection
-	syscfg_exti_register |= port << pin; 	// select port
-}
-
-void enable_interrupt_trigger(uint16_t pin, bool rising, bool falling) {
-    if (rising)  { EXTI->RTSR |= (1 << pin); }
-    if (falling) { EXTI->FTSR |= (1 << pin); }
-}
-
-void unmask_interrupt_pin(uint16_t pin) {
-    EXTI->IMR  |= (1 << pin);
-}
-
-void enable_interrupt(uint16_t pin, uint16_t port, uint32_t priority) {
-    int exti_irqn = EXTI0_IRQn + pin;
-
-    // interrupt enable works differently for pins 5-15
-    // EXTI4_IRQn is for pin 5
-    if (exti_irqn > EXTI4_IRQn) {
-        // have not looked into how to change this
-    }
-
-    NVIC_SetPriority(exti_irqn, priority);  // set priority
-    NVIC_EnableIRQ(exti_irqn);              // enable interrupt
-}
-
-void set_up_interrupt(uint16_t pin, uint16_t port, uint32_t priority, 
-    bool rising_trigger, bool falling_trigger) 
-{
-    enable_interrupt_clocks(port);
-    route_interrupt_pins(pin, port);
-    enable_interrupt_trigger(pin, rising_trigger, falling_trigger);
-    unmask_interrupt_pin(pin);
-    enable_interrupt(pin, port, priority);
-}
 
 void init_gpio(){
     // set GPIO registers to zero 
@@ -127,8 +70,8 @@ void init_gpio(){
     b_on = false;
 
     // configure interrupts
-    set_up_interrupt(1, 0x06, 0, true, true);
-    set_up_interrupt(2, 0x06, 0, true, true);
+    set_up_interrupt(1, PORT_G, 0, true, true);
+    set_up_interrupt(2, PORT_G, 0, true, true);
 }
 
 bool is_reset_button_pressed(){
