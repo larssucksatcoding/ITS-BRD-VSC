@@ -8,22 +8,26 @@
 #ifndef ANGLE_H
 #define ANGLE_H
 
+#include <stdint.h>
+
 extern double angle;
 extern double angular_momentum;
 
 /**
-  * @brief      recalculates Values of angle and angular momentum
+  * @brief      recalculates Value of angular momentum
+  *
+  * @param      phase_count (pointer) total_phase_count at time af calculation
+  * 
+  * @param      timestamp (pointer) timestamp at time of calculation
   */
-void recalculate_angular_momentum();
+void recalculate_angular_momentum(int *phase_count, uint32_t *timestamp);
 
 /**
   * @brief      recalculates current angle 
   *
-  * @param      -
-  * 
-  * @return     -
+  * @param      phase_count total phase count at time of calculation
   */
-void recalculate_angle();
+void recalculate_angle(int *phase_count);
 
 /**
   * @brief      returns value of angle

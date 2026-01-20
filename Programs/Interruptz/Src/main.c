@@ -23,7 +23,8 @@
 #include "angle.h"
 #include "error_handler.h"
 #include "time.h"
-#include "test_lcd.h"
+#include "timer.h"
+#include <stdint.h>
 
 
 #define PIN4	0b00010000
@@ -87,7 +88,36 @@ void reset_state() {
 	set_dir_led_off();
 	set_phase_led();
 
-	start_new_timewindow();
+	start_first_timewindow();
+}
+
+/**
+  * @brief      checks, if we could save data without being interrupted
+  *
+  * @return 	true, if interrrupted, false, if not interrupted
+  */
+bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous, 
+	uint32_t *isr_timestamp, int *phase_count) 
+{
+	*a = a_on;
+	*b = b_on;
+	*a_previous = a_on_previous;
+	*b_previous = b_on_previous;
+	*isr_timestamp = last_phase_transition_timestamp;
+	*phase_count = total_phase_count;
+
+	bool a2 = a_on;
+	bool b2 = b_on;
+	bool a_previous2 = a_on_previous;
+	bool b_previous2 = b_on_previous;
+	uint32_t isr_timestamp2 = last_phase_transition_timestamp;
+	int phase_count2 = total_phase_count;
+
+	bool no_interruption = ((*a == a2) && (*b == b2) && (*a_previous == a_previous2) &&
+		(*b_previous == b_previous2) && (*isr_timestamp == isr_timestamp2) && 
+		(*phase_count == phase_count2));
+	
+	return !no_interruption;
 }
 
 
@@ -115,10 +145,8 @@ int main(void) {
 		} else {
 			GPIOE->BSRR = PIN4 << RESET_REGISTER;
 		}
-
 		toggle = !toggle;
 
-		
 
 		// ===============
 		// HARDWARE INPUTS
@@ -131,27 +159,10 @@ int main(void) {
 		// CALCULATIONS
 		// ============
 
-		// --- ENCODER ENSHMODER ---
+		if(is_timewindow_over(&isr_timestamp)) {
 
-		recalculate_encoder();
-		encoder_direction = get_direction();
-		
-		if (encoder_direction == DIR_ERROR) {
-			handle_error(DIR_ERROR);
-			continue;
-		}
-
-		if (encoder_direction != DIR_NONE) {
-			save_timestamp(&last_phase_transition_timestamp);
-			increment_phase_count();
-		}
-
-
-
-		if(is_timewindow_over(&last_phase_transition_timestamp)) {
-			// ankle only after updating total phase count yes yes
-			recalculate_angle();
-			recalculate_angular_momentum();
+			recalculate_angle(&phase_count);
+			recalculate_angular_momentum(&phase_count, &isr_timestamp);
 
 			// fetch new values
 			check_display_data();
