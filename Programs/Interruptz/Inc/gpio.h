@@ -11,9 +11,16 @@
 /*  Includes  ----------------------------------------*/
 #include "stdbool.h"
 
+
 #define AUX0_INPUT_MASK    0b00000001      // Maske für den Input 
 #define AUX1_INPUT_MASK    0b00000010
 
+#define INPUT               GPIOF
+#define PHASE_COUNT_LEDS    GPIOD
+#define STATUS_LEDS         GPIOE
+
+#define RESET_REGISTER          16
+#define SET_REGISTER            0
 
 /**
   * @brief      initializes the module for first use, clears registers

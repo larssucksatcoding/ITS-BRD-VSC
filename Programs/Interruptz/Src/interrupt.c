@@ -10,6 +10,10 @@
 #include "time.h"
 #include "timer.h"
 
+// uncommint this define for oscilloscope measurement
+// connect the oscilloscope to the INTERRUPT_MEASURE_LED below
+// #define MEASURE_INTERRUPT_TIME
+#define INTERRUPT_MEASURE_LED 0b00010000
 
 /*  Private Methods  ----------------------------------------*/
 
@@ -104,14 +108,32 @@ void enable_interrupt(uint16_t pin, uint16_t port, uint32_t priority) {
 
 /*  Interrupt Service Routines  ----------------------------------------*/
 
+/*
+#define RESET_REGISTER          16
+#define SET_REGISTER            0
+#define ERROR_LED_MASK          0b00100000
+
+void set_err_led_on() {
+    STATUS_LEDS->BSRR = ERROR_LED_MASK << SET_REGISTER;
+}
+
+void set_err_led_off() {
+    STATUS_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
+}
+*/
+
 static inline void isr_handler(int pin) {
+
+    #ifdef MEASURE_INTERRUPT_TIME
+    STATUS_LEDS->BSRR = INTERRUPT_MEASURE_LED << SET_REGISTER;
+    #endif
 
     // -- input --
 
     last_phase_transition_timestamp = getTimeStamp(); // should be first thing in isr
     int input = (~GPIOG->IDR);
 
-    // -- calculations --
+    // -- output --
 
     switch (pin) {
       case 0: {
@@ -135,6 +157,10 @@ static inline void isr_handler(int pin) {
       case DIR_BACKWARDS: { total_phase_count--; break; }
       case DIR_ERROR: { show_error(); break; }
     }
+
+    #ifdef MEASURE_INTERRUPT_TIME
+    STATUS_LEDS->BSRR = INTERRUPT_MEASURE_LED << RESET_REGISTER;
+    #endif
 }
 
 

@@ -11,16 +11,6 @@
 #include "stm32f429xx.h"
 #include "interrupt.h"
 
-/*  Register  ----------------------------------------*/
-
-#define INPUT               GPIOF
-#define PHASE_COUNT_LEDS    GPIOD
-#define STATUS_LEDS         GPIOE
-
-/* LED definitions  ------------------------------------------*/
-
-#define RESET_REGISTER          16
-#define SET_REGISTER            0
 
 #define FORWARDS_LED_MASK       0b10000000
 #define BACKWARDS_LED_MASK      0b01000000
