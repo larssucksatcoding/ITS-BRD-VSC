@@ -67,14 +67,12 @@ void init_modules() {
 	init_gpio(&a_on, &b_on, &a_on_previous, &b_on_previous);
 	init_time(&last_phase_transition_timestamp);
 	init_encoder();
+
+	total_phase_count = 0;
 }
 
 /**
-  * @brief      - iiii dddd kkkk 
-  *
-  * @param      -
-  * 
-  * @return     -
+  * @brief      resets state of modules and reads input for first time
   */
 void reset_state() {
 	init_encoder(); // badly named, sets phase_count to 0
@@ -151,8 +149,30 @@ int main(void) {
 		// HARDWARE INPUTS
 		// ===============
 
-		refresh_input_state(&a_on, &b_on, &a_on_previous, &b_on_previous);
-		update_current();
+		// we should check in beginning of main, whether current timestamp (from main) 
+		// exceeds time window. This would mean, the encoder is no longer spinning
+
+		bool a;
+		bool b;
+		bool a_previous;
+		bool b_previous;
+		uint32_t isr_timestamp;
+		int phase_count;
+
+		bool interrupted = check_for_interruption(&a, &b, &a_previous, &b_previous,
+			&isr_timestamp, &phase_count);
+
+		for(int i = 1; i < 10 && interrupted; i ++) { 
+			// already checked once, now we check up to 9 more times
+			interrupted = check_for_interruption(&a, &b, &a_previous, &b_previous,
+			&isr_timestamp, &phase_count);
+		}
+
+		if(interrupted) {
+			// we tried saving data 10 times, and we always got interrupted. The decoder is spinning to fast
+			// ERRROOORR!!
+			
+		}
 
 		// ============
 		// CALCULATIONS
@@ -173,7 +193,7 @@ int main(void) {
 			// OUTPUT
 			// ======
 
-
+			// ---- BLINKY BLINKY ----
 			set_dir_led();
 			set_phase_led(&phase_count);
 		}
@@ -184,7 +204,6 @@ int main(void) {
 		// new have been set by recalcuate_display()
 		update_display();
 
-		
 	}
 
 }
