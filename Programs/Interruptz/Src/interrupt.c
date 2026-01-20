@@ -28,11 +28,11 @@ unsigned long get_clock_enable_mask(uint16_t port) {
   * @param      pin index.
   * @return     syscfg exticr register.
   */
-uint32_t get_syscfg_exticr_register(uint16_t pin) {
-    if (pin >  4) { return SYSCFG->EXTICR[0]; }
-    if (pin >  8) { return SYSCFG->EXTICR[1]; }
-    if (pin > 12) { return SYSCFG->EXTICR[2]; }
-    return SYSCFG->EXTICR[3];
+uint32_t get_syscfg_exticr_index(uint16_t pin) {
+    if (pin >  4) { return 0; }
+    if (pin >  8) { return 1; }
+    if (pin > 12) { return 2; }
+    return 3;
 }
 
 /**
@@ -50,9 +50,9 @@ void enable_interrupt_clocks(uint16_t port) {
   * @param      pin index, port number.
   */
 void route_interrupt_pins(uint16_t pin, uint16_t port) {
-    uint32_t syscfg_exti_register = get_syscfg_exticr_register(pin);
-	syscfg_exti_register &= 0x00 << pin;	// remove old selection
-	syscfg_exti_register |= port << pin; 	// select port
+    uint32_t index = get_syscfg_exticr_index(pin);
+	  SYSCFG->EXTICR[index] &= 0x00 << pin;	// remove old selection
+	  SYSCFG->EXTICR[index] |= port << pin; 	// select port
 }
 
 /**
