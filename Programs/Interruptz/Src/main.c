@@ -125,7 +125,6 @@ int main(void) {
 	init_modules();
 
 	int encoder_direction = DIR_NONE;
-	int total_phase_transition_count = 0;
 
 	// read all inputs once right before superloop to avoid
 	// immediate DIR_ERROR after the superloop starts
@@ -168,15 +167,12 @@ int main(void) {
 			check_display_data();
 
 			// new time window
-			start_new_timewindow();
-			reset_window_phase_count(); // does this belong here or inside the function above?
-		}
+			start_new_timewindow(&isr_timestamp);
+			
+			// ======
+			// OUTPUT
+			// ======
 
-		// ======
-		// OUTPUT
-		// ======
-		
-		// --- BLINKY BLINK ---
 
 		set_dir_led();
 		set_phase_led();

@@ -38,29 +38,35 @@ void save_timestamp(volatile uint32_t *last_phase_transition_timestamp);
 /**
   * @brief      starts a new time window.
   *
-  * @param      -
-  * 
-  * @return     -
+  * @param      previous_window_end_timestamp pointer to timestamp where last window ended
   */
-void start_new_timewindow();
+void start_new_timewindow(uint32_t *previous_window_end_timestamp);
+
+/**
+  * @brief      starts first time window by getting a Time Stamp 
+  */
+void start_first_timewindow();
 
 
 /**
   * @brief      checks whether the time window is over.
   *
-  * @param      last_phase_transition_timestamp pointer to variable
-  * 
+  * @param      timestamp (pointer) timestamp which should get checked, if it 
+  *             exceeded timewindow
+  *
   * @return     true if time window exceeded 
   */
-bool is_timewindow_over(volatile uint32_t *last_phase_transition_timestamp);
+bool is_timewindow_over(uint32_t *timestamp);
 
 
 /**
-  * @brief      milliseconds since time window was started.
+  * @brief      milliseconds between time window start and timestamp.
+  *
+  * @param      timestamp (pointer) timestamp to compare to start
   * 
-  * @return     time duration in ms.
+  * @return     diff between timestamp and window start in ms.
   */
-int ms_since_timewindow_start();
+int ms_since_timewindow_start(uint32_t *timestamp);
 
 
 
