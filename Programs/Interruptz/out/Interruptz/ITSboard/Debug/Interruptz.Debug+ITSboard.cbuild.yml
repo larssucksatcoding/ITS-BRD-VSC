@@ -337,8 +337,6 @@ build:
           category: header
         - file: ../../../../Inc/main.h
           category: header
-        - file: ../../../../Inc/test_lcd.h
-          category: header
         - file: ../../../../Inc/time.h
           category: header
         - file: ../../../../Inc/interrupt.h
@@ -356,8 +354,6 @@ build:
         - file: ../../../../Src/error_handler.c
           category: sourceC
         - file: ../../../../Src/gpio.c
-          category: sourceC
-        - file: ../../../../Src/test_lcd.c
           category: sourceC
         - file: ../../../../Src/time.c
           category: sourceC

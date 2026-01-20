@@ -8,7 +8,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "encoder.h"
-#include "gpio.h"
 #include "error_handler.h"
 #include "stdbool.h"
 
@@ -21,15 +20,14 @@
 
 int direction;
 
-int total_phase_count;
-int window_phase_count;
+static int last_total_phase_count; //!< total_phase_count after finished time window
 
 // ===============
 // PRIVATE METHODS
 // ===============
 
 /**
-  * @brief      gets the phase, in your phase. based. on hardware input.
+  * @brief      calculates phase we're in, based. on hardware input.
   *
   * @param      a Hardware Input pin0
   * @param      b Hardware Input pin1
@@ -53,15 +51,12 @@ int get_phase(volatile bool *a, volatile bool *b) {
 
 void init_encoder() {
     direction = DIR_NONE;
-
-    total_phase_count = 0;
-    window_phase_count = 0;
 }
 
 
-void recalculate_encoder() {
-    int last_phase = get_phase(&a_on_previous, &b_on_previous);
-    int curr_phase = get_phase(&a_on, &b_on);
+void check_direction(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous) {
+    int last_phase = get_phase(a_on_previous, b_on_previous);
+    int curr_phase = get_phase(a_on, b_on);
 
     switch (last_phase) {
         case PHASE_A: {
@@ -103,31 +98,14 @@ void recalculate_encoder() {
     }
 }
 
-
 int get_direction() {
     return direction;
 }
 
-int get_total_phase_count() {
-    return total_phase_count;
+int get_window_phase_count(int *total_phase_count) {
+    return *total_phase_count - last_total_phase_count;
 }
 
-int get_window_phase_count() {
-    return window_phase_count;
-}
-
-void increment_phase_count() {
-    if (direction == DIR_FORWARDS) {
-        window_phase_count++;
-        total_phase_count++;
-    }
-
-    if (direction == DIR_BACKWARDS) {
-        window_phase_count--;
-        total_phase_count--;
-    }
-}
-
-void reset_window_phase_count() {
-    window_phase_count = 0;
+void save_last_total_phase_count(int *phase_count) {
+    last_total_phase_count = *phase_count;
 }

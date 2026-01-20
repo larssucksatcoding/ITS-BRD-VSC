@@ -186,7 +186,6 @@ project:
         - file: Inc/error_handler.h
         - file: Inc/gpio.h
         - file: Inc/main.h
-        - file: Inc/test_lcd.h
         - file: Inc/time.h
         - file: Inc/interrupt.h
 
@@ -199,7 +198,6 @@ project:
         - file: Src/encoder.c
         - file: Src/error_handler.c
         - file: Src/gpio.c
-        - file: Src/test_lcd.c
         - file: Src/time.c
         - file: Src/interrupt.c
 

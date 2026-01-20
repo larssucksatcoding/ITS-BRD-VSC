@@ -23,7 +23,8 @@
 #include "angle.h"
 #include "error_handler.h"
 #include "time.h"
-#include "test_lcd.h"
+#include "timer.h"
+#include <stdint.h>
 
 
 #define PIN4	0b00010000
@@ -66,14 +67,12 @@ void init_modules() {
 	init_gpio(&a_on, &b_on, &a_on_previous, &b_on_previous);
 	init_time(&last_phase_transition_timestamp);
 	init_encoder();
+
+	total_phase_count = 0;
 }
 
 /**
-  * @brief      - iiii dddd kkkk 
-  *
-  * @param      -
-  * 
-  * @return     -
+  * @brief      resets state of modules and reads input for first time
   */
 void reset_state() {
 	init_encoder(); // badly named, sets phase_count to 0
@@ -82,12 +81,41 @@ void reset_state() {
 	refresh_input_state(&a_on, &b_on, &a_on_previous, &b_on_previous);
 	update_current();
 
-	recalculate_encoder();
+	check_direction(&a_on, &b_on, &a_on_previous, &b_on_previous);
 
-	set_dir_led_off();
-	set_phase_led();
+	set_status_led_off();
+	set_phase_led_off();
 
-	start_new_timewindow();
+	start_first_timewindow();
+}
+
+/**
+  * @brief      checks, if we could save data without being interrupted
+  *
+  * @return 	true, if interrrupted, false, if not interrupted
+  */
+bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous, 
+	uint32_t *isr_timestamp, int *phase_count) 
+{
+	*a = a_on;
+	*b = b_on;
+	*a_previous = a_on_previous;
+	*b_previous = b_on_previous;
+	*isr_timestamp = last_phase_transition_timestamp;
+	*phase_count = total_phase_count;
+
+	bool a2 = a_on;
+	bool b2 = b_on;
+	bool a_previous2 = a_on_previous;
+	bool b_previous2 = b_on_previous;
+	uint32_t isr_timestamp2 = last_phase_transition_timestamp;
+	int phase_count2 = total_phase_count;
+
+	bool no_interruption = ((*a == a2) && (*b == b2) && (*a_previous == a_previous2) &&
+		(*b_previous == b_previous2) && (*isr_timestamp == isr_timestamp2) && 
+		(*phase_count == phase_count2));
+	
+	return !no_interruption;
 }
 
 
@@ -95,7 +123,6 @@ int main(void) {
 	init_modules();
 
 	int encoder_direction = DIR_NONE;
-	int total_phase_transition_count = 0;
 
 	// read all inputs once right before superloop to avoid
 	// immediate DIR_ERROR after the superloop starts
@@ -115,60 +142,61 @@ int main(void) {
 		} else {
 			GPIOE->BSRR = PIN4 << RESET_REGISTER;
 		}
-
 		toggle = !toggle;
 
-		
 
 		// ===============
 		// HARDWARE INPUTS
 		// ===============
 
-		refresh_input_state(&a_on, &b_on, &a_on_previous, &b_on_previous);
-		update_current();
+		// we should check in beginning of main, whether current timestamp (from main) 
+		// exceeds time window. This would mean, the encoder is no longer spinning
+
+		bool a;
+		bool b;
+		bool a_previous;
+		bool b_previous;
+		uint32_t isr_timestamp;
+		int phase_count;
+
+		bool interrupted = check_for_interruption(&a, &b, &a_previous, &b_previous,
+			&isr_timestamp, &phase_count);
+
+		for(int i = 1; i < 10 && interrupted; i ++) { 
+			// already checked once, now we check up to 9 more times
+			interrupted = check_for_interruption(&a, &b, &a_previous, &b_previous,
+			&isr_timestamp, &phase_count);
+		}
+
+		if(interrupted) {
+			// we tried saving data 10 times, and we always got interrupted. The decoder is spinning to fast
+			// ERRROOORR!!
+			
+		}
 
 		// ============
 		// CALCULATIONS
 		// ============
 
-		// --- ENCODER ENSHMODER ---
+		if(is_timewindow_over(&isr_timestamp)) {
 
-		recalculate_encoder();
-		encoder_direction = get_direction();
-		
-		if (encoder_direction == DIR_ERROR) {
-			handle_error(DIR_ERROR);
-			continue;
-		}
-
-		if (encoder_direction != DIR_NONE) {
-			save_timestamp(&last_phase_transition_timestamp);
-			increment_phase_count();
-		}
-
-
-
-		if(is_timewindow_over(&last_phase_transition_timestamp)) {
-			// ankle only after updating total phase count yes yes
-			recalculate_angle();
-			recalculate_angular_momentum();
+			recalculate_angle(&phase_count);
+			recalculate_angular_momentum(&phase_count, &isr_timestamp);
 
 			// fetch new values
 			check_display_data();
 
 			// new time window
-			start_new_timewindow();
-			reset_window_phase_count(); // does this belong here or inside the function above?
+			start_new_timewindow(&isr_timestamp);
+			
+			// ======
+			// OUTPUT
+			// ======
+
+			// ---- BLINKY BLINKY ----
+			set_dir_led();
+			set_phase_led(&phase_count);
 		}
-
-		// ======
-		// OUTPUT
-		// ======
-		
-		// --- BLINKY BLINK ---
-
-		set_dir_led();
-		set_phase_led();
 
 		// --- DISPLAY ---
 
@@ -176,7 +204,6 @@ int main(void) {
 		// new have been set by recalcuate_display()
 		update_display();
 
-		
 	}
 
 }

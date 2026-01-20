@@ -8,10 +8,8 @@
 #include "gpio.h"
 #include "encoder.h"
 #include <stdbool.h>
-#include <stdlib.h>
 #include "stm32f429xx.h"
 #include "interrupt.h"
-#include "main.h"
 
 /*  Register  ----------------------------------------*/
 
@@ -39,12 +37,7 @@ static bool backwards_on;
 
 void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous){
     // set GPIO registers to zero 
-    PHASE_COUNT_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
-    STATUS_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
-
-    current_status = RESETTED;
-    current_phase_count = RESETTED;
-    input = RESETTED;
+    set_phase_led_off();
 
     a_on_previous = false;
     b_on_previous = false;
@@ -66,42 +59,38 @@ void set_dir_led() {
 
     switch (dir) {
         case DIR_FORWARDS: {
-            if(current_status != FORWARDS_LED_MASK) {
+            if(!forwards_on) {
                 // Forwards LED is not on
                 STATUS_LEDS->BSRR = FORWARDS_LED_MASK << SET_REGISTER;
-                current_status &= FORWARDS_LED_MASK;
+                forwards_on = true;
             }
             break;
         }
         case DIR_BACKWARDS: {
-            if(current_status != BACKWARDS_LED_MASK) {
+            if(!backwards_on) {
                 // Backwards LED is not on
                 STATUS_LEDS->BSRR = BACKWARDS_LED_MASK << SET_REGISTER;
-                current_status &= BACKWARDS_LED_MASK;
+                backwards_on = true;
             }
             break;
         }
     }
 }
 
-void set_dir_led_off() {
-    STATUS_LEDS->BSRR = RESET_MASK << RESET;
-    current_status = RESET_MASK;
+void set_status_led_off() {
+    STATUS_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
 }
 
 void set_err_led_on() {
     STATUS_LEDS->BSRR = ERROR_LED_MASK << SET_REGISTER;
-    current_status = ERROR_LED_MASK;
 }
 
 void set_err_led_off() {
     STATUS_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
-    current_status = RESETTED;
 }
 
-void set_phase_led() {
-    int phase_count = abs(get_total_phase_count());
-    current_phase_count = phase_count & PHASE_COUNT_LED_MASK;
+void set_phase_led(int *phase_count) {
+    int current_phase_count = *phase_count & PHASE_COUNT_LED_MASK;
     PHASE_COUNT_LEDS->BSRR = current_phase_count << SET_REGISTER;
 }
 

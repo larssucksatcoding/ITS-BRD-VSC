@@ -9,14 +9,11 @@
 /*  Includes  ------------------------*/
 
 #include "display.h"
-#include <stdlib.h>
-#include "LCD_Debug.h"
 #include "LCD_GUI.h"
 #include "LCD_general.h"
 #include "fonts.h"
 #include <stdio.h>
 #include "angle.h"
-#include "math.h"
 
 
 /*  Variables  -------------------------*/

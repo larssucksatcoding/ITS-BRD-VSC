@@ -32,37 +32,41 @@ void update_current() {
 }
 
 void save_timestamp(volatile uint32_t *last_phase_transition_ts) {
-    *last_phase_transition_ts = current_timestamp;
+    *last_phase_transition_ts = getTimeStamp();
 }
 
-void start_new_timewindow() {
-    window_start_timestamp = current_timestamp;
+void start_new_timewindow(uint32_t *previous_window_end_timestamp) {
+    window_start_timestamp = *previous_window_end_timestamp;
 }
 
-bool is_timewindow_over(volatile uint32_t *last_phase_transition_ts) {
-    int time_in_ms = ms_since_timewindow_start();
+void start_first_timewindow() {
+    window_start_timestamp = getTimeStamp();
+}
+
+bool is_timewindow_over(uint32_t *timestamp) {
+    int time_in_ms = ms_since_timewindow_start(timestamp);
 
     bool phase_transition_occured = 
-        (*last_phase_transition_ts == current_timestamp);
+        (*timestamp == current_timestamp);
 
     return 
          (time_in_ms >= MAX_WINDOW_DURATION_IN_MS) ||
         ((time_in_ms >= MIN_WINDOW_DURATION_IN_MS) && phase_transition_occured);
 }
 
-int ms_since_timewindow_start() {
+int ms_since_timewindow_start(uint32_t *timestamp) {
     uint32_t timestamp_diff = 0;
 
     // check for overflow since last time window
-    if (window_start_timestamp >= current_timestamp) {
+    if (window_start_timestamp >= *timestamp) {
 
         // window_start_timestamp was taken before overflow, so we get difference
         // by getting "distance" to max int + the timestamp after the overflow
         timestamp_diff = 
-            (UINT32_MAX - window_start_timestamp) + current_timestamp;
+            (UINT32_MAX - window_start_timestamp) + *timestamp;
     } else {
         timestamp_diff = 
-            current_timestamp - window_start_timestamp;
+            *timestamp - window_start_timestamp;
     }
 
     return timestamp_diff / TICKS_PER_MS;
