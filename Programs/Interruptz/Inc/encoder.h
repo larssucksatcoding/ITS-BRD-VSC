@@ -8,6 +8,7 @@
 #ifndef ENCODER_H
 #define ENCODER_H
 
+#include <stdbool.h>
 
 #define DIR_NONE        0
 #define DIR_FORWARDS    1
@@ -24,13 +25,18 @@
 void init_encoder();
 
 /**
-  * @brief      -
+  * @brief      checks in which direction the encoder is spinning 
   *
-  * @param      -
-  * 
-  * @return     -
+  * @param      a_on (pointer) refers to current status of pin0
+  *
+  * @param      b_on (pointer) refers to current status of pin1
+  *
+  * @param      a_on_previous (pointer) refers to previous status of pin0
+  *
+  * @param      b_on_previous (pointer) refers to previous status of pin1
   */
-void recalculate_encoder();
+void check_direction(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
+
 
 
 // getter

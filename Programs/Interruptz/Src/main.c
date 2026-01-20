@@ -83,7 +83,7 @@ void reset_state() {
 	refresh_input_state(&a_on, &b_on, &a_on_previous, &b_on_previous);
 	update_current();
 
-	recalculate_encoder();
+	check_direction(&a_on, &b_on, &a_on_previous, &b_on_previous);
 
 	set_dir_led_off();
 	set_phase_led();

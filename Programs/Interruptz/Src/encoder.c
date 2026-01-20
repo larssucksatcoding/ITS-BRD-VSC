@@ -8,7 +8,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "encoder.h"
-#include "gpio.h"
 #include "error_handler.h"
 #include "stdbool.h"
 
@@ -29,7 +28,7 @@ int window_phase_count;
 // ===============
 
 /**
-  * @brief      gets the phase, in your phase. based. on hardware input.
+  * @brief      calculates phase we're in, based. on hardware input.
   *
   * @param      a Hardware Input pin0
   * @param      b Hardware Input pin1
@@ -59,9 +58,9 @@ void init_encoder() {
 }
 
 
-void recalculate_encoder() {
-    int last_phase = get_phase(&a_on_previous, &b_on_previous);
-    int curr_phase = get_phase(&a_on, &b_on);
+void check_direction(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous) {
+    int last_phase = get_phase(a_on_previous, b_on_previous);
+    int curr_phase = get_phase(a_on, b_on);
 
     switch (last_phase) {
         case PHASE_A: {
@@ -102,7 +101,6 @@ void recalculate_encoder() {
         }
     }
 }
-
 
 int get_direction() {
     return direction;

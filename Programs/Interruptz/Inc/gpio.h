@@ -19,13 +19,13 @@
 /**
   * @brief      initializes the module for first use, clears registers
   *
-  * @param      a_on will get the new input at pin0
+  * @param      a_on will be resetted (input pin0)
   *
-  * @param      b_on will get the new input at pin1
+  * @param      b_on will be resetted (input pin1) 
   *
-  * @param      a_on_previous will get value that was at a_on before
+  * @param      a_on_previous will be resetted (previous input pin0)
   *
-  * @param      b_on_previous will get value that was at b_on before
+  * @param      b_on_previous will be resetted (previous input pin1)
   */
 void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
 
