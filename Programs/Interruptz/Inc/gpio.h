@@ -11,9 +11,8 @@
 /*  Includes  ----------------------------------------*/
 #include "stdbool.h"
 
- 
-#define RESET_REGISTER          16
-#define SET_REGISTER            0
+#define AUX0_INPUT_MASK    0b00000001      // Maske für den Input 
+#define AUX1_INPUT_MASK    0b00000010
 
 
 /**
@@ -28,6 +27,8 @@
   * @param      b_on_previous will be resetted (previous input pin1)
   */
 void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
+
+void read_gpio_pins(volatile bool *a_on, volatile bool *b_on);
 
 /**
   * @brief      checks whether reset button is pressed
@@ -65,19 +66,6 @@ void set_phase_led(int *phase_count);
   * @brief      turns off the phase leds
   */
 void set_phase_led_off();
-
-/**
-  * @brief      updates current input status
-  *
-  * @param      a_on will get the new input at pin0
-  *
-  * @param      b_on will get the new input at pin1
-  *
-  * @param      a_on_previous will get value that was at a_on before
-  *
-  * @param      b_on_previous will get value that was at b_on before
-  */
-void refresh_input_state(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
 
 #endif
 

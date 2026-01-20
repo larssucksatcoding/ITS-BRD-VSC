@@ -12,11 +12,7 @@
 #include "display.h"
 
 
-void handle_error(int error){
-    if (error == NO_ERROR) {
-        return;
-    }
-
+void show_error() {
     setErrMode();
     print_error("Deine Oma liebt dich nicht");
 

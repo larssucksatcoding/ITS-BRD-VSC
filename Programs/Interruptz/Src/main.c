@@ -32,18 +32,12 @@
 
 /* Variables ------------------------------------------------------------------*/
 
-// Timestamps
-
-          
 volatile uint32_t last_phase_transition_timestamp;
-volatile bool a_on_previous;
-volatile bool b_on_previous;
-volatile bool a_on;
-volatile bool b_on;
+volatile bool aux0_state_previous;
+volatile bool aux1_state_previous;
+volatile bool aux0_state;
+volatile bool aux1_state;
 volatile int total_phase_count;
-
-
-
 
 
 /* Functions ------------------------------------------------------------------*/
@@ -64,7 +58,8 @@ void init_modules() {
 	// init self-written modules
 	init_display();
 
-	init_gpio(&a_on, &b_on, &a_on_previous, &b_on_previous);
+	init_gpio(&aux0_state, &aux1_state, 
+		&aux0_state_previous, &aux1_state_previous);
 	init_time(&last_phase_transition_timestamp);
 	init_encoder();
 
@@ -75,45 +70,47 @@ void init_modules() {
   * @brief      resets state of modules and reads input for first time
   */
 void reset_state() {
-	init_encoder(); // badly named, sets phase_count to 0
+	init_encoder();
 	reset_display();
-
-	refresh_input_state(&a_on, &b_on, &a_on_previous, &b_on_previous);
-	update_current();
-
-	check_direction(&a_on, &b_on, &a_on_previous, &b_on_previous);
 
 	set_status_led_off();
 	set_phase_led_off();
 
 	start_first_timewindow();
+	read_gpio_pins(&aux0_state, &aux1_state);
 }
 
 /**
-  * @brief      checks, if we could save data without being interrupted
-  *
+  * @brief      save data into passed parameters and checks if we were
+  *				interrupted by the isr in the process.
   * @return 	true, if interrrupted, false, if not interrupted
   */
 bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous, 
 	uint32_t *isr_timestamp, int *phase_count) 
 {
-	*a = a_on;
-	*b = b_on;
-	*a_previous = a_on_previous;
-	*b_previous = b_on_previous;
+	// state 1
+	*a = aux0_state;
+	*b = aux1_state;
+	*a_previous = aux0_state_previous;
+	*b_previous = aux1_state_previous;
 	*isr_timestamp = last_phase_transition_timestamp;
 	*phase_count = total_phase_count;
 
-	bool a2 = a_on;
-	bool b2 = b_on;
-	bool a_previous2 = a_on_previous;
-	bool b_previous2 = b_on_previous;
+	// state 2
+	bool a2 = aux0_state;
+	bool b2 = aux1_state;
+	bool a_previous2 = aux0_state_previous;
+	bool b_previous2 = aux1_state_previous;
 	uint32_t isr_timestamp2 = last_phase_transition_timestamp;
 	int phase_count2 = total_phase_count;
 
-	bool no_interruption = ((*a == a2) && (*b == b2) && (*a_previous == a_previous2) &&
-		(*b_previous == b_previous2) && (*isr_timestamp == isr_timestamp2) && 
-		(*phase_count == phase_count2));
+	// true if state1 == state2
+	bool no_interruption = (
+		(*a == a2) && (*b == b2) && 
+		(*a_previous == a_previous2) && (*b_previous == b_previous2) && 
+		(*isr_timestamp == isr_timestamp2) && 
+		(*phase_count == phase_count2)
+	);
 	
 	return !no_interruption;
 }
@@ -124,61 +121,66 @@ int main(void) {
 
 	int encoder_direction = DIR_NONE;
 
-	// read all inputs once right before superloop to avoid
-	// immediate DIR_ERROR after the superloop starts
-	reset_state();
-
 	// while(1) {
 	// 	lcd_shit();
 	// 	HAL_Delay(20);
 	// }
 
-	bool toggle = false;
+	// bool toggle = false;
+
+	// ===============
+	// VARIABLE DEFINITIONS
+	// ===============
+
+	// values filled in by ddr
+	bool aux0_state_copy, aux1_state_copy; 
+	bool aux0_state_previous_copy, aux1_state_previous_copy;
+	uint32_t isr_timestamp, loop_timestamp;
+	int phase_count;
+
+	// values used for check_for_interruption loop
+	bool interrupted = false;
+	int iteration = 0;
+
+	// read all inputs once right before superloop to avoid
+	// immediate DIR_ERROR after the superloop starts
+	reset_state();
 
 	while(1) {
 
-		if (toggle) {
-			GPIOE->BSRR = PIN4 << SET_REGISTER;
-		} else {
-			GPIOE->BSRR = PIN4 << RESET_REGISTER;
-		}
-		toggle = !toggle;
-
+		// if (toggle) {
+		// 	GPIOE->BSRR = PIN4 << SET_REGISTER;
+		// } else {
+		// 	GPIOE->BSRR = PIN4 << RESET_REGISTER;
+		// }
+		// toggle = !toggle;
 
 		// ===============
 		// HARDWARE INPUTS
 		// ===============
 
-		// we should check in beginning of main, whether current timestamp (from main) 
-		// exceeds time window. This would mean, the encoder is no longer spinning
+		loop_timestamp = getTimeStamp();
 
-		bool a;
-		bool b;
-		bool a_previous;
-		bool b_previous;
-		uint32_t isr_timestamp;
-		int phase_count;
+		do {
+			bool interrupted = check_for_interruption(
+				&aux0_state_copy, &aux1_state_copy, 
+				&aux0_state_previous_copy, &aux1_state_previous_copy,
+				&isr_timestamp, &phase_count
+			);
+			iteration++;
+		} while ((iteration < 10) && interrupted);
 
-		bool interrupted = check_for_interruption(&a, &b, &a_previous, &b_previous,
-			&isr_timestamp, &phase_count);
-
-		for(int i = 1; i < 10 && interrupted; i ++) { 
-			// already checked once, now we check up to 9 more times
-			interrupted = check_for_interruption(&a, &b, &a_previous, &b_previous,
-			&isr_timestamp, &phase_count);
-		}
-
+		// we tried saving data 10 times, and we always got interrupted. 
+		// The decoder is spinning to fast. ERRROOORR!!
 		if(interrupted) {
-			// we tried saving data 10 times, and we always got interrupted. The decoder is spinning to fast
-			// ERRROOORR!!
-			
+			show_error();
 		}
 
 		// ============
 		// CALCULATIONS
 		// ============
 
-		if(is_timewindow_over(&isr_timestamp)) {
+		if(is_timewindow_over(loop_timestamp, isr_timestamp)) {
 
 			recalculate_angle(&phase_count);
 			recalculate_angular_momentum(&phase_count, &isr_timestamp);
@@ -188,12 +190,9 @@ int main(void) {
 
 			// new time window
 			start_new_timewindow(&isr_timestamp);
-			
-			// ======
-			// OUTPUT
-			// ======
+			save_last_total_phase_count(&phase_count);
 
-			// ---- BLINKY BLINKY ----
+			// blinky blink
 			set_dir_led();
 			set_phase_led(&phase_count);
 		}
@@ -203,7 +202,6 @@ int main(void) {
 		// displays new values on the display, if any 
 		// new have been set by recalcuate_display()
 		update_display();
-
 	}
 
 }

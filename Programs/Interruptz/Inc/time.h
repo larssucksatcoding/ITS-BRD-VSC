@@ -28,14 +28,6 @@ void update_current();
 
 
 /**
-  * @brief      saves the last fetched timestamp when a there was a phase stamp
-  *
-  * @param      last_phase_transition_timestamp pointer to variable
-  */
-void save_timestamp(volatile uint32_t *last_phase_transition_timestamp);
-
-
-/**
   * @brief      starts a new time window.
   *
   * @param      previous_window_end_timestamp pointer to timestamp where last window ended
@@ -51,22 +43,23 @@ void start_first_timewindow();
 /**
   * @brief      checks whether the time window is over.
   *
-  * @param      timestamp (pointer) timestamp which should get checked, if it 
-  *             exceeded timewindow
+  * @param      loop_timestamp: timestamp taken at the start of superloop
+  *             isr_timestamp:  timestamp taken by the isr when phase
+  *             transition occurs.
   *
   * @return     true if time window exceeded 
   */
-bool is_timewindow_over(uint32_t *timestamp);
+bool is_timewindow_over(uint32_t loop_timestamp, uint32_t isr_timestamp);
 
 
 /**
   * @brief      milliseconds between time window start and timestamp.
   *
-  * @param      timestamp (pointer) timestamp to compare to start
+  * @param      timestamp timestamp to compare to start
   * 
   * @return     diff between timestamp and window start in ms.
   */
-int ms_since_timewindow_start(uint32_t *timestamp);
+int ms_since_timewindow_start(uint32_t timestamp);
 
 
 

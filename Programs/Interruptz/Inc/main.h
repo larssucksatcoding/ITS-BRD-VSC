@@ -14,11 +14,10 @@
 /* Variables ------------------------------------------------------------------*/
 
 volatile extern uint32_t last_phase_transition_timestamp;
-
-volatile extern bool a_on_previous;
-volatile extern bool b_on_previous;
-volatile extern bool a_on;
-volatile extern bool b_on;
+volatile extern bool aux0_state_previous;
+volatile extern bool aux1_state_previous;
+volatile extern bool aux0_state;
+volatile extern bool aux1_state;
 volatile extern int total_phase_count;
 
 /**

@@ -31,8 +31,7 @@ void init_encoder();
   *
   * @param      b_on_previous (pointer) refers to previous status of pin1
   */
-void check_direction(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
-
+static inline int check_direction(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
 
 
 /**

@@ -18,7 +18,7 @@
 #define PHASE_D 3
 
 
-int direction;
+static int direction;
 
 static int last_total_phase_count; //!< total_phase_count after finished time window
 
@@ -27,19 +27,19 @@ static int last_total_phase_count; //!< total_phase_count after finished time wi
 // ===============
 
 /**
-  * @brief      calculates phase we're in, based. on hardware input.
+  * @brief      calculates phase we're in, in your phase. based. on hardware input.
   *
   * @param      a Hardware Input pin0
   * @param      b Hardware Input pin1
   * 
   * @return     returns the current phase the encoder is in.
   */
-int get_phase(volatile bool *a, volatile bool *b) {
+static inline int get_phase(volatile bool *a, volatile bool *b) {
     if (*a) {
-        if (*b)  { return PHASE_C; }
+        if (*b) { return PHASE_C; }
         else    { return PHASE_B; }
     } else {
-        if (*b)  { return PHASE_D; }
+        if (*b) { return PHASE_D; }
         else    { return PHASE_A; }
     }
 }
@@ -54,7 +54,7 @@ void init_encoder() {
 }
 
 
-void check_direction(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous) {
+static inline int check_direction(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous) {
     int last_phase = get_phase(a_on_previous, b_on_previous);
     int curr_phase = get_phase(a_on, b_on);
 
@@ -96,6 +96,8 @@ void check_direction(volatile bool *a_on, volatile bool *b_on, volatile bool *a_
             break;
         }
     }
+
+    return direction;
 }
 
 int get_direction() {

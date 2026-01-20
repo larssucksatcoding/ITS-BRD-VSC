@@ -14,11 +14,11 @@
 
 
 /**
-  * @brief      deals with errors, outputs messages on display, returns to normal mode, when finished
+  * @brief      shows an error, outputs messages on display, returns to normal mode, when finished
   *
-  * @param      integer error - Errorcode, der gecheckt werden soll
+  * @param
   */
-void handle_error(int error);
+void show_error();
 
 #endif
 

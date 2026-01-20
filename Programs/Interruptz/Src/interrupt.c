@@ -1,8 +1,14 @@
 
 #include "interrupt.h"
+#include "encoder.h"
+#include "error_handler.h"
 #include "stm32f429xx.h"
 #include "stm32f4xx.h"
 #include <stdint.h>
+#include "main.h"
+#include "gpio.h"
+#include "time.h"
+#include "timer.h"
 
 
 /*  Private Methods  ----------------------------------------*/
@@ -46,7 +52,7 @@ void enable_interrupt_clocks(uint16_t port) {
 }
 
 /**
-  * @brief      route pins to their respective exti registers.
+  * @brief      route pins to their respective EXTICRs.
   * @param      pin index, port number.
   */
 void route_interrupt_pins(uint16_t pin, uint16_t port) {
@@ -98,22 +104,54 @@ void enable_interrupt(uint16_t pin, uint16_t port, uint32_t priority) {
 
 /*  Interrupt Service Routines  ----------------------------------------*/
 
+static inline void isr_handler(int pin) {
+
+    // -- input --
+
+    last_phase_transition_timestamp = getTimeStamp(); // should be first thing in isr
+    int input = (~GPIOG->IDR);
+
+    // -- calculations --
+
+    switch (pin) {
+      case 0: {
+        aux0_state_previous = aux0_state;
+        aux0_state = (input & AUX0_INPUT_MASK) != 0;
+        break;
+      }
+      case 1: {
+        aux1_state_previous = aux1_state;
+        aux1_state = (input & AUX1_INPUT_MASK) != 0;
+        break;
+      }
+    }
+
+    int dir = check_direction(
+      &aux0_state, &aux1_state, 
+      &aux0_state_previous, &aux1_state_previous
+    );
+    switch (dir) {
+      case DIR_FORWARDS:  { total_phase_count++; break; }
+      case DIR_BACKWARDS: { total_phase_count--; break; }
+      case DIR_ERROR: { show_error(); break; }
+    }
+}
+
+
 /**
-  * @brief      ISR for pin 1. The name is hard-coded through the NVIC and
+  * @brief      ISR for pin 0 (AUX0). The name is hard-coded through the NVIC and
   *             cannot be changed by us.
   */
-void EXTI1_IRQHandler (void) {
-    // TODO: check if this function needs to be announced in the header or not.
-    // Code for if pin 1 changes here
+void EXTI0_IRQHandler (void) {
+  isr_handler(0);
 }
 
 /**
-  * @brief      ISR for pin 2. The name is hard-coded through the NVIC and
+  * @brief      ISR for pin 1 (AUX1). The name is hard-coded through the NVIC and
   *             cannot be changed by us.
   */
-void EXTI2_IRQHandler (void) {
-    // TODO: check if this function needs to be announced in the header or not.
-    // Code for if pin 2 changes here
+void EXTI1_IRQHandler (void) {
+  isr_handler(1);
 }
 
 /*  Public Methods  ----------------------------------------*/

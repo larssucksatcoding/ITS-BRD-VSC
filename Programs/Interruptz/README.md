@@ -1,20 +1,8 @@
 # TODO
 
-- [ ] implement the service routiness (interrupt)
-- [ ] is save_timestamp() still necessary? (time)
-- [ ] how do we deal with timestamps in generel? 
-- [ ] move total_phase_count initialization out of the main module plz (I did this)
-- [ ] in main deal with getting interrupted 10 times when saving data - make error and handle it to error handler abort correctly. 
-- [ ] make main "create" current timestamp at every start, and check, whether current timestamp exceeds window duration 
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+- [ ] how do we deal with timestamps in generel?
 
-
-
-
-
-
-- [x] how do we start new time window in the beginning?
+notes from reading the pdf
+- [ ] the repeated varaible check only needs to check for phase transitions and the timsatmp
+- [ ] enable compiler optimizations.
+- [x] functions that are called by the isr should be static inline. **the compiler optimizations need to be enabled for this.**

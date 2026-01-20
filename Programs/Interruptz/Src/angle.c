@@ -14,12 +14,12 @@
 #define PHASESWITCHES_TURN  1200
 
 
-double angle;
-double angular_momentum;
+static double angle;
+static double angular_momentum;
 
 
 void recalculate_angular_momentum(int *phase_count, uint32_t *timestamp) {
-    double time_s = (double) ms_since_timewindow_start(timestamp) / 1000.0;
+    double time_s = (double) ms_since_timewindow_start(*timestamp) / 1000.0;
     uint32_t window_phase_count = get_window_phase_count(phase_count);
 
     double prozentumdrehung = (double) window_phase_count / (double) PHASESWITCHES_TURN;
