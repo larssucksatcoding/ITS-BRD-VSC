@@ -85,8 +85,8 @@ void reset_state() {
 
 	check_direction(&a_on, &b_on, &a_on_previous, &b_on_previous);
 
-	set_dir_led_off();
-	set_phase_led();
+	set_status_led_off();
+	set_phase_led_off();
 
 	start_first_timewindow();
 }
@@ -174,8 +174,9 @@ int main(void) {
 			// ======
 
 
-		set_dir_led();
-		set_phase_led();
+			set_dir_led();
+			set_phase_led(&phase_count);
+		}
 
 		// --- DISPLAY ---
 
