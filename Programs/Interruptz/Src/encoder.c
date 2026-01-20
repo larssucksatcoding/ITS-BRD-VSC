@@ -20,8 +20,7 @@
 
 int direction;
 
-int total_phase_count;
-int window_phase_count;
+static int last_total_phase_count; //!< total_phase_count after finished time window
 
 // ===============
 // PRIVATE METHODS
@@ -52,9 +51,6 @@ int get_phase(volatile bool *a, volatile bool *b) {
 
 void init_encoder() {
     direction = DIR_NONE;
-
-    total_phase_count = 0;
-    window_phase_count = 0;
 }
 
 
@@ -106,26 +102,10 @@ int get_direction() {
     return direction;
 }
 
-int get_total_phase_count() {
-    return total_phase_count;
+int get_window_phase_count(int *total_phase_count) {
+    return *total_phase_count - last_total_phase_count;
 }
 
-int get_window_phase_count() {
-    return window_phase_count;
-}
-
-void increment_phase_count() {
-    if (direction == DIR_FORWARDS) {
-        window_phase_count++;
-        total_phase_count++;
-    }
-
-    if (direction == DIR_BACKWARDS) {
-        window_phase_count--;
-        total_phase_count--;
-    }
-}
-
-void reset_window_phase_count() {
-    window_phase_count = 0;
+void save_last_total_phase_count(int *phase_count) {
+    last_total_phase_count = *phase_count;
 }
