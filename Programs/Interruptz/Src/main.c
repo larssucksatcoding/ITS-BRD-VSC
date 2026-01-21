@@ -67,6 +67,7 @@ void init_modules() {
   * @brief      resets state of modules and reads input for first time
   */
 void reset_state() {
+	GUI_clear(GBLUE);
 	reset_display();
 
 	set_status_led_off();
