@@ -13,13 +13,13 @@
 
 
 void show_error() {
-    setErrMode();
+    // setErrMode();
     print_error("Deine Oma liebt dich nicht");
 
     while(!is_reset_button_pressed()) {
         // just wait :3
     }
 
-    setNormalMode();
+    // setNormalMode();
     reset_state();
 }
