@@ -10,16 +10,23 @@
 #include "gpio.h"
 #include "main.h"
 #include "display.h"
+#include "interrupt.h"
 
 
 void show_error() {
-    // setErrMode();
+	mask_interrupt_pin(0);
+	mask_interrupt_pin(1);
+
+    setErrMode();
     print_error("Deine Oma liebt dich nicht");
 
     while(!is_reset_button_pressed()) {
         // just wait :3
     }
 
-    // setNormalMode();
+    setNormalMode();
     reset_state();
+
+	unmask_interrupt_pin(0);
+	unmask_interrupt_pin(1);
 }

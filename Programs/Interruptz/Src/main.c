@@ -9,6 +9,7 @@
 /* Includes ------------------------------------------------------------------*/
 
 #include "display.h"
+#include "interrupt.h"
 #include "stm32f4xx_hal.h"
 #include "init.h"
 #include "LCD_GUI.h"
@@ -67,7 +68,9 @@ void init_modules() {
   * @brief      resets state of modules and reads input for first time
   */
 void reset_state() {
-	GUI_clear(GBLUE);
+	mask_interrupt_pin(0);
+	mask_interrupt_pin(1);
+
 	reset_display();
 
 	set_status_led_off();
@@ -78,6 +81,9 @@ void reset_state() {
 
 	total_phase_count = 0;
 	direction = DIR_NONE;
+
+	unmask_interrupt_pin(0);
+	unmask_interrupt_pin(1);
 }
 
 /**
@@ -165,6 +171,7 @@ int main(void) {
 
 		loop_timestamp = getTimeStamp();
 
+		iteration = 0;
 		do {
 			bool interrupted = check_for_interruption(
 				&aux0_state_copy, &aux1_state_copy, 
@@ -193,7 +200,19 @@ int main(void) {
 			check_display_data();
 
 			// new time window
-			start_new_timewindow(&isr_timestamp);
+			// edge case (maybe?):
+			// if first time window passes before encoder spins, the
+			// start_new_timewindow(&isr_timestamp); method will use
+			// isr_timestamp, which is at that point unitialized as
+			// the new start for the time window. this will mess up
+			// the next time window calculation, which could result
+			// in a time window of up to 40s, halting the program.
+			if (phase_count == 0) {
+				start_new_timewindow(&loop_timestamp);
+			} else {
+				start_new_timewindow(&isr_timestamp);
+			}
+			
 			save_last_total_phase_count(&phase_count);
 
 			// blinky blink

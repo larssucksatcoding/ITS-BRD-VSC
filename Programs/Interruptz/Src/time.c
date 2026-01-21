@@ -24,7 +24,7 @@ int ms_between_timestamps(uint32_t start, uint32_t end) {
     uint32_t timestamp_diff = 0;
 
     // check for overflow since last time window
-    if (start >= end) {
+    if (start > end) {
         // start was taken before and end after overflow, so we get difference
         // by getting "distance" of start timestamp to max int + end timestamp
         timestamp_diff = (UINT32_MAX - start) + end;
