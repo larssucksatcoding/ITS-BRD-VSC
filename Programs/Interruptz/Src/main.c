@@ -38,6 +38,7 @@ volatile bool aux1_state_previous;
 volatile bool aux0_state;
 volatile bool aux1_state;
 volatile int total_phase_count;
+volatile int direction;
 
 
 /* Functions ------------------------------------------------------------------*/
@@ -61,7 +62,6 @@ void init_modules() {
 	init_gpio(&aux0_state, &aux1_state, 
 		&aux0_state_previous, &aux1_state_previous);
 	init_time(&last_phase_transition_timestamp);
-	init_encoder();
 
 	total_phase_count = 0;
 }
@@ -70,7 +70,6 @@ void init_modules() {
   * @brief      resets state of modules and reads input for first time
   */
 void reset_state() {
-	init_encoder();
 	reset_display();
 
 	set_status_led_off();
@@ -78,6 +77,8 @@ void reset_state() {
 
 	start_first_timewindow();
 	read_gpio_pins(&aux0_state, &aux1_state);
+
+	direction = DIR_NONE;
 }
 
 /**
@@ -86,7 +87,7 @@ void reset_state() {
   * @return 	true, if interrrupted, false, if not interrupted
   */
 bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous, 
-	uint32_t *isr_timestamp, int *phase_count) 
+	uint32_t *isr_timestamp, int *phase_count, int *dir) 
 {
 	// state 1
 	*a = aux0_state;
@@ -95,6 +96,7 @@ bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous
 	*b_previous = aux1_state_previous;
 	*isr_timestamp = last_phase_transition_timestamp;
 	*phase_count = total_phase_count;
+	*dir = direction;
 
 	// state 2
 	bool a2 = aux0_state;
@@ -103,13 +105,15 @@ bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous
 	bool b_previous2 = aux1_state_previous;
 	uint32_t isr_timestamp2 = last_phase_transition_timestamp;
 	int phase_count2 = total_phase_count;
+	int dir2 = direction;
 
 	// true if state1 == state2
 	bool no_interruption = (
 		(*a == a2) && (*b == b2) && 
 		(*a_previous == a_previous2) && (*b_previous == b_previous2) && 
 		(*isr_timestamp == isr_timestamp2) && 
-		(*phase_count == phase_count2)
+		(*phase_count == phase_count2) &&
+		(*dir == dir2)
 	);
 	
 	return !no_interruption;
@@ -137,6 +141,7 @@ int main(void) {
 	bool aux0_state_previous_copy, aux1_state_previous_copy;
 	uint32_t isr_timestamp, loop_timestamp;
 	int phase_count;
+	int direction_copy;
 
 	// values used for check_for_interruption loop
 	bool interrupted = false;
@@ -165,7 +170,7 @@ int main(void) {
 			bool interrupted = check_for_interruption(
 				&aux0_state_copy, &aux1_state_copy, 
 				&aux0_state_previous_copy, &aux1_state_previous_copy,
-				&isr_timestamp, &phase_count
+				&isr_timestamp, &phase_count, &direction_copy
 			);
 			iteration++;
 		} while ((iteration < 10) && interrupted);
@@ -193,7 +198,7 @@ int main(void) {
 			save_last_total_phase_count(&phase_count);
 
 			// blinky blink
-			set_dir_led();
+			set_dir_led(&direction_copy);
 			set_phase_led(&phase_count);
 		}
 

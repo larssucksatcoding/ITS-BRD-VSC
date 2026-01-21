@@ -55,10 +55,8 @@ bool is_reset_button_pressed(){
     return (input & ERROR_BUTTON_MASK) != 0;
 }
 
-void set_dir_led() {
-    int dir = get_direction();
-
-    switch (dir) {
+void set_dir_led(int *dir) {
+    switch (*dir) {
         case DIR_FORWARDS: {
             if(!forwards_on) {
                 STATUS_LEDS->BSRR = FORWARDS_LED_MASK << SET_REGISTER;
@@ -93,6 +91,12 @@ void set_err_led_off() {
 void set_phase_led(int *phase_count) {
     int current_phase_count = *phase_count & PHASE_COUNT_LED_MASK;
     PHASE_COUNT_LEDS->BSRR = current_phase_count << SET_REGISTER;
+}
+
+void set_phase_led_off() {
+    // copied from commit "hange led control"
+    PHASE_COUNT_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
+    STATUS_LEDS->BSRR = RESET_MASK << RESET_REGISTER; // is this supposed to be here?
 }
 
 

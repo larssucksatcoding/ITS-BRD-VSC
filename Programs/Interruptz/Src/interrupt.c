@@ -122,6 +122,68 @@ void set_err_led_off() {
 }
 */
 
+/**
+  * @brief      calculates phase we're in, in your phase. based. on hardware input.
+  *
+  * @param      a Hardware Input pin0
+  * @param      b Hardware Input pin1
+  * 
+  * @return     returns the current phase the encoder is in.
+  */
+static inline int get_phase(volatile bool *a, volatile bool *b) {
+    if (*a) {
+        if (*b) { return PHASE_C; }
+        else    { return PHASE_B; }
+    } else {
+        if (*b) { return PHASE_D; }
+        else    { return PHASE_A; }
+    }
+}
+
+static inline void check_direction(volatile int *direction, volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous) {
+    int last_phase = get_phase(a_on_previous, b_on_previous);
+    int curr_phase = get_phase(a_on, b_on);
+
+    switch (last_phase) {
+        case PHASE_A: {
+            switch (curr_phase) {
+                case PHASE_A: { *direction = DIR_NONE; break; }
+                case PHASE_B: { *direction = DIR_FORWARDS; break; }
+                case PHASE_C: { *direction = DIR_ERROR; break; }
+                case PHASE_D: { *direction = DIR_BACKWARDS; break; }
+            }
+            break;
+        }
+        case PHASE_B: {
+            switch (curr_phase) {
+                case PHASE_A: { *direction = DIR_BACKWARDS; break; }
+                case PHASE_B: { *direction = DIR_NONE; break; }
+                case PHASE_C: { *direction = DIR_FORWARDS; break; }
+                case PHASE_D: { *direction = DIR_ERROR; break; }
+            }
+            break;
+        }
+        case PHASE_C: {
+            switch (curr_phase) {
+                case PHASE_A: { *direction = DIR_ERROR; break; }
+                case PHASE_B: { *direction = DIR_BACKWARDS; break; }
+                case PHASE_C: { *direction = DIR_NONE; break; }
+                case PHASE_D: { *direction = DIR_FORWARDS; break; }
+            }
+            break;
+        }
+        case PHASE_D: {
+            switch (curr_phase) {
+                case PHASE_A: { *direction = DIR_FORWARDS; break; }
+                case PHASE_B: { *direction = DIR_ERROR; break; }
+                case PHASE_C: { *direction = DIR_BACKWARDS; break; }
+                case PHASE_D: { *direction = DIR_NONE; break; }
+            }
+            break;
+        }
+    }
+}
+
 static inline void isr_handler(int pin) {
 
     #ifdef MEASURE_INTERRUPT_TIME
@@ -148,11 +210,12 @@ static inline void isr_handler(int pin) {
       }
     }
 
-    int dir = check_direction(
+    check_direction(
+      &direction,
       &aux0_state, &aux1_state, 
       &aux0_state_previous, &aux1_state_previous
     );
-    switch (dir) {
+    switch (direction) {
       case DIR_FORWARDS:  { total_phase_count++; break; }
       case DIR_BACKWARDS: { total_phase_count--; break; }
       case DIR_ERROR: { show_error(); break; }

@@ -48,7 +48,7 @@ bool is_reset_button_pressed();
   * @brief      sets led to represent last measured direction of rotation:
   *             d23 on: clockwise, d22 on: counter clockwise
   */
-void set_dir_led();
+void set_dir_led(int *dir);
 
 /**
   * @brief      turn dir led off and err led off

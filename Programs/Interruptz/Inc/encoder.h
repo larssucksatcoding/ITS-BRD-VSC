@@ -10,34 +10,15 @@
 
 #include <stdbool.h>
 
+#define PHASE_A 0
+#define PHASE_B 1
+#define PHASE_C 2
+#define PHASE_D 3
+
 #define DIR_NONE        0
 #define DIR_FORWARDS    1
 #define DIR_BACKWARDS   2
 
-
-/**
-  * @brief      initalizes the encoder module: resets direction and total phase count
-  */
-void init_encoder();
-
-/**
-  * @brief      checks in which direction the encoder is spinning 
-  *
-  * @param      a_on (pointer) refers to current status of pin0
-  *
-  * @param      b_on (pointer) refers to current status of pin1
-  *
-  * @param      a_on_previous (pointer) refers to previous status of pin0
-  *
-  * @param      b_on_previous (pointer) refers to previous status of pin1
-  */
-static inline int check_direction(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
-
-
-/**
-  * @brief      returns spinning direction of encoder    
-  */
-int get_direction();
 
 /**
   * @brief      calculates diff between total_phase_count and last_total_phase_count
