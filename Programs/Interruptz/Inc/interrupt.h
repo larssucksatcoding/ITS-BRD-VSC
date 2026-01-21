@@ -37,6 +37,18 @@
 void set_up_interrupt(uint16_t pin, uint16_t port, uint32_t priority, 
     bool rising_trigger, bool falling_trigger);
 
+    /**
+  * @brief      mask a given pin for interrupt use.
+  * @param      pin index.
+  */
+void mask_interrupt_pin(uint16_t pin);
+
+/**
+  * @brief      unmask a given pin for interrupt use.
+  * @param      pin index.
+  */
+void unmask_interrupt_pin(uint16_t pin);
+
 #endif
 
 /**

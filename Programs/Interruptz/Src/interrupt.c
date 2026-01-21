@@ -12,7 +12,7 @@
 
 // uncommint this define for oscilloscope measurement
 // connect the oscilloscope to the INTERRUPT_MEASURE_LED below
-// #define MEASURE_INTERRUPT_TIME
+#define MEASURE_INTERRUPT_TIME
 #define INTERRUPT_MEASURE_LED 0b00010000
 
 /*  Private Methods  ----------------------------------------*/
@@ -73,14 +73,6 @@ void route_interrupt_pins(uint16_t pin, uint16_t port) {
 void enable_interrupt_trigger(uint16_t pin, bool rising, bool falling) {
     if (rising)  { EXTI->RTSR |= (1 << pin); }
     if (falling) { EXTI->FTSR |= (1 << pin); }
-}
-
-/**
-  * @brief      unmask a given pin for interrupt use.
-  * @param      pin index.
-  */
-void unmask_interrupt_pin(uint16_t pin) {
-    EXTI->IMR  |= (1 << pin);
 }
 
 /**
@@ -259,4 +251,12 @@ void set_up_interrupt(uint16_t pin, uint16_t port, uint32_t priority,
     enable_interrupt_trigger(pin, rising_trigger, falling_trigger);
     unmask_interrupt_pin(pin);
     enable_interrupt(pin, port, priority);
+}
+
+void unmask_interrupt_pin(uint16_t pin) {
+    EXTI->IMR  |= (1 << pin);
+}
+
+void mask_interrupt_pin(uint16_t pin) {
+    EXTI->IMR  &= ~(1 << pin);
 }
