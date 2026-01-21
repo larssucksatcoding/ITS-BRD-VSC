@@ -61,8 +61,8 @@ void enable_interrupt_clocks(uint16_t port) {
   */
 void route_interrupt_pins(uint16_t pin, uint16_t port) {
     uint32_t index = get_syscfg_exticr_index(pin);
-	  SYSCFG->EXTICR[index] &= 0x00 << pin;	// remove old selection
-	  SYSCFG->EXTICR[index] |= port << pin; 	// select port
+	  SYSCFG->EXTICR[index] &= ~(0x0f << (pin*4));	// remove old selection
+	  SYSCFG->EXTICR[index] |= (port << (pin*4)); 	// select port
 }
 
 /**
