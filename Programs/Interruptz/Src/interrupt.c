@@ -214,7 +214,6 @@ static inline void isr_handler(uint16_t pin) {
     #ifdef MEASURE_INTERRUPT_TIME
     STATUS_LEDS->BSRR = INTERRUPT_MEASURE_LED << RESET_REGISTER;
     #endif
-
 }
 
 

@@ -77,12 +77,12 @@ void reset_state() {
 	set_status_led_off();
 	set_phase_led_off();
 
-	start_first_timewindow();
-	read_gpio_pins(&aux0_state, &aux1_state);
-
 	total_phase_count = 0;
 	direction = DIR_NONE;
 	error = NO_ERROR;
+
+	start_first_timewindow();
+	read_gpio_pins(&aux0_state, &aux1_state);
 
 	unmask_interrupt_pin(0);
 	unmask_interrupt_pin(1);
@@ -222,13 +222,19 @@ int main(void) {
 			}
 			
 			save_last_total_phase_count(&phase_count);
-
-			// blinky blink
-			set_dir_led(&direction_copy);
-			set_phase_led(&phase_count);
 		}
 
 		// --- DISPLAY ---
+
+		// blinky blink
+		// mask_interrupt_pin(0);
+		// mask_interrupt_pin(1);
+
+		set_dir_led(&direction_copy);
+		set_phase_led(&phase_count);
+
+		// unmask_interrupt_pin(0);
+		// unmask_interrupt_pin(1);
 
 		// displays new values on the display, if any 
 		// new have been set by recalcuate_display()

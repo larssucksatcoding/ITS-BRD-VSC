@@ -59,6 +59,7 @@ void set_dir_led(int *dir) {
     switch (*dir) {
         case DIR_FORWARDS: {
             if(!forwards_on) {
+                STATUS_LEDS->BSRR = BACKWARDS_LED_MASK << RESET_REGISTER;
                 STATUS_LEDS->BSRR = FORWARDS_LED_MASK << SET_REGISTER;
                 forwards_on = true;
                 backwards_on = false;
@@ -67,6 +68,7 @@ void set_dir_led(int *dir) {
         }
         case DIR_BACKWARDS: {
             if(!backwards_on) {
+                STATUS_LEDS->BSRR = FORWARDS_LED_MASK << RESET_REGISTER;
                 STATUS_LEDS->BSRR = BACKWARDS_LED_MASK << SET_REGISTER;
                 backwards_on = true;
                 forwards_on = false;
@@ -90,6 +92,7 @@ void set_err_led_off() {
 
 void set_phase_led(int *phase_count) {
     int current_phase_count = *phase_count & PHASE_COUNT_LED_MASK;
+    PHASE_COUNT_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
     PHASE_COUNT_LEDS->BSRR = current_phase_count << SET_REGISTER;
 }
 

@@ -14,6 +14,7 @@
 #include "fonts.h"
 #include <stdio.h>
 #include "angle.h"
+#include "interrupt.h"
 
 
 /*  Variables  -------------------------*/
@@ -49,20 +50,69 @@ int index = 0;
 
 /*  Functions  -------------------------*/ 
 
+void double_to_str(double d, char* str) {
+
+    // ignore negative numbers for now
+    if (d < 0) {
+        d = -d;
+    }
+
+    int integer_part = (int) d;
+    
+    // loop for extracting integer part
+    // 1234 -> 4 (index 3 i 0)
+    // 123  -> 3 (i2)
+    // 12   -> 2 (i1)
+    // 1    -> 1 (index 0 i 3)
+    // for (int i = 0; i < INTEGER_PART_LEN; i++) {
+    //     int str_index = INTEGER_PART_LEN - (i + 1);
+
+    //     int remainder = integer_part % 10;
+    //     str[str_index] = (char) remainder;
+
+    //     integer_part /= 10;
+    // }
+
+    str[3] = (char) '0' + ((int)(d) % 10);
+    str[2] = (char) '0' + ((int)(d / 10) % 10);
+    str[1] = (char) '0' + ((int)(d / 100) % 10);
+    str[0] = (char) '0' + ((int)(d / 1000) % 10);
+
+    str[INTEGER_PART_LEN] = '.';
+
+    // loop for decimal place
+    str[INTEGER_PART_LEN + 1] = (char) '0' + ((int)(d *  10) % 10);
+    str[INTEGER_PART_LEN + 2] = (char) '0' + ((int)(d * 100) % 10);
+    str[INTEGER_PART_LEN + 3] = '\0';
+}
+
+
 void display_index_angle(int index) {
     Coordinate current_angle_c = angle_c;
     current_angle_c.x += index * CHAR_X_LENGTH;
 
+    // mask_interrupt_pin(0);
+    // mask_interrupt_pin(1);
+
     GUI_disChar(current_angle_c, angle_new[index], 
         &Font20, default_color, default_font_color);
+
+    // unmask_interrupt_pin(0);
+    // unmask_interrupt_pin(1);
 }
 
 void display_index_angular_momentum(int index) {
     Coordinate current_angular_momentum_c = angular_momentum_c;
     current_angular_momentum_c.x += index * CHAR_X_LENGTH;
 
+    // mask_interrupt_pin(0);
+    // mask_interrupt_pin(1);
+
     GUI_disChar(current_angular_momentum_c, angular_momentum_new[index], 
         &Font20, default_color, default_font_color);
+
+    // unmask_interrupt_pin(0);
+    // unmask_interrupt_pin(1);
 }
 
 void update_display() {
@@ -103,8 +153,17 @@ void check_display_data() {
     double angle = get_angle();
     double angular_momentum = get_angular_momentum();
 
-    sprintf(angle_new, FORMAT_STR, angle);
-    sprintf(angular_momentum_new, FORMAT_STR, angular_momentum);
+    // mask_interrupt_pin(0);
+    // mask_interrupt_pin(1);
+
+    // snprintf(angle_new, CHAR_LEN, FORMAT_STR, angle);
+    // snprintf(angular_momentum_new, CHAR_LEN, FORMAT_STR, angular_momentum);
+
+    double_to_str(angle, angle_new);
+    double_to_str(angular_momentum, angular_momentum_new);
+
+    // unmask_interrupt_pin(0);
+    // unmask_interrupt_pin(1);
 
     display_is_updating = true;
     index = 0;
@@ -129,11 +188,18 @@ void reset_display() {
     char angle_display[CHAR_LEN];
     char angular_momentum_display[CHAR_LEN];
 
-    sprintf(angle_display, FORMAT_STR, 0.0);
-    sprintf(angular_momentum_display, FORMAT_STR, 0.0);
+    // snprintf(angle_display, CHAR_LEN, FORMAT_STR, 0.0);
+    // snprintf(angular_momentum_display, CHAR_LEN, FORMAT_STR, 0.0);
 
-    sprintf(angle_new, FORMAT_STR, 0.0);
-    sprintf(angular_momentum_new, FORMAT_STR, 0.0);
+    double_to_str(0.0, angle_display);
+    double_to_str(0.0, angular_momentum_display);
+
+    // snprintf(angle_new, CHAR_LEN, FORMAT_STR, 0.0);
+    // snprintf(angular_momentum_new, CHAR_LEN, FORMAT_STR, 0.0);
+
+    double_to_str(0.0, angle_new);
+    double_to_str(0.0, angular_momentum_new);
+
 
     for (int i = 0; i < CHAR_LEN - 1; i++) {
         display_index_angle(i);
