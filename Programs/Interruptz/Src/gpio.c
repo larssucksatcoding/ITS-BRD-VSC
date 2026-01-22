@@ -44,14 +44,14 @@ void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_pre
 }
 
 void read_gpio_pins(volatile bool *a_on, volatile bool *b_on) {
-    uint32_t input = (~GPIOG->IDR);
+    uint32_t input = (~GPIOG->IDR) & 0x3;
     
     *a_on = (input & AUX0_INPUT_MASK) != 0;
     *b_on = (input & AUX1_INPUT_MASK) != 0;
 }
 
 bool is_reset_button_pressed(){
-    uint32_t input = (~GPIOG->IDR);
+    int input = (~INPUT->IDR) & 0xFF;
     return (input & ERROR_BUTTON_MASK) != 0;
 }
 

@@ -185,7 +185,7 @@ static inline void isr_handler(uint16_t pin) {
     // -- input --
 
     last_phase_transition_timestamp = getTimeStamp(); // should be first thing in isr
-    uint32_t input = (~GPIOG->IDR);
+    uint32_t input = (~GPIOG->IDR) & 0x3;
 
     // -- clear interrupt flag --
     // the source of all my agony ;-;
