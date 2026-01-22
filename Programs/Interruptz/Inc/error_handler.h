@@ -18,7 +18,7 @@
   *
   * @param
   */
-void show_error();
+void show_error(char* str);
 
 #endif
 

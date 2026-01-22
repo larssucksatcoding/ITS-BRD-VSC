@@ -23,10 +23,10 @@
 // 1234,56 = "1234,56\0". 2 extra length needed for "," and "\0"
 // ^^^^      <- integer part
 //      ^^   <- decimal part
-#define INTEGER_PART_LEN 4
+#define INTEGER_PART_LEN 8
 #define DECIMAL_PART_LEN 2
 #define CHAR_LEN (INTEGER_PART_LEN + DECIMAL_PART_LEN + 2)
-#define FORMAT_STR "%07.2f"
+#define FORMAT_STR "%011.2f"
 
 #define CHAR_X_LENGTH 15
 
@@ -188,17 +188,17 @@ void reset_display() {
     char angle_display[CHAR_LEN];
     char angular_momentum_display[CHAR_LEN];
 
-    // snprintf(angle_display, CHAR_LEN, FORMAT_STR, 0.0);
-    // snprintf(angular_momentum_display, CHAR_LEN, FORMAT_STR, 0.0);
+    snprintf(angle_display, CHAR_LEN, FORMAT_STR, 0.0);
+    snprintf(angular_momentum_display, CHAR_LEN, FORMAT_STR, 0.0);
 
-    double_to_str(0.0, angle_display);
-    double_to_str(0.0, angular_momentum_display);
+    // double_to_str(0.0, angle_display);
+    // double_to_str(0.0, angular_momentum_display);
 
-    // snprintf(angle_new, CHAR_LEN, FORMAT_STR, 0.0);
-    // snprintf(angular_momentum_new, CHAR_LEN, FORMAT_STR, 0.0);
+    snprintf(angle_new, CHAR_LEN, FORMAT_STR, 0.0);
+    snprintf(angular_momentum_new, CHAR_LEN, FORMAT_STR, 0.0);
 
-    double_to_str(0.0, angle_new);
-    double_to_str(0.0, angular_momentum_new);
+    // double_to_str(0.0, angle_new);
+    // double_to_str(0.0, angular_momentum_new);
 
 
     for (int i = 0; i < CHAR_LEN - 1; i++) {

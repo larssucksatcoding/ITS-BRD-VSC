@@ -17,11 +17,10 @@
 
 uint32_t biggest_diff = 0;
 
-
-static volatile bool aux0_state_previous;
-static volatile bool aux1_state_previous;
-static volatile bool aux0_state;
-static volatile bool aux1_state;
+static bool aux0_state_previous;
+static bool aux1_state_previous;
+static bool aux0_state;
+static bool aux1_state;
 
 /*  Private Methods  ----------------------------------------*/
 
@@ -130,19 +129,19 @@ void set_err_led_off() {
   * 
   * @return     returns the current phase the encoder is in.
   */
-static inline int get_phase(volatile bool *a, volatile bool *b) {
-    if (*a) {
-        if (*b) { return PHASE_C; }
+static inline int get_phase(volatile bool a, volatile bool b) {
+    if (a) {
+        if (b)  { return PHASE_C; }
         else    { return PHASE_B; }
     } else {
-        if (*b) { return PHASE_D; }
+        if (b)  { return PHASE_D; }
         else    { return PHASE_A; }
     }
 }
 
-static inline void check_direction(volatile int *direction, volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous) {
-    int last_phase = get_phase(a_on_previous, b_on_previous);
-    int curr_phase = get_phase(a_on, b_on);
+static inline void check_direction(volatile int *direction) {
+    int last_phase = get_phase(aux0_state_previous, aux1_state_previous);
+    int curr_phase = get_phase(aux0_state, aux1_state);
 
     switch (last_phase) {
         case PHASE_A: {
@@ -209,11 +208,7 @@ static inline void isr_handler(uint16_t pin) {
     aux1_state_previous = aux1_state;
     aux1_state = (input & AUX1_INPUT_MASK) != 0;
 
-    check_direction(
-      &direction,
-      &aux0_state, &aux1_state, 
-      &aux0_state_previous, &aux1_state_previous
-    );
+    check_direction(&direction);
     switch (direction) {
       case DIR_FORWARDS:  { total_phase_count++; break; }
       case DIR_BACKWARDS: { total_phase_count--; break; }

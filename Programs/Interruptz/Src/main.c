@@ -65,7 +65,7 @@ void init_modules() {
 /**
   * @brief      resets state of modules and reads input for first time
   */
-void reset_state() {
+static inline void reset_state() {
 	mask_interrupt_pin(0);
 	mask_interrupt_pin(1);
 
@@ -90,7 +90,7 @@ void reset_state() {
   *				interrupted by the isr in the process.
   * @return 	true, if interrrupted, false, if not interrupted
   */
-bool check_for_interruption(// bool *a, bool *b, bool *a_previous, bool *b_previous, 
+static inline bool check_for_interruption(// bool *a, bool *b, bool *a_previous, bool *b_previous, 
 	uint32_t *isr_timestamp, int *phase_count, int *dir, int *err) 
 {
 	// state 1
@@ -171,10 +171,17 @@ int main(void) {
 			iteration++;
 		} while ((iteration < 10) && interrupted);
 
-		// we tried saving data 10 times, and we always got interrupted. 
-		// The decoder is spinning to fast. ERRROOORR!!
-		if(interrupted || (error_copy == DIR_ERROR)) {
-			show_error();
+		// interrupted = false;
+
+		if (interrupted) {
+			show_error("deine main liebt dich nicht D:");
+			reset_state();
+			continue;
+		}
+
+		if (error_copy == DIR_ERROR) {
+			show_error("deine ISR liebt dich nicht :c");
+			reset_state();
 			continue;
 		}
 
@@ -198,7 +205,7 @@ int main(void) {
 			// the new start for the time window. this will mess up
 			// the next time window calculation, which could result
 			// in a time window of up to 40s, halting the program.
-			if (phase_count == 0) {
+			if (get_window_phase_count(&phase_count) == 0) {
 				start_new_timewindow(&loop_timestamp);
 			} else {
 				start_new_timewindow(&isr_timestamp);
