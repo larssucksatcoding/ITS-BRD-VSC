@@ -171,8 +171,6 @@ int main(void) {
 			iteration++;
 		} while ((iteration < 10) && interrupted);
 
-		// interrupted = false;
-
 		if (interrupted) {
 			show_error("deine main liebt dich nicht D:");
 			reset_state();

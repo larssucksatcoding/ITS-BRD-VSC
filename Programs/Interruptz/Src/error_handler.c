@@ -15,6 +15,8 @@
 
 void show_error(char* str) {
 
+    set_err_led_on();
+
 	mask_interrupt_pin(0);
 	mask_interrupt_pin(1);
 
@@ -23,6 +25,7 @@ void show_error(char* str) {
 
 	unmask_interrupt_pin(0);
 	unmask_interrupt_pin(1);
+
 
     while(!is_reset_button_pressed()) {
         // just wait :3
@@ -35,4 +38,6 @@ void show_error(char* str) {
 
 	unmask_interrupt_pin(0);
 	unmask_interrupt_pin(1);
+
+    set_err_led_off();
 }

@@ -59,6 +59,7 @@ void set_status_led_off();
   * @return     void
   */
 void set_err_led_on();
+void set_err_led_off();
 
 /**
   * @brief      reveals total amount of phase shifts (subtract counterclockwise?)
