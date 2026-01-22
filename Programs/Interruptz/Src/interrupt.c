@@ -258,6 +258,9 @@ void set_up_interrupt(uint16_t pin, uint16_t port, uint32_t priority,
     if (!rising_trigger && !falling_trigger)    { return; } // no trigger selected
     if (priority > 15)                          { return; } // priority exceeded
 
+    // set pins as input, hardcoded for now
+    GPIOG->MODER &= ~(0x00 << (2 * pin));
+
     enable_interrupt_clocks(port);
     route_interrupt_pins(pin, port);
     enable_interrupt_trigger(pin, rising_trigger, falling_trigger);
