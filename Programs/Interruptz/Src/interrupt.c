@@ -259,7 +259,7 @@ void set_up_interrupt(uint16_t pin, uint16_t port, uint32_t priority,
     if (priority > 15)                          { return; } // priority exceeded
 
     // set pins as input, hardcoded for now
-    GPIOG->MODER &= ~(0x00 << (2 * pin));
+    GPIOG->MODER &= ~(0x03 << (2 * pin));
 
     enable_interrupt_clocks(port);
     route_interrupt_pins(pin, port);
