@@ -18,6 +18,7 @@
 #define PHASE_COUNT_LED_MASK    0x00FF          // Maske für die Anzeige des Phasen Counts
 #define RESET_MASK              0xFF            // Maske um 16-Bit-Register auf 0 zu setzen.
 
+
 /* Input  -------------------------------------------*/
 
 #define ERROR_BUTTON_MASK       (1<<6)     
@@ -32,22 +33,6 @@ static bool backwards_on;
 
 void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous){
     set_phase_led_off();
-
-    *a_on_previous = false;
-    *b_on_previous = false;
-    *a_on = false;
-    *b_on = false;
-
-    // configure interrupts
-    set_up_interrupt(0, PORT_G, 0, true, true); // AUX0
-    set_up_interrupt(1, PORT_G, 0, true, true); // AUX1
-}
-
-void read_gpio_pins(volatile bool *a_on, volatile bool *b_on) {
-    uint32_t input = (~GPIOG->IDR) & 0x3;
-    
-    *a_on = (input & AUX0_INPUT_MASK) != 0;
-    *b_on = (input & AUX1_INPUT_MASK) != 0;
 }
 
 bool is_reset_button_pressed(){

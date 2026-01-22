@@ -35,8 +35,6 @@
   */
 void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
 
-void read_gpio_pins(volatile bool *a_on, volatile bool *b_on);
-
 /**
   * @brief      checks whether reset button is pressed
   * 

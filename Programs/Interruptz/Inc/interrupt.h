@@ -50,6 +50,11 @@ void mask_interrupt_pin(uint16_t pin);
   */
 void unmask_interrupt_pin(uint16_t pin);
 
+
+void read_gpio_pins();
+
+void init_interrupt();
+
 #endif
 
 /**

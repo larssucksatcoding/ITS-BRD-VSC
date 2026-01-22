@@ -12,10 +12,16 @@
 
 // uncommint this define for oscilloscope measurement
 // connect the oscilloscope to the INTERRUPT_MEASURE_LED below
-// #define MEASURE_INTERRUPT_TIME
+#define MEASURE_INTERRUPT_TIME
 #define INTERRUPT_MEASURE_LED 0b00010000
 
 uint32_t biggest_diff = 0;
+
+
+static volatile bool aux0_state_previous;
+static volatile bool aux1_state_previous;
+static volatile bool aux0_state;
+static volatile bool aux1_state;
 
 /*  Private Methods  ----------------------------------------*/
 
@@ -180,6 +186,12 @@ static inline void check_direction(volatile int *direction, volatile bool *a_on,
 
 static inline void isr_handler(uint16_t pin) {
 
+    // -- clear interrupt flag --
+    // the source of all my agony ;-;
+
+    EXTI->PR = (1 << pin);
+
+
     #ifdef MEASURE_INTERRUPT_TIME
     STATUS_LEDS->BSRR = INTERRUPT_MEASURE_LED << SET_REGISTER;
     #endif
@@ -188,11 +200,6 @@ static inline void isr_handler(uint16_t pin) {
 
     last_phase_transition_timestamp = getTimeStamp(); // should be first thing in isr
     uint32_t input = (~GPIOG->IDR) & 0x3;
-
-    // -- clear interrupt flag --
-    // the source of all my agony ;-;
-
-    EXTI->PR = (1 << pin);
 
     // -- output --
 
@@ -265,4 +272,22 @@ void unmask_interrupt_pin(uint16_t pin) {
 
 void mask_interrupt_pin(uint16_t pin) {
     EXTI->IMR  &= ~(1 << pin);
+}
+
+void read_gpio_pins() {
+    uint32_t input = (~GPIOG->IDR) & 0x3;
+
+    aux0_state = (input & AUX0_INPUT_MASK) != 0;
+    aux1_state = (input & AUX1_INPUT_MASK) != 0;
+}
+
+void init_interrupt() {
+    aux0_state_previous= false;
+    aux1_state_previous = false;
+    aux0_state = false;
+    aux1_state = false;
+
+    // configure interrupts
+    set_up_interrupt(0, PORT_G, 0, true, true); // AUX0
+    set_up_interrupt(1, PORT_G, 0, true, true); // AUX1
 }
