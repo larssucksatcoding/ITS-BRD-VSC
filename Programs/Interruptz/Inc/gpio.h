@@ -33,7 +33,7 @@
   *
   * @param      b_on_previous will be resetted (previous input pin1)
   */
-void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous);
+void init_gpio();
 
 /**
   * @brief      checks whether reset button is pressed

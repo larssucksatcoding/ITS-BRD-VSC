@@ -34,10 +34,7 @@
 /* Variables ------------------------------------------------------------------*/
 
 volatile uint32_t last_phase_transition_timestamp;
-volatile bool aux0_state_previous;
-volatile bool aux1_state_previous;
-volatile bool aux0_state;
-volatile bool aux1_state;
+
 volatile int total_phase_count;
 volatile int direction;
 volatile int error;
@@ -61,8 +58,8 @@ void init_modules() {
 	// init self-written modules
 	init_display();
 	init_time(&last_phase_transition_timestamp);
-	init_gpio(&aux0_state, &aux1_state, 
-		&aux0_state_previous, &aux1_state_previous);
+	init_gpio();
+	init_interrupt();
 }
 
 /**
@@ -82,7 +79,7 @@ void reset_state() {
 	error = NO_ERROR;
 
 	start_first_timewindow();
-	read_gpio_pins(&aux0_state, &aux1_state);
+	read_gpio_pins();
 
 	unmask_interrupt_pin(0);
 	unmask_interrupt_pin(1);

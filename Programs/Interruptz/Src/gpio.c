@@ -31,7 +31,7 @@ static bool backwards_on;
 
 /* Public Functions  -------------------------------------------*/
 
-void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous){
+void init_gpio() {
     set_phase_led_off();
 }
 
