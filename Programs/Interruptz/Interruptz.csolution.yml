@@ -17,7 +17,7 @@ solution:
       target-set:
         - set:
           images:
-            - project-context: Interruptz.Release
+            - project-context: Interruptz.Debug
 
   # List of different build configurations.
   build-types:

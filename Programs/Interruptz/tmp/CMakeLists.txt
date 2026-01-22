@@ -8,17 +8,17 @@ include("roots.cmake")
 
 # Context specific lists
 set(CONTEXTS
-  "Interruptz.Release+ITSboard"
+  "Interruptz.Debug+ITSboard"
 )
 list(LENGTH CONTEXTS CONTEXTS_LENGTH)
 math(EXPR CONTEXTS_LENGTH "${CONTEXTS_LENGTH}-1")
 
 set(DIRS
-  "${CMAKE_CURRENT_SOURCE_DIR}/Interruptz.Release+ITSboard"
+  "${CMAKE_CURRENT_SOURCE_DIR}/Interruptz.Debug+ITSboard"
 )
 
 set(OUTPUTS_1
-  "${SOLUTION_ROOT}/out/Interruptz/ITSboard/Release/Interruptz.axf"
+  "${SOLUTION_ROOT}/out/Interruptz/ITSboard/Debug/Interruptz.axf"
 )
 
 set(ARGS

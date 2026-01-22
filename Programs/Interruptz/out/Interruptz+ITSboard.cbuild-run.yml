@@ -9,8 +9,8 @@ cbuild-run:
   device: STMicroelectronics::STM32F429ZITx
   device-pack: Keil::STM32F4xx_DFP@2.17.1
   output:
-    - file: Interruptz/ITSboard/Release/Interruptz.axf
-      info: generate by Interruptz.Release+ITSboard
+    - file: Interruptz/ITSboard/Debug/Interruptz.axf
+      info: generate by Interruptz.Debug+ITSboard
       type: elf
       load: image+symbols
   system-resources:
