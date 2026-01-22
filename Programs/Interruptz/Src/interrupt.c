@@ -208,11 +208,15 @@ static inline void isr_handler(uint16_t pin) {
     aux1_state_previous = aux1_state;
     aux1_state = (input & AUX1_INPUT_MASK) != 0;
 
+    if( (aux0_state != aux0_state_previous) && (aux1_state != aux1_state_previous)) {
+      error = DIR_ERROR;
+    }
+    
     check_direction(&direction);
     switch (direction) {
       case DIR_FORWARDS:  { total_phase_count++; break; }
       case DIR_BACKWARDS: { total_phase_count--; break; }
-      case DIR_ERROR: { error = DIR_ERROR; break; }
+      /* case DIR_ERROR: { error = DIR_ERROR; break; } */
     }
 
     #ifdef MEASURE_INTERRUPT_TIME
