@@ -12,7 +12,7 @@
 
 // uncommint this define for oscilloscope measurement
 // connect the oscilloscope to the INTERRUPT_MEASURE_LED below
-#define MEASURE_INTERRUPT_TIME
+// #define MEASURE_INTERRUPT_TIME
 #define INTERRUPT_MEASURE_LED 0b00010000
 
 /*  Private Methods  ----------------------------------------*/
@@ -176,7 +176,7 @@ static inline void check_direction(volatile int *direction, volatile bool *a_on,
     }
 }
 
-static inline void isr_handler() {
+static inline void isr_handler(uint16_t pin) {
 
     #ifdef MEASURE_INTERRUPT_TIME
     STATUS_LEDS->BSRR = INTERRUPT_MEASURE_LED << SET_REGISTER;
@@ -186,6 +186,11 @@ static inline void isr_handler() {
 
     last_phase_transition_timestamp = getTimeStamp(); // should be first thing in isr
     uint32_t input = (~GPIOG->IDR);
+
+    // -- clear interrupt flag --
+    // the source of all my agony ;-;
+
+    EXTI->PR = (1 << pin);
 
     // -- output --
 
@@ -217,7 +222,7 @@ static inline void isr_handler() {
   *             cannot be changed by us.
   */
 void EXTI0_IRQHandler (void) {
-  isr_handler();
+  isr_handler(0);
 }
 
 /**
@@ -225,7 +230,7 @@ void EXTI0_IRQHandler (void) {
   *             cannot be changed by us.
   */
 void EXTI1_IRQHandler (void) {
-  isr_handler();
+  isr_handler(1);
 }
 
 /*  Public Methods  ----------------------------------------*/
