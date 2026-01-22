@@ -2,7 +2,7 @@ build:
   generated-by: csolution version 2.12.0+p48-gd3223e31
   solution: ../../../../Interruptz.csolution.yml
   project: ../../../../Interruptz.cproject.yml
-  context: Interruptz.Debug+ITSboard
+  context: Interruptz.Release+ITSboard
   compiler: AC6
   board: STMicroelectronics::NUCLEO-F429ZI:Rev.B
   board-pack: Keil::STM32NUCLEO_BSP@1.8.1
@@ -54,8 +54,8 @@ build:
       path: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1
     - pack: Keil::STM32NUCLEO_BSP@1.8.1
       path: ${CMSIS_PACK_ROOT}/Keil/STM32NUCLEO_BSP/1.8.1
-  optimize: none
-  debug: on
+  optimize: speed
+  debug: off
   misc:
     ASM:
       - -masm=auto
@@ -142,11 +142,11 @@ build:
     - ../../../../../../DisplayWaveshare/Inc
     - ../../../../../../ITS_BRD_LIB/Inc
     - ../../../../../../ITS_BRD_LIB/Utilities/AddFonts
-    - ../../../../RTE/_Debug_ITSboard
+    - ../../../../RTE/_Release_ITSboard
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include
     - ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
   add-path-asm:
-    - ../../../../RTE/_Debug_ITSboard
+    - ../../../../RTE/_Release_ITSboard
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include
     - ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
   output-dirs:
@@ -360,7 +360,7 @@ build:
         - file: ../../../../Src/interrupt.c
           category: sourceC
   constructed-files:
-    - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h
+    - file: ../../../../RTE/_Release_ITSboard/RTE_Components.h
       category: header
   licenses:
     - license: <unknown>

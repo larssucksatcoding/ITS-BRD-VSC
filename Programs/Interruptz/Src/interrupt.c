@@ -39,9 +39,9 @@ unsigned long get_clock_enable_mask(uint16_t port) {
   * @return     syscfg exticr register.
   */
 uint32_t get_syscfg_exticr_index(uint16_t pin) {
-    if (pin >  4) { return 0; }
-    if (pin >  8) { return 1; }
-    if (pin > 12) { return 2; }
+    if (pin <  4) { return 0; }
+    if (pin <  8) { return 1; }
+    if (pin < 12) { return 2; }
     return 3;
 }
 

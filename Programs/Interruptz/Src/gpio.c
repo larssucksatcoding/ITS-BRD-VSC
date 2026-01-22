@@ -32,6 +32,7 @@ static bool backwards_on;
 
 void init_gpio(volatile bool *a_on, volatile bool *b_on, volatile bool *a_on_previous, volatile bool *b_on_previous){
     set_phase_led_off();
+    set_status_led_off();
 
     *a_on_previous = false;
     *b_on_previous = false;
@@ -93,6 +94,10 @@ void set_err_led_off() {
 void set_phase_led(int *phase_count) {
     int current_phase_count = *phase_count & PHASE_COUNT_LED_MASK;
     PHASE_COUNT_LEDS->BSRR = current_phase_count << SET_REGISTER;
+}
+
+void set_phase_led_off() {
+    PHASE_COUNT_LEDS->BSRR = RESET_MASK << RESET_REGISTER;
 }
 
 
