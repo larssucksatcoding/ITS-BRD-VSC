@@ -17,7 +17,7 @@ solution:
       target-set:
         - set:
           images:
-            - project-context: Interruptz.Debug
+            - project-context: Interruptz.Release
 
   # List of different build configurations.
   build-types:
@@ -27,7 +27,7 @@ solution:
 
     - type: Release
       debug: off
-      optimize: balanced
+      optimize: speed
 
   # List related projects.
   projects:
