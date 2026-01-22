@@ -17,10 +17,10 @@
 
 uint32_t biggest_diff = 0;
 
-static bool aux0_state_previous;
-static bool aux1_state_previous;
-static bool aux0_state;
-static bool aux1_state;
+static volatile bool aux0_state_previous;
+static volatile bool aux1_state_previous;
+static volatile bool aux0_state;
+static volatile bool aux1_state;
 
 /*  Private Methods  ----------------------------------------*/
 

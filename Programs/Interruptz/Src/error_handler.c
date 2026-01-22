@@ -15,10 +15,10 @@
 
 void show_error(char* str) {
 
-    set_err_led_on();
-
 	mask_interrupt_pin(0);
 	mask_interrupt_pin(1);
+
+    set_err_led_on();
 
     setErrMode();
     print_error(str);
@@ -36,8 +36,8 @@ void show_error(char* str) {
 
     setNormalMode();
 
+    set_err_led_off();
+
 	unmask_interrupt_pin(0);
 	unmask_interrupt_pin(1);
-
-    set_err_led_off();
 }
