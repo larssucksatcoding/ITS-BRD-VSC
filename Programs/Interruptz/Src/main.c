@@ -93,37 +93,37 @@ void reset_state() {
   *				interrupted by the isr in the process.
   * @return 	true, if interrrupted, false, if not interrupted
   */
-bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous, 
+bool check_for_interruption(// bool *a, bool *b, bool *a_previous, bool *b_previous, 
 	uint32_t *isr_timestamp, int *phase_count, int *dir, int *err) 
 {
 	// state 1
-	*a = aux0_state;
-	*b = aux1_state;
-	*a_previous = aux0_state_previous;
-	*b_previous = aux1_state_previous;
+	// *a = aux0_state;
+	// *b = aux1_state;
+	// *a_previous = aux0_state_previous;
+	// *b_previous = aux1_state_previous;
 	*isr_timestamp = last_phase_transition_timestamp;
 	*phase_count = total_phase_count;
 	*dir = direction;
 	*err = error;
 
 	// state 2
-	bool a2 = aux0_state;
-	bool b2 = aux1_state;
-	bool a_previous2 = aux0_state_previous;
-	bool b_previous2 = aux1_state_previous;
+	// bool a2 = aux0_state;
+	// bool b2 = aux1_state;
+	// bool a_previous2 = aux0_state_previous;
+	// bool b_previous2 = aux1_state_previous;
 	uint32_t isr_timestamp2 = last_phase_transition_timestamp;
 	int phase_count2 = total_phase_count;
-	int dir2 = direction;
-	int err2 = error;
+	// int dir2 = direction;
+	// int err2 = error;
 
 	// true if state1 == state2
 	bool no_interruption = (
-		(*a == a2) && (*b == b2) && 
-		(*a_previous == a_previous2) && (*b_previous == b_previous2) && 
+		// (*a == a2) && (*b == b2) && 
+		// (*a_previous == a_previous2) && (*b_previous == b_previous2) && 
 		(*isr_timestamp == isr_timestamp2) && 
-		(*phase_count == phase_count2) &&
-		(*dir == dir2) &&
-		(*err == err2)
+		(*phase_count == phase_count2)
+		// (*dir == dir2) &&
+		// (*err == err2)
 	);
 	
 	return !no_interruption;
@@ -135,20 +135,13 @@ int main(void) {
 
 	int encoder_direction = DIR_NONE;
 
-	// while(1) {
-	// 	lcd_shit();
-	// 	HAL_Delay(20);
-	// }
-
-	// bool toggle = false;
-
 	// ===============
 	// VARIABLE DEFINITIONS
 	// ===============
 
 	// values filled in by ddr
-	bool aux0_state_copy, aux1_state_copy; 
-	bool aux0_state_previous_copy, aux1_state_previous_copy;
+	// bool aux0_state_copy, aux1_state_copy; 
+	// bool aux0_state_previous_copy, aux1_state_previous_copy;
 	uint32_t isr_timestamp, loop_timestamp;
 	int phase_count;
 	int direction_copy;
@@ -164,13 +157,6 @@ int main(void) {
 
 	while(1) {
 
-		// if (toggle) {
-		// 	GPIOE->BSRR = PIN4 << SET_REGISTER;
-		// } else {
-		// 	GPIOE->BSRR = PIN4 << RESET_REGISTER;
-		// }
-		// toggle = !toggle;
-
 		// ===============
 		// HARDWARE INPUTS
 		// ===============
@@ -180,8 +166,8 @@ int main(void) {
 		iteration = 0;
 		do {
 			bool interrupted = check_for_interruption(
-				&aux0_state_copy, &aux1_state_copy, 
-				&aux0_state_previous_copy, &aux1_state_previous_copy,
+				// &aux0_state_copy, &aux1_state_copy, 
+				// &aux0_state_previous_copy, &aux1_state_previous_copy,
 				&isr_timestamp, &phase_count, &direction_copy,
 				&error_copy
 			);
@@ -227,14 +213,9 @@ int main(void) {
 		// --- DISPLAY ---
 
 		// blinky blink
-		// mask_interrupt_pin(0);
-		// mask_interrupt_pin(1);
 
 		set_dir_led(&direction_copy);
 		set_phase_led(&phase_count);
-
-		// unmask_interrupt_pin(0);
-		// unmask_interrupt_pin(1);
 
 		// displays new values on the display, if any 
 		// new have been set by recalcuate_display()

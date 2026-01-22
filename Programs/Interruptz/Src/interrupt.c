@@ -15,6 +15,8 @@
 // #define MEASURE_INTERRUPT_TIME
 #define INTERRUPT_MEASURE_LED 0b00010000
 
+uint32_t biggest_diff = 0;
+
 /*  Private Methods  ----------------------------------------*/
 
 /**
@@ -214,6 +216,12 @@ static inline void isr_handler(uint16_t pin) {
     #ifdef MEASURE_INTERRUPT_TIME
     STATUS_LEDS->BSRR = INTERRUPT_MEASURE_LED << RESET_REGISTER;
     #endif
+
+    // uint32_t isr_end_timestamp = getTimeStamp();
+    // uint32_t diff = (isr_end_timestamp - last_phase_transition_timestamp);
+    // if (diff > biggest_diff) {
+    //     biggest_diff = diff;
+    // }
 }
 
 

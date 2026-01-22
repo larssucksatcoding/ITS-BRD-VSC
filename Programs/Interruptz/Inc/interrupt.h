@@ -25,6 +25,7 @@
 #define PORT_J  0x09
 #define PORT_K  0x0A
 
+extern uint32_t biggest_diff;
 
 /**
   * @brief      sets up ab interrupt completely given a pin and port number.

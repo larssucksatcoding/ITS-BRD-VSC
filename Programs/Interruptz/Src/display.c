@@ -156,11 +156,11 @@ void check_display_data() {
     // mask_interrupt_pin(0);
     // mask_interrupt_pin(1);
 
-    // snprintf(angle_new, CHAR_LEN, FORMAT_STR, angle);
-    // snprintf(angular_momentum_new, CHAR_LEN, FORMAT_STR, angular_momentum);
+    snprintf(angle_new, CHAR_LEN, FORMAT_STR, angle);
+    snprintf(angular_momentum_new, CHAR_LEN, FORMAT_STR, angular_momentum);
 
-    double_to_str(angle, angle_new);
-    double_to_str(angular_momentum, angular_momentum_new);
+    // double_to_str(angle, angle_new);
+    // double_to_str(angular_momentum, angular_momentum_new);
 
     // unmask_interrupt_pin(0);
     // unmask_interrupt_pin(1);
