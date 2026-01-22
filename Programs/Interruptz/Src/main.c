@@ -40,6 +40,7 @@ volatile bool aux0_state;
 volatile bool aux1_state;
 volatile int total_phase_count;
 volatile int direction;
+volatile int error;
 
 
 /* Functions ------------------------------------------------------------------*/
@@ -81,6 +82,7 @@ void reset_state() {
 
 	total_phase_count = 0;
 	direction = DIR_NONE;
+	error = NO_ERROR;
 
 	unmask_interrupt_pin(0);
 	unmask_interrupt_pin(1);
@@ -92,7 +94,7 @@ void reset_state() {
   * @return 	true, if interrrupted, false, if not interrupted
   */
 bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous, 
-	uint32_t *isr_timestamp, int *phase_count, int *dir) 
+	uint32_t *isr_timestamp, int *phase_count, int *dir, int *err) 
 {
 	// state 1
 	*a = aux0_state;
@@ -102,6 +104,7 @@ bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous
 	*isr_timestamp = last_phase_transition_timestamp;
 	*phase_count = total_phase_count;
 	*dir = direction;
+	*err = error;
 
 	// state 2
 	bool a2 = aux0_state;
@@ -111,6 +114,7 @@ bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous
 	uint32_t isr_timestamp2 = last_phase_transition_timestamp;
 	int phase_count2 = total_phase_count;
 	int dir2 = direction;
+	int err2 = error;
 
 	// true if state1 == state2
 	bool no_interruption = (
@@ -118,7 +122,8 @@ bool check_for_interruption(bool *a, bool *b, bool *a_previous, bool *b_previous
 		(*a_previous == a_previous2) && (*b_previous == b_previous2) && 
 		(*isr_timestamp == isr_timestamp2) && 
 		(*phase_count == phase_count2) &&
-		(*dir == dir2)
+		(*dir == dir2) &&
+		(*err == err2)
 	);
 	
 	return !no_interruption;
@@ -147,6 +152,7 @@ int main(void) {
 	uint32_t isr_timestamp, loop_timestamp;
 	int phase_count;
 	int direction_copy;
+	int error_copy;
 
 	// values used for check_for_interruption loop
 	bool interrupted = false;
@@ -176,15 +182,17 @@ int main(void) {
 			bool interrupted = check_for_interruption(
 				&aux0_state_copy, &aux1_state_copy, 
 				&aux0_state_previous_copy, &aux1_state_previous_copy,
-				&isr_timestamp, &phase_count, &direction_copy
+				&isr_timestamp, &phase_count, &direction_copy,
+				&error_copy
 			);
 			iteration++;
 		} while ((iteration < 10) && interrupted);
 
 		// we tried saving data 10 times, and we always got interrupted. 
 		// The decoder is spinning to fast. ERRROOORR!!
-		if(interrupted) {
+		if(interrupted || (error_copy == DIR_ERROR)) {
 			show_error();
+			continue;
 		}
 
 		// ============

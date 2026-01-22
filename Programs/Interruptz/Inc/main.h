@@ -20,6 +20,7 @@ volatile extern bool aux0_state;
 volatile extern bool aux1_state;
 volatile extern int total_phase_count;
 volatile extern int direction;
+volatile extern int error;
 
 /**
 *  @brief       resets the state of all modules to reset/ initalize values

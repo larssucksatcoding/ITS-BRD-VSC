@@ -208,12 +208,13 @@ static inline void isr_handler(uint16_t pin) {
     switch (direction) {
       case DIR_FORWARDS:  { total_phase_count++; break; }
       case DIR_BACKWARDS: { total_phase_count--; break; }
-      case DIR_ERROR: { show_error(); break; }
+      case DIR_ERROR: { error = DIR_ERROR; break; }
     }
 
     #ifdef MEASURE_INTERRUPT_TIME
     STATUS_LEDS->BSRR = INTERRUPT_MEASURE_LED << RESET_REGISTER;
     #endif
+
 }
 
 

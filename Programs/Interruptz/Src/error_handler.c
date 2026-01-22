@@ -27,6 +27,8 @@ void show_error() {
     setNormalMode();
     reset_state();
 
+    error = NO_ERROR;
+
 	unmask_interrupt_pin(0);
 	unmask_interrupt_pin(1);
 }
