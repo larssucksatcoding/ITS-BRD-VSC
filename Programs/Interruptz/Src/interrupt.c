@@ -176,7 +176,7 @@ static inline void check_direction(volatile int *direction, volatile bool *a_on,
     }
 }
 
-static inline void isr_handler(int pin) {
+static inline void isr_handler() {
 
     #ifdef MEASURE_INTERRUPT_TIME
     STATUS_LEDS->BSRR = INTERRUPT_MEASURE_LED << SET_REGISTER;
@@ -185,22 +185,15 @@ static inline void isr_handler(int pin) {
     // -- input --
 
     last_phase_transition_timestamp = getTimeStamp(); // should be first thing in isr
-    int input = (~GPIOG->IDR);
+    uint32_t input = (~GPIOG->IDR);
 
     // -- output --
 
-    switch (pin) {
-      case 0: {
-        aux0_state_previous = aux0_state;
-        aux0_state = (input & AUX0_INPUT_MASK) != 0;
-        break;
-      }
-      case 1: {
-        aux1_state_previous = aux1_state;
-        aux1_state = (input & AUX1_INPUT_MASK) != 0;
-        break;
-      }
-    }
+    aux0_state_previous = aux0_state;
+    aux0_state = (input & AUX0_INPUT_MASK) != 0;
+
+    aux1_state_previous = aux1_state;
+    aux1_state = (input & AUX1_INPUT_MASK) != 0;
 
     check_direction(
       &direction,
@@ -224,7 +217,7 @@ static inline void isr_handler(int pin) {
   *             cannot be changed by us.
   */
 void EXTI0_IRQHandler (void) {
-  isr_handler(0);
+  isr_handler();
 }
 
 /**
@@ -232,7 +225,7 @@ void EXTI0_IRQHandler (void) {
   *             cannot be changed by us.
   */
 void EXTI1_IRQHandler (void) {
-  isr_handler(1);
+  isr_handler();
 }
 
 /*  Public Methods  ----------------------------------------*/
