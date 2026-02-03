@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.12.0+p41-gfeadfc5e
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: One_Wire_Bus.csolution.yml
+  cbuild-run: out/One_Wire_Bus+ITSboard.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: One_Wire_Bus.cproject.yml
+  cbuilds:
+    - cbuild: out/One_Wire_Bus/ITSboard/Debug/One_Wire_Bus.Debug+ITSboard.cbuild.yml
+      project: One_Wire_Bus
+      configuration: .Debug+ITSboard
+      messages:
+        info:
+          - One_Wire_Bus.cbuild-pack.yml - file is already up-to-date
+          - One_Wire_Bus+ITSboard.cbuild-run.yml - file is already up-to-date
+          - One_Wire_Bus.Debug+ITSboard.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.16.2
+        - pack: ARM::CMSIS-NN@7.0.0

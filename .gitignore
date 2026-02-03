@@ -6,8 +6,7 @@
 # Ignore User specific setting
 /Programs/*/*.uvguix.*
 
-#csoluion Toolbox
-*csolution.yml
+
 
 
 ### macOS ###
@@ -64,8 +63,7 @@ compile_commands.json
 # instead I will ignore everything but CMakeLists.txt (!file not working if
 # parent directory is ignored)
 
-# i do not know what the purpose of this file is, but i feel like it is not that important 
-*cbuild-idx.yml
+
 
 # i think these are not necessary
 

@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.12.0+p48-gd3223e31
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: Interruptz.csolution.yml
+  cbuild-run: out/Interruptz+ITSboard.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: Interruptz.cproject.yml
+  cbuilds:
+    - cbuild: out/Interruptz/ITSboard/Release/Interruptz.Release+ITSboard.cbuild.yml
+      project: Interruptz
+      configuration: .Release+ITSboard
+      messages:
+        info:
+          - Interruptz.cbuild-pack.yml - file is already up-to-date
+          - Interruptz+ITSboard.cbuild-run.yml - file is already up-to-date
+          - Interruptz.Release+ITSboard.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.16.2
+        - pack: ARM::CMSIS-NN@7.0.0
