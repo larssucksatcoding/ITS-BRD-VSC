@@ -14,7 +14,7 @@
 #define     SENSOR_B        0x28
 #define     SENSOR_S        0x10
 
-slave current_slave;
+slave *current_slave;
 int c_s_index;
 slave slaves[MAX_SLAVE];
 uint8_t slave_count; 
@@ -29,19 +29,19 @@ void calculate_temperature(){
     int temp_int = 0;
     double temp = 0;
 
-    copy_arr(TEMP_LENGTH, current_slave.scratchpad, temp_arr);
+    copy_arr(TEMP_LENGTH, current_slave->scratchpad, temp_arr);
     bits_to_temp(temp_arr, &temp_int);
 
-    if(current_slave.family_code == B_FAM) {
+    if(current_slave->family_code == B_FAM) {
         temp = (double) temp_int / 16.0;
     }
-    else if (current_slave.family_code == S_FAM) {
+    else if (current_slave->family_code == S_FAM) {
         temp = (double) temp_int / 2.0;
     }
     else {
         temp = 0;
     }
-    current_slave.temperature = temp;
+    current_slave->temperature = temp;
 }
 
 void next_slave(){
@@ -51,19 +51,20 @@ void next_slave(){
     else {
         c_s_index++;
     }
-    current_slave = slaves[c_s_index];
+    current_slave = &slaves[c_s_index];
 }
 
 pslave get_current_slave(){
-    return &current_slave;
+    return current_slave;
 }
 
 void save_scratchpad(unsigned char scratchpad_data[SCRATCHPAD_LENGTH]){
-    copy_arr(SCRATCHPAD_LENGTH, scratchpad_data, current_slave.scratchpad);
+    copy_arr(SCRATCHPAD_LENGTH, scratchpad_data, current_slave->scratchpad);
 }
 
 void new_slave(unsigned char rom_data[ROM_LENGTH]){
     
+    c_s_index++;
     slave_count++;
     unsigned int fam = 0;
     unsigned char fam_code[FAM_LENGTH];
@@ -71,21 +72,24 @@ void new_slave(unsigned char rom_data[ROM_LENGTH]){
     copy_arr(FAM_LENGTH, rom_data, fam_code);
     bits_to_fam(fam_code, &fam);
 
-    slave new_slave;
-    copy_arr(ROM_LENGTH, rom_data, new_slave.ROM);
+    slave *new_slave = &slaves[c_s_index];
+    copy_arr(ROM_LENGTH, rom_data, new_slave->ROM);
+
+    // initialize scratchpad with 0.
+    for (int i = 0; i < SCRATCHPAD_LENGTH; i++) {
+        new_slave->scratchpad[i] = 0;
+    }
     
     if(fam == B_FAM){
-        new_slave.family_code = B_FAM;
+        new_slave->family_code = B_FAM;
     }
     else if (fam == S_FAM){
-        new_slave.family_code = S_FAM;
+        new_slave->family_code = S_FAM;
     }
     else { // unknown family code
-        new_slave.family_code = 0x00;
+        new_slave->family_code = 0x00;
     };
 
-    c_s_index = slave_count -1;
-    slaves[c_s_index] = new_slave;
     current_slave = new_slave;
 }
 
